@@ -1,5 +1,4 @@
-\documentclass[a4paper,12pt]{article}
-
+\documentclass[final,fmstyle]{./util/ucathesis}
 
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
@@ -14,14 +13,94 @@
 \usepackage{booktabs}
 
 \usepackage{tikz}
-\usepackage[style=numeric,sorting=none,backend=bibtex]{biblatex}
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
 
-\addbibresource{bibliography} 
+\usepackage{glossaries}
+\usepackage{etoolbox}
+\usepackage[xindy]{imakeidx}
+
+
+%\MakePerPage{footnote}
+\addbibresource{bibliography.bib} 
+
+
+
+%Datos de la tesís
+\title{Construccionismo como complemento a la enseñanza tradicional:  una
+	aplicación a la formación de profesionales del área de enfermería}
+\author{Mirta González y Arturo Volpe}
+\degree{Informática}
+
+\advisor{Ing.}{Martín Abente Lahaye,M.Sc.}
+
+\logosource{./graphics/logo.jpg}
+\institution{Universidad Nacional de Asunción}
+\faculty{Facultad Politécnica}
+\address{San Lorenzo - Paraguay}
+
+
+\newtoks\customtok
+
+
+\renewcommand*{\newacronymhook}{%
+ \edef\dosetkeys{\noexpand\setkeys{glossentry}{user1={},\the\glskeylisttok}}%
+ \dosetkeys
+ \ifcsempty{@glo@useri}%
+ {%
+   \expandafter\customtok\expandafter{\the\glsshorttok}%
+ }%
+ {%
+   \edef\custom{\the\glsshorttok, \csexpandonce{@glo@useri}}%
+   \expandafter\customtok\expandafter{\custom}%
+ }%
+}
+
+\newcommand*{\custompostdesc}[1]{%
+  \ifcsempty{glo@#1@useri}{}{(\glsentryuseri{#1})}%
+}
+
+\renewcommand*{\CustomAcronymFields}{%
+  user1={},%
+  name={\the\glsshorttok},%
+  description={\the\glslongtok\noexpand\custompostdesc{\the\glslabeltok}},%
+  first={\the\glslongtok\space(\the\customtok)},%
+  firstplural={\the\glslongtok\noexpand\acrpluralsuffix\space(\the\customtok)}%
+  text={\the\glsshorttok},%
+  plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
+}
+
+\SetCustomStyle
+\makeglossaries
+\makeindex
 
 \begin{document}
 
+\include{acronimos}
+
+\maketitle
+
+% Tabla de contenidos
+\tableofcontents
+% Lista de figuras
+%\listoffigures
+% Lista de tablas
+%\listoftables
+% Lista de algoritmos
+%\listofalgorithms
+
+\printglossary[type=\acronymtype,title=Lista de Siglas]
+
+\addcontentsline{toc}{chapter}{Lista de Siglas}
+
+
+\mainmatter
+
+\chapter{Introducción}
+
+Seccion de la introducción al uso de las \Gls{tic}.
+
+
 \include{tics/main}
-\include{tics/construccionismo_TICs}
 
 
 \printbibliography
