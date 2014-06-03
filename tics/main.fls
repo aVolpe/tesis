@@ -1,0 +1,7 @@
+PWD /home/avolpe/develop/tesis/documents/libro/tics
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT main.tex
+OUTPUT main.log
+INPUT /usr/share/texmf/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texmf/fonts/tfm/public/cm/cmbx10.tfm
