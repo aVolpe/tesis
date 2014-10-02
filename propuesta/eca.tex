@@ -1,0 +1,157 @@
+
+
+\section{Acciones condicionadas por eventos}
+
+Las \gls{eca} son aquellas que son lanzadas una vez que se cumple un determinado
+evento\cite{bailey2004event}. En las bases de datos relacionales, son conocidos
+
+
+
+Las mismas pueden ser utilizadas para notificar que un determinado conjunto de
+eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
+información acerca de la utilización de un determinado recurso.
+
+\subsection{Motivación}
+
+Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en
+forma de una única regla, la cual facilita la declaración de las
+mismas\cite{bailey2004event}.
+
+Son principalmente útiles para analizar el comportamiento en tiempo real de un
+sistema\cite{bailey2004event}.
+%TODO agregar más motivaciones.
+
+
+
+\subsection{Declaración}
+
+Una \gls{eca}, se define como:
+
+\begin{center}
+	 Cuando ocurren una serie de \emph{eventos}, y se cumple una
+	 \emph{condición}, entonces realizar una acción. \emph{Acción}
+\end{center}
+
+Los eventos determinan cuando una regla debe ser activada, los mismos se dividen
+en dos categorías, primitivos y compuestos, los primeros son detectables, por
+ejemplo, cuando se inserta una jeringa, y los compuestos, son la combinación de
+uno o más primitivos\cite{bailey2004event}. Los eventos compuestos, se unen
+mediante:
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item conjunción (\emph{y}),
+\item disjunción (\emph{o}), y
+\item secuencia (\emph{entonces}).
+\end{enumerate*}
+Sin embargo, no siempre son necesarios todas las posibles combinaciones, y las
+combinaciones sencillas son más fáciles de optimizar y
+probar\cite{bailey2004event}.
+
+Una regla  puede tener argumentos, los cuales son el entorno en el cual se lanzo
+el evento que lo lanza.
+
+Las condiciones determinan si el entorno es el necesario para que la regla sea
+activada.
+
+La acción a ejecutar describe la lógica que debe ser ejecutada cuando se han
+lanzado los eventos y la condición de la regla se ha cumplido.
+
+\subsubsection{Dependencia entre reglas}
+
+Las reglas pueden depender de otras reglas, lo cual se puede ver como que la
+finalización de una regla es un evento que otra regla espera para poder ser
+activada.
+
+Las reglas pueden agregar información a un contexto compartido por todas las
+reglas, de esta manera, se puede pasar parámetros entre distintas reglas, por
+ejemplo, la regla \emph{Retirar Torniquete}, depende de la regla \emph{Insertar Torniquete}, pero debe responder solamente al torniquete
+que ha activado la regla de inserción, es decir, el usuario puede extraer varios
+torniquetes, y la regla no debe activarse, hasta que se extraiga el torniquete
+que activo la primer regla.
+
+Así, la regla \emph{Retirar Torniquete} depende de la regla \emph{Insertar
+Torniquete}, y esta relación entre reglas, se da en dos formas:
+
+\begin{itemize}
+\item  \emph{Dependencia fuerte:} la regla \emph{Retirar Torniquete} solamente podrá
+	ser elegida para ser lanzada cuando la regla \emph{Insertar Torniquete}
+	haya sido cumplida.
+\item  \emph{Dependencia de contexto}: la regla \emph{Retirar Torniquete} no se
+	activará cuando los eventos a los que escucha se terminen, sino cuando
+	los eventos a los que escucha sean lanzados con los parámetros adecuados
+	(se extraiga el torniquete que lanzo la regla de inserción).
+\end{itemize}
+
+
+
+
+\subsection{Modelo de ejecución}
+
+Para ejecutar un motor de reglas del tipo \gls{eca}, se debe tener en cuenta
+principalmente dos factores, 
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item  Como se verifica el cumplimiento de cada regla, y, 
+\item  Que ocurre cuando varias reglas son lanzadas al mismo tiempo.
+\end{enumerate*}.
+
+Para ambos casos se puede tomar un enfoque \emph{inmediato}, es decir que
+inmediatamente cuando se lanza un evento, o se cumple una condición, se ejecuta
+la regla. Además existen otros dos modos de ejecución, \emph{deferida}, y
+\emph{desacoplada}, en la primera, se espera hasta que el lanzador del evento
+culmine su trabajo, y luego se ejecute la regla, pero en la misma unidad de
+trabajo, mientras que en la ejecución desacoplada, se encolan los trabajos y
+otro hilo es el encargado de ejecutar las reglas.
+
+La propuesta implementada, utiliza una ejecución inmediata, principalmente por
+la sencillez de las reglas, es decir, las reglas no realizar un trabajo pesado,
+solamente controlan el estado del entorno y lo validan.
+
+Además, la ejecución inmediata es importante por que el entorno no sufre
+modificaciones entre el evento lanzado y la ejecución de la regla, según
+\cite{bailey2004event}, este es el factor más importante para determinar el tipo
+de ejecución deseado.
+
+
+
+\subsubsection{Estados de una regla}
+
+Una regla puede estar en uno de los siguientes estados:
+
+\begin{description}
+\item[BEGIN] Es una regla que recién fue creada, no realiza ninguna
+	acción.
+\item[WAITING\_FOR\_RULE] Es un estado en el que esta esperando que otras reglas
+	sean lanzadas.
+\item[WAITING\_FOR\_EVENT] Es un estado en el que esta escuchando a que sean
+	lanzados los eventos a los que escucha, este es el estado principal.
+\item[WAITING\_FOR\_CONDITION] La regla ya no espera por ningún evento y las
+	reglas de las que depende ya han sido lanzadas, se verifica cada cierto
+	tiempo si el entorno cumple con una condición definida.
+\item[FINISH] La regla ha sido lanzada, con un resultado no determinado, se pudo
+	haber cumplido, como no, es el estado final de una regla. Cuando una
+	regla llega a este estado, se lanza su evento de finalización.
+\end{description}
+
+Una regla puede estar en solo un estado, y solamente se permite que el estado
+avance, desde \emph{BEGIN} hasta \emph{FINISH}.
+
+\subsubsection{Ciclo de vida}
+
+Cuando una regla es definida, y insertada al motor de reglas, inmediatamente
+pasa al estado \emph{BEGIN}, luego se verifica si la misma depende de otras
+reglas, sí este es el caso, pasa al estado \emph{WAITING\_FOR\_RULE} y escucha a
+los eventos de finalización de las reglas anteriores.
+
+Una vez que las reglas anteriores han sido finalizadas, la regla pasa al estado
+\emph{WAITING\_FOR\_EVENT} sí deben escuchar por algún evento, en caso contrario
+pasan al estado \emph{WAITING\_FOR\_CONDITION}.
+
+Una vez que la regla está en estado \emph{WAITING\_FOR\_CONDITION}, pasa a un
+motor que ejecuta su condición cada cierto tiempo, si la condición se cumple, la
+regla se ejecuta, y la misma pasa a estado \emph{FINISH}, momento en el cual
+notifica a las reglas que dependen de ella que ha sido lanzada.
+
+Una vez que la regla esta en estado \emph{FINISH}, la misma sale del esquema de
+ejecución, y solo esta disponible para obtener resultados.
+
+
+
