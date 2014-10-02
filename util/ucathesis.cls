@@ -231,7 +231,7 @@
     \vspace{\@line}\textbf{\large\@faculty}\par
     %\textbf{\large\@department}\par
 	%%\vspace{2\@line}\includegraphics{logo.png}\par
-    \vspace{2\@line}\includegraphics{\@logosource}\par
+    \vspace{2\@line}\includegraphics[natwidth=220,natheight=330]{\@logosource}\par
     \vspace{0.5\@line}\textsc{\Large``\@title''}\par
     \vspace{0.5\@line}
     \begin{singlespace}
