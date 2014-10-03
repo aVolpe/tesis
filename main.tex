@@ -11,6 +11,8 @@
 \usepackage{pgfgantt}
 \usepackage{changepage}
 \usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
 
 \usepackage{tikz}
 \usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
@@ -36,6 +38,8 @@
 \faculty{Facultad Politécnica}
 \address{San Lorenzo - Paraguay}
 
+%% templates
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
 
 \newtoks\customtok
 
@@ -84,7 +88,7 @@
 % Lista de tablas
 %\listoftables
 % Lista de algoritmos
-%\listofalgorithms
+\listofalgorithms
 
 \printglossary[type=\acronymtype,title=Lista de Siglas]
 
