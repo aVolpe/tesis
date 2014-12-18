@@ -1,0 +1,55 @@
+\section{Encuesta Subjetiva}
+
+En el análisis de los resultados, existieron alumnos que no respondieron todas
+las preguntas, para tratar este tipo de casos, es importante analizar la
+naturaleza del patrón de datos faltantes\cite{carpita2011imputation}. Existen
+tres posibles formas de categorizar el patrón de ocurrencia de falta de
+respuestas:\cite{leite2010performance}\cite{leite2010performance}\cite{tsikriktsis2005review}.
+
+
+\begin{description}
+    \item[Información faltante completamente aleatoria] Cuando la información
+        faltante es independiente de la variable medida y de otras variables.
+    \item[Información faltante aleatoria] Cuando la información faltante depende
+        de otras variables, pero no de la variable en sí. 
+    \item[Información faltante no aleatoria] Cuando hay una relación entre la
+        información faltante y el valor de la variable.
+\end{description}
+
+Los datos muestran que la información faltante es completamente aleatoria en
+relación a la variable medida y a las demás variables, de hecho, una sola
+encuesta tiene información faltante, así, se establece que el tipo de
+información faltante es \emph{Información faltante completamente aleatoria}.
+
+Existen tres mecanismos\cite{tsikriktsis2005review} principales para lidiar con
+información faltante, eliminación, reemplazo, y procedimientos basados en modelo
+(?Model-based procedure XXX).\cite{tsikriktsis2005review} recomienda utilizar
+un mecanismo de reemplazo para escalas del tipo Likert.
+
+Las técnicas de reemplazo se clasifican en tres grandes
+grupos\cite{tsikriktsis2005review}:
+\begin{enumerate*}[label=\itshape\alph*\upshape.]
+\item basadas en la promedio,
+\item basadas en regresión, y,
+\item imputación \emph{hot deck}.
+\end{enumerate*}
+
+La sustitución basada por promedio, se divide nuevamente en tres grupos;
+promedio
+\begin{enumerate*}[label=\itshape\alph*\upshape.]
+\item total,
+\item del subgrupo, y,
+\item por caso.
+\end{enumerate*}
+La sustitución del promedio total se realiza obteniendo el promedio de todas las
+respuestas de esta pregunta, la sustitución de subgrupo es similar, solo que se
+limita a aquellos sujetos del mismo subgrupo del sujeto que no respondió, y
+finalmente, la sustitución por caso, es el promedio de las respuestas válidas
+del sujeto.
+
+En su resumen de las diferentes técnicas y cuando se deben utilizar cada una,
+\cite{tsikriktsis2005review}, recomienda la utilización de la sustitución basada
+en promedio por caso. 
+
+De esta forma se reemplazan los valores faltantes en la encuesta, con el
+promedio del sujeto.
