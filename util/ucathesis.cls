@@ -14,7 +14,7 @@
 \usepackage{algorithmic}
 
 \bibliographystyle{unsrt} % Numeros ordenados por entrada
-%%\bibliographystyle{alpha} % Nombre y año 
+%%\bibliographystyle{alpha} % Nombre y aï¿½o 
 
 \DeclareOption{draft}{ \@isdrafttrue  \PassOptionsToClass{draft}{report} }
 \DeclareOption{final}{ \@isdraftfalse \PassOptionsToClass{final}{report} }
@@ -75,13 +75,13 @@
   {\gdef\@advisorname{#1}\gdef\@advisortitle{#2}\gdef\@advisor{#3}}
 
 
-\newcommand{\@institution}{Universidad Católica}
+\newcommand{\@institution}{Universidad Catï¿½lica}
 \newcommand{\institution}[1]{\gdef\@institution{#1}}
-\newcommand{\@nameinstitution}{"Nuestra Señora de la Asunción"}
+\newcommand{\@nameinstitution}{"Nuestra Seï¿½ora de la Asunciï¿½n"}
 \newcommand{\nameinstitution}[1]{\gdef\@institution{#1}}
-\newcommand{\@faculty}{Facultad de Ciencias y Tecnología}
+\newcommand{\@faculty}{Facultad de Ciencias y Tecnologï¿½a}
 \newcommand{\faculty}[1]{\gdef\@faculty{#1}}
-\newcommand{\@department}{Departamento de Electrónica e Informática}
+\newcommand{\@department}{Departamento de Electrï¿½nica e Informï¿½tica}
 \newcommand{\department}[1]{\gdef\@department{#1}}
 \newcommand{\@grade}{Ingeniero}
 \newcommand{\grade}[1]{\gdef\@grade{#1}}
@@ -238,7 +238,7 @@
       \textsc{Trabajo Final de Grado presentado por}\par
       \vfill{\scshape \@typeauthor{\unskip,\par}{\unskip\par y{} }}\par
       \vfill\textsc{como requisito}\par
-      \textsc{para obtener el título de \@grade}\par
+      \textsc{para obtener el tï¿½tulo de \@grade}\par
       \textsc{en \@degree}\par
       \vfill\textsc{\@advisorname}\par\vspace{4pt}
 	  \textsc{\@advisortitle\ \@advisor}\par\vspace{4pt}

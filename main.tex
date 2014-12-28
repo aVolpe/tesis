@@ -14,6 +14,7 @@
 \usepackage{booktabs}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{xargs}
 
 \usepackage{tikz}
 \usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
@@ -22,6 +23,7 @@
 \usepackage{etoolbox}
 \usepackage[xindy]{imakeidx}
 
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 
 %\MakePerPage{footnote}
 \addbibresource{bibliography.bib} 
@@ -72,6 +74,9 @@
   plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
 }
 
+\newcommandx{\todox}[2][1=]{\todo[linecolor=gray,backgroundcolor=gray!25,bordercolor=gray,#1]{#2}}
+
+
 \SetCustomStyle
 \makeglossaries
 \makeindex
@@ -91,6 +96,9 @@
 % Lista de algoritmos
 \listofalgorithms
 
+\listoftodos[Notes]
+
+
 \printglossary[type=\acronymtype,title=Lista de Siglas]
 
 \addcontentsline{toc}{chapter}{Lista de Siglas}
@@ -106,7 +114,7 @@ Sección de la introducción al uso de las \Gls{tic}.
 \include{tics/main}
 \include{propuesta/main}
 \include{analisis/main}
-
+\include{evaluacion/main}
 
 \printbibliography
 
