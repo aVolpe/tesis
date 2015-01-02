@@ -2,29 +2,26 @@
 
 Al final del periodo de prueba, cada alumno de la muestra completa una encuesta
 con 31 preguntas que se utilizan para validar las hipótesis. Las preguntas están
-agrupadas en dos grupos, el primero cuenta con 27 preguntas cuyas respuestas son
-en forma la escala de  Likert, como se explica más adelante, de 7 opciones cada
-una, la segunda parte cuenta con 4 preguntas abiertas. Estas preguntas están
-formuladas teniendo en cuenta las variables descriptas en~\ref{sec:variables}.
+agrupadas en dos, el primer grupo cuenta con 27 preguntas cerradas, es decir de
+una sola respuesta en una lista de opciones, el segundo grupo cuenta con 4
+preguntas abiertas. 
 
-Cada encuesta fue entregada a los alumnos que acordaron participar en el
-experimento, mientras completaban la encuesta, un guía estuvo presente para
-responder cualquier duda que surgiera.
-
-La encuesta fue distribuida a todos los alumnos que son mencionados
-en~\ref{sec:objetiva} como la muestra seleccionada, son 11 alumnos en total.
+Cada encuesta es entregada a los alumnos que acordaron participar en el
+experimento, mientras completan la encuesta, un guía está presente para
+responder cualquier duda.
 
 \subsection{Métrica}
 \label{sec:metrica}
+\label{sec:likert}
 
-Los datos de las variables descriptas en la sección~\ref{sec:variables} fueron
-recolectados utilizando como metodología la encuesta de aprobación como se
-indico en la sección~\ref{sec:metodologia}, para la valoración de las variables
-medidas se utilizo la escala de Likert~\cite{Allen:2007} la cual consto de 7
-valores posibles.
+\martin{Likert es un punto central de toda la evaluación, no sabemos si debe ir
+    como un punto aparte antes de empezar a hablar del resto, o si puede ir acá
+    y luego es referenciada}
 
-El valor mas bajo utilizado en la escala de Likert fue 1/``Totalmente en
-desacuerdo'' y el mas alto fue 7/``Totalmente de acuerdo''.
+Para la valoración de las variables medidas se utiliza la escala de
+Likert~\cite{Allen:2007} de 7 valores posibles. El valor más bajo utilizado en
+la escala de Likert es 1 ``Totalmente en desacuerdo'' y el mas alto es 7
+``Totalmente de acuerdo''.
 
 Una vez valoradas y registradas todas las respuestas y con el objetivo de
 eliminar las tendencias en la forma en la son completadas las encuestas
@@ -43,7 +40,7 @@ Para cada respuesta $s$ del usuario $i$, el valor ajustado, por la primera
 normalización, $s_1$ se define como:
 
 \begin{equation*}
-s_1=\frac{s-\min_i}{\max_i-\min_i}
+s1_i=\frac{s-\min_i}{\max_i-\min_i}
 \end{equation*}
 
 Y luego siendo:
@@ -52,20 +49,20 @@ Y luego siendo:
 	\item $groupmax_i$ la respuesta ajustada de mayor valor en el grupo $i$
 \end{itemize}
 
-Para cada respuesta ajustada $s_1$ del usuario $i$, el valor ajustado $s_a$ se
+Para cada respuesta ajustada $s1_i$ del usuario $i$, el valor ajustado $sa_i$ se
 define como:	
 
 \begin{equation*}
-s_a=\frac{s_1-groupmin_i}{groupmax_i-groupmin_i}
+sa_i=\frac{s1_i-groupmin_i}{groupmax_i-groupmin_i}
 \end{equation*}
 
 Obteniendo así un valor normalizado, tanto por individuo, como por pregunta, en
 el rango $0$ y $1$.
 
-Con el resultado final de la estandarización podemos diferenciar cuales son los
+Con el resultado final de la estandarización diferenciamos cuales son los
 puntos fuertes y cuales los puntos débiles de la solución propuesta con
 respecto a las respuestas dadas por los usuarios. Estos valores son relativos a
-las respuestas originales dadas a la encuesta por lo usuarios de la aplicación.
+las respuestas originales dadas en la encuesta.
 
 Para la valoración absoluta de cada  item se utiliza la media de cada columna o
 respuesta a una pregunta de la encuesta.
@@ -99,30 +96,30 @@ aquellos aspectos de la solución propuesta que buscan ser evaluados.
 Este factor esta relacionado con la característica que posee la solución en
 cuanto a la oportunidad que brinda al usuario para explorar cada uno de los
 elementos del entorno simulado (paciente, herramientas propias del
-procedimiento). En este sentido, se busca proveer facilidad de uso,
-intuitividad y realismo en cuanto a las acciones y situaciones que se presentan
-en la solución para que de esta manera, los elementos que la componen no
-representen para el jugador un obstáculo que impida su uso.
+procedimiento). En este sentido, se busca proveer facilidad de uso, intuitividad
+y realismo en cuanto a las acciones y situaciones que se presentan en la
+solución para que de esta manera, los elementos que la componen no representen
+para el jugador un obstáculo que impida su uso.
 
-Las variables que miden este aspecto son las siguiente:
+Las variables que miden este aspecto son las siguientes:
 
 \begin{description}
 
-\item [Funciones realizadas por los elementos del juego:] se refiere a la
+\item[Funciones realizadas por los elementos del juego] se refiere a la
     correctitud con la que una herramienta o elemento del juego representa las
     funciones que el mismo puede realizar en la vida real, en este sentido, se
     evalúa el realismo con el que es representado tal elemento.
 
-\item [Aleatoriedad para afianzar conocimientos:] se refiere al beneficio que
+\item[Aleatoriedad para afianzar conocimientos] se refiere al beneficio que
     puede traer el hecho de que el estado del paciente en el juego sea aleatorio
     en cuanto a la posibilidad que esto brinda al jugador para poner a prueba
     sus conocimientos teóricos.
 
-\item [Aleatoriedad para representar realismo:] se refiere al uso de estados
+\item[Aleatoriedad para representar realismo] se refiere al uso de estados
     aleatorios en el paciente para que de esta forma el procedimiento se asemeje
     mas a una situación real.
 
-\item [Facilidad de uso:] se refiere a lo fácil e intuitivo  que puede ser la
+\item[Facilidad de uso] se refiere a lo fácil e intuitivo  que puede ser la
     utilización de los elementos del juego.
 
 \end{description}
@@ -142,32 +139,34 @@ Las variables que miden estos aspectos son las siguientes:
 
 \begin{description}
 
-\item [Movimientos motrices del paciente:] se refiere a la suficiencia de los
+\item [Movimientos motrices del paciente] se refiere a la suficiencia de los
     movimientos motrices que realiza el paciente en el escena correspondiente a
     la valoración de la escala de Glasgow.
 
-\item [Movimientos oculares del paciente:] se refiere a la suficiencia de los
+\item [Movimientos oculares del paciente] se refiere a la suficiencia de los
     movimientos oculares que realiza el paciente en la escena correspondiente a
     la valoración del escala de Glasgow.
 
-\item [Reacción verbal del paciente:] se refiere a la suficiencia de las
+\item [Reacción verbal del paciente] se refiere a la suficiencia de las
     reacciones o respuestas verbales que realiza el paciente en la escena
     correspondiente a la valoración de la escala de Glasgow.
 
-\item[Acciones suficientes de los elementos o herramientas:] se refiere a si las
-    diferentes acciones que pueden realizarse con los elementos o herramientas
-    del juego en un determinado procedimiento de enfermería son suficientes para
-    ese procedimiento, ya que, debido a las limitaciones de la tecnología estas
-    acciones son limitadas.
-
-\item[Distinción entre los estados del paciente:] se refiere a si los diferentes
+\item[Distinción entre los estados del paciente] se refiere a si los diferentes
     estados del paciente son distinguidos correctamente en el procedimiento de
     valoración de la Escala de Glasgow ya que esto es importante para que el
     jugador pueda diagnosticar correctamente al paciente.
 
+\item[Acciones las herramientas] se refiere a si las diferentes acciones que
+    pueden realizarse con los elementos o herramientas del juego en un
+    determinado procedimiento de enfermería son suficientes para ese
+    procedimiento, ya que, debido a las limitaciones de la tecnología estas
+    acciones son limitadas.
+
 \end{description}
 
-\subsubsection{Gamificacion}
+\subsubsection{Gamification}
+
+\martin{Se puede poner gamificación?}
 
 Este factor esta relacionado con la importancia de incluir en la solución
 aquellas características que son propias de un juego de vídeo convencional. Se
@@ -179,23 +178,23 @@ Las variables que miden estos aspectos son las siguientes:
 
 \begin{description}
    
-\item[Puntaje del juego como motivación:] se refiere a que tanto motiva al
-    jugador que la solución le proporcione un puntaje total al final de cada
-    partida para poder mejorar constantemente siendo este puntaje como una
-    evaluación final de tod lo que realizo dentro de la partida.
+\item[Motivcación del puntaje] se refiere a que tanto motiva al jugador que la
+    solución le proporcione un puntaje total al final de cada partida para poder
+    mejorar constantemente siendo este puntaje como una evaluación final de todo
+    lo que realizo dentro de la partida.
 
-\item[Importancia del puntaje:] se refiere a que tan importante es para un
+\item[Importancia del puntaje] se refiere a que tan importante es para un
     jugador que se le proporcione un puntaje total al final de cada partida para
     poder visualizar su rendimiento.
 
-\item[Socialización de los puntajes:] se refiere a si el hecho de que las
+\item[Socialización de los puntajes] se refiere a si el hecho de que las
     personas del mismo entorno compartan sus puntajes, experiencias y logros en
     las partidas a través de redes sociales pueda ser motivador.
 
-\item[Medición del tiempo como motivación:] se refiere a que tanto motiva al
+\item[Medición del tiempo como motivación] se refiere a que tanto motiva al
     jugador que la solución le proporcione el tiempo que duro su partida
-    siendo este tiempo como una evaluación de su precisión a la hora de realizar
-    el procedimiento que se le presente.
+    sirviendo este tiempo como una evaluación de su precisión a la hora de
+    realizar el procedimiento que se le presente.
 
 \end{description} 
 
@@ -211,26 +210,26 @@ Las variables que miden este aspecto son las siguientes:
 
 \begin{description}
 
-\item[Escenografía para entrar en ambiente:] se refiere a la importancia de la
+\item[Escenografía para entrar en ambiente] se refiere a la importancia de la
     escenografía de la partida para que el jugador entre en ambiente para
     realizar el procedimiento que se le presente.
 
-\item[Juegos cortos como ayuda para la repetición:] se refiere a si el hecho de
+\item[Juegos cortos como ayuda para la repetición] se refiere a si el hecho de
     que los procedimientos presentados en las partidas sean cortos contribuye a
     repetir las partidas varias veces de seguido entrando en un estado de
     inmersión.
 
-\item[Gráficos en tres dimensiones para entender el entorno:] se refiere a la
+\item[Gráficos en tres dimensiones para entender el entorno] se refiere a la
     importancia que tiene el uso de gráficos en tres dimensiones para que el
     jugador pueda entender mejor el entorno y las posibles acciones que puede
     realizar.
 
-\item[Realismo a través de ordenes verbales:] se refiere a si el hecho de que la
+\item[Realismo a través de ordenes verbales] se refiere a si el hecho de que la
     solución brinde la posibilidad de que aparezca un menú de ordenes verbales
     en el momento en que el jugador habla hace que la acción de dar ordenes
     verbales se asemeje mas a la realidad.
 
-\item[Simulación como herramienta:] se refiere a si la simulación ayuda al
+\item[Simulación como herramienta] se refiere a si la simulación ayuda al
     jugador a sentirse parte del laboratorio, dando cierto realismo a la escena
     que se le presenta.
 
@@ -245,17 +244,17 @@ Las variables que miden este aspecto son las siguientes:
 
 \begin{description}
 
-\item[Simulación para complementar el estudio en clase y laboratorio:] se
+\item[Simulación para complementar el estudio en clase y laboratorio] se
     refiere a que tanto las herramientas alternativas como la simulación pueden
     complementar a los métodos de aprendizaje tradicionales que son el estudio
     en clase y en el laboratorio.
 
-\item[Simulación provee mas facilidades para el estudio:] se refiere a si las
-    herramientas alternativas como la simulación proveen mas facilidades para
+\item[Simulación provee más facilidades para el estudio] se refiere a si las
+    herramientas alternativas como la solución proveen más facilidades para
     poner en practica los conocimientos con respecto a los demás métodos de
-    aprendizaje que son los libros, laboratorios,  campo de practicas.
+    aprendizaje que son los libros, laboratorios y el campo de practicas.
 
-\item[Interacción con el paciente:] se refiere a si el hecho de que el jugador
+\item[Interacción con el paciente] se refiere a si el hecho de que el jugador
     pueda interactuar con un paciente que responde a las acciones del jugador es
     mejor que utilizar un maniquí inmóvil como el de los laboratorios de
     practica.
@@ -273,16 +272,16 @@ Las variables que miden este aspecto son las siguientes:
 
 \begin{description}
 
-\item[Importancia de los detalles de los pasos realizados incorrectamente:] se
-    refiere a que tan importante es para el jugador que la solución no solo le
-    diga los pasos que hizo de manera incorrecta sino también las causas por las
-    cuales no los realizo correctamente.
+\item[Detalles de los pasos realizados incorrectamente] se refiere a que tan
+    importante es para el jugador que la solución no solo le diga los pasos que
+    hizo de manera incorrecta sino también las causas por las cuales no los
+    realizo correctamente.
 
-\item[Suficiencia de los detalles de los pasos realizados incorrectamente:]se
-    refiere a que tan suficiente es para el jugador mostrar justificaciones
-    breves acerca de las causas por las que realizo incorrectamente un paso.
+\item[Suficiencia de los detalles de los pasos realizados incorrectamente] se
+    refiere a sí son suficientes las justificaciones breves acerca de las causas
+    por las cuales que realizo incorrectamente un paso.
 
-\item[Iconos para representar el estado del jugador:] se refiere a la
+\item[Iconos para representar el estado del jugador] se refiere a la
     suficiencia de mostrar iconos en la interfaz de la solución para
     representar el estado actual del jugador.
 
@@ -299,16 +298,16 @@ Las variables que miden este aspecto son las siguientes:
 
 \begin{description}
 
-\item[La solución para memorizar y comprender el procedimiento:] se refiere a
+\item[La solución para memorizar y comprender el procedimiento] se refiere a
     que tanto ayuda la solución al jugador para entender los procedimientos que se
     le presenten y para memorizar los pasos de cada uno de ellos.
 
-\item[Falta de pistas como ayuda al aprendizaje:] se refiere a que tan efectivo
+\item[Falta de pistas como ayuda al aprendizaje] se refiere a que tan efectivo
     resulta no dar pistas al jugador en el momento de realizar un procedimiento
     para que pueda plasmar y medir sus conocimientos.
 
-\item[Suficiencia de los botones que indican acciones:] se refiere a que tan
-    suficiente es representar determinadas acciones que deben realizarse con un
-    botón debido a limitaciones en la tecnología.
+\item[Suficiencia de los botones que indican acciones] se refiere a que tan
+    suficiente es representar determinadas acciones  con un botón debido a
+    limitaciones en la tecnología.
 
 \end{description}

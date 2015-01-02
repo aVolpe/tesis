@@ -1,22 +1,79 @@
 \section{Encuesta objetiva}
 \label{sec:objetiva}
 
-A fin de obtener información comparativa acerca del conocimiento de los alumnos
-que utilizaron la solución propuesta y los que no la utilizaban, utilizados
-como un grupo de control, se realizo un examen, que consta de diez preguntas.
+A fin de obtener información acerca del conocimiento de los alumnos que
+utilizaron la solución propuesta y los que no la utilizaron, los cuales
+constituyen el grupo de control, se realiza un examen que consta de diez
+preguntas.
 
-El examen busca medir el nivel de conocimiento del alumno sobre los dos temas
-simulados, contiene preguntas de nivel básico, medio y avanzado.
+El examen mide el nivel de conocimiento del alumno sobre los dos temas
+simulados, contiene preguntas de nivel básico, medio y avanzado. Las mismas son
+formuladas utilizando la lista de competencias básicas que debe tener un alumno
+para aprobar la materia \textbf{Enfermería en Urgencias II}, y además están
+aprobadas por los profesores de la cátedra.
 
-Las preguntas fueron formuladas utilizando la lista de competencias básicas que
-debe tener un alumno para aprobar la materia \textbf{Enfermería en Urgencias
-    II}, y posteriormente fueron aprobadas por los profesores de la cátedra.
+Cada pregunta tiene el mismo peso, así la puntuación más baja obtenible es $0$, y
+la más alta es $10$.
 
-Cada pregunta tiene el mismo peso, así la puntuación más baja obtenible es 0, y
-la más alta es 10.
-
-\section{Muestra}
+\subsection{Muestra}
 
 El universo cuenta con 124 alumnos, de los cuales 11 son la muestra seleccionada
-para el experimento, entonces se utilizan a los 113 alumnos restantes como un 
-grupo de control.
+para el experimento, y los 113 alumnos restantes son utilizados como grupo de
+control.
+
+La utilización de 11 alumnos es suficiente, ya que según estudios
+de~\cite{nielsen2000}, mientras menos experiencia tengan los sujetos de estudio
+con la solución planteada, serán necesarios menos para detectar un gran
+porcentaje de errores y fortalezas, y según~\cite{ritch2009}, una base de 10 a
+12 es suficiente para obtener resultados estadísticamente válidos.
+
+\subsection{Variables}
+
+Se mide el rendimiento de los alumnos, para ello se utiliza el promedio de las
+notas, tanto del conjunto total de alumnos, como de los que participaron del
+experimento, y del grupo de control.
+
+Adicionalmente, se busca medir el rendimiento por tema, para así poder
+contrastar con los resultados del registro de actividades, que se explica en la
+siguiente sección.
+
+Siendo:
+
+\begin{itemize}
+    \item $po_i{_k}$ la respuesta del usuario $i$ a la pregunta $k$
+    \item $n$ total de preguntas, es igual a 10
+    \item $tc$ total de alumnos en el grupo de control, que es igual a 113.
+    \item $t$ total de alumnos, que es 124
+    \item $ts$ total de sujetos de estudio, que es igual a 11.
+\end{itemize}
+
+Se define el puntaje total de de cada alumno $pto_i$ del alumno $i$ como, 
+
+\begin{equation*}
+    pto_i = \sum_{j=1}^n{po_i{_j}}
+\end{equation*}
+
+Se define el promedio total de los alumnos, $promtotal$ como:
+
+\begin{equation*}
+    promtotal = \frac{\sum_{i=1}^t{pto_i}}{t}
+\end{equation*}
+
+El promedio total de los alumnos que participaron en el experimento
+$promsujetos$, es:
+
+\begin{equation*}
+    promsujetos = \frac{\sum_{i=1}^ts{pto_i}}{t}
+\end{equation*}
+
+El promedio del grupo de control, $promcontrol$, se define como:
+
+\begin{equation*}
+    promcontrol = \frac{\sum_{i=1}^ts{pto_i}}{t}
+\end{equation*}
+
+\martin{Como se hace para que las últimas dos sumatorias solo incluyan a los
+    alumnos encuestados y de control respectivamente? Debemos definir varias
+    variables $ptop$ (puntaje total de objetiva que participo)?}
+
+

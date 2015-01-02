@@ -1,33 +1,148 @@
 \section{Interfaz de usuario}
 
-La primera fue realizada con alumnos de la carrera de Ingeniería en Informática
-de la Facultad Politécnica que pertenece a la Universidad Nacional de Asunción,
-sin experiencia previa tanto con la solución como con los procedimientos
-simulados, pero si familizarizados con la utilización de dispositivos móviles.
+\martin{Debería mencionar que se utilizaron tablets? Por que son diferentes a lo
+    que se termino usando. Nos parece que es irrelevante la información.}
 
-\cite{nielsen2000} recomienda una muestra de 5 personas para pruebas de
-usabilidad.~\cite{ritch2009} menciona que con 5 individuos, se encuentran 85\%
-de los errores en promedio, y que un grupo de 5 a 10 personas es adecuado para
-pruebas de usabilidad sencillas.
+Adicionalmente a las pruebas y mencionadas, durante el desarrollo se realizó una
+prueba de interfaz para comprobar hipótesis sobre la interfaz del usuario,
+específicamente buscando la retroalimentación de usuarios acostumbrados a
+tecnología similar a la utilizada en la solución.
 
-Esta prueba no es de gran complejidad, el procedimiento es sencillo y esta
-bien definido, se busca determinar que problemas presenta la interfaz, que
-impedimentos encuentran usuarios acostumbrados a la tecnología pero no al
-procedimiento, por ello se elige una muestra de 8 alumnos.
+La prueba de interfaz de usuario se realiza con alumnos de la carrera de
+Ingeniería en Informática de la Facultad Politécnica que pertenece a la
+Universidad Nacional de Asunción\todox{Agregar al glosario}, sin experiencia
+previa tanto con la solución como con los procedimientos simulados, pero si
+familiarizados con la utilización de dispositivos móviles.
+
+El experimento consiste en dos partes importantes involucradas en la recolección
+de datos para su posterior análisis. Estas partes son las siguientes:
+
+\begin{description}
+
+\item[Simulación] Luego de una explicación acerca de las funciones y manejos
+    generales de la solución por parte de los experimentadores, cada usuario
+    completa una tarea que se le es asignada, como ayuda, recibe un papel que
+    lista todos los pasos necesarios para llevar a cabo el procedimiento
+    Extracción de muestras para hemocultivo utilizando la solución.
+    	
+    Las simulaciones son grabadas mediante programas de captura de pantalla, así
+    como por detectores de eventos táctiles.
+    	
+\item[Encuesta] Posteriormente se le provee a cada sujeto una encuesta a cada
+    usuario la cuál es utilizada para obtener una idea general acerca de la
+    calidad de la simulación. 
+
+\end{description} 
 
 \subsection{Muestra}
 
-La primera fue realizada con alumnos de la carrera de Ingeniería en Informática
-de la Facultad Politécnica que pertenece a la Universidad Nacional de Asunción,
-sin experiencia previa tanto con la solución como con los procedimientos
-simulados, pero si familizarizados con la utilización de dispositivos móviles.
+El número de muestras tomadas fue 8, ya que según~\cite{nielsen2000} son necesarios
+al menos 5 participantes para poder obtener resultados significativos en una prueba
+de usabilidad. Además,~\cite{ritch2009} asegura que la teoría de~\cite{nielsen2000}
+es verdadera especialmente para pruebas simples. 
 
-\cite{nielsen2000} recomienda una muestra de 5 personas para pruebas de
-usabilidad.~\cite{ritch2009} menciona que con 5 individuos, se encuentran 85\%
-de los errores en promedio, y que un grupo de 5 a 10 personas es adecuado para
-pruebas de usabilidad sencillas.
+Se fundamenta el número de participantes, y que es una prueba sencilla, por qué:
 
-Esta prueba no es de gran complejidad, el procedimiento es sencillo y esta
-bien definido, se busca determinar que problemas presenta la interfaz, que
-impedimentos encuentran usuarios acostumbrados a la tecnología pero no al
-procedimiento, por ello se elige una muestra de 8 alumnos.
+\begin{itemize}
+
+\item La prueba que se esta ejecutando es sencilla (no debería tomar más de 10
+    minutos) 
+
+\item Se busca solamente obtener información acerca de la interfaz, y no el
+    funcionamiento en sí de la simulación, pues los usuarios no son expertos en
+    el área y no tienen conocimiento acerca de qué debería pasar. 
+
+\item No se busca medir el aprendizaje del usuario en temas no relacionados a la
+    interfaz, es decir, no se mide el aprendizaje del usuario en el tema
+    simulado.
+
+\item El procedimiento esta bien definido y los pasos necesarios están a
+    disposición del usuario en todo momento.
+
+\end{itemize}
+
+\subsection{Variables}
+
+Las variables medidas durante las simulaciones y realización de la tarea son las
+siguientes:
+
+\begin{itemize}
+
+\item Cantidad de opciones elegidas (agrupadas por opción): número de veces en
+    que el usuario selecciona una determinada opción.
+
+\item Cantidad de acciones realizadas (agrupadas por tipo): número de veces  en
+    que el usuario realiza una determinada acción.
+
+\item Número de pasos realizados: cantidad de pasos requeridos que son
+    realizados en la simulación. 
+
+\item Cantidad de movimientos espaciales: número de veces en que se modifica el
+    estado de la cámara para realizar las acciones deseadas.
+
+\item Tiempo de elección de opción: cuanto tiempo tarda el usuario en elegir una
+    determinada opción.
+
+\item Tiempo de realización de acción: cuanto tiempo tarda el usuario en
+    realizar una determinada acción.
+
+\item Cantidad de intentos para realizar acciones: número de veces en que un
+    usuario intenta realizar correctamente una acción. 
+
+\end{itemize}
+
+En cuanto a la encuesta, las siguientes son las variables que fueron consideradas y medidas:
+
+\begin{itemize}
+
+\item Calidad gráfica: realismo y calidad de los modelos utilizados.
+
+\item Interacción: desenvolvimiento en el entorno y utilización del hardware.
+
+\item Interacción con objetos: utilización errónea de objetos.
+
+\item Características del entorno: realismo del escenario y de los objetos
+    utilizados.
+
+\item Usabilidad de la interfaz: facilidad de uso de las opciones proveídas por
+    la interfaz.
+
+\item Integración con el hardware: facilidad de uso de la solución con una
+    tablet. 
+
+\end{itemize}
+
+\subsection{Métricas}
+
+Para el análisis de la opinión de los usuarios, se utiliza la escala de Likert
+explicada en~\ref{sec:likert}, y en el análisis de la interacción del usuario se
+utilizan las grabaciones registradas durante el experimento.
+
+Haciendo uso de estas variables descriptas anteriormente, las métricas
+utilizadas son las siguientes:
+
+\begin{itemize}
+    
+\item Media de error en la elección de opciones: se obtiene dividiendo la suma
+    de las opciones realizadas sobre la cantidad ideal. 
+    
+\item Media de pasos correctos: se obtiene dividiendo la cantidad de pasos
+    requeridos realizados sobre la cantidad de pasos requeridos. 
+    
+\item Cantidad de movimientos por tipo: número de movimientos que fueron
+    realizados agrupados por tipo (desplazamiento, acercamiento/
+    desplazamiento).
+    
+\item Evolución del tiempo de elección de opciones: variación del tiempo
+    requerido para elegir una opción entre la primera vez y las demás ocasiones.
+    
+\item Evolución del tiempo de realización de acciones: variación del tiempo
+    requerido para realizar una acción entre la primera vez y las demás
+    ocasiones.
+    
+\item Media de error en la realización de acciones: se obtiene dividiendo la
+    cantidad de intentos para realizar una determinada acción sobre la cantidad
+    ideal.
+
+\end{itemize}
+
