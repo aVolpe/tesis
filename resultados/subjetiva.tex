@@ -1,0 +1,174 @@
+\section{Encuesta Subjetiva}
+
+\todox{Añadir más explicación acerca de los resultados}
+En el análisis de los resultados de las encuestas subjetivas, existieron alumnos
+que no respondieron todas las preguntas, para tratar este tipo de casos, es
+importante analizar la naturaleza del patrón de datos
+faltantes\cite{carpita2011imputation}. 
+
+
+\subsection{Datos faltantes}
+
+Existen tres posibles formas de categorizar el patrón de ocurrencia de falta de
+respuestas\cite{leite2010performance}
+\cite{leite2010performance}\cite{tsikriktsis2005review}:
+
+
+\begin{description}
+    \item[Información faltante completamente aleatoria] Cuando la información
+        faltante es independiente de la variable medida y de otras variables.
+    \item[Información faltante aleatoria] Cuando la información faltante depende
+        de otras variables, pero no de la variable en sí. 
+    \item[Información faltante no aleatoria] Cuando hay una relación entre la
+        información faltante y el valor de la variable.
+\end{description}
+
+Los datos muestran que la información faltante es completamente aleatoria en
+relación a la variable medida y a las demás variables, de hecho, una sola
+encuesta tiene información faltante, así, se establece que el tipo de
+información faltante es \emph{Información faltante completamente aleatoria}.
+
+Existen tres mecanismos\cite{tsikriktsis2005review} principales para lidiar con
+información faltante, eliminación, reemplazo, y procedimientos basados en
+modelo.~\cite{tsikriktsis2005review} recomienda utilizar un mecanismo de
+reemplazo para escalas del tipo Likert.
+
+Las técnicas de reemplazo se clasifican en tres grandes
+grupos\cite{tsikriktsis2005review}:
+\begin{enumerate*}[label=\itshape\alph*\upshape.]
+\item basadas en el promedio,
+\item basadas en regresión, y,
+\item imputación \emph{hot deck}.
+\end{enumerate*}
+
+La sustitución basada por promedio, se divide nuevamente en tres grupos;
+promedio
+\begin{enumerate*}[label=\itshape\alph*\upshape.]
+\item total,
+\item del subgrupo, y,
+\item por caso.
+\end{enumerate*}
+La sustitución del promedio total se realiza obteniendo el promedio de todas las
+respuestas de esta pregunta, la sustitución de subgrupo es similar, solo que se
+limita a aquellos sujetos del mismo subgrupo del sujeto que no respondió, y
+finalmente, la sustitución por caso, es el promedio de las respuestas válidas
+del sujeto.
+
+En su resumen de las diferentes técnicas y cuando se deben utilizar,
+\cite{tsikriktsis2005review}, recomienda la utilización de la sustitución basada
+en promedio por caso. 
+
+De esta forma se reemplazan los valores faltantes en la encuesta, con el
+promedio del sujeto.
+
+\subsection{Resultados}
+
+Los resultados se resumen en la tabla~\ref{tab:subjetiva_conformidad_resumen},
+se muestra el número de alumno para identificar a un alumno y el promedio de sus
+respuestas en la encuesta, existen 27 preguntas y por motivos de espacio,
+solamente se muestra el promedio de las mismas, los detalles completos se pueden
+ver en el apéndice.
+
+\begin{table}[!hbt]
+\begin{tabular}{llllllllr}
+\toprule
+\textbf{\shortstack{Número de \\alumno}}         &
+\begin{sideways}\textbf{Gamificación}                    \end{sideways}        &
+\begin{sideways}\textbf{Exploración}                     \end{sideways}        &
+\begin{sideways}\textbf{Inmersión}                       \end{sideways}        &
+\begin{sideways}\textbf{Pedagogía}                       \end{sideways}        &
+\begin{sideways}\textbf{Representación}                  \end{sideways}        &
+\begin{sideways}\textbf{Retroalimentación}               \end{sideways}        &
+\begin{sideways}\textbf{Utilidad}                        \end{sideways}        &
+\textbf{\shortstack{Promedio\\de respuestas}}\\
+\midrule
+1              & 5 & 5 & 4 & 6 & 4 & 4 & 6 & 5 \\
+2              & 6 & 6 & 6 & 6 & 5 & 5 & 6 & 6 \\
+3              & 4 & 6 & 6 & 5 & 3 & 5 & 6 & 5 \\
+4              & 6 & 3 & 6 & 6 & 4 & 6 & 5 & 5 \\
+5              & 5 & 5 & 6 & 6 & 4 & 4 & 5 & 5 \\
+6              & 6 & 5 & 5 & 5 & 6 & 5 & 6 & 5 \\
+7              & 7 & 7 & 7 & 7 & 6 & 7 & 7 & 7 \\
+8              & 7 & 7 & 7 & 7 & 6 & 6 & 6 & 7 \\
+9              & 7 & 7 & 7 & 7 & 5 & 6 & 7 & 6 \\
+10             & 6 & 6 & 5 & 7 & 5 & 5 & 5 & 5 \\
+11             & 7 & 5 & 4 & 5 & 5 & 5 & 5 & 5 \\
+\midrule
+Promedio Total & 6 & 6 & 6 & 6 & 5 & 5 & 6 & 6 \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva}
+\label{tab:subjetiva_conformidad_resumen}
+\end{table}
+\martin{~\ref{tab:subjetiva_conformidad_resumen} Es mejor poner las iniciales o un número de alumno?}
+
+Se observa que el el puntaje más bajo en el promedio final es 5 que significa
+\textit{Parcialmente de acuerdo}, y el más alto es 7, que significa
+\textit{Totalmente de acuerdo}, se observa además el puntaje 6, que significa
+\textit{De acuerdo}.
+
+Como se explica en la sección~\ref{sec:likert}, estos resultados están sujetos a
+tendencias, para ello se aplica el método de doble
+estandarización\cite{Pagolu2011}, los resultados se muestran en la
+tabla~\ref{tab:subjetiva_conformidad_corregida}
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule
+\textbf{\shortstack{Número de \\alumno}}         &
+\begin{sideways}\textbf{Gamificación}                    \end{sideways}        &
+\begin{sideways}\textbf{Exploración}                     \end{sideways}        &
+\begin{sideways}\textbf{Inmersión}                       \end{sideways}        &
+\begin{sideways}\textbf{Pedagogía}                       \end{sideways}        &
+\begin{sideways}\textbf{Representación}                  \end{sideways}        &
+\begin{sideways}\textbf{Retroalimentación}               \end{sideways}        &
+\begin{sideways}\textbf{Utilidad}                        \end{sideways}        &
+\textbf{\shortstack{Promedio\\de respuestas}}\\
+\midrule
+1              & 0.45 & 0.55 & 0.20 & 0.63 & 0.44 & 0.41 & 0.82 & 0.47 \\
+2              & 0.33 & 0.53 & 0.49 & 0.61 & 0.27 & 0.13 & 0.52 & 0.41 \\
+3              & 0.17 & 0.86 & 0.87 & 0.67 & 0.13 & 0.67 & 1.00 & 0.60 \\
+4              & 0.75 & 0.31 & 0.63 & 0.81 & 0.47 & 0.78 & 0.54 & 0.59 \\
+5              & 0.46 & 0.58 & 0.69 & 0.67 & 0.57 & 0.50 & 0.54 & 0.58 \\
+6              & 1.00 & 0.73 & 0.68 & 0.42 & 0.90 & 0.67 & 1.00 & 0.78 \\
+7              & 1.00 & 0.79 & 1.00 & 0.67 & 0.50 & 0.87 & 0.78 & 0.80 \\
+8              & 0.75 & 1.00 & 0.83 & 0.75 & 0.70 & 0.70 & 0.44 & 0.75 \\
+9              & 0.90 & 1.00 & 0.93 & 1.00 & 0.64 & 0.92 & 1.00 & 0.90 \\
+10             & 0.79 & 0.74 & 0.54 & 0.92 & 0.60 & 0.60 & 0.67 & 0.68 \\
+11             & 0.75 & 0.42 & 0.08 & 0.25 & 0.60 & 0.35 & 0.25 & 0.39 \\
+\midrule
+\textbf{Promedio Total} & 0.67 & 0.68 & 0.63 & 0.67 & 0.53 & 0.60 & 0.69 & 0.63 \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva con doble estandarización}
+\label{tab:subjetiva_conformidad_corregida}
+\end{table}
+
+Para obtener una mejor visión de las fortalezas y debilidades de la solución
+propuesta, se presenta la estrella de kiviat~\ref{fig:subjetiva_kiviat}, en la
+misma se puede observar cuales son los puntos débiles de la solución.
+
+\begin{figure}[!ht]
+\begin{tikzpicture}[label distance=.15cm]
+\tkzKiviatDiagram[radial=2,
+                    lattice=2,
+                    step=2,
+                    scale=2.3]%
+                {Gamificación,
+                Exploración,
+                Inmersión,
+                Pedagogía,
+                Representación,
+                Retroalimentación,
+                Utilidad }
+\tkzKiviatLine[thick,
+                color=blue,
+                mark=ball,
+                ball color=red,
+                mark size=1pt,opacity=.2, 
+                fill=red!20](0.67,0.68,0.63,0.67,0.53,0.60,0.69)
+\end{tikzpicture}
+\label{fig:subjetiva_kiviat}
+\caption{Estrella de Kiviat de los aspectos simulados}
+\end{figure}
