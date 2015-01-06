@@ -1,0 +1,96 @@
+\section{Registro de actividad}
+
+\martin{Ponemos a los alumnos que no jugaron con 0 partidas y 0 segundos, o
+    los omitimos?}
+
+Las actividad de los usuarios es registrada y almacenada para su análisis, a
+continuación se presentan los resultados de ese análisis, el mismo fue descrito
+en~\ref{sec:registro}.
+
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule
+                   & \multicolumn{2}{c}{Extracción de sangre} \\
+                   \cmidrule(lr){2-3} 
+Número de alumno   & Sesiones jugadas                            & Tiempo jugado \\
+\midrule
+ 1       & 5  & 1202 \\
+ 2       & 19 & 2507 \\
+ 4       & 5  & 398  \\
+ 5       & 6  & 768  \\
+ 6       & 17 & 2371 \\
+ 7       & 7  & 707  \\
+ 9       & 1  & 126  \\
+10       & 8  & 960  \\
+\midrule
+Total:   & 68 & 9039 \\
+\bottomrule
+\end{tabular}
+\caption{Número de partidas y tiempo total por alumno, en la escena de
+    extracción de sangre.}
+\label{tab:log_hemocultivo_partida}
+\end{table}
+
+La cantidad de partidas jugadas por usuario, se ven en la
+tabla~\ref{tab:log_hemocultivo_partida}, se observa que existen 3 alumnos que
+participaron del experimento o no se registro su actividad.
+
+Los registros pueden no ser registrados sí
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+    \item El usuario utilizo la solución, pero no envió los datos y, luego
+        desinstalo la solución o borro los datos de la misma, o,
+    \item El usuario no utilizo la solución.
+\end{enumerate*}
+
+En la tabla~\ref{tab:log_glasgow_random_partida}, se observa la cantidad de
+sesiones y tiempo total por alumno, en la escena de \textit{Glasgow}, en modo de
+evaluación.
+
+Se observa que $5$ alumnos participaron en $22$ sesiones, en total jugaron
+$1768$ segundos.
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule
+& \multicolumn{2}{c}{Glasgow (Evaluación)} \\
+                   \cmidrule(lr){2-3} 
+Número de alumno   & Sesiones jugadas                            & Tiempo jugado \\
+\midrule
+1     & 4  & 211 \\
+2     & 8  & 738 \\
+4     & 3  & 132 \\
+6     & 1  & 97  \\
+7     & 6  & 590 \\
+\midrule
+Total & 22 & 1768 \\
+\bottomrule
+\end{tabular}
+\caption{Número de partidas y tiempo total por alumno, en la escena
+    \textit{Glasgow}, en modo evaluación}
+\label{tab:log_glasgow_random_partida}
+\end{table}
+
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule
+& \multicolumn{2}{c}{Glasgow (Exploración)} \\
+                   \cmidrule(lr){2-3} 
+Número de alumno   & Sesiones jugadas                            & Tiempo jugado \\
+\midrule
+1        & 2 & 79 \\
+2        & 3 & 80 \\
+4        & 3 & 89 \\
+6        & 1 & 79 \\
+\midrule
+Total:   & 9 & 327 \\
+\bottomrule
+\end{tabular}
+\caption{Número de partidas y tiempo total por alumno, en la escena
+    \textit{Glasgow}, en modo exploración}
+\label{tab:log_glasgow_custom_partida}
+\end{table}
