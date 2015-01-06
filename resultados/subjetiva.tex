@@ -116,14 +116,14 @@ tabla~\ref{tab:subjetiva_conformidad_corregida}
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
-\textbf{\shortstack{Número de \\alumno}}         &
-\begin{sideways}\textbf{Gamificación}                    \end{sideways}        &
-\begin{sideways}\textbf{Exploración}                     \end{sideways}        &
-\begin{sideways}\textbf{Inmersión}                       \end{sideways}        &
-\begin{sideways}\textbf{Pedagogía}                       \end{sideways}        &
-\begin{sideways}\textbf{Representación}                  \end{sideways}        &
-\begin{sideways}\textbf{Retroalimentación}               \end{sideways}        &
-\begin{sideways}\textbf{Utilidad}                        \end{sideways}        &
+\textbf{\shortstack{Número de \\alumno}}                                &
+\begin{sideways}\textbf{Gamificación}                    \end{sideways} &
+\begin{sideways}\textbf{Exploración}                     \end{sideways} &
+\begin{sideways}\textbf{Inmersión}                       \end{sideways} &
+\begin{sideways}\textbf{Pedagogía}                       \end{sideways} &
+\begin{sideways}\textbf{Representación}                  \end{sideways} &
+\begin{sideways}\textbf{Retroalimentación}               \end{sideways} &
+\begin{sideways}\textbf{Utilidad}                        \end{sideways} &
 \textbf{\shortstack{Promedio\\de respuestas}}\\
 \midrule
 1              & 0.45 & 0.55 & 0.20 & 0.63 & 0.44 & 0.41 & 0.82 & 0.47 \\
@@ -146,22 +146,21 @@ tabla~\ref{tab:subjetiva_conformidad_corregida}
 \end{table}
 
 Para obtener una mejor visión de las fortalezas y debilidades de la solución
-propuesta, se presenta la estrella de kiviat~\ref{fig:subjetiva_kiviat}, en la
+propuesta, se presenta el gráfico de kiviat~\ref{fig:subjetiva_kiviat}, en la
 misma se puede observar cuales son los puntos débiles de la solución.
 
 \begin{figure}[!ht]
 \begin{tikzpicture}[label distance=.15cm]
 \tkzKiviatDiagram[radial=2,
-                    lattice=2,
-                    step=2,
+                    lattice=2, step=2,
                     scale=2.3]%
                 {Gamificación,
-                Exploración,
-                Inmersión,
-                Pedagogía,
-                Representación,
-                Retroalimentación,
-                Utilidad }
+                 Exploración,
+                 Inmersión,
+                 Pedagogía,
+                 Representación,
+                 Retroalimentación,
+                 Utilidad}
 \tkzKiviatLine[thick,
                 color=blue,
                 mark=ball,
@@ -170,5 +169,16 @@ misma se puede observar cuales son los puntos débiles de la solución.
                 fill=red!20](0.67,0.68,0.63,0.67,0.53,0.60,0.69)
 \end{tikzpicture}
 \label{fig:subjetiva_kiviat}
-\caption{Estrella de Kiviat de los aspectos simulados}
+\caption{Gráfico de Kiviat de los factores evaluados}
 \end{figure}
+
+En el gráfico se observa en la figura, que las principales debilidades de
+la solución son la representación y la retroalimentación.
+
+Es importante notar que los datos la figura~\ref{fig:subjetiva_kiviat}
+y~\ref{tab:subjetiva_conformidad_corregida} son relativas a los datos de la
+tabla~\ref{tab:subjetiva_conformidad_resumen}, es decir, que la representación
+es el punto más débil, pero se ve en~\ref{tab:subjetiva_conformidad_resumen}
+que el valor es 5 de 7, lo que indica que es un punto aceptable, y entre
+los factores analizados es el que menos aprobación obtuvo.
+
