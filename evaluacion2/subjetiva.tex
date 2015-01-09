@@ -11,75 +11,8 @@ Cada encuesta es entregada a los alumnos que acordaron participar en el
 experimento, mientras completan la encuesta, un guía está presente para
 responder cualquier duda.
 
-\subsection{Métrica}
-\label{sec:metrica}
-\label{sec:likert}
-
-\martin{Likert es un punto central de toda la evaluación, no sabemos si debe ir
-    como un punto aparte antes de empezar a hablar del resto, o si puede ir acá
-    y luego es referenciada}
-
-Para la valoración de las variables medidas se utiliza la escala de
-Likert~\cite{Allen:2007} de 7 valores posibles. El valor más bajo utilizado en
-la escala de Likert es 1 ``Totalmente en desacuerdo'' y el mas alto es 7
-``Totalmente de acuerdo''.
-
-Una vez valoradas y registradas todas las respuestas y con el objetivo de
-eliminar las tendencias en la forma en la son completadas las encuestas
-\cite{Fischer2010} se utiliza el método de Doble Estandarización recomendado por
-\cite{Pagolu2011}. Este método, consiste en dos estandarizaciones, la primera
-por fila que en este caso representa a los individuos y la segunda por columna
-donde cada columna representa una de las diferentes preguntas de la encuesta.
-
-Siendo:
-\begin{itemize}
-	\item $\min_i$ la respuesta de menor valor del usuario $i$.
-	\item $\max_i$ la respuesta de mayor valor del usuario $i$.
-\end{itemize}
-
-Para cada respuesta $s$ del usuario $i$, el valor ajustado, por la primera 
-normalización, $s_1$ se define como:
-
-\begin{equation*}
-s1_i=\frac{s-\min_i}{\max_i-\min_i}
-\end{equation*}
-
-Y luego siendo:
-\begin{itemize}
-	\item $groupmin_i$ la respuesta ajustada de menor valor en el grupo $i$.
-	\item $groupmax_i$ la respuesta ajustada de mayor valor en el grupo $i$
-\end{itemize}
-
-Para cada respuesta ajustada $s1_i$ del usuario $i$, el valor ajustado $sa_i$ se
-define como:	
-
-\begin{equation*}
-sa_i=\frac{s1_i-groupmin_i}{groupmax_i-groupmin_i}
-\end{equation*}
-
-Obteniendo así un valor normalizado, tanto por individuo, como por pregunta, en
-el rango $0$ y $1$.
-
-Con el resultado final de la estandarización diferenciamos cuales son los
-puntos fuertes y cuales los puntos débiles de la solución propuesta con
-respecto a las respuestas dadas por los usuarios. Estos valores son relativos a
-las respuestas originales dadas en la encuesta.
-
-Para la valoración absoluta de cada  item se utiliza la media de cada columna o
-respuesta a una pregunta de la encuesta.
-
-Siendo:
-\begin{itemize} 
-\item $r_{k_i}$ la respuesta del usuario $i$ a la pregunta $k$.
-\item $t_k$ la cantidad total de usuarios que respondieron la pregunta $k$.
-\end{itemize}
-
-El puntaje promedio de cada pregunta o item evaluado  $p_k$ en la encuesta se
-define como:
-
-\begin{equation*}
-p_k = \frac{\sum_{i=1}^n{r_{k_i}}}{t_k}
-\end{equation*}
+La métrica utilizada es la escala de Likert, descrita en la
+sección~\ref{sec:likert}.
 
 \subsection{Variables}
 \label{sec:variables}

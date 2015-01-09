@@ -8,26 +8,33 @@ tecnología, se realiza una encuesta que cuenta con diez preguntas, las cuales
 buscan obtener información acerca del modelo de dispositivo móvil, el acceso a
 Internet, y la predisposición de cada alumno a ayudar en el experimento.
 
-El \Gls{iab} contó\martin{En que tiempo debe ir? El resto esta en presente.} en
-el 2014 con 124 alumnos en el cuarto año distribuidos en tres secciones, el cual es considerado
-el Universo. De los 124 alumnos, 93 de ellos estuvieron dispuestos a participar de la prueba
-y completaron la encuesta.
-
-Se agrupan a los alumnos en diferentes grupos para determinar si sus
-dispositivos celulares son capaces de ejecutar la solución de manera fluida, los
-requisitos mínimos para garantizar esta experiencia son:
-
-\begin{itemize}
-    \item Sistema Operativo Android 4.0 o superior\todox{Explicar por que
-            android}
-    \item Memoria ram de 512MB o superior.
-    \item Velocidad de procesador de 1 GHz o superior.
-    \item GPU \todox{No se como poner la GPU, hay demasiada variedad}
-\end{itemize}
+En el año $2014$, el \Gls{iab} cuenta con $124$ alumnos en el cuarto año distribuidos en
+tres secciones, el cual es considerado el Universo. De los 124, 93 de
+ellos estuvieron dispuestos a participar de la prueba y completaron la encuesta.
 
 Con los resultados de la encuesta de ubicación tecnológica, se seleccionan
 aquellos alumnos que posean dispositivos móviles que superan o igualan las
-especificaciones, se seleccionan un total de 19 estudiantes.
+especificaciones.
 
-\martin{Hace falta más detalles? Una sección de métricas y variables, o es
-    suficiente con mencionar los criterios mínimos de selección?}
+
+\section{Variables}
+
+Se definen $5$ factores necesarios para que un alumno pueda ser considerado como
+sujeto de experimento, 
+
+Los requisitos mínimos para que la solución tenga un desempeño que garantice una
+experiencia fluida a la hora de utilizarla son:
+
+\begin{itemize}
+    \item Sistema Operativo Android 4.0 o superior
+    \item Memoria ram de 512MB o superior.
+    \item Velocidad de procesador de 1 GHz o superior.
+    \item \Gls{gpu} Mali 400 o superior.
+    \item Conexión frecuente a internet.
+\end{itemize}
+
+\subsection{Sistema Operativo}
+
+El conjunto de funcionalidades utilizadas por la solución requiere un \Gls{api}
+Android de nivel 14\cite{android:api} o superior, lo cual corresponde a un
+sistema operativo Android 4.0.
