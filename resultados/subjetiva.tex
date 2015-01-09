@@ -2,73 +2,271 @@
 
 \section{Encuesta Subjetiva}
 \todox{Añadir más explicación acerca de los resultados}
+
 En el análisis de los resultados de las encuestas subjetivas, existieron alumnos
 que no respondieron todas las preguntas, para tratar este tipo de casos, es
 importante analizar la naturaleza del patrón de datos
 faltantes\cite{carpita2011imputation}. 
 
-
-\subsection{Datos faltantes}
-
-Existen tres posibles formas de categorizar el patrón de ocurrencia de falta de
-respuestas\cite{leite2010performance}
-\cite{leite2010performance}\cite{tsikriktsis2005review}:
-
-
-\begin{description}
-    \item[Información faltante completamente aleatoria] Cuando la información
-        faltante es independiente de la variable medida y de otras variables.
-    \item[Información faltante aleatoria] Cuando la información faltante depende
-        de otras variables, pero no de la variable en sí. 
-    \item[Información faltante no aleatoria] Cuando hay una relación entre la
-        información faltante y el valor de la variable.
-\end{description}
-
-Los datos muestran que la información faltante es completamente aleatoria en
-relación a la variable medida y a las demás variables, de hecho, una sola
-encuesta tiene información faltante, así, se establece que el tipo de
-información faltante es \emph{Información faltante completamente aleatoria}.
-
-Existen tres mecanismos\cite{tsikriktsis2005review} principales para lidiar con
-información faltante, eliminación, reemplazo, y procedimientos basados en
-modelo.~\cite{tsikriktsis2005review} recomienda utilizar un mecanismo de
-reemplazo para escalas del tipo Likert.
-
-Las técnicas de reemplazo se clasifican en tres grandes
-grupos\cite{tsikriktsis2005review}:
-\begin{enumerate*}[label=\itshape\alph*\upshape.]
-\item basadas en el promedio,
-\item basadas en regresión, y,
-\item imputación \emph{hot deck}.
-\end{enumerate*}
-
-La sustitución basada por promedio, se divide nuevamente en tres grupos;
-promedio
-\begin{enumerate*}[label=\itshape\alph*\upshape.]
-\item total,
-\item del subgrupo, y,
-\item por caso.
-\end{enumerate*}
-La sustitución del promedio total se realiza obteniendo el promedio de todas las
-respuestas de esta pregunta, la sustitución de subgrupo es similar, solo que se
-limita a aquellos sujetos del mismo subgrupo del sujeto que no respondió, y
-finalmente, la sustitución por caso, es el promedio de las respuestas válidas
-del sujeto.
+La información recogida por la encuesta muestra que hay datos faltantes, como se
+explico en~\ref{sec:informacion_faltante}, esta información faltante es
+completamente aleatoria en relación a la variable medida y a las demás
+variables, de hecho, una sola encuesta tiene información faltante, así, se
+establece que el tipo de información faltante es \emph{Información faltante
+    completamente aleatoria}.
 
 En su resumen de las diferentes técnicas y cuando se deben utilizar,
 \cite{tsikriktsis2005review}, recomienda la utilización de la sustitución basada
-en promedio por caso. 
-
-De esta forma se reemplazan los valores faltantes en la encuesta, con el
-promedio del sujeto.
+en promedio por caso. Así, se completan los valores faltantes con el promedio de
+respuestas completadas por el usuario.
 
 \subsection{Resultados}
 
-Los resultados se resumen en la tabla~\ref{tab:subjetiva_conformidad_resumen},
+Se presentan a continuación los resultados de las encuestas, agrupados por los
+factores definidos en~\ref{sec:variables}.
+
+La tabla~\ref{tab:subjetiva_conformidad_exploracion} nos muestra las respuestas
+de los alumnos a las preguntas relacionadas al factor exploración, son cuatro
+preguntas, las cuales fueron descritas en~\ref{sec:sub_exploracion}. 
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{@{} *{5}{r} @{}}
+\toprule
+& \multicolumn{4}{c}{Exploración} \\
+\cmidrule(lr){2-5}
+Alumno &
+\parbox{3cm}{Funciones realizadas por los elementos del juego} &
+\parbox{3cm}{Aleatoriedad para afianzar conocimientos} &
+\parbox{2.5cm}{Aleatoriedad para representar realismo} &
+\parbox{2.5cm}{Facilidad de uso}  \\
+\midrule
+1         & 2   & 6   & 5   & 6  \\
+2         & 6   & 6   & 4   & 6  \\
+3         & 3   & 3   & 5   & 5  \\
+4         & 6   & 6   & 6   & 6  \\
+5         & 6   & 6   & 2   & 5  \\
+6         & 6   & 6   & 6   & 6  \\
+7         & 7   & 7   & 7   & 7  \\
+8         & 6   & 6   & 7   & 7  \\
+9         & 5   & 7   & 7   & 7  \\
+10        & 6   & 7   & 6   & 6  \\
+11        & 7   & 6   & 7   & 6  \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor Exploración}
+\label{tab:subjetiva_conformidad_exploracion}
+\end{table}
+
+La tabla~\ref{tab:subjetiva_conformidad_gamificacion} muestra las respuestas de
+los alumnos a las preguntas relacionadas al factor \textit{Gamificación}, son
+cinco preguntas, las cuales fueron descritas en~\ref{sec:sub_gamificacion}. 
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{@{} *{5}{r} @{}}
+\toprule
+& \multicolumn{4}{c}{Gamificación} \\
+\cmidrule(lr){2-5}
+Alumno &
+\parbox{2.5cm}{Motivación del puntaje} &
+\parbox{2.5cm}{Importancia del puntaje} &
+\parbox{3cm}{Socialización de los puntajes} &
+\parbox{3cm}{Medición del tiempo como motivación} \\
+\midrule
+1  & 6 & 4 & 4 & 7  \\
+2  & 7 & 4 & 6 & 6  \\
+3  & 6 & 6 & 5 & 6  \\
+4  & 1 & 4 & 6 & 1  \\
+5  & 2 & 2 & 7 & 7  \\
+6  & 6 & 5 & 4 & 6  \\
+7  & 7 & 7 & 6 & 7  \\
+8  & 7 & 7 & 7 & 7  \\
+9  & 7 & 7 & 7 & 7  \\
+10 & 7 & 4 & 5 & 7  \\
+11 & 5 & 4 & 5 & 6  \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor Gamificación}
+\label{tab:subjetiva_conformidad_gamificacion}
+\end{table}
+
+La tabla~\ref{tab:subjetiva_conformidad_inmersion} muestra las respuestas de
+los alumnos a las preguntas relacionadas al factor \textit{Inmersión}, son
+cinco preguntas, las cuales fueron descritas en~\ref{sec:sub_inmersion}. 
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{@{} *{6}{r} @{}}
+\toprule
+& \multicolumn{5}{c}{Inmersión} \\
+\cmidrule(lr){2-6}
+Alumno &
+\parbox{2.5cm}{Escenografía para entrar en ambiente} &
+\parbox{2.5cm}{Juegos cortos como ayuda para la repetición} &
+\parbox{2.5cm}{Gráficos en tres dimensiones para entender el entorno} &
+\parbox{2.5cm}{Realismo a través de ordenes verbales} &
+\parbox{2.5cm}{Simulación como herramienta} \\
+\midrule
+1  & 4 & 6 & 4 & 5 & 3  \\
+2  & 6 & 6 & 6 & 6 & 6  \\
+3  & 6 & 6 & 6 & 5 & 6  \\
+4  & 4 & 6 & 7 & 5 & 6  \\
+5  & 6 & 6 & 5 & 6 & 6  \\
+6  & 6 & 6 & 6 & 4 & 4  \\
+7  & 7 & 7 & 7 & 7 & 7  \\
+8  & 6 & 7 & 7 & 7 & 7  \\
+9  & 6 & 7 & 7 & 7 & 7  \\
+10 & 6 & 3 & 4 & 6 & 6  \\
+11 & 5 & 3 & 5 & 5 & 4  \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor Inmersión}
+\label{tab:subjetiva_conformidad_inmersion}
+\end{table}
+
+
+La tabla~\ref{tab:subjetiva_conformidad_pedagogia} agrupa las respuestas de los
+alumnos según el factor pedagógico, son tres preguntas, las cuales fueron
+descritas en~\ref{sec:sub_pedagogia}. 
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{@{} *{4}{r} @{}}
+\toprule
+& \multicolumn{3}{c}{Pedagogía} \\
+\cmidrule(lr){2-4}
+Alumno &
+\parbox{4cm}{La solución para memorizar y comprender el procedimiento} &
+\parbox{4cm}{Falta de pistas como ayuda al aprendizaje} &
+\parbox{4cm}{Suficiencia de los botones que indican acciones} \\
+\midrule
+1  & 6 & 6 & 6  \\
+2  & 6 & 6 & 7  \\
+3  & 4 & 6 & 6  \\
+4  & 6 & 7 & 6  \\
+5  & 7 & 5 & 6  \\
+6  & 4 & 4 & 6  \\
+7  & 7 & 6 & 7  \\
+8  & 6 & 7 & 7  \\
+9  & 7 & 7 & 7  \\
+10 & 6 & 7 & 7  \\
+11 & 5 & 6 & 5  \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor Pedagogía}
+\label{tab:subjetiva_conformidad_pedagogia}
+\end{table}
+
+
+La tabla~\ref{tab:subjetiva_conformidad_representacion} agrupa las respuestas de
+los alumnos según la calidad de presentación, son cinco preguntas, las cuales
+fueron descritas en~\ref{sec:sub_representacion}. 
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{@{} *{6}{r} @{}}
+\toprule
+& \multicolumn{5}{c}{Representación} \\
+\cmidrule(lr){2-6}
+Alumno &
+\parbox{2.5cm}{Movimientos motrices del paciente} &
+\parbox{2.5cm}{Movimientos oculares del paciente} &
+\parbox{2.5cm}{Reacción verbal del paciente} &
+\parbox{2.5cm}{Distinción entre los estados del paciente} &
+\parbox{2.5cm}{Acciones las herramientas} \\
+\midrule
+1  & 6 & 6 & 2 & 5 & 2  \\
+2  & 4 & 5 & 5 & 6 & 4  \\
+3  & 5 & 3 & 3 & 3 & 3  \\
+4  & 6 & 5 & 2 & 4 & 2  \\
+5  & 2 & 2 & 6 & 6 & 6  \\
+6  & 6 & 4 & 6 & 6 & 6  \\
+7  & 7 & 6 & 5 & 7 & 5  \\
+8  & 6 & 7 & 7 & 7 & 5  \\
+9  & 5 & 6 & 2 & 7 & 6  \\
+10 & 6 & 4 & 4 & 4 & 5  \\
+11 & 6 & 4 & 6 & 6 & 5  \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor
+    Representación}
+\label{tab:subjetiva_conformidad_representacion}
+\end{table}
+
+
+La tabla~\ref{tab:subjetiva_conformidad_retroalimentacion} agrupa las respuestas
+de los alumnos según la calidad de retroalimentación, son tres preguntas, las
+cuales fueron descritas en~\ref{sec:sub_retroalimentacion}. 
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{@{} *{4}{r} @{}}
+\toprule
+& \multicolumn{3}{c}{Retroalimentación} \\
+\cmidrule(lr){2-4}
+Alumno &
+\parbox{4cm}{Detalles de los pasos realizados incorrectamente} &
+\parbox{4cm}{Suficiencia de los detalles de los pasos realizados incorrectamente} &
+\parbox{4cm}{Iconos para representar el estado del jugador} \\
+\midrule
+1  & 3 & 2 & 7  \\
+2  & 5 & 4 & 6  \\
+3  & 3 & 6 & 6  \\
+4  & 6 & 6 & 6  \\
+5  & 6 & 1 & 6  \\
+6  & 2 & 6 & 6  \\
+7  & 6 & 7 & 7  \\
+8  & 6 & 6 & 7  \\
+9  & 6 & 6 & 7  \\
+10 & 5 & 4 & 6  \\
+11 & 4 & 5 & 6  \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor
+    Retroalimentación}
+\label{tab:subjetiva_conformidad_retroalimentacion}
+\end{table}
+
+
+La tabla~\ref{tab:subjetiva_conformidad_utilidad} agrupa las respuestas de los
+alumnos según la utilidad de la solución, son tres preguntas, las cuales fueron
+descritas en~\ref{sec:sub_utilidad}. 
+
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{@{} *{6}{r} @{}}
+\toprule
+& \multicolumn{3}{c}{Utilidad} \\
+\cmidrule(lr){2-4}
+Alumno &
+\parbox{4cm}{Simulación para complementar el estudio en clase y laboratorio} &
+\parbox{4cm}{Simulación provee más facilidades para el estudio} &
+\parbox{4cm}{Interacción con el paciente} \\
+\midrule
+1  & 7 & 5 & 7  \\
+2  & 6 & 6 & 6  \\
+3  & 6 & 6 & 6  \\
+4  & 2 & 6 & 6  \\
+5  & 2 & 6 & 6  \\
+6  & 6 & 6 & 6  \\
+7  & 7 & 6 & 7  \\
+8  & 5 & 6 & 7  \\
+9  & 7 & 7 & 7  \\
+10 & 1 & 7 & 7  \\
+11 & 6 & 4 & 5  \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor Utilidad}
+\label{tab:subjetiva_conformidad_utilidad}
+\end{table}
+
+
+Los resultados  se resumen en la tabla~\ref{tab:subjetiva_conformidad_resumen},
 se muestra el número de alumno para identificar a un alumno y el promedio de sus
 respuestas en la encuesta, existen 27 preguntas y por motivos de espacio,
-solamente se muestra el promedio de las mismas, los detalles completos se pueden
-ver en el apéndice.
+solamente se muestra el promedio de las mismas.
 
 \begin{table}[!hbt]
 \begin{tabular}{llllllllr}
