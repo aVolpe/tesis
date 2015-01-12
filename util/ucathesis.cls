@@ -38,17 +38,6 @@
 % load babel using spanish %
 \RequirePackage[spanish,activeacute]{babel}
 
-%% load graphicx %
-%%\RequirePackage{ifpdf}
-%%\ifpdf
-%%  \RequirePackage[pdftex]{graphicx}
-%%  \pdfcompresslevel=9
-%%  \DeclareGraphicsExtensions{.pdf,.png}
-%%\else
-%%  \RequirePackage[dvips]{graphicx}
-%%  \DeclareGraphicsExtensions{.eps,.ps}
-%%\fi
-
 % class fields %
 \renewcommand{\@author}{\ClassError{ucathesis}{Falta especificar \string\author{}}
  {Usa el comando \string\author{} en el preambulo para especificar tu nombre.}}
@@ -75,13 +64,13 @@
   {\gdef\@advisorname{#1}\gdef\@advisortitle{#2}\gdef\@advisor{#3}}
 
 
-\newcommand{\@institution}{Universidad Cat�lica}
+\newcommand{\@institution}{Universidad Católica}
 \newcommand{\institution}[1]{\gdef\@institution{#1}}
-\newcommand{\@nameinstitution}{"Nuestra Se�ora de la Asunci�n"}
+\newcommand{\@nameinstitution}{"Nuestra Señora de la Asunción"}
 \newcommand{\nameinstitution}[1]{\gdef\@institution{#1}}
-\newcommand{\@faculty}{Facultad de Ciencias y Tecnolog�a}
+\newcommand{\@faculty}{Facultad de Ciencias y Tecnología}
 \newcommand{\faculty}[1]{\gdef\@faculty{#1}}
-\newcommand{\@department}{Departamento de Electr�nica e Inform�tica}
+\newcommand{\@department}{Departamento de Electrónica e Informática}
 \newcommand{\department}[1]{\gdef\@department{#1}}
 \newcommand{\@grade}{Ingeniero}
 \newcommand{\grade}[1]{\gdef\@grade{#1}}
@@ -238,7 +227,7 @@
       \textsc{Trabajo Final de Grado presentado por}\par
       \vfill{\scshape \@typeauthor{\unskip,\par}{\unskip\par y{} }}\par
       \vfill\textsc{como requisito}\par
-      \textsc{para obtener el t�tulo de \@grade}\par
+      \textsc{para obtener el t\'{i}tulo de \@grade}\par
       \textsc{en \@degree}\par
       \vfill\textsc{\@advisorname}\par\vspace{4pt}
 	  \textsc{\@advisortitle\ \@advisor}\par\vspace{4pt}
