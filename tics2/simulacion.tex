@@ -1,0 +1,180 @@
+\section{Simulación}
+\label{sec:tics_SIMULACION}
+
+La simulación se define como el proceso de diseñar un modelo de un sistema real
+y, llevar a cabo experimentos con este modelo, con el fin o bien de entender el
+comportamiento del sistema o de la evaluación de distintas estrategias para la
+operación del sistema\cite{ingalls2008introduction}. 
+%[ingalls2008introduction]
+
+Un juego y una simulación podrían llegar a ser muy parecidos, a veces los juegos
+tienen motores de simulación\footnote{Un motor de simulación es un conjunto de
+objetos y métodos que se utilizan para la construcción de modelos de
+simulación que están dentro de las aplicaciones}, una de las diferencias
+es que la simulación es muy dependiente del contexto. 
+
+La simulación en el ámbito de la educación fue evolucionando desde simples
+motores de reglas hasta complejos entornos, la simulación demostró ser una
+herramienta muy útil el ámbito laboral \cite{mariluz:seiousgames}, pues enseña
+al alumno a encarar situaciones muy difíciles de representar en entornos
+completamente controlados y provee mecanismos para comprobar la efectividad de
+la herramienta. 
+
+Actualmente la simulación se utiliza más en el ámbito empresarial pues las
+empresas son las más necesitas de innovar en el ámbito de la enseñanza. Un
+ejemplo de esta necesidad se da, por ejemplo, en el entrenamiento de nuevos
+vendedores, es muy difícil enseñar a un vendedor como debe vender los productos
+con un pizzarón y/o una presentación, en cambio la simulación permite que el
+mismo pueda probar cosas nuevas y experiencias de sus compañeros (o instructor),
+convirtiendo así el aprendizaje en colectivo\cite{mariluz:seiousgames}. En el
+ámbito académico la simulación mas utilizada en campos físicos (como simulación
+de fluidos), meteorología (simulación de tormentas y fenómenos climáticos), etc. 
+
+Existen dos tipos de simulaciones, en primer lugar están las experimentales que
+ponen al estudiante en el lugar de un profesional y requieren que el mismo tome
+decisiones para alcanzar los objetivos y en segundo lugar están las simbólicas
+que buscan que el estudiante deduzca eventos, principios y mejores prácticas
+\cite{charsky:2010}. 
+%\cite{charsky:2010}
+
+Una simulación esta conformada por:
+
+\begin{description}
+
+\item[Entidades] Cualquier objeto o componente en el sistema que requiera
+	representación explícita en el modelo se define como
+	entidad\cite{banks2000dm}. Las entidades poseen atributos. Los atributos
+	son las características de una determinada entidad que son exclusivos de
+	esa entidad. Por último, son aquellas que cambian el estado de una
+	simulación. Ejemplo de entidades son: un médico o una jeringa en una
+	simulación médica.
+
+\item[Acciones] Las entidades interactúan entre sí a través de acciones. Estas
+	acciones puede causar cambios en el estado de la simulación además de
+	eventos. Ejemplo de una acción en una simulación médica es la
+	esterilización de un instrumento.
+
+\item[Eventos] Los eventos son hechos que ocurren de manera controlada pero no
+	siempre predecible en el entorno simulado, los mismos afectan a las
+	entidades y deben obligar a realizar alguna de las acciones disponibles
+	para tal evento. Ejemplo de un evento en un simulación médica es un paro
+	cardíaco del paciente.
+
+\end{description}
+
+La confianza en el modelo o la simulación según\cite{DoDSysEng2001} se establece
+mediante:
+
+\begin{description}
+
+\item[La verificación] Es el proceso de determinar si la implementación
+	representa con precisión las especificaciones del diseño. 
+
+\item[La validación] Es el proceso de determinar el grado en el que el modelo
+	representa de forma exacta la realidad de acuerdo al uso que se tiene
+	previsto darle y el nivel de confianza que debe tenerse en la
+	evaluación.
+
+\item[La acreditación] Es el proceso de certificación de un modelo para su uso
+	con un propósito específico.
+%[DoDSysEng2001]
+
+\end{description}
+
+
+
+%En la actualidad, la utilización de la simulación como herramienta para el
+%entrenamiento es cada vez mayor por partes de los profesores, quienes están
+%cada vez más familiarizados con la tecnología. 
+
+%Según\cite{humphreys2013developing} los tipos de estudiantes definidos por Kolb
+%son:
+
+%\begin{description}
+
+%\item[Accommodating learners] Aprenden de la experiencia e interiorizan el
+%aprendizaje a través de experimentación activa. 
+
+%\item[Diverging learners] Aprenden a través de experimentación activa, e
+%interiorizan el conocimiento reflexionando sobre la experiencia. 
+
+%\item[Coverning learners] Aprenden a través del pensamiento abstracto e
+%interiorizan el conocimiento a través de la experimentación activa.
+
+%\item[Assimilating learners] Aprenden a través del pensamiento abstracto y las
+%interiorizan reflexionando sobre las mismas. 
+	
+%\end{description}
+
+%Teniendo en cuenta el caso de la enfermería, la misma es una ciencia que atrae
+%a alumnos del tipo \emph{Diverging learners}, y la simulación es una
+%herramienta ideal para este tipo de estudiantes.
+
+La mayoría de la literatura encontrada acerca de la simulación y los cuidados de
+la salud no proporcionan muchos detalles acerca de la implementación de modelos
+de simulación en áreas amplias, se cree que esto se debe a la complejidad de
+representar las actividades relacionas al cuidado de la salud dentro de un
+modelo de simulación que debe, de hecho, ser una simplificación de las mismas.
+Esta simplificación puede ser un proceso sumamente complejo, por lo cual la
+mayoría se centra en una parte de las actividades hospitalarias pero no así en
+todas. Cuanto mayor sea el detalle, la simulación conducirá a una representación
+más realista lo cual aumenta la confianza en los grupos de interés, sin embargo,
+más detalle requiere más datos validados y esto puede ser costoso de
+obtener\cite{guna:simulation}.
+
+Algunas aplicaciones específicas en el cuidado de la salud son:
+
+\begin{description}
+
+\item[Departamento de emergencia y accidentes] La mayoría de los trabajos
+	realizados en esta área se refieren a la optimización de tiempo de
+	espera de los pacientes y la organización del personal, de las
+	habitaciones,de las ambulancias, para dar mejor atención a los
+	pacientes. Un ejemplo de esto es Edsim que que se utiliza para aumentar
+	el rendimiento en un departamento de emergencias en EE.UU como parte de
+	un sistema que permite el desvío de ambulancias en los períodos pico de
+	demanda, el cual incluye la introducción de salones de descarga y la
+	disminución del tiempo de estancia, y sin pasar por el
+	triaje\cite{guna:simulation}. 
+	
+\item[Instalaciones para pacientes hospitalizados] Los trabajos se centran en la
+	mejora en la atención con respecto al flujo de pacientes así como la
+	ocupación de camas. Muchos trabajos tratan de demostrar como se podrían
+	utilizar modelos matemáticos para esto. Harper y Shahani presentaron un
+	modelo de simulación flexible relacionado a estás cuestiones de
+	pacientes hospitalizados, el mismo utiliza TOCHSIM, flexible en el
+	sentido de que aborda también problemas como la creación de una nueva
+	unidad en el hospital\cite{guna:simulation}.
+
+\item[Clínicas para pacientes ambulatorios] En este sentido la simulación se
+	utiliza para minimizar el tiempo de espera de los pacientes en clínicas
+	externas, es decir, aquellas en las que se sacan citas. El tiempo de
+	espera no sólo implica la espera dentro de la clínica sino también el
+	tiempo que pasa entre el momento en el que se solicita un cita y el día
+	de la cita. Un ejemplo de esto es CLINSIM que se utilizó en el Reino
+	Unido para observar como la política de operación puede influir en los
+	tiempos de espera de los pacientes\cite{guna:simulation}. 
+
+\item[Formación médica y quirúrgica] Se centran en tareas específicas y en la
+	formación de un conjunto limitado de habilidades referentes a estas
+	tareas. Los ejemplos más recientes son entrenamiento para un intubación
+	esofágica, capacitación y evaluación de capacidades laparoscópicas,
+	entrenamiento para la palpación de tumores de mama\cite{mantovani:vr}. 
+
+\item[Sistemas de formación de emergencias] Se refieren a aquellas simulaciones
+	diseñadas para la rápida respuesta médica. Incluye desde pacientes
+	virtuales dinámicos cuya acción por parte del estudiante produce un
+	cambio clínico en el mismo y una respuesta al estudiante.  Otro ejemplo
+	es el utilizado en la marina de EE.UU que intenta formar a los
+	profesionales para su rápida acción frente a desastres civiles y donde
+	la estabilización de pacientes se tenga que dar con recursos
+	limitados~\cite{mantovani:vr}. 
+
+\item[Entrenamiento para profesionales de salud mental] Janssen LP creó una
+	simulación para educar a los psiquiatras y profesionales de la salud en
+	lo que es tener esquizofrenia llamada \emph{el viaje en autobús} que
+	trata de mostrar lo que pasa dentro de de la mente de una persona con
+	esquizofrenia cuando viaja en autobús en base a experiencias relatadas
+	por pacientes y médicos\cite{mantovani:vr}. 
+
+\end{description}
