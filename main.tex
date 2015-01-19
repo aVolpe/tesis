@@ -30,6 +30,12 @@
 
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 
+\usetikzlibrary{shapes,arrows}
+
+\tikzstyle{block} = [rectangle, draw, fill=gray!20, 
+    text width=10em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+
 %\MakePerPage{footnote}
 \addbibresource{bibliography.bib} 
 
@@ -108,20 +114,15 @@
 
 \listoftodos[TODO]
 
-
 \printglossary[type=\acronymtype,title=Lista de Siglas]
 
 \addcontentsline{toc}{chapter}{Lista de Siglas}
 
-
 \mainmatter
 
-\chapter{Introducción}
-
-Sección de la introducción al uso de las \Gls{tic}.
-
-
-\include{tics/main}
+\include{introduccion/main}
+%\include{tics/main}
+\include{tics2/main}
 \include{propuesta/main}
 \include{analisis/main}
 \include{evaluacion2/main}
