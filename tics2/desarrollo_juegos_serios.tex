@@ -1,0 +1,106 @@
+\section{Desarrollo de Serious Game}
+
+\todox{Agregar mas contenido}
+
+Pereira\cite{pereira2009design} en el diseño del juego \emph{Living Forest} utiliza los pasos definidos a continuación como modelo de creación de un juego serio a partir de la definición previa de las competencias básicas que se desean enseñar.
+
+Primero se definen las competencias básicas y luego se diseña y desarrolla el juego. A
+continuación la figura \ref{fig:tics_flujo_diseño_prop} muestra el proceso de desarrollo y luego se explica cada ítem.
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[auto]
+    % Place nodes
+    \node [block] (1) {Objetivos de diseño};
+    \node [block, right of=1, node distance=5cm] (2) {Competencias básicas relacionadas con la educación};
+    \node [block, right of=2, node distance=5cm] (3) {Investigación del dominio};
+    \node [block, below of=3, node distance=3cm] (4) {Diseño del juego};
+    \node [block, left of=4, node distance=5cm] (5) {Tiempo en el juego};
+    \node [block, left of=5, node distance=5cm] (6) {Acciones de jugabilidad};
+    \node [block, below of=6, node distance=3cm] (7) {Indicadores};
+    \node [block, right of=7, node distance=5cm] (8) {Representación e interacción};
+    \node [block, right of=8, node distance=5cm] (9) {Implementación};
+    \node [block, below of=9, node distance=3cm] (10) {Evaluación};
+    % Draw edges
+    \path [line] (1) -- (2);
+    \path [line] (2) -- (3);
+    \path [line] (3) -- (4);
+    \path [line] (4) -- (5);
+    \path [line] (5) -- (6);
+    \path [line] (6) -- (7);
+    \path [line] (7) -- (8);
+    \path [line] (8) -- (9);
+    \path [line] (9) -- (10);
+\end{tikzpicture}
+
+\caption{Flujo de diseño propuesto de un Serious Game}
+\label{fig:tics_flujo_diseño_prop}
+\end{figure}
+
+
+\subsection{Partes del flujo de diseño}
+\subsubsection{Objetivos de diseño}
+Definen cuál es el propósito del juego
+
+\subsubsection{Competencias básicas relacionadas con la educación} 
+
+Se identifican aquellas que influyen en el diseño del juego
+
+\subsubsection{Investigación del dominio}
+\begin{itemize}
+	\item Recabar información importante para el diseño.
+	\item Participación de un experto en el dominio.
+	\item Estadísticas sobre características.
+	\item Una pregunta que surge es: que grado de detalle debe ser modelado?.
+	\item Que incluir y que considerar.
+	\item Identificar conjuntos de acciones hipotéticas a modelar (jugadores).
+	\item Comprensión del dominio (funciones).
+	\item Para cada función, analizar los elementos y servicios relacionados que se podrían modelar.
+\end{itemize}
+
+\subsubsection{Diseño del juego}
+\begin{itemize}
+	\item A partir de la idea original y basado en la información recogida. 
+	\item Determinar el papel desempeñado por el jugador (de acuerdo a la semántica y pragmática de las acciones y decisiones que está llamado a hacer). 
+	\item Aproximación a la realidad y exploración con tiempo limitado. 
+\end{itemize}
+
+\subsubsection{Tiempo de juego}
+\begin{itemize}
+	\item Permitir al jugador experimentar las consecuencias de la toma de decisiones a corto plazo.
+	\item Tiempo para la primera experiencia (Adaptación).
+\end{itemize}
+
+\subsubsection{Indicadores}
+Indicadores del progreso de un jugador, como por ejemplo: puntaje, cumplimiento de objetivos, etc.
+
+\subsubsection{Representación e interacción}
+\begin{itemize}
+	\item Implementación de las representaciones de la escena del juego.
+	\item Elementos que forman partes de la escena.
+	\item Representar visualmente el concepto que se modela en la lógica del juego.
+	\item Animaciones.
+	\item Sonido.
+	\item Punto de vista del jugador en la interfaz del juego.
+	\item Movimientos de cámaras y zoom.
+	\item Mantener coherencia en las representaciones.
+	\item Diseño de componente de la interfaz. Por ejemplo panel de indicadores, barra de herramientas.
+\end{itemize}
+
+\subsubsection{Implementación} 
+\begin{itemize}
+	\item Distintas tareas del proceso de desarrollo. 
+	\item Plataforma. La producción del juego involucra el estado del arte, el desarrollo de componentes, el estado del arte, la programación y el testeo. 
+	\item Iteraciones (implementación y evaluación). 
+	\item Realizar optimizaciones. 
+	\item Poner énfasis en la estética, retro-alimentación y el estado. 
+\end{itemize}
+
+\subsubsection{Evaluación} 
+\begin{itemize}
+	\item Realizar varias sesiones de evaluación durante el desarrollo. Por ejemplo, con los responsables o expertos, miembros de la audiencia objetivo. 
+	\item La evaluación con los grupos de interés se centra en la adaptación del juego (usabilidad). 
+	\item La evaluación con los expertos se centra en la validación del modelo de la simulación (refinamiento). 
+	\item Evaluación con la audiencia objetivo para probar el juego en un escenario(parecido al final) y evaluar los aspectos relacionados con el proceso de aprendizaje.
+\end{itemize}
+
