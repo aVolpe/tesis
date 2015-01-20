@@ -1,8 +1,5 @@
 \section{Registro de actividad}
 
-\martin{Ponemos a los alumnos que no jugaron con 0 partidas y 0 segundos, o
-    los omitimos?}
-
 Las actividad de los usuarios es registrada y almacenada para su análisis, a
 continuación se presentan los resultados de ese análisis, el mismo fue descrito
 en~\ref{sec:registro}.
@@ -31,6 +28,8 @@ Total:   & 68 & 9039 \\
 \caption{Número de partidas y tiempo total por alumno, en la escena de
     extracción de sangre.}
 \label{tab:log_hemocultivo_partida}
+\observacion{#alumno o ver mejor forma de decir que es uno por fila}
+\observacion{Tiempo en segundos?}
 \end{table}
 
 La cantidad de partidas jugadas por usuario, se ven en la
@@ -96,11 +95,15 @@ Total:   & 9 & 327 \\
 \end{table}
 
 
-En las tablas \ref{tab:log_hemocultivo_puntaje} y \ref{tab:log_glasgow_random_puntaje} se muestran los primeros puntajes y 
-un promedio de los puntajes siguientes obtenidos por cada usuario en los procedimientos de extracción de sangre y de la 
-evaluación de la escala de Glasgow. Se debe tener en cuenta el tiempo y las cantidades de veces que cada alumno jugó
-cada uno de los procedimientos para valorar los resultados mostrados. En general, los puntajes no muestran una mejora 
-importante en los puntajes.
+En las tablas \ref{tab:log_hemocultivo_puntaje} y
+\ref{tab:log_glasgow_random_puntaje} se muestran los primeros puntajes y un
+promedio de los puntajes siguientes obtenidos por cada usuario en los
+procedimientos de extracción de sangre y de la evaluación de la escala de
+Glasgow. Se debe tener en cuenta el tiempo y las cantidades de veces que cada
+alumno jugó cada uno de los procedimientos para valorar los resultados
+mostrados. En general, los puntajes no muestran una mejora importante en los
+puntajes\revisar{Esto contradice lo anterior}\revisar{Donde esta la
+    de extracción(??)}.
 
 \begin{table}[!hbt]
 \centering
@@ -120,8 +123,8 @@ Número de alumno   & Primer Puntaje                            & Siguientes Pun
 10       & 3 & 7.2 \\
 \bottomrule
 \end{tabular}
-\caption{Puntaje obtenido la primera vez y el promedio de las siguientes veces por alumno, en la escena de
-    extracción de sangre.}
+\caption{Puntaje obtenido la primera vez y el promedio de las siguientes veces
+    por alumno, en la escena de extracción de sangre.}
 \label{tab:log_hemocultivo_puntaje}
 \end{table}
 
@@ -141,7 +144,10 @@ Número de alumno   & Primer Puntaje                            & Siguientes Pun
 7     & 0 & 1 \\
 \bottomrule
 \end{tabular}
-\caption{Puntaje obtenido la primera vez y el promedio de las siguientes veces por alumno, en la escena
-    \textit{Glasgow}, en modo evaluación}
+\caption{Puntaje obtenido la primera vez y el promedio de las siguientes veces
+    por alumno, en la escena \textit{Glasgow}, en modo evaluación}
 \label{tab:log_glasgow_random_puntaje}
 \end{table}
+
+\observacion{Promedios  puntaje final no hay una forma de traficar el progreso?,
+    algo más generar, por que osino no dice nada}
