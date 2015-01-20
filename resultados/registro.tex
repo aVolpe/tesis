@@ -9,9 +9,12 @@ en~\ref{sec:registro}.
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
-                   & \multicolumn{2}{c}{Extracción de sangre} \\
-                   \cmidrule(lr){2-3} 
-Número de alumno   & Sesiones jugadas                            & Tiempo jugado \\
+& \multicolumn{2}{c}{Extracción de sangre} \\
+\cmidrule(lr){2-3} 
+\begin{minipage}{3cm}Número de alumno\observacion{\#alumno o ver mejor forma de
+        decir que es uno  por fila}  \end{minipage} & 
+Sesiones jugadas & 
+\begin{minipage}{3cm}Tiempo jugado \observacion{Tiempo en segundos}\end{minipage}\\
 \midrule
  1       & 5  & 1202 \\
  2       & 19 & 2507 \\
@@ -28,8 +31,6 @@ Total:   & 68 & 9039 \\
 \caption{Número de partidas y tiempo total por alumno, en la escena de
     extracción de sangre.}
 \label{tab:log_hemocultivo_partida}
-\observacion{#alumno o ver mejor forma de decir que es uno por fila}
-\observacion{Tiempo en segundos?}
 \end{table}
 
 La cantidad de partidas jugadas por usuario, se ven en la
@@ -95,15 +96,15 @@ Total:   & 9 & 327 \\
 \end{table}
 
 
-En las tablas \ref{tab:log_hemocultivo_puntaje} y
-\ref{tab:log_glasgow_random_puntaje} se muestran los primeros puntajes y un
+En las tablas~\ref{tab:log_hemocultivo_puntaje}
+y~\ref{tab:log_glasgow_random_puntaje} se muestran los primeros puntajes y un
 promedio de los puntajes siguientes obtenidos por cada usuario en los
 procedimientos de extracción de sangre y de la evaluación de la escala de
 Glasgow. Se debe tener en cuenta el tiempo y las cantidades de veces que cada
 alumno jugó cada uno de los procedimientos para valorar los resultados
 mostrados. En general, los puntajes no muestran una mejora importante en los
-puntajes\revisar{Esto contradice lo anterior}\revisar{Donde esta la
-    de extracción(??)}.
+puntajes\revisar{Esto contradice lo anterior}\revisar{Donde esta la de
+    extracción(??)}.
 
 \begin{table}[!hbt]
 \centering
