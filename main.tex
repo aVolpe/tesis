@@ -28,7 +28,7 @@
 \usepackage{etoolbox}
 \usepackage[xindy]{imakeidx}
 
-\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\usepackage[colorinlistoftodos,prependcaption,spanish]{todonotes}
 
 \DeclareUnicodeCharacter{00E3}{á}
 
@@ -87,8 +87,11 @@
   plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
 }
 
-\newcommandx{\todox}[2][1=]{\todo[linecolor=gray,backgroundcolor=gray!25,bordercolor=gray,#1]{#2}}
-\newcommandx{\martin}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=gray,#1]{#2}}
+\newcommandx{\todox}[2][1=]{\todo[linecolor=gray,backgroundcolor=white,#1]{#2}}
+\newcommandx{\martin}[2][1=]{\todo[linecolor=blue,backgroundcolor=white,#1]{#2}}
+\newcommandx{\replantear}[2][1=]{\todo[inline,caption={Replantear}]{#2}}
+\newcommandx{\observacion}[2][1=]{\todo[inline,caption={Observacion}]{#2}}
+\newcommandx{\revisar}[2][1=]{\todo[caption={Revision},linecolor=red,backgroundcolor=white,#1]{#2}}
 
 
 % COLOR para las tablas
@@ -114,7 +117,8 @@
 % Lista de algoritmos
 \listofalgorithms
 
-\listoftodos[TODO]
+\listoftodos
+\todototoc
 
 \printglossary[type=\acronymtype,title=Lista de Siglas]
 
