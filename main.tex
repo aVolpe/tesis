@@ -20,8 +20,22 @@
 \usepackage{tkz-kiviat}
 \usepackage{multirow}
 \usepackage[normalem]{ulem}
+\usepackage{pdflscape} % Ver si no funciona con páginas en formato de tesis http://goo.gl/Rszezu
+%\usepackage{rotating}
+\usepackage{tabulary}
+\usepackage{titlesec}
+\usepackage[newcommands]{ragged2e}
 \newcommand{\removed}[1]{\uline{#1}}
 
+% PACKAGE titlesec
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% END PACKAGE titlesec
 
 \usepackage{tikz}
 \usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
