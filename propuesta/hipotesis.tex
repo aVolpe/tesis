@@ -1,6 +1,10 @@
 \section{Hipótesis de la simulación}
 \label{sec:hipotesis}
 
+
+\observacion{Ver en la tésis de Tardon: \emph{no es necesario simular todos los
+        pasos}.}
+
 Las escenas seleccionadas y definidas en~\ref{sec:seleccion_escenas} representan
 las acciones que deben realizar los profesionales de enfermería a la hora de
 realizar los procedimientos seleccionados, por limitaciones técnicas,
@@ -21,7 +25,7 @@ presentes solamente a través de opciones y que partes se omitirán son:
     \item \textbf{Importancia}: no todos los pasos definidos en el procedimiento
         oficial son necesarios, por ejemplo, la colocación de los elementos
         cerca del lugar de trabajo, es un paso necesario, pero es considerado un
-        paso necesario y trivial.
+        paso poco importante y trivial.
 
         La importancia es evaluada por profesionales del \Gls{iab}, los cuales
         dieron su opinión acerca de cada aspecto simulado, el mismo es tenido en
@@ -37,10 +41,9 @@ presentes solamente a través de opciones y que partes se omitirán son:
         los alumnos y cuales presentan mayores dificultades en su vida
         profesional.
 
-    \item \textbf{Familiaridad de los alumnos con la acción}: existen
-        actividades que son recurrentes en la vida de un estudiante de
-        enfermería, actividades que son realizadas en la mayoría de las
-        materias prácticas, si los alumnos están familiarizados.
+        Otro aspecto que influye en la facilidad de realización de los
+        procedimientos es la familiarización, si los alumnos están
+        familiarizados con los procedimientos, estos no son simulados.
 
 \end{itemize}
 
@@ -54,7 +57,7 @@ Existen hipótesis que son globales para toda la simulación, las mismas son:
     \item \textbf{Comandos de voz con interfaz}: para enviar una petición al
         paciente (por ejemplo, preguntarle su nombre), no es necesario
         identificar las palabras del usuario, sino más bien detectar que ha
-        hablado y listar las posibles preguntas que puede realizar.
+        hablado y listar las posibles acciones que se pueden realizar.
 
     \item \textbf{Utilización de la interfaz}: para realizar una acción con los
         elementos, es suficiente con presionar el mismo y seleccionar una acción
@@ -66,7 +69,7 @@ Existen hipótesis que son globales para toda la simulación, las mismas son:
 
 \end{itemize}
 
-Otras hipótesis, son tomadas por escena, las dos escenas simuladas son muy
+Otras hipótesis, son tomadas por escena, las dos escenas simuladas son
 diferentes en el modo de interacción del usuario con su entorno, por ejemplo, en
 la escena de extracción de sangre, el usuario interactúa con el paciente a
 través de objetos, en la evaluación de Glasgow, la interacción con el paciente
@@ -158,13 +161,13 @@ consideraciones que deben ser tomadas.
 
 \item \textbf{Esterilizar la zona de punción}: la esterilización de la zona de
     punción es un factor de suma importancia para el procedimiento, así como el
-    momento en el que se realiza, el jugador debería poder esterilizar la zona
-    antes de insertar la jeringa.
+    momento en el que se realiza, \emph{el jugador debería poder esterilizar} la
+    zona antes de insertar la jeringa.
     
 \item \textbf{Extraer el protector de la aguja}: La extracción del protector de
     la aguja es un paso necesario, pero trivial, el hecho de retirar el
-    protector de la jeringa no es un paso necesario para el logro de las
-    competencias básicas necesarias.
+    protector de la jeringa \emph{no es un paso necesario para el logro de las
+        competencias básicas necesarias}, por ello, no se simula.
 
 \item \textbf{Puncionar la piel con la aguja}: este es un paso central en el
     procedimiento, en el se deben tener en cuenta aspectos como la posición
@@ -172,12 +175,14 @@ consideraciones que deben ser tomadas.
 
     La posición donde se realiza la punción es importante por que depende de la
     ubicación donde se colocó el torniquete, y debe ser en uno de los puntos del
-    brazo donde existen venas capaces de soportar el procedimiento.
+    brazo donde existen venas capaces de soportar el procedimiento, \emph{en
+        cada brazo existen dos puntos donde se puede inyectar}.
 
     En cuanto al ángulo de punción, es un conocimiento importante que deben
     tener los alumnos, el conocimiento es teórico y según comentarios de los
     profesores, es un tema en el cual los alumnos tienen suficiente práctica en
-    el laboratorio.
+    el laboratorio, \emph{No se simula el ángulo en el cual se inserta la
+        jeringa}, es decir, la jeringa siempre se inserta en el mismo angulo.
 
 \item \textbf{Tensar la zona de punción}: el proceso de tensar la zona de
     punción se realiza momentos durante la inserción de la jeringa, el mismo es
@@ -185,42 +190,99 @@ consideraciones que deben ser tomadas.
     mismo tiempo (dos para tensar y otro para realizar la punción), lo cual
     dificulta la utilización de la solución.
 
-    Este paso no es simulado por la dificultad técnica que implica utilizar tres
-    dedos para realizar una tarea que no es central para el procedimiento.
+    \emph{Este paso no se simula} por la dificultad técnica que implica utilizar
+    tres dedos para realizar una tarea, conjuntamente con la facilidad con que
+    se realiza acción. 
 
 \item \textbf{Remover el torniquete}: Al igual que en la colocación del
-    torniquete, el momento de la extracción es importante, pero no la forma de
-    realizarlo.
+    torniquete, \emph{se simula el momento} de la extracción por que es
+    importante, pero no los detalles de la extracción.
 
 \item \textbf{Solicitar la apertura del puño}: el momento exacto donde se debe
     solicitar al paciente que abra la mano es fundamental para la realización
-    correcta de la simulación.
+    correcta de la simulación. \emph{Este paso se simula} a través de un comando
+    de voz.
 
 \item \textbf{Extraer la muestra se sangre necesaria}: este es el paso central
     de la práctica, tanto el momento, como la forma es importante simular.
+
+    La extracción de la sangre \emph{se simula} la acción de la extracción, pero
+    no detalles como la sangre extraída, la velocidad de extracción y la fuerza
+    necesaria por limitaciones de la tecnología.
 
 \item \textbf{Presionar el brazo y extraer la aguja}: la presión del brazo para
     extraer la jeringa es un paso trivial, en cambio el momento en el que se
     extrae la aguja es conocimiento necesario para el procedimiento.
 
+    \emph{No se simula esta acción}, pues es un paso al que los alumnos están
+    acostumbrados y de simularse, agrega una complejidad adicional a la
+    extracción, que es un paso que se realiza al mismo tiempo.
+
 \item \textbf{Colocar algodón con alcohol en el punto de punción}: este paso es
     importante, tanto el momento en el cual se debe realizar, como la forma de
     realizarlo.
 
+    \emph{Se simula la colocación del algodón}, así como el tiempo que se debe
+    presionar el mismo.
+
 \item \textbf{Sellar la muestra y enviarlo a su destinatario}: es necesario que
     los alumnos sepan que este paso debe ser realizado, pero los detalles del
-    mismo, no son necesarios para el logro de las competencias básicas, este
-    paso no se simula.
+    mismo, no son necesarios para el logro de las competencias básicas,
+    \emph{este paso no se simula}.
+
 
 \item \textbf{Retirar la bata, tapaboca, gorro y guantes}: es necesario que los
     alumnos sepan que deben desechar todos los elementos que fueron utilizados
     durante el proceso, la forma de hacerlo no es necesaria.
 
+    \emph{Se simula el momento en el que se extraen los elementos} a través de
+    una opción en la interfaz.
+
 \item \textbf{Asepsia de las manos}: la asepsia final de las manos es un paso
     necesario para el procedimiento, así como la asepsia inicial, es importante
-    que los alumnos sepan el momento en cual deben realizarlo.
+    que los alumnos sepan el momento en cual deben realizarlo, \emph{este paso
+        se simula} a través de una opción en la interfaz.
 
 \end{itemize}
 
+Estas hipótesis afectan directamente el desarrollo de la aplicación, dictando
+que partes del procedimiento se simulan y como, pueden ser vistas como
+requisitos funcionales de la solución.
 
 \subsection{Evaluación de glasgow}
+
+En la sección~\ref{sec:glasgow_protocolo} se definieron los pasos necesarios
+para poder llevar a cabo el procedimiento, este procedimiento es un paso
+rutinario que deben realizar los profesionales para poder determinar rápidamente
+el estado de conciencia de un individuo. 
+
+El paso central de la práctica es la valoración del paciente y la generación del
+diagnostico, los demás pasos, no colaborar en el desarrollo de la competencia
+básica y según opiniones de los profesores no son importantes.
+
+Así, es suficiente con simular al paciente y las reacciones que tiene ante las
+acciones del jugador, y las siguientes hipótesis se basan en la interacción
+paciente/jugador.
+
+El último paso del procedimiento es el registro final de la puntuación, el mismo
+es utilizado como mecanismo de evaluación y el registro en sí no se simula, es
+decir, se solicita al jugador que realice el diagnostico (mediante un menú),
+pero no en la condiciones que se utilizan en la vida real (anotando en el
+registro médico del paciente).
+
+Para simular la medición del estado del paciente, se toman las siguientes
+hipótesis:
+
+\begin{itemize}
+    \item La provocación de un estimulo doloroso al paciente es una accion
+        necesaria, pero no así los detalles de la misma, \emph{se simula el
+            estimulo con una opción} al personar al paciente en alguna
+        extremidad.
+    \item El dialogo jugador/paciente se realiza a través de comandos de voz, el
+        nombre del paciente es una información que se conoce de ante mano y
+        \emph{Se simulan 7 posibles preguntas}, que incluyen solicitudes de
+        apertura ocular, movimiento de extremidades, y preguntas generales como
+        el nombre del paciente, el día y el lugar.
+\end{itemize}
+
+
