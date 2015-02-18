@@ -1,20 +1,26 @@
 %! TEX root = ../main.tex
 \section{Evaluación en tiempo de ejecución}
 
-Las acciones realizadas por los usuarios dentro de la aplicación son evaluadas para determinar si realizo o no el procedimiento de manera correcta y así brindarle información al usuario sobre su rendimiento.
+Las acciones realizadas por los usuarios dentro de la aplicación son evaluadas
+para determinar si realizo o no el procedimiento de manera correcta y así
+brindarle información al usuario sobre su rendimiento.
 
-En esta sección se explica como son evaluados las acciones de los usuarios para los diferentes procedimientos simulados.
+En esta sección se explica como son evaluados las acciones de los usuarios para
+los diferentes procedimientos simulados.
 
 \subsection{Extracción de muestras de sangre}
 
-Para la evaluación de las acciones del usuario en este procedimiento se utilizo un motor de reglas denominado "Acciones condicionadas por eventos". A continuación se explica en detalle cada aspecto relacionado tanto al motor como a la forma de evaluación del rendimiento del usuario.
+Para la evaluación de las acciones del usuario en este procedimiento se utilizo
+un motor de reglas denominado \enquote{Acciones condicionadas por eventos}. A
+continuación se explica en detalle cada aspecto relacionado tanto al motor como
+a la forma de evaluación del rendimiento del usuario.
 
 \subsubsection{Acciones condicionadas por eventos}
 
 Un evento es la ocurrencia de un hecho en particular, y son identificados por un
 nombre y un conjunto de parámetros, por ejemplo, cuando un evento es cuando el
 enfermero inserta una Jeringa, el nombre de este evento es
-\emph{''jeringa.inserted''}, y sus parámetros podrían ser el lugar y el tiempo
+\enquote{jeringa}.inserted, y sus parámetros podrían ser el lugar y el tiempo
 de la inserción, así, la influencia del estudiante en la simulación es una
 sucesión de eventos.
 
@@ -237,28 +243,55 @@ la acción de la regla y modifica el estado de la regla a \emph{FINISH}.
 
 \subsubsection{Definición de reglas}
 
-La reglas del procedimiento de extracción de sangre fueron definidas de acuerdo a los pasos requeridos según el protocolo del procedimiento y al orden en el que son requeridos. Es decir, cada paso del protocolo tiene asociado una regla dentro del motor que lo representa y las condiciones asociadas a cada regla están determinadas por el orden en que deben realizarse dentro del protocolo.
+La reglas del procedimiento de extracción de sangre fueron definidas de acuerdo
+a los pasos requeridos según el protocolo del procedimiento y al orden en el que
+son requeridos. Es decir, cada paso del protocolo tiene asociado una regla
+dentro del motor que lo representa y las condiciones asociadas a cada regla
+están determinadas por el orden en que deben realizarse dentro del protocolo.
 
-Cada regla tiene una o mas condiciones que deben ser cumplidas para que un paso del protocolo realizado se considere correcto.
+Cada regla tiene una o mas condiciones que deben ser cumplidas para que un paso
+del protocolo realizado se considere correcto.
 
 \subsubsection{Retroalimentación y puntuación final}
+\label{sec:puntuacion_hemocultivo}
 
-Cada regla tiene asociado un peso, de acuerdo a la dificultad de realizar el paso, este peso es utilizado al final de la partida para darle una puntuación al usuario acerca de su 
-rendimiento en la partida.
+Cada regla tiene asociado un peso, de acuerdo a la dificultad de realizar el
+paso, este peso es utilizado al final de la partida para darle una puntuación al
+usuario acerca de su rendimiento en la partida.
 
-Además, un regla puede quedar en uno de diferentes estados al final de la partida como se mostró anteriormente, cada uno de esos estados posee un significado en el contexto del procedimiento y por lo tanto tiene información asociada para que al final de la partida se muestre una retroalimentación correcta al usuario por paso.
+Además, un regla puede quedar en uno de diferentes estados al final de la
+partida como se mostró anteriormente, cada uno de esos estados posee un
+significado en el contexto del procedimiento y por lo tanto tiene información
+asociada para que al final de la partida se muestre una retroalimentación
+correcta al usuario por paso.
 
 \subsection{Valoración de la escala de Glasgow}
+\label{sec:puntuacion_glasgow}
 
-Para la evaluación del rendimiento del usuario en el momento de llevar a cabo el procedimiento de valoración de la escala de Glasgow se tuvo un enfoque completamente diferente al del procedimiento de extracción de muestras
-de sangre debido a la naturaleza propia del procedimiento. 
+Para la evaluación del rendimiento del usuario en el momento de llevar a cabo el
+procedimiento de valoración de la escala de Glasgow se tuvo un enfoque
+completamente diferente al del procedimiento de extracción de muestras de sangre
+debido a la naturaleza propia del procedimiento. 
 
-Como se explico anteriormente, el paciente puede estar en ciertos estados específicos dentro de la escala, y además dentro de cada estado reacciona de un forma en particular por lo tanto, al inicio de la partida
-un componente interno de la aplicación selecciona de forma aleatoria un estado para el paciente, de forma tal que cada vez que una partida sea jugada no se repitan los estados de forma seguida.
+Como se explico anteriormente, el paciente puede estar en ciertos estados
+específicos dentro de la escala, y además dentro de cada estado reacciona de un
+forma en particular por lo tanto, al inicio de la partida un componente interno
+de la aplicación selecciona de forma aleatoria un estado para el paciente, de
+forma tal que cada vez que una partida sea jugada no se repitan los estados de
+forma seguida.
 
-El estado aleatorio del paciente es guardado en una variable que no es modificada hasta que se reinicie la partida. Al final de la partida, la aplicación pide al usuario que valore el estado del paciente que le fue presentado, una vez que el usuario confirme su respuesta la aplicación la compara con el estado guardado y de esta forma puede informar al usuario acerca de su rendimiento en el diagnostico.
+El estado aleatorio del paciente es guardado en una variable que no es
+modificada hasta que se reinicie la partida. Al final de la partida, la
+aplicación pide al usuario que valore el estado del paciente que le fue
+presentado, una vez que el usuario confirme su respuesta la aplicación la
+compara con el estado guardado y de esta forma puede informar al usuario acerca
+de su rendimiento en el diagnostico.
 
-Además, cada posible respuesta dada por el usuario contiene información relacionada al contexto del procedimiento y a la situación actual presentada la cual es utilizada como retroalimentación al final de la partida. La puntuación final dada depende de la cantidad de valoraciones correctas dadas por el usuario para la respuesta verbal, motora, ocular y nivel de gravedad del paciente.
+Además, cada posible respuesta dada por el usuario contiene información
+relacionada al contexto del procedimiento y a la situación actual presentada la
+cual es utilizada como retroalimentación al final de la partida. La puntuación
+final dada depende de la cantidad de valoraciones correctas dadas por el usuario
+para la respuesta verbal, motora, ocular y nivel de gravedad del paciente.
 
 
 
