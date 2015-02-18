@@ -1,7 +1,7 @@
 %! TEX root = ../main.tex
 
 
-\section{Acciones condicionadas por eventos}
+\subsubsection{Acciones condicionadas por eventos}
 
 Un evento es la ocurrencia de un hecho en particular, y son identificados por un
 nombre y un conjunto de parámetros, por ejemplo, cuando un evento es cuando el
@@ -29,7 +29,7 @@ eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
 información acerca de la utilización de un determinado recurso.
 
 
-\subsubsection{Motivación}
+\paragraph{Motivación}
 
 Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en
 forma de una única regla, la cual facilita la declaración de las
@@ -47,7 +47,7 @@ Definir si las acciones de un usuario son correctas utilizando un motor
 conjunto de acciones que se deben realizar, y agregar una acción que verifica si
 los pasos realizados fueron los correctos.
 
-\subsection{Declaración}
+\paragraph{Declaración}
 
 Una \gls{eca}, se define como\cite{bailey2004event}\cite{behrends2006combining}:
 
@@ -78,7 +78,7 @@ disponible.
 La \emph{acción} a ejecutar describe la lógica que debe ser ejecutada cuando se han
 lanzado los eventos y la condición de la regla se ha cumplido.
 
-\subsubsection{Dependencia entre reglas}
+\paragraph{Dependencia entre reglas}
 
 Las reglas pueden depender de otras reglas, lo cual se puede ver como que la
 finalización de una regla es un evento que otra regla espera para poder ser
@@ -106,7 +106,7 @@ formas\cite{bailey2004event}:
 	(se extraiga el torniquete que lanzo la regla de inserción).
 \end{itemize}
 
-\subsubsection{Definición}
+\paragraph{Definición}
 
 La definición de las reglas se realiza de la siguiente forma;
 \begin{algorithm}[H]
@@ -126,7 +126,8 @@ los guantes'', y en ese momento tenga las manos limpias, la variable \emph{e},
 es el entorno, y a través de la propiedad \emph{Patient} obtiene el estado del
 paciente en ese momento.
 
-\subsection{Modelo de ejecución}
+
+\paragraph{Modelo de ejecución}
 
 Para ejecutar un motor de reglas del tipo \gls{eca}, se debe tener en cuenta
 principalmente dos factores, 
@@ -157,7 +158,7 @@ de ejecución deseado.
 
 
 
-\subsubsection{Estados de una regla}
+\paragraph{Estados de una regla}
 
 Una regla puede estar en uno de los siguientes estados:
 
@@ -185,7 +186,7 @@ Una regla puede estar en solo un estado, y solamente se permite que el estado
 avance, desde \emph{BEGIN} hasta \emph{FINISH}.
 
 
-\subsubsection{Ciclo de vida}
+\paragraph{Ciclo de vida}
 
 Cuando una regla es definida, y insertada al motor de reglas, inmediatamente
 pasa al estado \emph{BEGIN}, luego se verifica si la misma depende de otras
@@ -204,13 +205,13 @@ notifica a las reglas que dependen de ella que ha sido lanzada.
 Una vez que la regla esta en estado \emph{FINISH}, la misma sale del esquema de
 ejecución, y solo esta disponible para obtener resultados.
 
-Según el ejemplo de la regla definida en el código \ref{alg:rule:guante}, la
+Según el ejemplo de la regla definida en el código\ref{alg:rule:guante}, la
 regla al terminar de ser construida pasa a estado \emph{BEGIN}, al no depender
 de otras reglas, pasa inmediatamente al estado \emph{WAITING\_FOR\_EVENT},
 cuando es lanzado el evento, la regla ejecuta la acción y pasa al estado
 \emph{FINISH}.
 
-\subsubsection{Motor de ejecución}
+\paragraph{Motor de ejecución}
 
 Un motor de reglas \gls{eca}, requiere de un proceso que evalúe constantemente
 las reglas para verificar si las mismas deben ser lanzadas o
@@ -225,3 +226,4 @@ El motor de reglas actúa sobre aquellas reglas en estado
 validar si la regla puede ser activada (el procedimiento es único por cada
 regla), si el mismo determina que la regla puede ser lanzada, el motor ejecuta
 la acción de la regla y modifica el estado de la regla a \emph{FINISH}.
+

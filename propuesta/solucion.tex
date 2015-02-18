@@ -57,6 +57,24 @@ sistema\cite{banks2000dm}, cada acción que se realiza provoca una acción, y lo
 eventos son la mecanismo que tiene una entidad para ser notificada de las
 acciones de otras entidades.
 
+Un evento una consecuencia de una acción, por ejemplo, cuando el usuario 
+realiza la acción \emph{Limpiar manos}, se crea el evento \emph{Manos Limpias}. 
+Cualquier entidad de la simulación puede reaccionar ante diversos eventos, 
+por ejemplo, la entidad \emph{Enfemero} reacciona ante el evento \emph{Manos
+Limpias}, y cambia su estado interno para reflejar este evento (de ahora en 
+más, se considera que las manos del enfemero están limpias).
+
+Los Eventos son útiles para que varias entidades puedan reaccionar ante
+una acción, cuando el enfermero extrae la jeringa del paciente, se crea un
+evento para notificar este cambio, y el paciente reacciona de diversas maneras,
+por ejemplo, desde ese momento, la zona de donde se extrajo la jeringa, pasa a 
+estar contaminada, y la lista de jeringas del paciente se reduce. 
+
+Existe otro componente aparte de las entidades que depende de los eventos 
+para cambiar su estado, y es el \emph{Motor de Reglas}, este motor escucha
+todos los eventos relacionados con las reglas, y se encarga de evaluar, así
+es notificado de los cambios en el entorno.
+
 \subsubsection{Interacción con el entorno}
 
 El usuario se desenvuelve en un entorno de tres dimensiones, en el cual realiza las
@@ -76,6 +94,233 @@ principales que el usuario puede realizar:
         en la dirección contraria.
 \end{itemize}
 
+
+\subsubsection{Acciones condicionadas por eventos}
+
+Un evento es la ocurrencia de un hecho en particular, y son identificados por un
+nombre y un conjunto de parámetros, por ejemplo, cuando un evento es cuando el
+enfermero inserta una Jeringa, el nombre de este evento es
+\enquote{jeringa.inserted}, y sus parámetros podrían ser el lugar y el tiempo de
+la inserción, así, la influencia del usuario en la simulación es una sucesión de
+eventos.
+
+Por cada acción que realiza el usuario dentro de la simulación, existe un evento
+relacionado, por consiguiente, es razonable estudiar algunos eventos para
+determinar si los pasos realizados corresponden con los deseados. 
+
+Para determinar si una sucesión de eventos es la correcta, se definen reglas,
+una regla es una asociación de una condición y una acción, la condición define
+si el entorno es el adecuado para realizar una acción, la cual es un
+procedimiento que realiza la lógica deseada.
+
+Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados
+eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos
+como triggers, es decir, una base de datos relacional (u orientada a objetos) es
+un motor de reglas \gls{eca}\cite{bailey2004event}\cite{behrends2006combining}.
+
+Las mismas pueden ser utilizadas para notificar que un determinado conjunto de
+eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
+información acerca de la utilización de un determinado recurso.
+
+
+\paragraph{Motivación}
+
+Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en
+forma de una única regla, la cual facilita la declaración de las
+mismas\cite{bailey2004event}.
+
+Son principalmente útiles para analizar el comportamiento en tiempo real de un
+sistema en una forma
+reactiva\cite{bailey2004event}\cite{de2001eca}\cite{bailey2002analysis}, esta
+característica esta impulsada principalmente por que son ejecutadas después de
+la ocurrencia de un evento, y el entorno no es modificado, pudiendo así acceder
+al mismo entorno que el qué lanzo el evento.
+
+Definir si las acciones de un usuario son correctas utilizando un motor
+\gls{eca} es sencillo desde el punto de vista que sólo se deben definir un
+conjunto de acciones que se deben realizar, y agregar una acción que verifica si
+los pasos realizados fueron los correctos.
+
+\paragraph{Declaración}
+
+Una \gls{eca}, se define como\cite{bailey2004event}\cite{behrends2006combining}:
+
+\begin{center}
+	 Cuando ocurren una serie de \emph{eventos}, y se cumple una
+	 \emph{condición}, entonces realizar una \emph{Acción}.
+\end{center}
+
+Los \emph{eventos} determinan cuando una regla debe ser activada, los mismos se
+dividen en dos categorías\cite{behrends2006combining}, primitivos y compuestos,
+los primeros son detectables, por ejemplo, cuando se inserta una jeringa, y los
+compuestos, son la combinación de uno o más
+primitivos\cite{bailey2004event}\cite{behrends2006combining}. Los eventos
+compuestos, se unen mediante:
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item conjunción (\emph{y}),
+\item disyunción (\emph{o}), y
+\item secuencia (\emph{entonces}).
+\end{enumerate*}
+Sin embargo, no siempre son necesarios todas las posibles combinaciones, y las
+combinaciones sencillas son más fáciles de optimizar y
+probar\cite{bailey2004event}.
+
+La \emph{condición} de una regla determina si el entorno es el necesario para que la
+regla sea activada, en esta condición el entorno que lanzó el evento esta
+disponible.
+
+La \emph{acción} a ejecutar describe la lógica que debe ser ejecutada cuando se han
+lanzado los eventos y la condición de la regla se ha cumplido.
+
+\paragraph{Dependencia entre reglas}
+
+Las reglas pueden depender de otras reglas, lo cual se puede ver como que la
+finalización de una regla es un evento que otra regla espera para poder ser
+activada.
+
+Las reglas pueden agregar información a un contexto compartido por todas las
+reglas, de esta manera, se puede pasar parámetros entre distintas reglas, por
+ejemplo, la regla \emph{Retirar Torniquete}, depende de la regla \emph{Insertar
+Torniquete}, pero debe responder solamente al torniquete que ha activado
+la regla de inserción, es decir, el usuario puede extraer varios torniquetes, y
+la regla no debe activarse, hasta que se extraiga el torniquete que activo la
+primer regla.
+
+Así, la regla \emph{Retirar Torniquete} depende de la regla \emph{Insertar
+Torniquete}, y esta relación entre reglas, se da en dos
+formas\cite{bailey2004event}:
+
+\begin{itemize}
+\item  \emph{Dependencia fuerte:} la regla \emph{Retirar Torniquete} solamente podrá
+	ser elegida para ser lanzada cuando la regla \emph{Insertar Torniquete}
+	haya sido cumplida.
+\item  \emph{Dependencia de contexto}: la regla \emph{Retirar Torniquete} no se
+	activará cuando los eventos a los que escucha se terminen, sino cuando
+	los eventos a los que escucha sean lanzados con los parámetros adecuados
+	(se extraiga el torniquete que lanzo la regla de inserción).
+\end{itemize}
+
+\paragraph{Representación}
+
+La definición de las reglas se realiza de la siguiente forma;
+\begin{algorithm}[H]
+\caption{Creación de regla de verificación de calzado de guantes}
+\label{alg:rule:guante}
+\lstset{style=sharpc}
+\begin{lstlisting}
+Rule.New(``Regla de verificacion de calzado de guantes'').
+     When(``enfermero.guantes.calzar'').
+     Then(e => e.Patient.ManosLimpias()).
+\end{lstlisting}
+\end{algorithm}
+%TODO agregar indice de algoritmos
+
+La regla anterior controla que el estudiante ha realizado la acción ``Calzarse
+los guantes'', y en ese momento tenga las manos limpias, la variable \emph{e},
+es el entorno, y a través de la propiedad \emph{Patient} obtiene el estado del
+paciente en ese momento.
+
+\paragraph{Modelo de ejecución}
+
+Para ejecutar un motor de reglas del tipo \gls{eca}, se debe tener en cuenta
+principalmente dos factores, 
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item  Como se verifica el cumplimiento de cada regla, y, 
+\item  Que ocurre cuando varias reglas son lanzadas al mismo tiempo
+\end{enumerate*}.
+
+Para ambos casos se puede tomar un enfoque \emph{inmediato}, es decir que
+inmediatamente cuando se lanza un evento, o se cumple una condición, se ejecuta
+la regla. Además existen otros dos modos de ejecución, \emph{deferida}, y
+\emph{desacoplada}, en la primera, se espera hasta que el lanzador del evento
+culmine su trabajo, y luego se ejecuta la regla, pero en la misma unidad de
+trabajo, mientras que en la ejecución desacoplada, se encolan los trabajos y
+otro hilo es el encargado de ejecutar las reglas. Estos modos están inspirados
+en las bases de datos relacionales, el deferido se ejecuta en la misma
+transacción, y el desacoplado, inmediatamente después de que la transacción
+termine\cite{bailey2004event}.
+
+La propuesta implementada, utiliza una ejecución inmediata, principalmente por
+la sencillez de las reglas, es decir, las reglas no realizar un proceso complejo,
+solamente controlan el estado del entorno y lo validan.
+
+Además, la ejecución inmediata es importante por que el entorno no sufre
+modificaciones entre el evento lanzado y la ejecución de la regla, según
+\cite{bailey2004event}, este es el factor más importante para determinar el tipo
+de ejecución deseado.
+
+
+
+\paragraph{Estados de una regla}
+
+Una regla puede estar en uno de los siguientes estados:
+
+\begin{description}
+\item[BEGIN] Es una regla que recién fue creada, no realiza ninguna
+	acción.
+\item[WAITING\_FOR\_RULE] Es un estado en el que esta esperando que otras reglas
+	sean lanzadas. En este estado, es un suscriptor de las reglas por la que
+	espera, y no forma parte del ciclo de ejecución del motor de reglas.
+\item[WAITING\_FOR\_EVENT] Es un estado en el que esta escuchando a que sean
+	lanzados los eventos a los que escucha, este es el estado principal. En
+	este estado, es un suscriptor de los eventos por los que espera, y no
+	forma parte del ciclo de ejecución del motor de reglas. Se diferencia
+	del estado anterior, en que los eventos escuchados pueden ser lanzados
+	por cualquier objeto del entorno, no necesariamente una regla.
+\item[WAITING\_FOR\_CONDITION] La regla ya no espera por ningún evento y las
+	reglas de las que depende ya han sido lanzadas, se verifica cada cierto
+	tiempo si el entorno cumple con una condición definida. 
+\item[FINISH] La regla ha sido lanzada, con un resultado no determinado, se pudo
+	haber cumplido, como no, es el estado final de una regla. Cuando una
+	regla llega a este estado, se lanza su evento de finalización.
+\end{description}
+
+Una regla puede estar en solo un estado, y solamente se permite que el estado
+avance, desde \emph{BEGIN} hasta \emph{FINISH}.
+
+
+\paragraph{Ciclo de vida}
+
+Cuando una regla es definida, y insertada al motor de reglas, inmediatamente
+pasa al estado \emph{BEGIN}, luego se verifica si la misma depende de otras
+reglas, sí este es el caso, pasa al estado \emph{WAITING\_FOR\_RULE} y escucha a
+los eventos de finalización de las reglas anteriores.
+
+Una vez que las reglas anteriores han sido finalizadas, la regla pasa al estado
+\emph{WAITING\_FOR\_EVENT} sí deben escuchar por algún evento, en caso contrario
+pasan al estado \emph{WAITING\_FOR\_CONDITION}.
+
+Una vez que la regla está en estado \emph{WAITING\_FOR\_CONDITION}, pasa a un
+motor que ejecuta su condición cada cierto tiempo, si la condición se cumple, la
+regla se ejecuta, y la misma pasa a estado \emph{FINISH}, momento en el cual
+notifica a las reglas que dependen de ella que ha sido lanzada.
+
+Una vez que la regla esta en estado \emph{FINISH}, la misma sale del esquema de
+ejecución, y solo esta disponible para obtener resultados.
+
+Según el ejemplo de la regla definida en el código\ref{alg:rule:guante}, la
+regla al terminar de ser construida pasa a estado \emph{BEGIN}, al no depender
+de otras reglas, pasa inmediatamente al estado \emph{WAITING\_FOR\_EVENT},
+cuando es lanzado el evento, la regla ejecuta la acción y pasa al estado
+\emph{FINISH}.
+
+\paragraph{Motor de ejecución}
+
+Un motor de reglas \gls{eca}, requiere de un proceso que evalúe constantemente
+las reglas para verificar si las mismas deben ser lanzadas o
+no\cite{bailey2004event}\cite{galton2002two}, este motor puede utilizar el
+algoritmo de RETE\cite{de2001eca} para realizar esta verificación, en la
+propuesta presentada, la cantidad de reglas definidas, y la no dependencia
+circular entre ellas, hace innecesario la implementación de tal
+algoritmo\cite{de2001eca}. 
+
+El motor de reglas actúa sobre aquellas reglas en estado
+\emph{WAITING\_FOR\_CONDITION} e invoca al procedimiento que se encarga de
+validar si la regla puede ser activada (el procedimiento es único por cada
+regla), si el mismo determina que la regla puede ser lanzada, el motor ejecuta
+la acción de la regla y modifica el estado de la regla a \emph{FINISH}.
+
+
 \subsection{Grafo de estados}
 
 La solución tiene varias escenarios, y dentro de cada escenario, existen varias
@@ -88,7 +333,8 @@ diferentes pantallas y escenarios.
 \includegraphics[scale=0.5]{propuesta/grafo_escenas.png}
 \caption{Navegación entre escenarios y pantallas. Los escenarios son los
     rectángulos con un borde dos rayas, y las pantallas tienen un borde con una
-    sola raya.}
+    sola raya. Los estados inicial y final se muestran como círculos, notar que
+    el estado inicial es además del punto de entrada, un escenario.}
 \label{fig:grafo_estados}
 \end{figure}
 
@@ -124,16 +370,45 @@ pantalla el usuario puede compartir sus resultados por las redes sociales,
 reiniciar el escenario y finalmente, poder volver a la \emph{Pantalla de
     inicio}.
 
+Se describen todos los escenarios, primeramente se da una descripción general de
+los escenarios y se procede a explicar los detalles del mismo, incluyendo las
+entidades, eventos y acciones que pueden ser realizados en el mismo.
 
 \subsection{Inicio}
 
-\subsubsection{Descripción del entorno}
+La solución se inicia con un escenario que esta inspirado en el laboratorio de
+enfermería del \Gls{iab}, este escenario es la primera experiencia que tiene un
+usuario al utilizar la misma, este escenario sirve como un menú principal, desde
+este punto todas las opciones son accesibles para el usuario, este escenario es
+denominado~\emph{Inicio}.
 
-La escena mostrada como pantalla de inicio de la aplicación muestra como fondo la sala de 
-un hospital con los elementos típicos de estos lugares, esta es la que se utiliza como 
-escenografía principal en los escenas de los procedimientos, haciendo que el usuario entre 
-en ambiente. Además de este fondo, se muestras varias opciones en forma de botones que serán 
-descriptas a continuación y un mensaje en donde se recomienda al usuario el uso de auriculares.
+La primera vez que se inicia la solución, se muestra una pequeña ventana
+solicitando el número del usuario, se utiliza esta información como un
+identificador del usuario y así poder asociar la información del mismo con un
+alumno en particular.
+
+\subsubsection{Descripción del entorno}
+\label{sec:inicio_descripcion}
+
+La escena mostrada como pantalla de inicio de la aplicación muestra como fondo
+la sala de un hospital con los elementos típicos de estos lugares, esta es la
+que se utiliza como escenografía principal en las escenas de los procedimientos.
+Además de este fondo, se muestras varias opciones en forma de botones que serán
+descriptas a continuación y un mensaje en donde se recomienda al usuario el uso
+de auriculares.
+
+\begin{figure}[H] 
+\centering 
+\includegraphics[scale=0.2]{propuesta/sala.jpg}
+\caption{Edificio y decoración inspirados en los laboratorios de enfermería del
+    \Gls{iab}, este edificio se utiliza par los diferentes escenarios}
+\label{fig:sala_perspectiva}
+\end{figure}
+
+Se observa en la figura~\ref{fig:sala_perspectiva} la decoración utilizada en
+el escenario \emph{Inicio}, mientras se muestran las opciones, se ejecuta una
+animación que recorre el escenario mostrando los detalles importantes, como la
+camilla, el lector de estadísticas vitales, y demás elementos del escenario.
 
 \subsubsection{Opciones}
 
@@ -141,13 +416,10 @@ Las opciones disponibles en la pantalla de inicio son presentadas en forma de
 botones los cuales tienen una breve descripción que identifica la función que
 cumplen. 
 
-\todox{Agregar descripción del escenario y si es necesario pantalla donde se
-    pone el número}
-
 \begin{itemize}
 \item Botón \enquote{Enviar Progreso}: esta función envía toda la información
     acerca de la actividad que el usuario realizo en la aplicación a un servidor
-    backend que se encarga de almacenar estos datos.
+    \emph{backend} que se encarga de almacenar estos datos.
 \item Botón \enquote{Salir de la simulación}: esta función permite salir de la
     aplicación.
 \item Botón \enquote{Facebook}: esta función permite al usuario ingresar a su
@@ -158,7 +430,9 @@ cumplen.
 \item Botón \enquote{Explorar Glasgow}: esta función permite ingresar a la
     escena correspondiente al procedimiento para explorar las reacción de un
     paciente con un diagnostico especifico de la escala de Glasgow permitiendo
-    al usuario jugar una nueva partida.
+    al usuario jugar una nueva partida, el diagnostico se selecciona una vez
+    presionado este botón a través de la ventana de~\emph{Elegir estado del
+        paciente}.
 \item Botón \enquote{Evaluar Glasgow}: esta función permite ingresar a la escena
     correspondiente al procedimiento para la valoración y diagnostico de la
     escala de Glasgow para un paciente con estado aleatorio permitiendo al
@@ -171,6 +445,9 @@ cumplen.
 A continuación se detallan cada una de las opciones y formas disponibles de
 interactuar con la escena del procedimiento de extracción de muestras de sangre.
 
+Los detalles a continuación toman en cuenta las hipótesis definidas
+en~\ref{sec:hemocultivo_hipotesis}. 
+
 \subsubsection{Descripción del entorno}
 
 Al seleccionar el procedimiento de extracción de sangre en la pantalla de inicio 
@@ -182,23 +459,16 @@ La posición inicial de la cámara se ubica en un ángulo en donde se puedan ver
 bien los brazos del paciente para facilitar al usuario la realización del 
 procedimiento.
 
-\todox{Agregar descripción}
-
-\subsubsection{Descripción de la interfaz}
-
-La interfaz principal de este escenario posee dos menús, uno a cada lado de la
-pantalla, las opciones son representadas como botones que poseen una imagen
-intuitiva\todox{Ver si no hay que agregar esto como hipótesis} que representa la
-función que realizan. 
 
 \subsubsection{Entidades}
 
-En la extracción de sangre existen dos entidades principales, el paciente y el
-usuario, cada entidad mantiene un estado independiente de la otra entidad.
+En la extracción de sangre existen dos entidades principales, el \emph{paciente}
+y el \emph{usuario}, cada entidad mantiene un estado independiente de la otra
+entidad.
 
-El paciente es una entidad con estado complejo, el cual es constantemente
+El \emph{paciente} es una entidad con estado complejo, el cual es constantemente
 modificado por las acciones del usuario, en resumen, la información que contiene
-el estado del paciente es:
+el paciente es:
 
 \begin{itemize}
     \item \textbf{Jeringas}: un paciente puede tener cero o más jeringas en
@@ -224,11 +494,11 @@ el estado del paciente es:
         que pueden provocar que esto ocurra:
         \begin{itemize}
             \item Inyección de una jeringa cuando existe otra inyectada.
-            \item Inyección en un lugar en lugares inadecuados.
+            \item Inyección en un lugar inadecuado.
             \item Inyección en un lugar no esterilizado.
             \item Inyección en un brazo cuya mano este abierta.
             \item Inyección fuera del alcance de los torniquetes actuales.
-            \item Interacción con el paciente sin que el mismo tenga la mano
+            \item Interacción con el paciente sin que el enfermero tenga la mano
                 estéril.
         \end{itemize}
         Es importante notar que este estado no es afectado directamente por una
@@ -236,8 +506,8 @@ el estado del paciente es:
 \end{itemize}
 
 El \emph{usuario o enfermero} mantiene un estado en todo momento del cual
-dependen sus acciones, por ejemplo, si la mano del paciente no esta
-esterilizada, cualquier interacción con el paciente provocara que el paciente se
+dependen sus acciones, por ejemplo, si la mano del enfermero no esta
+esterilizada, cualquier interacción con el paciente provocara que se
 contamine.
 
 \begin{itemize}
@@ -252,147 +522,623 @@ contamine.
 
 \subsubsection{Acciones}
 
+Las acciones que puede realizar el usuario se clasifican en tres, los
+\emph{comandos de voz} que simulan una conversación entre el paciente y
+enfermero, \emph{las opciones}, que engloban las acciones que puede realizar un
+enfermero en cuanto a bioseguridad, y \emph{los elementos} que son las
+herramientas que puede utilizar el enfermero durante el procedimiento.
 
 \paragraph{Comando de voz}
 
 Para representar la interacción del usuario con el paciente usando la voz se
 implemento un menú que es activado y mostrado en pantalla cuando el usuario
-habla, este menú muestra una seria de ordenes que el usuario le haría al
-paciente normalmente hablándole. Las opciones de menú se detalla a continuación:
+habla, este menú muestra una seria de ordenes que el usuario le diría al
+paciente normalmente. Las opciones de menú se detalla a continuación:
 
 \begin{itemize}
-\item Explicar procedimiento: esta función sirve para detectar si el usuario
-    realizo la acción de explicar al paciente acerca del procedimiento. 
-\item Abrir la mano izquierda: esta función le indica al paciente que abra su
-    mano izquierda, como resultado el paciente realiza esta acción.
-\item Cerrar la mano izquierda: esta función le indica al paciente que cierre su
-    mano izquierda, como resultado el paciente realiza esta acción.
-\item Abrir la mano derecha: esta función le indica al paciente que abra su mano
-    derecha, como resultado el paciente realiza esta acción.
-\item Cerrar la mano derecha: esta función le indica al paciente que cierre su
-    mano derecha, como resultado el paciente realiza esta acción.
+    \item \textbf{Explicar procedimiento}: Permite que el usuario explique el
+        procedimiento que se va a realizar al paciente. 
+\item \textbf{Abrir la mano izquierda}: esta función le indica al paciente que
+    abra su mano izquierda, como resultado el paciente realiza esta acción.
+\item \textbf{Cerrar la mano izquierda}: esta función le indica al paciente que
+    cierre su mano izquierda, como resultado el paciente realiza esta acción.
+\item \textbf{Abrir la mano derecha}: esta función le indica al paciente que
+    abra su mano derecha, como resultado el paciente realiza esta acción.
+\item \textbf{Cerrar la mano derecha}: esta función le indica al paciente que
+    cierre su mano derecha, como resultado el paciente realiza esta acción.
 \end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{propuesta/hemocultivo_comando_voz.jpg}
+\caption{Opciones mostradas al detectar sonido en la escena de extracción
+    de sangre.}
+\label{fig:hemocultivo_voz_gui}
+\end{figure}
+
+En la figura~\ref{fig:hemocultivo_voz_gui} se observa las opciones anteriormente
+descritas, este menú aparece inmediatamente después de que el sistema detecte
+que el usuario este hablando.
 
 \paragraph{Opciones}
 
-En este menú se despliegan los botones que representan las opciones de
-bioseguridad. Es decir, acciones como lavarse las manos, calzarse guantes,
-ponerse gorro, ponerse bata y ponerse tapaboca.
+Las \emph{Opciones} son aquellas acciones que puede realizar y afectan
+únicamente al paciente. Representan a los aspectos de bioseguridad, es decir,
+acciones como lavarse las manos, calzarse guantes, gorro, bata y tapaboca.
 
-Los elementos de bioseguridad que actualmente tiene puesto el usuario se
-representan como se describió anteriormente y se muestran en la parte baja de la
-pantalla. Desaparece quitarse que en ese caso se representa al volver a
-seleccionar la misma opción.
+Estas opciones afectan al estado de la entidad \emph{enfermero}.
 
 \paragraph{Elementos}
 
-En este menú se despliegan los botones que representan a lo elementos que se
-utilizan para realizar el procedimiento, una vez presionado ese elemento queda
-seleccionado. Solo un elemento puede ser seleccionado a la vez. Si el mismo
-botón se vuelve a presionar inmediatamente después de haber sido presionado, el
-elemento queda de-seleccionado.
+Los \emph{Elementos} representan las herramientas que utiliza un enfermero
+durante el procedimiento, un solo elemento puede ser utilizado en cualquier
+momento.
 
-%Estas opciones van cambiando el estado del jugador y pueden ser seleccionados
-%mas de una opción a la vez además de permitir de-seleccionar una opción
-%volviendo a tocar el botón correspondiente. También posee la opción de
-%finalizar la partida la cual manda al usuario a la pantalla de resultados.
-%% REVISAR ESTO , el comienzo es sobre opciones y el final sobre elementos %%
 
-La herramienta seleccionada actualmente para realizar el procedimiento se se
-muestra en la forma descripta anteriormente arriba de la pantalla principal del
-procedimiento. Esta imagen representa lo que actualmente tiene en las manos el
-jugador. Desaparece al de-seleccionar o terminar de usar la herramienta.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{propuesta/hemocultivo_elementos.jpg}
+\caption{Interfaz con los elementos en el paciente, se observa el torniquete (es
+    un toro negro), la jeringa, una zona esterilizada (el área cerca del
+    torniquete) y un algodón para punzar (Cerca de la muñeca, es una figura
+    blanca), todo en el brazo derecho.}
+\label{fig:hemocultivo_elementos}
+\end{figure}
 
-\todox{Agregar colocación}
-\todox{Agregar utilización}
+Los elementos, que podemos observar en la
+figura~\ref{fig:hemocultivo_elementos}, son:
 
-\subsubsection{Eventos}
-\subsubsection{Motor de reglas}
+\begin{itemize}
+\item \textbf{Torniquete}: es el primer elemento que se debe usar, para utilizar
+    el mismo, el mismo se activa al presionar una parte del brazo del paciente,
+    en ese momento, el torniquete aparece en el brazo del paciente, para
+    extraerlo, se debe presionar el torniquete y elegir la opción extraer. En la
+    figura~\ref{fig:hemocultivo_elementos} se observa al torniquete como un toro
+    negro alrededor del brazo izquierdo.
+
+\item \textbf{Sanitizador}: es un elemento que se utiliza para realizar la
+    higienización del punto de punción, para utilizarlo se debe presionar
+    cualquier parte del brazo del paciente, a continuación aparece una gaza, la
+    cual debe ser agitada con un dedo durante un segundo para que se cree una
+    zona estéril, la zona estéril creada, es visible a través de una capsula
+    verde transparente.
+
+\item \textbf{Jeringa}: Es el elemento utilizado para realizar la extracción, su
+    utilización es similar a la del \emph{Torniquete}, solo que aparte de la
+    opción de extracción tiene dos opciones adicionales.
+
+    A través de un menú contextual, se ofrece la posibilidad de realizar un
+    acercamiento, como se observa en la
+    figura~\ref{fig:hemocultivo_jeringa_zoom}, en la vista ampliada, se puede
+    realizar la extracción de sangre utilizando dos dedos, con el primero se
+    presiona el tambor y con el segundo dedo se extrae el émbolo\footnote{El
+        tambor es la parte de la jeringa que almacena el fluido, mientras que el
+        émbolo es la parte que se utiliza para presionar o succionar el fluido}.
+    
+\item \textbf{Algodón}: El algodón se utiliza para presionar una zona que
+    recientemente fue punzada, para utilizar este elemento, basta con presionar
+    el brazo del paciente durante un segundo.
+
+\end{itemize}
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{propuesta/hemocultivo_jeringa_ampliada.jpg}
+\caption{Vista de la jeringa ampliada, facilitando la extracción de sangre. Se
+    agregan flechas azules para facilitar la comprensión del cómo se extrae
+    sangre.}
+\label{fig:hemocultivo_jeringa_zoom}
+\end{figure}
+
+
+
+\subsubsection{Reglas para la evaluación durante la ejecución}
+
+%La reglas del procedimiento de extracción de sangre fueron definidas de acuerdo
+%a los pasos requeridos según el protocolo del procedimiento y al orden en el que
+%son requeridos. Es decir, cada paso del protocolo tiene asociado una regla
+%dentro del motor que lo representa y las condiciones asociadas a cada regla
+%están determinadas por el orden en que deben realizarse dentro del protocolo.
+
+%Cada regla tiene una o mas condiciones que deben ser cumplidas para que un paso
+%del protocolo realizado se considere correcto.
+
+Las reglas definidas dentro de la extracción de sangre definen las acciones
+que se deben llevar a cabo para completar el procedimiento, es necesario que
+todas las reglas sean cumplidas para obtener un puntaje perfecto.
+
+Cada regla contiene información acerca del estado del progreso del alumno en un
+paso en particular, estas reglas pueden tener como dependencias a otras reglas,
+es decir, una regla solo se puede cumplir si una regla anterior se cumple, este
+es el caso de las reglas que definen la extracción de un torniquete, la cual
+depende de la regla que define la colocación del torniquete.  
+
+Las reglas definen el mecanismo que se utiliza para proveer una retroalimentación
+al usuario una vez finalizada la partida, pues la regla almacena información 
+acerca del progreso del usuario en cada paso.
+
+A continuación se da una breve descripción de las reglas utilizadas y sus
+diversos estados.
+
+\begin{itemize}
+\item \textbf{Explicar procedimiento}: define cuando el usuario ha explicado el
+    procedimiento, debe ser la primera regla que se cumple, existiendo dos
+    estados que no cumplen la condición, cuando no es la primera regla que se
+    cumple y cuando el usuario no realizo la acción.
+
+\item \textbf{Higuienización de manos}: define sí las manos del enfemero están
+    limpias, existen dos estados para esta regla, cuando se lavo las manos y
+    cuando no realizo esta acción. Es importante notar que de esta regla
+    dependen varias reglas posteriores, es decir, si esta regla no se cumple,
+    las reglas de bioseeguridad no pueden ser cumplidas.
+
+\item \textbf{Calzar guantes}: este paso es inmediatamente posterior a la
+    higuienización de las manos, y como este, varias reglas dependen del momento
+    en el que se calcen los guantes. Si el paciente se calza los guantes, la
+    única forma de fallar este paso es que las manos estén sucias.
+
+\item \textbf{Gorro, bata y tapaboca}: estos tres pasos son similares, pues
+    tienen las mismas dependencias y el orden en el que se cumplan no está
+    definido, las posiblidades con este paso son:
+    \begin{itemize}
+    \item Incompleto: si el usuario no se calzo el gorro, bata o tapaboca en
+        ningún momento de la práctica.
+    \item Manos sucias: si la regla \emph{Higuienización de manos} no se cumple
+        cuando el usuario se vista con el gorro, bata o tapaboca.
+    \item Sin guantes: si la regla \emph{Calzar guantes} no se cumple al momento
+        de calzar el gorro, tapaboca o bata. 
+    \end{itemize}
+    
+\item \textbf{Colocar torniquete}: este paso debe ser realizado una vez que el
+    usuario tenga el guante calzado, el torniquete puede ser colocado en
+    cualquier parte del brazo, pero depende del lugar de punción de la jeringa.
+    Así, existen dos casos donde esta regla falla, cuando no se coloca el
+    torniquete en ningún lugar, y cuando el torniquete se coloca en un lugar
+    inadecuado. Es importante notar que esta regla se activa cuando se realiza
+    la punción de la jeringa.
+
+\item \textbf{Cerrar manos}: debe ocurrir después de que se explicará el
+    procedimiento y antes de que se inserte la jeringa, además deberá ser la
+    mano correspondiente al lugar donde se inyecto la jeringa. Así, existen dos
+    formas de fallar este paso, que la punción haya ocurrido en otro brazo, o
+    que la punción no se realizo. Es importante notar que esta regla no activa
+    cuando el usuario solicita al paciente que se cierre su mano, sino cuando la
+    jeringa es insertada, esto es así pues es importante el estado de la mano
+    cuando el usuario realiza la punción.
+
+\item \textbf{Esterilizar Zona}: El usuario puede esterilizar varias zonas, pero
+    la única zona que activa esta regla, es aquella donde se realizo la punción.
+    Así esta regla tiene dos posibles formas de proveer retroalimentación en
+    caso de que no se cumpla, que no se esterilizó ningún lugar del cuerpo, o
+    que el lugar esterilizado no sea el lugar de punción.
+
+\item \textbf{Realizar punción}: Existen dos casos de error, si el usuario
+    inserta la jeringa en un lugar incorrecto (los lugares correctos se definen
+    en~\ref{sec:hemocultivo_hipotesis}), y sí el usuario no realiza la punción.
+
+\item \textbf{Retirar Torniquete}: esta regla es dependiente de la regla
+    \emph{Colocar Torniquete}, y de cual torniquete se retira. Existiendo dos
+    casos de error, el usuario retira un torniquete que no activo la regla
+    \emph{Colocar Torniquete} (indicando que este es el torniquete correcto), y
+    que no se retire ningún torniquete.
+
+\item \textbf{Abrir mano}: una vez realiza la punción, y retirado el torniquete,
+    se debe solicitar al paciente que abra sus manos, así, es dependiente de la
+    regla \emph{Realizar punción}, y tiene tres casos de error, que la punción
+    no se haya realizado, que la mano no se haya cerrado antes, y que la mano
+    que se abra no corresponda con la mano que se cerro.
+
+\item \textbf{Extraer Sangre}: depende únicamente de si la jeringa con la cual
+    se extrae sangre es la correcta, así hay dos posibles casos de errores, que
+    la sangre no se haya extraído, y que la regla \emph{Realizar punción} no se
+    cumpla.
+
+\item \textbf{Retirar Jeringa}: se controla que la jeringa que se extraíga sea
+    la jeringa que cumplió el paso \emph{Realizar punción}, así, existen dos
+    casos de error, que la jeringa no hay sido extraída y que se extrajo sangre
+    de una jeringa incorrecta.
+
+\item \textbf{Presionar zona de punción}: debe realizarse inmediatamente después
+    de \emph{Retirar Jeringa}, y tiene dos casos de error, que la jeringa no
+    haya sido extraída, y que la zona punzada no corresponda con la zona de
+    punción.
+
+\item \textbf{Quitar bata, gorro y tapaboca}: depende de la regla \emph{Bata,
+        gorro y tapaboca}, y de que la jeringa haya sido extraída, si el
+    enfemero se extrae la bata, gorro o tapaboca antes de retirar la jeringa, se
+    produce un error. Otro caso para que esta regla falle es que la regla
+    \emph{Bata, gorro y tapaboca} no se cumpla.
+
+\item \textbf{Descalzar guantes}: depende de que las reglas \emph{Calzar
+        Guantes} y \emph{Retirar jeringa}, así existen dos posibles casos de
+    error, que el usuario no se calce los guantes, o que la jeringa no haya sido
+    extraída.
+
+\item \textbf{Limpiar manos}: Como paso final, se debe proceder a realizar una
+    higienizaron de manos, este debe ser el paso final, y tiene como
+    prerrequisito que todas las reglas anteriores hayan sido lanzadas.
+
+\end{itemize}
+
+\paragraph{Retroalimentación y puntuación final}
+\label{sec:puntuacion_hemocultivo}
+
+Cada regla tiene asociado un peso, de acuerdo a la dificultad de realizar el
+paso, este peso es utilizado al final de la partida para darle una puntuación al
+usuario acerca de su rendimiento en la partida.
+
+Además, un regla puede quedar en uno de diferentes estados al final de la
+partida como se mostró anteriormente, cada uno de esos estados posee un
+significado en el contexto del procedimiento y por lo tanto tiene información
+asociada para que al final de la partida se muestre una retroalimentación
+correcta al usuario por paso.
+
 \subsubsection{Registro de actividad}
 
+Cada acción que realiza el usuario dentro de la simulación provoca un evento, y
+estos eventos son registrados de manera transparente para el usuario.
+
+Existen otros tipos de eventos que no son generados por acciones, por ejemplo,
+cuando la simulación termina, el motor de reglas lanza un evento por regla,
+indicando su estado.
+
+Un subconjunto de todos los eventos, son registrados en un archivo de texto en
+formato \Gls{json}, el mismo es posteriormente enviado a un servidor que
+almacena la información de todos los usuarios.
+
+Los eventos registrados, son aquellos que involucran a las opciones, elementos,
+utilización de la jeringa, torniquete, higienizador, y como un caso especial,
+todas las reglas también son registradas (independientemente si son
+satisfactorias o no).
+
+La información que se almacena permite reproducir exactamente todo el desarrollo
+de la simulación, con excepción de los movimientos de la cámara. De esta manera,
+los datos recabados permiten saber en que tareas los usuarios se encontraron con
+un mayor número de inconvenientes.
+
+\subsubsection{Interfaz del usuario}
+
+La interfaz principal de este escenario posee dos menús, uno a cada lado de la
+pantalla, las opciones son representadas como botones que poseen una imagen
+intuitiva\todox{Ver si no hay que agregar esto como hipótesis} que representa la
+función que realizan. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{propuesta/hemocultivo_gui.jpg}
+\caption{Vista de la interfaz principal del escenario \emph{Extracción de
+        sangre}, con todas las opciones desplegadas.}
+\label{fig:hemocultivo_gui}
+\end{figure}
+
+
+En la figura~\ref{fig:hemocultivo_gui} se observa la interfaz, se observa en el
+centro al paciente, y las diferentes opciones que tiene el usuario para
+interactuar con el paciente y con el enfermero.
+
+Existen dos opciones principales dentro de la interfaz, en la parte superior
+derecha esta el menú \emph{Opciones} y en la parte inferior izquierda, el menú
+\emph{Elementos}.
+
+Al presionar el menú \emph{Opciones} aparecen las distintas
+acciones que puede realizar el usuario en cuanto a aspectos de bioseguridad, el 
+lavado de manos es idempotente, es decir no importa cuantas veces se presione, el 
+resultado será el mismo, en cambio los demás botones (bata, guante, tapaboca y gorro)
+representan la acción de calzar/descalzar, es decir, la primera vez que se presiona
+la opción bata, el estado del enfermero cambia a \emph{Con Bata}, si se presiona una
+segunda vez, el estado cambia a \emph{Sin Bata}.
+
+El menú \emph{Elementos} se despliegan opciones que representan a lo elementos que se
+utilizan para realizar el procedimiento, una vez presionado un elemento queda
+seleccionado (simulando que es la herramienta que el enfemero tiene en la mano
+en ese momento), solo un elemento puede ser seleccionado a la vez. Si el mismo
+botón se vuelve a presionar inmediatamente después de haber sido presionado, el
+elemento se des-selecciona (simulando que el enfemero dejo la herramienta).
+
+Adicionalmente, existen dos indicadores del estado del paciente, en la parte
+inferior derecha, denominados \emph{Indicadores de bioseguridad}, se muestran
+iconos representando los elementos que tiene actualmente el paciente, estos
+incluyen los gorros, bata y tapaboca. El elemento que actualmente esta
+seleccionado se muestra en la parte superior izquierda de la pantalla, a
+diferencia de los indicadores de bioseguridad, es un único icono.
+
+Para la utilización de los elementos, existe un menú contextual\footnote{Un menú
+    que se despliega al presionar un elemento, es contextual pues varia de
+    acuerdo al elemento seleccionado.}, que lista las opciones disponibles por
+elemento, como se observa en la figura~\ref{fig:hemocultivo_torniquete_cm}.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{propuesta/hemocultivo_contextual.jpg}
+\caption{Menú contextual del elemento torniquete.}
+\label{fig:hemocultivo_torniquete_cm}
+\end{figure}
 
 \subsection{Valoración de la escala de Glasgow}
 
-\subsubsection{Descripción del escenario}
 
-La interfaz principal de este escenario posee un botón de finalización de
-partida al costado con una imagen intuitiva que representa la función que
-realiza. Este botón manda al usuario a la pantalla de resultados.
+La escena  \emph{Valoración de la escala de Glasgow} busca simular el
+comportamiento de un paciente con daño cerebral, por ello se presenta en dos
+modos distintos, en la primera, el usuario no conoce el estado del paciente,
+este modo se conoce como \emph{Evaluar Glasgow}, y en su segundo modo, el
+usuario elige el estado del paciente antes de iniciar la escena, esto modo
+se conoce como \emph{Exploración Glasgow}. 
+
+La reducida cantidad de diferencias entre ambos modos de la práctica permiten
+que ambas sean descritas en esta sección, las características explicadas son
+comunes para ambas, salvo se especifique lo contrario.
+
+En el modo \emph{Exploración Glasgow}, antes de iniciar la práctica, se le
+permite al usuario seleccionar el estado del paciente mediante una interfaz, en
+cambio, en el modo \emph{Evaluar Glasgow}, el estado del paciente no se conoce
+de antemano y será responsabilidad del usuario determinarlo.
+
+La escena se inicia mostrando un paciente acostado en una camilla, de manera
+similar a la escena \emph{Extracción de sangre}, la principal diferencia es que
+el paciente no se encuentra en ninguna posición en particular, simplemente esta
+acostado en la camilla.
+
+Existe una pantalla particular dentro de esta escena, conocida como
+\emph{Pantalla de Diagnostico}, esta pantalla, permite al usuario ingresar su
+diagnostico del paciente, contiene cuatro preguntas básicas, la valoración
+motora, verbal, ocular y general de acuerdo a lo definido en~\ref{sec:glasgow} y
+a las hipótesis definidas en~\ref{sec:glasgow_hipotesis}.
+
+\emph{Exploración Glasgow}.
 
 \subsubsection{Entidades}
+
+Al igual que en \emph{Extracción de sangre}, existen dos entidades principales,
+solo que en esta escena, el enfermero no almacena información alguna, y el
+paciente solo almacena su estado, que se define al inicio. De esta forma, las
+entidades no se modifican en ningún momento.
+
+La información almacenada por la entidad paciente es su estado motor, verbal y
+ocular, el cual es un conjunto de números, cuyos posibles valores se definen en
+en~\ref{sec:glasgow_protocolo}, la definición de estos números varían de acuerdo
+al tipo de forma de la escena:
+
+\begin{itemize}
+    \item \textbf{Exploración}: la escena de exploración se inicia con la
+        \emph{Pantalla de diagnostico}, donde el usuario selecciona el estado
+        del paciente que desea, este estado se mantendrá constante durante toda
+        la escena.
+    \item \textbf{Evaluación}: al inicio se crean tres números de manera
+        aleatoria, el algoritmo que crea estos valores, lo hace de tal manera
+        que el estado del paciente es consistente, por ejemplo, el paciente
+        nunca tendrá un estado verbal \enquote{Orientado} (valor 5 en la escala)
+        y un estado ocular \enquote{Ausente} (valor 1 en la escala), pues esto
+        no tendría sentido, si no puede abrir los ojos (estado
+        \enquote{ausente}), no puede saber donde esta (estado
+        \enquote{orientado}).
+\end{itemize}
+
+Aunque el estado de las entidades no se modifique, esto no significa que no
+puedan realizar acciones entre ellas, solo que estas acciones y los eventos
+generados no alteran el estado del las entidades.
+
 \subsubsection{Acciones} 
-\subsubsection{Eventos} 
+
+Las acciones se clasifican en dos tipos, los \enquote{comandos de voz} y las
+\enquote{opciones a través de menú contextual}. 
+
+\paragraph{Menú Contextual}
+
+Las opciones a través del menú contextual se relacionan a acciones que puede
+realizar el paciente sobre una parte particular del cuerpo del paciente, en las
+extremidades, el menú despliega una sola opción, la cual es \emph{Pinchar}, que
+provoca que el enfermero realice un estimulo doloroso en el paciente, el
+paciente reacciona ante este estímulo dependiendo de su valoración motora y
+ocular. 
+
+\begin{itemize}
+    \item Si el estado ocular del paciente es \enquote{Al dolor}, el paciente
+        abrirá los ojos inmediatamente después de que se presione la opción. 
+    \item  La respuesta motora varia de acuerdo al su estado, si el mismo es
+        \enquote{Localiza}, el paciente mueve sus manos hasta el origen del
+        dolor, si el estado es \enquote{Retira}, moverá la extremidad que
+        sufrió el estimulo lejos de su posición inicial, si es
+        \enquote{Flexión anormal}, el paciente reaccionará comprimiendo el
+        cuerpo, indistintamente de la ubicación del estimulo doloroso, y sí el
+        estado es \enquote{Extiende}, el paciente extenderá el cuerpo.
+\end{itemize}
+
+\paragraph{Comandos de voz}
+
+Las opciones disponibles a través de los comandos de voz, simulan una
+interacción verbal entre el enfermero y el paciente, y se agrupan por tres
+tipos, verbales, oculares y motoras.
+
+Las preguntas y posibles respuestas de tipo \emph{verbal}, se pueden ver en la
+tabla~\ref{tab:glasgow_opciones_respuesta}. 
+
+\begin{table}[H]
+\centering
+\begin{tabulary}{1.2\textwidth}{LCCCCC}
+\toprule
+\textbf{Pregunta} & \textbf{Orientado} & \textbf{Confusa} & \textbf{Palabras
+    inapropiadas} & \textbf{Palabras incomprensibles} & \textbf{Ausente} \\
+\midrule
+¿Qué día es? & El día de la semana actual & Cualquier día de la semana menos el
+correcto & La respuesta a otra pregunta en estado orientado & Gritos, gruñidos y
+quejidos & No emite sonido \\
+¿Cuál es su nombre? & \emph{Carlos Benitez} & Respuesta coherente sin mencionar
+su nombre & Respuesta a otra pregunta en estado orientado & Gritos, gruñidos y
+quejidos & No emite sonido \\
+¿Donde se encuentra? & \emph{En una cama de hospital} & \emph{En mi dormitorio} &
+Respuesta a otra pregunta en estado orientado & Gritos, gruñidos y quejidos & No
+emite sonido \\
+\bottomrule
+\end{tabulary}
+\caption{Posibles respuestas de acuerdo al estado verbal del paciente.}
+\label{tab:glasgow_opciones_respuesta}
+\end{table}
+
+Las opciones del menú contextual del tipo \emph{motor}, son cuatro: 
+
+\begin{itemize*}
+    \item Mueva el brazo
+    \item Mueva la pierna
+    \item Mueva la mano
+    \item Mueva la cabeza
+\end{itemize*}
+
+A diferencia de las opciones verbales, estas no tienen una respuesta sonora, en
+cambio, sí el estado motor es \enquote{Obecede},el paciente reacciona moviendo
+una extremidad, en el caso contrario, el paciente no realiza acción.
+
+Finalmente, existe una opción \emph{ocular}, la cual es \enquote{Abra su ojo por
+favor}, la cual no tiene una respuesta sonora, y solo sí el paciente tiene un
+estado ocular \enquote{Al hablar} abre los ojos, en caso contrario, no realiza
+acción alguna.
+
 \subsubsection{Pantalla de diagnostico}
+
+Una vez que el usuario decida que esta listo para dar un diagnostico, procede a
+finalizar la escena, en ese momento se presenta una pantalla donde el mismo
+puede diagnosticar al paciente, como se observa en la
+figura~\ref{fig:glasgow_gui_resultados}.
+
+Las opciones presentadas al usuario son cuatro, puntuación verbal, ocular,
+motora y un diagnostico del estado de conciencia del paciente. Estos valores
+se describen en~\ref{sec:glasgow_protocolo}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{propuesta/glasgow_diagnostico.jpg}
+\caption{Vista de la \emph{Pantalla de diagnóstico}, donde el usuario puede
+    asignar una puntuación a cada aspecto analizado del paciente.}
+\label{fig:glasgow_gui_resultados}
+\end{figure}
+
+En el modo \emph{Evaluación Glasgow}, esta misma pantalla se utiliza la inicio
+de la escena para que el usuario pueda seleccionar el estado deseado del
+paciente.
+
+La única diferencia que existe entre la \emph{Pantalla de diagnostico} entre la
+exploración y la evaluación, es que en la evaluación, los posibles valores para
+cada aspecto a diagnosticar es de $0$ a $8$, y en la exploración, son los
+valores mínimos y máximos validos\footnote{Los valores máximos se definen
+    en~\ref{sec:glasgow_protocolo} y son $4$ (ocular), $5$ (verbal) y $6$
+    (motora)}.
+
+\subsubsection{Valoración}
+\label{sec:puntuacion_glasgow}
+
+Para la evaluación del rendimiento del usuario en el momento de llevar a cabo el
+procedimiento de valoración de la escala de Glasgow se tuvo un enfoque
+completamente diferente al del procedimiento de extracción de sangre debido a la
+naturaleza propia del procedimiento. 
+
+Como se explico anteriormente, el paciente puede estar en ciertos estados
+específicos dentro de la escala, y además dentro de cada estado reacciona de un
+forma en particular por lo tanto, al inicio de la partida un componente interno
+de la aplicación selecciona de forma aleatoria un estado para el paciente, de
+forma tal que cada vez que una partida sea jugada no se repitan los estados de
+forma seguida.
+
+El estado aleatorio del paciente es guardado en una variable que no es
+modificada hasta que se reinicie la partida. Al final de la partida, la
+aplicación pide al usuario que valore el estado del paciente que le fue
+presentado, una vez que el usuario confirme su respuesta la aplicación la
+compara con el estado guardado y de esta forma puede informar al usuario acerca
+de su rendimiento en el diagnostico.
+
+Además, cada posible respuesta dada por el usuario contiene información
+relacionada al contexto del procedimiento y a la situación actual presentada la
+cual es utilizada como retroalimentación al final de la partida. La puntuación
+final dada depende de la cantidad de valoraciones correctas dadas por el usuario
+para la respuesta verbal, motora, ocular y nivel de gravedad del paciente.
+
 \subsubsection{Registro de actividad}
-\paragraph{Elementos y opciones}
 
+Al igual que en la escena \emph{Extracción de sangre}, las acciones del usuario
+son registradas en un archivo con formato \Gls{json} y enviadas a un servidor
+que almacena la información acerca de todos los usuarios.
+
+Se almacena además, el diagnostico del usuario, la puntuación del mismo y el
+estado inicial del paciente, así como el modo de la escena (evaluación o
+exploración).
+
+\subsubsection{Interfaz de usuario}
+
+La interfaz de usuario, como se observa en la figura~\ref{fig:glasgow_gui}, es
+muy sencilla, se compone de solo una opción permanente, la cual permite al
+usuario finalizar la escena y muestra la \emph{Pantalla de diagnostico}. Se
+observa además, las opciones que se despliegan cuando la solución detecta que el
+usuario emite palabras, conocidas como \emph{Comandos de Voz}, que permiten al
+mismo interactuar con el usuario.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{propuesta/glasgow_comandos_voz.jpg}
+\caption{Interfaz de la escena \emph{Evaluación de Glasgow}, se observa los
+    \emph{comandos de voz}, así como la opción que permite finalizar la escena
+    (esquina inferior izquierda).}
+\label{fig:glasgow_gui}
+\end{figure}
+
+Además se ve en la interfaz, al paciente, que es el foco principal de la cámara.
 
 \subsection{Pantalla de resultados}
-\subsubsection{Descripción del escenario}
-\subsubsection{Retroalimentacion}
-\subsubsection{Gamificacion}
-\subsubsection{Reinicio}
-\subsubsection{Puntuación}
-\subsubsection{Tiempo utilizado}
-\subsubsection{Facebook 2}
 
-\subsection{Partes de la simulación}
-    \subsubsection{Entidades}
-    \subsubsection{Eventos}
-    \subsubsection{Acciones}
-    \subsubsection{Interacción con la cámara}
+Al finalizar ambas escenas, se presenta una pantalla de resultados, la cual es
+la encargada de mostrar toda la información que fue recabada durante la escena,
+esta información incluye los pasos correctos e incorrectos que realizo el
+usuario.
 
-\subsection{Grafo del desarrollo}
-% podemos poner acá un gráfico mas o menos así (ver graphviz)
-%           /---> Hemocultivo --\
-%          /                     \              /-> Reiniciar
-%  Inicio ------> Glasgow 1 -------> Resultados --> Inicio
-%         \ \                    /              \-> Facebook 2
-%          \ \--> Glasgow 2 ----/
-%           \---> Salir 
-%            \--> Facebook 1
-%             \-> Enviar resultados
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{propuesta/resultado_glasgow.jpg}
+\caption{Pantalla de resultados mostrando los pasos correctos e incorrectos, en
+    la escena \emph{Glasgow}.}
+\label{fig:resultados_glasgow}
+\end{figure}
 
-\subsection{Pantalla de inicio}
-    \subsubsection{Descripción del escenario}
-    \subsubsection{Enviar datos}
-    \subsubsection{Glasgow}
-    \subsubsection{Extracción de sangre}
-    \subsubsection{Facebook 1}
+Se observa en la figura~\ref{fig:resultados_glasgow} el diseño de la
+pantalla, el título es la escena actual, en el pié se observa un resumen de la
+puntuación, y el tiempo que duro la escena.
 
-\subsection{Extracción de sangre}
-    \subsubsection{Descripción del escenario}
-    \subsubsection{Descripción de la interfaz}
-    \subsubsection{Entidades} % definimos cuales son las entidades
-        %\subsubsubsection{Estado del enfermero}
-        %\subsubsubsection{Objeto seleccionado}
-    \subsubsection{Acciones} % definimos cuales son las acciones de esas entidades
-        %\subsubsubsection{Comandos de voz}
-        %\subsubsubsection{Opciones} %bata,mano,guante,y eso
-        %\subsubsubsection{Elementos}
-            %\subsubsubsubsection{Colocación}
-            %\subsubsubsubsection{Utilización}
-    \subsubsection{Eventos} % definimos cuales son los eventos que se lanzan en este proceso
-    \subsubsection{Motor de reglas} % se define como funciona el motor de reglas acá
-    \subsubsection{Registro de actividad} % se define como se registra las acciones del usuario (cuales)
+Se lista de manera ordenada los pasos en la parte izquierda de la pantalla, y en
+la parte derecha se muestra información relevante acerca del motivo por el cual
+no se cumplió cada paso.
 
+Adicionalmente a la información de la sesión, se permite al usuario reiniciar la
+escena, ir al menú, y compartir en las redes sociales.
 
-\subsection{Glasgow 1 y 2}
-    \subsubsection{Descripción del escenario}
-    \subsubsection{Entidades} % definimos cuales son las entidades
-        %\subsubsubsection{Reacciones del paciente}
-    \subsubsection{Acciones} % definimos cuales son las acciones de esas entidades
-        %\subsubsubsection{Acciones sobre el paciente}
-        %\subsubsubsection{Comandos de voz}
-    \subsubsection{Eventos} % definimos cuales son los eventos que se lanzan en este proceso
-    \subsubsection{Pantalla de diagnostico}
-    \subsubsection{Registro de actividad} % se define como se registra las acciones del usuario (cuales)
-    
-\subsection{Pantalla de resultados}
-    \subsubsection{Descripción del escenario}
-    \subsubsection{Retroalimentacion}
-    \subsubsection{Gamificacion}
-    \subsubsection{Reinicio}
-    \subsubsection{Puntuación}
-    \subsubsection{Tiempo utilizado}
-    \subsubsection{Facebook 2}
+\subsubsection{Retroalimentación}
+
+La retroalimentación se logra a través de la pantalla de resultados, en ella se
+presenta información detalla de lo que se realizo. 
+
+Si el usuario realizo de manera incorrecta un paso del procedimiento, esta
+información esta contenida en una regla (\emph{Extracción de Sangre}), o en el
+estado inicial del paciente (\emph{Evaluación de Glasgow}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{propuesta/resultado_hemocultivo.jpg}
+\caption{Pantalla de resultados mostrando los pasos correctos e incorrectos en
+    la escena \emph{Extracción de sangre}.}
+\label{fig:resultados_hemocultivo}
+\end{figure}
+
+Como se observa en la figura~\ref{fig:resultados_hemocultivo}, el paso
+\enquote{Poner Jeringa}, contiene la siguiente información \enquote{Puesta en un
+    lugar incorrecto}, esto le indica al usuario, que el lugar donde la jeringa
+fue insertada era incorrecto, otro posible valor de retroalimentación es
+\emph{Jeringa no insertada}.
+
+\subsubsection{Gamificación}
+
+En esta pantalla además se observan opciones que son estudiadas por la
+\emph{Gamificación}, entre ellas observamos la puntuación total, el tiempo
+utilizado y la utilización de redes sociales.
+
+Si el usuario presiona el botón \enquote{Facebook}, se despliega el menú de
+dicha red social, permitiendo que el mismo pueda agregar un mensaje
+personalizado y la sesión se comparta con el texto \enquote{Conseguí 15 puntos
+    en 1475 segundos, en la \emph{Escena Extracción de sangre} jugando con
+    YAVE}.
+
