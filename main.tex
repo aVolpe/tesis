@@ -3,8 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{csquotes}
-\usepackage{graphicx}
+\usepackage{csquotes} \usepackage{graphicx}
 \usepackage[showframe=false]{geometry}
 \usepackage{pdflscape}
 \usepackage[inline]{enumitem}
@@ -112,6 +111,7 @@
 \newcommandx{\revisar}[2][1=]{\todo[size=\small,caption={Revision},linecolor=red,backgroundcolor=white,#1]{#2}}
 \newcommand{\tabletodo}[2][]{\begin{minipage}{3cm}\todo[inline,#1]{#2}\end{minipage}}
 \newcommand{\fixme}[2]{\uline{#1}\todo[linecolor=blue,backgroundcolor=green,size=\small]{#2}}
+\newcommand{\cs}{C$\sharp$ }
 
 %\newcommand{\fixme}[2]{\uline{#1}\todo[linecolor=black,backgroundcolor=green,size=\Small]{\begin{spacing}{0.5}#2\end{spacing}}}
 
@@ -149,10 +149,12 @@
 
 \include{introduccion/main}
 \include{tics2/main}
+\include{juegos_serios/main}
 \include{problema/main}
 \include{propuesta/main}
 \include{evaluacion2/main}
 \include{resultados/main}
+\include{conclusion/main}
 
 \printbibliography
 
