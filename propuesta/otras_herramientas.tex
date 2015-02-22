@@ -1,18 +1,17 @@
 \section{Entorno de desarrollo}
 
 La creación de la solución es un proceso complejo, el cual se compone de varios
-pasos necesarios, para llevar a cabo el desarrollo completo es necesario recurrir
-a una gran cantidad de tecnologías, herramientas, \textit{frameworks}, y
-recursos.
+pasos necesarios, para llevar a cabo el desarrollo completo se debe recurrir a
+una gran cantidad de tecnologías, herramientas, \textit{frameworks}, y recursos.
 
 En esta sección se describen todos las partes involucradas en el desarrollo de
-la solución propuesta, con excepción del motor de simulación, el cual es
-descrito en~\ref{sec:seleccion_plataforma}.
+la solución propuesta, con excepción del motor gráfico, el cual es descrito
+en~\ref{sec:seleccion_plataforma}.
 
 La solución se compone de dos partes, la primera es la aplicación que los
 usuarios utilizan para realizar las prácticas, denominada solución, y la segunda
 parte, es un servidor que se encarga de almacenar la información sobre los
-usuarios de la solución y como la utilizan, denominado \textit{backend}.
+usuarios de la solución y como la utilizan, denominado \textit{Backend}.
 
 Primeramente se definen las herramientas de gestión de código, pues ellas son
 utilizadas tanto por la solución como por el \textit{backend}, luego se definen
@@ -22,14 +21,14 @@ citan y describen de manera breve las herramientas utilizadas por el
 
 \subsection{Herramientas de gestión de código}
 
-La gestión del codigo fuente desarrollado como parte de esta tesis se realizo
+La gestión del código fuente desarrollado como parte de esta tesis se realizo
 mediante la utilización de la herramienta de control de código fuente
-\textit{Git}\cite{git}, \textit{Git} es de código abierto bajo la licencia
-\Gls{gnu}.
+\textit{Git}, \textit{Git} es un software de control de versiones distrubido, de
+código abierto bajo la licencia \Gls{gnu}\cite{git}.
 
-El servidor de \textit{Git} utilizado es \textit{BitBucket}\cite{bitbucket}, el
-cual es un servidor que almacena repositorios \textit{GIT} de manera gratuita,
-la principal carácteristica y motivación por la cual se utiliza este servicio es
+El proveedor del servicio \textit{Git} utilizado es
+\textit{BitBucket}\cite{bitbucket}, el cual almacena repositorios \textit{Git},
+la principal característica y motivación por la cual se utiliza este servicio es
 que el mismo permite mantener varios repositorios privados de manera
 gratuita\cite{bitbucket}, de esta manera, se utilizan distintos repositorios,
 específicos para cada parte del presente trabajo, un repositorio para los
@@ -42,74 +41,112 @@ de los usuario.
 \subsection{Desarrollo de la simulación}
 
 El desarrollo de la solución requiere de una variedad importante de tecnologías
-aparte del motor, cuya elección fue descrita en~\ref{sec:seleccion_plataforma},
-las herramientas descritas en esta sección complementan al motor seleccionado o
-facilitan la creación de contenido.
+aparte del motor, las herramientas descritas en esta sección complementan al
+motor seleccionado y facilitan la creación de contenido.
 
-Se utilizo el \textit{Unity Editor} para la creación de las escenas,
-\textit{MonoDevelop} y \cs para la parte de programación de la interacción entre
-los componentes de la solución.
+Se utilizo el \Gls{ide} \textit{Unity Editor} para la creación de las escenas,
+el \Gls{ide} \textit{MonoDevelop} y el lenguaje \cs{} para la programación de la
+interacción entre los componentes de la solución.
 
 Adicionalmente se utilizaron varias herramientas de diseño para crear
 componentes 3D y 2D, \textit{Make Human} es utilizado para la creación de los
-pacientes, \textit{3D Max} permite la creación de objetos como gazas, y otros
+pacientes, \textit{3Ds Max} permite la creación de objetos como gazas, y otros
 elementos utilizados dentro de la solución. En cuanto a los gráficos 2D, se
 utilizo \textit{Photoshop}, y diversas páginas web que proveían contenido
-gratuíto.
+gratuito.
 
 \subsubsection{Unity Editor}
 
-El editor de Unity totalmente integrado y expansible es la interfaz en la se
-crean los juegos o simulaciones. Este editor importa todos los activos que se
-hayan seleccionado y los organiza dentro de el. Permite compilar las escenas con
-los terrenos, luces, audio, personajes, física, entre otros. Se puede agregar
-interacción a través de scripting. En este editor se puede probar y editar en
-forma simultanea los juegos o simulaciones y desplegarlos en las plataformas
-elegidas. Existen cinco vistas en el editor: explorador de proyectos, inspector,
-jerarquía, escena y juego. Cada una de estas escenas cuenta con las herramientas
-necesarias para permitir un fácil desarrollo del juego\cite{unity3d}.
+El \Gls{ide} de \textit{Unity} es la herramienta en la se crean los juegos o
+simulaciones. Este \Gls{ide} importa todos los activos que se hayan seleccionado
+y los organiza dentro de él. Permite compilar las escenas con los terrenos,
+luces, audio, personajes, física, entre otros. Se puede agregar interacción a
+través de \textit{scripting}. En este \Gls{ide} se puede probar y editar en
+forma simultánea los juegos y desplegarlos en las plataformas
+elegidas\cite{unity3d}. 
+
+Existen cinco vistas en el editor: explorador de proyectos, inspector,
+jerarquía, escena y juego. Cada una de estas vistas cuenta con las herramientas
+necesarias que permiten el desarrollo del juego\cite{unity3d}.
+
+El editor se utiliza por que es única herramienta que permite crear escenas en
+\textit{Unity}, sin embargo, este \Gls{ide}, no permite la edición de código
+\footnote{Existen \textit{Assets} que permiten la edición de código dentro del
+    \textit{Unity Editor}, pero son pagas y de baja reputación}, por ello se
+necesita un editor externo de código.
 
 
 \subsubsection{MonoDevelop}
 
-MonoDevelop es de código abierto, bajo la licencia \Gls{gnu} y siendo apoyado
-principalmente por la comunidad \textit{Mono}. Es el \Gls{ide} utilizado por
-defecto en el desarrollo de aplicaciones para \textit{Unity3D}, el mismo soporta
-varios lenguajes de programación, como \cs, \textit{UnityScript}, y
-\textit{Boo}. Es un \Gls{gnu} multiplataforma que soporta \textit{Windows} al
-igual que \textit{Unity3D}.
+\textit{MonoDevelop} es un \Gls{ide} de código abierto, bajo la licencia
+\Gls{gnu} apoyado principalmente por la comunidad \textit{Mono}. Es el \Gls{ide}
+utilizado por defecto en el desarrollo de aplicaciones para \textit{Unity3D}, el
+mismo soporta varios lenguajes de programación, como \cs{},
+\textit{UnityScript}, y \textit{Boo}. Es un \Gls{ide} multiplataforma que
+soporta \textit{Windows} al igual que \textit{Unity3D}.
 
-\subsubsection{\cs}
+Existen otros editores que pueden ser utilizados para el desarrollo del código
+fuente, pero los mismos no cuentan con el mismo nivel de integración y no son
+gratuítos\footnote{\textit{Microsoft Visual Studio} permite el mismo nivel de
+    integración que \textit{MonoDevelop} con un \textit{plugin}, pero el mismo
+    era de pago durante el desarrollo de la solución}.
 
-\cs es un lenguaje de programación orientado a objetos diseñado por
-\textit{Microsoft}, es uno de los tres lenguajes disponibles en la plataforma
-\textit{Unity3D}, los otros dos lenguajes son \textit{UnityScript} y
-\textit{Boo}\cite{unity:script}.
+\subsubsection{Lenguaje de programación}
 
-La selección de \cs como lenguaje de programación esta relacionada con la
-familiaridad de los autores con lenguajes similares, por ser el lenguaje con más
-ayuda en linea, y por que las librerias no diseñadas específicamente para
-\textit{Unity3d} pueden ser utilizadas.
+\textit{Unity3D} utiliza versiones limitadas\footnote{La definición del lenguaje
+    es la misma, pero las librerías estándar no están completas} de tres
+lenguajes de programación: \cs{}, \textit{UnityScript}, y
+\textit{Boo}\cite{unity:script}. Estos lenguajes son compilados y orientados a
+objetos.
 
-Cabe mencionar que la \textit{UnityScript} es normalmnete confundido con
-\textit{JavaScript}, lenguaje del que esta inspirado, pero las librerias
-disponibles para \textit{JavaScript} no funcionan con \textit{UnityScript}, y la
-cantidad de librerias disponibles para \textit{Boo} es muy limitada.
+\cs{} es un lenguaje de programación orientado a objetos diseñado por
+\textit{Microsoft}, es el lenguaje más utilizado por la comunidad, y el
+subconjunto de funcionalidades implementadas en \textit{Unity3D} hace que la
+mayoría de las librerías disponibles para \cs{} funcionen correctamente en
+\textit{Unity3D}.
+
+\textit{UnityScript} es un lenguaje normalmente confundido con
+\textit{JavaScript}, lenguaje del que esta inspirado, una de las principales
+diferencias es que \textit{UnityScript} es orientado a objetos, a través de
+clases, al contrario que \textit{JavaScript} que es orientado a objetos a través
+de prototipos. Otras diferencias menores con \textit{JavaScript}, es que en
+\textit{UnityScript}, el nombre del archivo es el nombre de una clase implícita
+que engloba el contenido del archivo\cite{us_vs_js}, por ello, las librerías
+disponibles para \textit{JavaScript} no son compatibles con
+\textit{UnityScript}.
+
+\textit{Boo} es un lenguaje inspirado en \textit{Python}, desarrollado bajo la
+licencia \Gls{mit}, la cantidad de librerías portables a \textit{Unity3D}
+disponibles es muy limitada y la aceptación de la comunidad hacia el lenguaje es
+pobre.
+
+Otra característica interesante es que, por el orden de compilación de los
+proyectos \textit{Unity3D}, los archivos \textit{UnityScript} y \textit{Boo} son
+compilados antes que los \cs{}, esto provoca que, las clases
+\textit{UnityScript} sean utilizables desde \cs{}, lo que no se cumple en el
+caso contrario, es decir, las clases \cs{} no son accesibles desde código
+\textit{UnityScript} o \textit{Boo}.
+
+Por los criterios mencionados se selecciona a \cs{} como el lenguaje de
+implementación, por ser el lenguaje con más ayuda en línea, y por que las
+librerías no diseñadas específicamente para \textit{Unity3d} pueden ser
+utilizadas. Otro factor que influye en la elección es la familiaridad de los
+autores con lenguajes similares. 
 
 \subsubsection{Herramientas de diseño}
 
 Las herramientas utilizadas para crear modelos 3D son las siguientes:
 
 \begin{itemize}
-\item \textbf{MakeHuman}: es un software gratuito y de código abierto bajo la
-    licencia \Gls{agnu} para crear personajes humanos 3D. Es una herramienta
-    diseñada para simplificar la creación de seres humanos virtuales utilizando
-    una interfaz gráfica de usuario\cite{makehuman}. 
-\item \textbf{3DS MAX}: es un software privado de modelado 3D completo, que
-    además posee herramientas para animación, simulación y renderizacion. Esta
-    herramienta fue utilizada para crear objetos 3D que no fueran personajes
-    humanos y para exportar modelos de un formato a otro que fuera compatible
-    con \textit{Unity3d}\cite{3dsmax}.
+\item \textbf{MakeHuman}: es un software de código abierto bajo la licencia
+    \Gls{agnu} para crear personajes humanos 3D. Es una herramienta diseñada
+    para simplificar la creación de seres humanos virtuales utilizando una
+    interfaz gráfica de usuario\cite{makehuman}. 
+\item \textbf{3DS Max}: es un software privado de modelado 3D, que además posee
+    herramientas para animación, simulación y renderización. Esta herramienta
+    fue utilizada para crear objetos 3D que no fueran personajes humanos y para
+    exportar modelos de un formato a otro que fuera compatible con
+    \textit{Unity3D}\cite{3dsmax}.
 \item \textbf{Photoshop}: es una herramienta de edición de gráficos 2D de
     \textit{Adobe}, permite la creación y edición de gráficos, es utilizada para
     la creación de iconos, botones y demás contenido 2D que forma parte de la
@@ -119,10 +156,10 @@ Las herramientas utilizadas para crear modelos 3D son las siguientes:
 \subsection{Desarrollo del \textit{backend}}
 
 A fin de registrar las actividades del usuario, se necesita de un servidor que
-almacene los datos centralizados de todos los usuarios y las actividades que
-estos realizan.
+almacene los datos de todos los usuarios y las actividades que estos realizan
+dentro de la solución.
 
-Este servidor debe proveer:
+Este servicio debe proveer:
 
 \begin{itemize}
     \item \textbf{Alta disponibilidad}: el servidor debe estar disponible en
@@ -131,32 +168,35 @@ Este servidor debe proveer:
         usuarios envíen datos sin inconvenientes cuando crean necesario.
     \item \textbf{Accesibilidad}: el servidor debe poder ser accesible desde
         cualquier red móvil.
+    \item \textbf{Bajo costo de comunicación}: la comunicación del usuario con
+        el \textit{backend} debe ser lo menos costosa posible, pues se utilizan
+        recursos del usuario.
 \end{itemize}
 
 Para el desarrollo de la aplicación web que almacena los datos se utiliza
-\Gls{javaee} en su versión 6, la misma se utiliza por la familiarización de los
-autores con la tecnología, y la facilidad que provee la misma para la
+\Gls{javaee} en su versión $6$, la misma se utiliza por la familiarización de
+los autores con la tecnología, y la facilidad que provee la misma para la
 realización de servicios web que permitan la interacción con la solución.
 
 \Gls{javaee} es un estándar de software empresarial de código abierto cuyo
 desarrollo es dirigido por la comunidad\cite{javaee}, la implementación
-utilizada es de \textit{RedHat} llamada \textit{JBoss} en su versión 7.1,
+utilizada es de \textit{RedHat} llamada \textit{JBoss} en su versión $7.1$,
 \textit{JBoss} es un esfuerzo de la comunidad dirigido por \textit{RedHat}. 
 
 Para los servicios se utiliza la arquitectura \Gls{rest}, la principal
-motivación para utilizar \Gls{rest} es eficiencia en el uso de la
-red\cite{pautasso2008restful}, el cual es también es la motivación para la
-utilización \Gls{json}. 
+motivación para utilizar \Gls{rest} es la eficiencia en el uso de la
+red\cite{pautasso2008restful}, la cual es también la motivación para la
+utilización de \Gls{json}. 
 
 La implementación del lado del servidor de la arquitectura \Gls{rest} es
 \textit{RestEasy}, \textit{RestEasy} es un proyecto de código abierto dirigido
 por \textit{RedHat} y que forma parte de la plataforma \textit{JBoss}, de parte
 de la solución se utiliza la implementación por defecto de \textit{Unity3D}.
 
-Otro factor determinante es la facilidad de interacción que existe entre Unity3D
-y los servicios \Gls{rest}, debido a que \Gls{rest} cumple con el protocolo
-HTTP, y en ambos ecosistemas (\textit{JavaEE} y \textit{Unity3d}) existen
-implementaciones disponibles y de fácil utilización.
+Otro factor determinante es la facilidad de interacción que existe entre
+\textit{Unity3D} y los servicios \Gls{rest}, debido a que \Gls{rest} cumple con
+el protocolo HTTP, y en ambos ecosistemas (\textit{JavaEE} y \textit{Unity3d})
+existen implementaciones disponibles y de fácil utilización.
 
 Para el desarrollo del servidor web se utilizo el \Gls{ide} \textit{Eclipse}, el
 cual es un proyecto de código abierto dirigido por la \textit{Eclipse
@@ -166,13 +206,13 @@ servicios web \Gls{rest}.
 El almacenamiento permanente de los datos se logra con la utilización de
 \textit{PostgreSQL}, el cual es un motor de bases de datos de código abierto
 dirigido por una comunidad de desarrolladores llamada \textit{PostgreSQL Global
-    Development Group}. La versión elegida es la 9.1.
+    Development Group}. La versión elegida es la $9.1$.
 
 \subsubsection{OpenShift}
 
 A fin de obtener las características necesarias, de alta disponibilidad y
 accesibilidad, se utiliza la herramienta de plataforma como servicio de
-\textit{RedHat} llamada \textit{OpenShift}, el cual es un producto de código
+\textit{RedHat} llamada \textit{OpenShift}, la cual es un producto de código
 abierto dirigido por \textit{RedHat}.
 
 \textit{OpenShift} provee diferentes plataformas, entre las cuales se encuentran
@@ -192,7 +232,6 @@ se pueden desplegar nuevas versiones de la aplicación, utiliza un repositorio
 actualiza este repositorio, la aplicación se despliega con la versión
 actualizada.
 
-\observacion{Ver si hay que agregar las librerías utilizadas}
-% Facebook
-% NGUI 3
-% Diferentes paquetes de gráficos.
+\observacion{Tincho: Es necesario describir todas las librerias utilizadas?,
+    tanto del lado del Unity, como de Java, utilizamos aproximadamente 15
+    librerias}.
