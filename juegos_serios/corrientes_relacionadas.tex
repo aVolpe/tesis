@@ -1,0 +1,228 @@
+\section{Corrientes relacionadas}
+
+\subsection{Simulación}
+
+La simulación se define como el proceso de diseñar un modelo de un sistema real
+y, llevar a cabo experimentos con este modelo, con el fin o bien de entender el
+comportamiento del sistema o de la evaluación de distintas estrategias para la
+operación del sistema\cite{ingalls2008introduction}. 
+%[ingalls2008introduction]
+
+Un juego y una simulación podrían llegar a ser muy parecidos, a veces los juegos
+tienen motores de simulación\footnote{Un motor de simulación es un conjunto de
+objetos y métodos que se utilizan para la construcción de modelos de
+simulación que están dentro de las aplicaciones}, una de las diferencias
+es que la simulación es muy dependiente del contexto. 
+
+La simulación en el ámbito de la educación fue evolucionando desde simples
+motores de reglas hasta complejos entornos, la simulación demostró ser una
+herramienta muy útil en el ámbito laboral\cite{mariluz:seiousgames}, pues enseña
+al alumno a encarar situaciones muy difíciles de representar en entornos
+completamente controlados y provee mecanismos para comprobar la efectividad de
+la herramienta. 
+
+Actualmente la simulación se utiliza más en el ámbito empresarial pues las
+empresas son las más necesitadas de innovar en el ámbito de la enseñanza. Un
+ejemplo de esta necesidad se da, por ejemplo, en el entrenamiento de nuevos
+vendedores, es muy difícil enseñar a un vendedor como debe vender los productos
+con un pizarrón y/o una presentación, en cambio la simulación permite que el
+mismo pueda probar cosas nuevas y experiencias de sus compañeros (o instructor),
+convirtiendo así el aprendizaje en colectivo\cite{mariluz:seiousgames}. En el
+ámbito académico la simulación es más utilizada en campos físicos (como simulación
+de fluidos), meteorología (simulación de tormentas y fenómenos climáticos), etc. 
+
+Existen dos tipos de simulaciones, en primer lugar están las experimentales que
+ponen al estudiante en el lugar de un profesional y requieren que el mismo tome
+decisiones para alcanzar los objetivos y en segundo lugar están las simbólicas
+que buscan que el estudiante deduzca eventos, principios y mejores prácticas
+\cite{charsky:2010}. 
+
+
+\subsubsection{Partes de una simulación}
+
+Una simulación esta conformada por:
+
+\begin{description}
+
+\item[Entidades] Cualquier objeto o componente en el sistema que requiera
+	representación explícita en el modelo se define como
+	entidad\cite{banks2000dm}. Las entidades poseen atributos. Los atributos
+	son las características de una determinada entidad que son exclusivos de
+	esa entidad. Por último, son aquellas que cambian el estado de una
+	simulación. Ejemplo de entidades son: un médico o una jeringa en una
+	simulación médica.
+
+\item[Acciones] Las entidades interactúan entre sí a través de acciones. Estas
+	acciones puede causar cambios en el estado de la simulación además de
+	eventos. Ejemplo de una acción en una simulación médica es la
+	esterilización de un instrumento.
+
+\item[Eventos] Los eventos son hechos que ocurren de manera controlada pero no
+	siempre predecible en el entorno simulado, los mismos afectan a las
+	entidades y deben obligar a realizar alguna de las acciones disponibles
+	para tal evento. Ejemplo de un evento en un simulación médica es un paro
+	cardíaco del paciente.
+
+\end{description}
+
+La confianza en el modelo o la simulación según\cite{DoDSysEng2001} se establece
+mediante:
+
+\begin{itemize}
+
+\item \textbf{La verificación} Es el proceso de determinar si la implementación
+	representa con precisión las especificaciones del diseño. 
+
+\item \textbf{La validación} Es el proceso de determinar el grado en el que el modelo
+	representa de forma exacta la realidad de acuerdo al uso que se tiene
+	previsto darle y el nivel de confianza que debe tenerse en la
+	evaluación.
+
+\item[La acreditación] Es el proceso de certificación de un modelo para su uso
+	con un propósito específico.
+%[DoDSysEng2001]
+
+\end{itemize}
+
+
+
+\subsection{Gamification}
+
+%\observacion{Empezar explicando qué es}
+
+El uso de mecánicas tradicionalmente usadas en los videojuegos en
+contextos distintos a los juegos es denominado gamification.
+
+
+%\fixme{ Es el uso de mecánicas tradicionalmente usadas en los videojuegos en
+%    contextos distintos a los juegos. Según Shell~\cite{hj:gamification} un
+%    juego es una actividad cuyo fin es resolver un problema de manera
+%    entretenida. }{reordenar}
+
+La \emph{Gamification}, mejora la actividad del usuario, el \emph{engagement}
+(enganchamiento o compromiso con el juego), el aprendizaje, la puntualidad
+(capacidad de completar una tarea o asignación antes del tiempo designado), el
+retorno a la inversión, la calidad y la colaboración.
+
+\subsubsection{Principios}
+
+Los principios de la gamificación moderna según~\cite{hj:gamification} son los
+siguientes:
+
+\begin{itemize}
+    \item \fixme{Objetivos claramente definidos}{explicar más}.
+    \item Mejor registro de resultados y tablas de puntuación.
+    \item Retroalimentación más frecuente.
+    \item Un mayor grado de elección personal de los métodos.\revisar{Abstracto}
+    \item Entrenamiento consistente.
+\end{itemize}
+
+\observacion{Agregar ejemplo o ver otra manera de enriquecer la explicación de
+    los principios.}
+
+Cuando se mide el desempeño, el rendimiento mejora, cuando el rendimiento se
+mide y además se informa sobre esto, la tasa de mejora acelera. Cuando la
+retroalimentación se presenta en forma de tablas y gráficos el impacto es aún
+mayor.
+
+\subsubsection{Propiedades gamification}
+
+Esencialmente, gamification intenta aplicar la mecánica de los juegos en otros
+entornos, como el ambiente educativo. Este concepto no está directamente
+relacionado con el diseño del juego, sino que trata de involucrar al usuario a
+través de pequeñas dosis de desafíos y recompensas con el fin de conseguir que
+el usuario realice ciertas acciones en diferentes
+ambientes\cite{breaking:gamification}.
+
+Gamification trabaja para satisfacer algunos de los deseos humanos más
+fundamentales: el reconocimiento y la recompensa, de estado, de logros,
+competencia y colaboración, la auto-expresión, y el
+altruismo.\cite{breaking:gamification}.
+
+La mecánica del juego pueden ser de diferentes
+tipos\cite{breaking:gamification}, tales como:
+
+\begin{itemize}
+    \item Comportamiento (centrado en el comportamiento humano y la psiquis
+        humana),
+    \item Retroalimentación (en relación con el ciclo de retroalimentación en la
+        mecánica de juego, y
+    \item La progresión (utilizada para estructurar y extender la acumulación de
+        habilidades significativas).
+\end{itemize}
+
+
+Existen otros mecanismos de juego que se pueden utilizar para los materiales
+gamification y actividades educativas\cite{breaking:gamification}, tales como:
+
+\begin{itemize}
+    \item El tiempo (los jugadores tienen un tiempo limitado para realizar una
+        tarea).
+    \item La exploración (los jugadores tienen que explorar y descubrir cosas
+        que les sorprenderán).
+    \item Los desafíos entre los usuarios (los jugadores pueden darse desafíos
+        unos a otros y competir para el logro de los objetivos, los objetos,
+        medallas, etc.).
+\end{itemize}
+
+Para que sea eficaz a largo plazo, gamification debe ser algo más que la adición
+de este tipo de elementos para un contexto no-juego, también debe actuar sobre
+la motivación intrínseca de los jugadores\cite{framework:gamification}. 
+
+Con el fin de tener una motivación intrínseca para realizar una tarea, la
+persona debe mantenerse en un estado entre la ansiedad (si el desafío supera las
+capacidades de la persona) y el aburrimiento (si la persona siente que la tarea
+es demasiado fácil ). Este es un estado conocido como flujo. Objetivos claros,
+un sentido de control, retroalimentación inmediata y, sobre todo, un equilibrio
+entre habilidad y reto son algunos de los factores que contribuyen a
+fluir\cite{framework:gamification}.
+
+La relación, el deseo de interactuar y conectarse con otras personas, es una de
+las necesidades humanas innatas que conducen a la motivación
+intrínseca\cite{framework:gamification}.
+
+Por lo tanto, los sistemas con gamification no sólo deben abordar la motivación
+extrínseca de los jugadores, sino también considerar la forma de conducir a los
+jugadores la motivación intrínseca. Debería centrarse en cómo crear experiencias
+significativas, proporcionar un sentido de relación entre los jugadores, mejorar
+su reconocimiento social, y dar la autonomía y el propósito de sus acciones.
+También debe mantener a los jugadores en un estado de flujo y proporcionar una
+experiencia divertida conjunto\cite{framework:gamification}. 
+
+
+\subsubsection{Elementos del juego}
+
+Los elementos del juego son el conjunto de componentes y características de los
+juegos de vídeo que se pueden utilizar en contextos
+no-juego\cite{framework:gamification}.
+
+El flujo y la diversión deben ser considerados en un diseño como sección
+transversal del sistema, transversal a los otros
+componentes\cite{framework:gamification}.
+
+A continuación se describe como se implementarían estos conceptos con los elementos
+del juego, según\cite{framework:gamification}:
+
+\begin{itemize}
+    \item Retroalimentación y recompensas: puntos, barras de progreso,
+        insignias, trofeos, tabla de calificación.
+    \item Amigos: compartir, invitar a amigos, dar/comercializar/vender bienes
+        virtuales, tablas de clasificación (gráfico social).
+    \item Jugabilidad: niveles, objetivos intermedios, objetivos claros, fracaso
+        divertido, reglas, economía virtual, calendarios de recompensas.
+\end{itemize}
+
+Los componentes transversales de flujo y la diversión se logran a través de la
+forma en que las actividades se establecen en el sistema. El dominio y el
+progreso son los que hacen que las experiencias sean divertidas. La sensación de
+dominio y el progreso se puede implementar a través de los elementos de la
+jugabilidad, los amigos y conceptos de retroalimentación y recompensas. Lo mismo
+ocurre con el flujo. El jugador puede mantenerse en un canal de flujo cuando él
+o ella está óptimamente desafiado proporcionando tareas que no son ni demasiado
+fácil ni demasiado difícil. Esto podría lograrse proporcionando
+retroalimentación inmediata, objetivos intermedios y diferentes niveles de
+progresión. De esta manera, el reto es equilibrado con las habilidades del
+jugador\cite{framework:gamification}.
+
+\observacion{\textbf{Inssito}, tienen que expandir la primera sección como para
+    darle contexto a todas estas secciones}
