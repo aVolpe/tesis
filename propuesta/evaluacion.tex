@@ -36,7 +36,7 @@ procedimiento que realiza la lógica deseada.
 Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados
 eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos
 como triggers, es decir, una base de datos relacional (u orientada a objetos) es
-un motor de reglas \gls{eca}\cite{bailey2004event}\cite{behrends2006combining}.
+un motor de reglas \gls{eca}\cite{bailey2004event,behrends2006combining}.
 
 Las mismas pueden ser utilizadas para notificar que un determinado conjunto de
 eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
@@ -51,7 +51,7 @@ mismas\cite{bailey2004event}.
 
 Son principalmente útiles para analizar el comportamiento en tiempo real de un
 sistema en una forma
-reactiva\cite{bailey2004event}\cite{de2001eca}\cite{bailey2002analysis}, esta
+reactiva\cite{bailey2004event,de2001eca,bailey2002analysis}, esta
 característica esta impulsada principalmente por que son ejecutadas después de
 la ocurrencia de un evento, y el entorno no es modificado, pudiendo así acceder
 al mismo entorno que el qué lanzo el evento.
@@ -63,7 +63,7 @@ los pasos realizados fueron los correctos.
 
 \paragraph{Declaración}
 
-Una \gls{eca}, se define como\cite{bailey2004event}\cite{behrends2006combining}:
+Una \gls{eca}, se define como\cite{bailey2004event,behrends2006combining}:
 
 \begin{center}
 	 Cuando ocurren una serie de \emph{eventos}, y se cumple una
@@ -74,7 +74,7 @@ Los \emph{eventos} determinan cuando una regla debe ser activada, los mismos se
 dividen en dos categorías\cite{behrends2006combining}, primitivos y compuestos,
 los primeros son detectables, por ejemplo, cuando se inserta una jeringa, y los
 compuestos, son la combinación de uno o más
-primitivos\cite{bailey2004event}\cite{behrends2006combining}. Los eventos
+primitivos\cite{bailey2004event,behrends2006combining}. Los eventos
 compuestos, se unen mediante:
 \begin{enumerate*}[label=\itshape\alph*\upshape)]
 \item conjunción (\emph{y}),
@@ -128,17 +128,17 @@ La definición de las reglas se realiza de la siguiente forma;
 \label{alg:rule:guante}
 \lstset{style=sharpc}
 \begin{lstlisting}
-Rule.New("Regla de verificacion de calzado de guantes").
-     When("enfermero.guantes.calzar").
+Rule.New(``Regla de verificacion de calzado de guantes'').
+     When(``enfermero.guantes.calzar'')
      Then(e => e.Patient.ManosLimpias()).
 \end{lstlisting}
 \end{algorithm}
 %TODO agregar indice de algoritmos
 
-La regla anterior controla que el estudiante ha realizado la acción ``Calzarse
-los guantes'', y en ese momento tenga las manos limpias, la variable \emph{e},
-es el entorno, y a través de la propiedad \emph{Patient} obtiene el estado del
-paciente en ese momento.
+La regla anterior controla que el estudiante ha realizado la acción
+\enquote{Calzarse los guantes}, y en ese momento tenga las manos limpias, la
+variable \emph{e}, es el entorno, y a través de la propiedad \emph{Patient}
+obtiene el estado del paciente en ese momento.
 
 \paragraph{Modelo de ejecución}
 
@@ -228,7 +228,7 @@ cuando es lanzado el evento, la regla ejecuta la acción y pasa al estado
 
 Un motor de reglas \gls{eca}, requiere de un proceso que evalúe constantemente
 las reglas para verificar si las mismas deben ser lanzadas o
-no\cite{bailey2004event}\cite{galton2002two}, este motor puede utilizar el
+no\cite{bailey2004event,galton2002two}, este motor puede utilizar el
 algoritmo de RETE\cite{de2001eca} para realizar esta verificación, en la
 propuesta presentada, la cantidad de reglas definidas, y la no dependencia
 circular entre ellas, hace innecesario la implementación de tal

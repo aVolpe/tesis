@@ -1,20 +1,27 @@
 \section{Hipótesis de la simulación}
 \label{sec:hipotesis}
 
-Las escenas seleccionadas y definidas en~\ref{sec:seleccion_escenas}
-representan las acciones que deben realizar los profesionales de enfermería
-a la hora de realizar los procedimientos seleccionados, por limitaciones
-técnicas, tecnológicas y de tiempo, no es posible realizar una simulación
-de todos los pasos requeridos.
+\observacion{Ir más al grano y decir que se debe encontrar un punto de
+    equilibrio entre simplicidad y detalle, en la simulación, pero esa es una
+    tesis de por sí, entonces ustedes van a basarse en otros trabajos y sentido
+    común}
 
+Las escenas seleccionadas y definidas en la sección~\ref{sec:seleccion_escenas}
+representan las acciones que deben realizar los profesionales de enfermería a la
+hora de realizar los procedimientos seleccionados, por limitaciones técnicas,
+tecnológicas y de tiempo, no es posible realizar una simulación de todos los
+pasos requeridos.
 
-Según~\ref{videojuegos:gonzaleztardon}, existe un compromiso visible entre
+\observacion{Busquen algún articulo sobre simulación ver simulación (NDE: hace
+    regencia errores de referencias (las que apuntan a tardon))}
+
+Según~\cite{videojuegos:gonzaleztardon}, existe un compromiso visible entre
 realismo y credibilidad, tomando en cuenta que uno de los objetivos de la
 solución es la presentación de situaciones simplificadas que permitan transmitir
 conocimiento, mientras más realismo exista, más detalles existirán y por
 consiguiente, los usuarios tendrán que concentrarse en un mayor número de
 detalles, lo que resulta contraproducente con el objetivo de la
-solución\ref{videojuegos:gonzaleztardon}. Estas hipótesis sirven para acotar el
+solución\cite{videojuegos:gonzaleztardon}. Estas hipótesis sirven para acotar el
 alcance de la simulación, definen qué se simulará y cual es del detalle
 necesario para alcanzar las competencias básicas.
 
@@ -35,9 +42,11 @@ presentes solamente a través de opciones y que partes se omitirán son:
         procedimiento, pero es considerado un paso poco importante y fácil de
         realizar.
 
-        La importancia es evaluada por profesionales del \Gls{iab}, los cuales
-        dieron su opinión acerca de cada aspecto simulado, el mismo es tenido en
-        cuenta para determinar la importancia de cada acción.
+        \fixme{La importancia es evaluada por profesionales del \Gls{iab}, los
+            cuales dieron su opinión acerca de cada aspecto simulado, el mismo
+            es tenido en cuenta para determinar la importancia de cada
+            acción}{Usar esto en vez de sentido común. (Ver observación al
+            inicio del archivo)}.
 
     \item \textbf{Facilidad de realización en la vida real o en el laboratorio}:
         ciertos pasos son fáciles de realizar en la vida real pero requieren un
@@ -54,7 +63,7 @@ presentes solamente a través de opciones y que partes se omitirán son:
         familiarizados con los procedimientos, estos no son simulados.
 
 \end{itemize}
-Existen hipótesis que son globales para toda la simulación, las mismas son:
+\fixme{Existen}{No utilizar tanto} hipótesis que son globales para toda la simulación, las mismas son:
 
 \begin{itemize}
 
@@ -72,6 +81,10 @@ Existen hipótesis que son globales para toda la simulación, las mismas son:
 
 \end{itemize}
 
+\observacion{Revisar el orden de las cosas, explicar los escenarios primero y
+    después la arquitectura, las alternativas, y rel resultado final (Su
+    solución)}
+
 Otras hipótesis, son tomadas por escena, las dos escenas simuladas son
 diferentes en el modo de interacción del usuario con su entorno, por ejemplo, en
 la escena \enquote{Extracción de sangre}, el usuario interactúa con el paciente
@@ -80,24 +93,33 @@ el paciente es directa.
 
 \subsection{Extracción de sangre}
 \label{sec:hemocultivo_hipotesis}
+\observacion{Esta un poco desconectado}
 
 Se presentan los pasos mostrados en la sección~\ref{sec:hemocultivo_protocolo},
 y adicionalmente se establecen las hipótesis punto por punto y las
 consideraciones que deben ser tomadas.
+
+\observacion{Resumir más}
+
+\observacion{No termina de conectar esto, uno llega a esta parte y no entiende
+    por que se esta hablando de por que no. Hay que vestir con la bata; No se
+    entiende como se llego a eso}
+\observacion{Ver donde poner esto para que no quede desconectado}
 
 \begin{itemize}
 
 \item \textbf{Preparar el equipo}: la preparación del equipo es un aspecto muy
     importante del procedimiento, pero no es un punto único de la extracción de
     sangre, además las prácticas de los alumnos cubren completamente este paso
-    según comentarios de los profesores. \emph{Este paso no se simula}.
+    \fixme{según comentarios de los profesores}{}. \emph{Este paso no se simula}.
 
 \item \textbf{Explicación al paciente del procedimiento a realizar}: es un
     aspecto importante del procedimiento, pero la simulación de una conversación
     alumno-paciente es compleja, según comentarios de los profesores, es
     suficiente con que los alumnos sepan que lo deben realizar y en que momento,
-    no es necesario simular la conversación en sí. \emph{Este paso se simula a
-        través de un comando de voz con la interfaz}.
+    no es necesario simular la conversación en sí. \fixme{Este paso se simula a
+        través de un comando de voz con la interfaz}{Hace falta describir
+        implementación ya?}.
 
 \item \textbf{Asepsia de las manos}: este paso forma parte de un área más amplia
     conocida como bioseguridad, la cual es un aspecto transversal a todos los
@@ -255,6 +277,11 @@ requisitos funcionales de la solución.
 
 \subsection{Evaluación de glasgow}
 \label{sec:glasgow_hipotesis}
+
+\observacion{Esta descripción tiene otra estructura que la de extracción.
+    Unificar!!}
+\observacion{Resumir \emph{Mucho} más lo anterior y destacar/concertar más a la
+    solución}
 
 En la sección~\ref{sec:glasgow_protocolo} se definieron los pasos necesarios
 para llevar a cabo el procedimiento, este procedimiento es un paso rutinario que

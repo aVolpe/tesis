@@ -1,15 +1,28 @@
 %! TEX root = ../main.tex
 \section{Tecnologías disponibles}
 
+\observacion{Falta una descripción de más alto nivel del tipo de tecnología que se
+    necesita}
+\observacion{Traten de mantener la descripción del engine con la misma
+    profundad, osino parece copipaste}
+
+\observacion{Busquen una estructura Basia para la descripción, tipo:
+\begin{itemize}
+    \item Quien hace
+    \item Tipo de licencia, precio
+    \item características principales, lenguajes, etc.
+    \item Que tan usado es
+\end{itemize}
+}
+
 Para el desarrollo de videojuegos se utilizan programas o herramientas
 especializadas en ello llamadas \enquote{Motores de videojuegos}. A continuación
 se da una breve introducción de lo que es un motor de videojuego o motor
 gráfico.
 
-El término \enquote{motor gráfico} o \enquote{motor de videojuegos} hace
-referencia a una serie de rutinas de programación que permiten el diseño, la
-creación, el desarrollo y la representación gráfica de un
-videojuego\cite{videojuego:telechea}.
+El término \enquote{motor de videojuegos} hace referencia a una serie de rutinas
+de programación que permiten el diseño, la creación, el desarrollo y la
+representación gráfica de un videojuego\cite{videojuego:telechea}.
 
 Además, la gran mayoría de estos motores ofrecen a su vez características y
 funciones que facilitan la construcción del videojuego, como el motor físico
@@ -19,11 +32,13 @@ elasticidad) o detector de colisiones, sonidos, \textit{scripting}, animaciones,
 inteligencia artificial, comunicación a través de redes, \textit{streaming},
 administración de memoria, etc\cite{videojuego:telechea}.
 
-El motor de juego utilizado depende de las características que posea el
-videojuego que se quiere desarrollar. Por lo mismo, a continuación se da una
-breve descripción de los motores más utilizados actualmente, se definen los
-criterios para de selección y se realiza una comparación entre los mismos, y se
-define el motor que más se adecue a las necesidades.
+El motor de juego a utilizar depende de las características que posea el
+videojuego que se quiere desarrollar. \fixme{Por lo mismo}{NO}, a continuación
+se da una breve descripción de los motores más utilizados actualmente, se
+definen los criterios para de selección y se realiza una comparación entre los
+mismos, y se define el motor que más se adecue a las necesidades.
+
+\observacion{Comentar que puntos hay en comparación}
 
 \subsection{Unreal Development Kit}
 
@@ -35,10 +50,10 @@ construcción de grandes juegos y evolución del \textit{Unreal
 
 \textit{Unreal Engine} permite desarrollar juegos para plataformas como
 \textit{Windows PC, Mac, iOS y Android}. También es compatible con \textit{Xbox
-    One} y \textit{PlayStation 4}. Existen además trabajos recientes sobre otras
-plataformas como \textit{HTLM5} y \textit{Linux}\cite{unrealengine}.
+    One} y \textit{PlayStation 4}. \fixme{Existen}{} además trabajos recientes
+sobre otras plataformas como \textit{HTLM5} y \textit{Linux}\cite{unrealengine}.
 
-Sin embargo existe una versión gratuita del \textit{Unreal Engine}, el
+Sin embargo \fixme{existe}{} una versión gratuita del \textit{Unreal Engine}, el
 \Gls{udk}. El \Gls{udk} es la edición gratuita de \textit{Unreal Engine
     3}\footnote{Versión previa a la actual versión comercial.} que proporciona
 acceso al motor de juegos 3D y a la herramienta profesional que se utiliza en el
@@ -50,15 +65,12 @@ Utilizando \Gls{udk} se pueden implementar juegos y aplicaciones en
 
 \subsection{Blender Game Engine}
 
+\observacion{No hace falta hablar de blender}
+
 \enquote{Blender Game Engine} es el motor de juego de \textit{Blender
     Foundation} que permite crear aplicaciones 3D interactivas o simulaciones,
-desarrollabo bajo la licencia \Gls{gnu}. La principal diferencia entre el
-\textit{Blender Game Engine} y el Blender convencional está en el proceso de
-renderizado\cite{blender}.
+desarrollabo bajo la licencia \Gls{gnu}\cite{blender}.
 
-Es importante no confuir con \textit{Blender}, pues este es un software de
-modelado \textit{3D} y animaciones, pero esto se renderiza fuera de linea, es
-decir, una vez generadas no pueden ser modificadas. Por el contrario
 \textit{Blender Game Engine} genera las escenas de forma continua en tiempo real
 e incorpora facilidades para la interacción del usuario durante el proceso de
 \textit{renderización}\cite{blender}.
@@ -73,9 +85,12 @@ no requiere programación\cite{blender}.
 El motor de juego puede simular contenido dentro de \textit{Blender}, sin
 embargo, también incluye la posibilidad de exportar en plataformas como
 \textit{Windows, Linux y Mac OS}. También hay soporte básico para plataformas
-móviles con el proyecto \textit{Android Blender Player GSOC 2012}.
+móviles con el proyecto \textit{Android Blender Player \fixme{GSOC}{?} 2012}.
 
 \subsection{CryEngine 3}
+
+\observacion{Las descripciones tienen que restar lo mejor y lo pero de cada
+    engine, osino parece una propaganda}
 
 \enquote{CryEngine 3} es el motor de juegos desarrollado por \textit{Crytek}.
 \textit{CryEngine} es un motor avanzado para el desarrollo de juegos, películas,

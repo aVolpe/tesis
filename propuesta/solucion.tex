@@ -3,9 +3,11 @@
 \section{Solución}
 \label{sec:solucion}
 
-A continuación se describe la arquitectura propuesta para la realización de una juego serio, se
-utiliza la guía básica definida por~\cite{pereira2009design} y descrita
-en~\ref{sec:desarrollo}.
+\observacion{Siempre ayuda poner alguna imagen}
+
+A continuación se describe la arquitectura propuesta para la realización de una
+juego serio, se utiliza la guía básica definida por~\cite{pereira2009design} y
+descrita en~\ref{sec:desarrollo}.
 
 Esta sección se enfoca en los aspectos técnicos de la creación del juego serio,
 las competencias básicas relacionadas con la educación (segundo paso de la guía
@@ -73,7 +75,7 @@ para cambiar su estado, y es el \emph{Motor de Reglas}, este motor escucha
 todos los eventos relacionados con las reglas, y se encarga de evaluar, así
 es notificado de los cambios en el entorno.
 
-\subsubsection{Interacción con el entorno}
+\subsubsection{Interacción la escena}
 
 El usuario se desenvuelve en un entorno de tres dimensiones, en el cual realiza las
 actividades relacionadas a la práctica, se distinguen dos tipos de movimientos
@@ -95,6 +97,10 @@ principales que el usuario puede realizar:
 
 \subsubsection{Acciones condicionadas por eventos}
 
+\observacion{Todo esto se podría juntar en una subsection que explique la
+    relación en los eventos, las interacciones y como combina el mundo. Además
+    hay que resumir más}
+
 Un evento es la ocurrencia de un hecho en particular, y son identificados por un
 nombre y un conjunto de parámetros, por ejemplo, un evento es cuando el
 enfermero inserta una Jeringa, el nombre de este evento es
@@ -114,7 +120,7 @@ procedimiento que realiza la lógica deseada.
 Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados
 eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos
 como triggers, es decir, una base de datos relacional (u orientada a objetos) es
-un motor de reglas \gls{eca}\cite{bailey2004event}\cite{behrends2006combining}.
+un motor de reglas \gls{eca}\cite{bailey2004event,behrends2006combining}.
 
 Las mismas pueden ser utilizadas para notificar que un determinado conjunto de
 eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
@@ -129,10 +135,10 @@ mismas\cite{bailey2004event}.
 
 Son principalmente útiles para analizar el comportamiento en tiempo real de un
 sistema en una forma
-reactiva\cite{bailey2004event}\cite{de2001eca}\cite{bailey2002analysis}, esta
-característica esta impulsada principalmente por que son ejecutadas después de
-la ocurrencia de un evento, y el entorno no es modificado, pudiendo así acceder
-al mismo entorno que el qué lanzo el evento.
+reactiva\cite{bailey2004event,de2001eca,bailey2002analysis}, esta característica
+esta impulsada principalmente por que son ejecutadas después de la ocurrencia de
+un evento, y el entorno no es modificado, pudiendo así acceder al mismo entorno
+que el qué lanzo el evento.
 
 Definir si las acciones de un usuario son correctas utilizando un motor
 \gls{eca} es sencillo teniendo en cuenta que sólo se deben definir un
@@ -141,7 +147,7 @@ los pasos realizados fueron los correctos.
 
 \paragraph{Declaración}
 
-Una \gls{eca}, se define como\cite{bailey2004event}\cite{behrends2006combining}:
+Una \gls{eca}, se define como\cite{bailey2004event,behrends2006combining}:
 
 \begin{displayquote}
 	 Cuando ocurren una serie de \emph{eventos}, y se cumple una
@@ -152,7 +158,7 @@ Los \emph{eventos} determinan cuando una regla debe ser activada, los mismos se
 dividen en dos categorías\cite{behrends2006combining}, primitivos y compuestos,
 los primeros son detectables, por ejemplo, cuando se inserta una jeringa, y los
 compuestos, son la combinación de uno o más
-primitivos\cite{bailey2004event}\cite{behrends2006combining}. Los eventos
+primitivos\cite{bailey2004event,behrends2006combining}. Los eventos
 compuestos, se unen mediante:
 \begin{enumerate*}[label=\itshape\alph*\upshape)]
 \item conjunción (\emph{y}),
@@ -171,6 +177,9 @@ La \emph{acción} a ejecutar describe la lógica que debe ser ejecutada cuando s
 lanzado los eventos y la condición de la regla se ha cumplido.
 
 \paragraph{Dependencia entre reglas}
+
+\observacion{Cuanto de esto es de la literatura y cuanto es propuesta suya?}
+\observacion{Resumir}
 
 Las reglas pueden depender de otras reglas, lo cual se puede ver como que la
 finalización de una regla es un evento que otra regla espera para poder ser
@@ -219,6 +228,9 @@ es el entorno, y a través de la propiedad \emph{Patient} obtiene el estado del
 paciente en ese momento.
 
 \paragraph{Modelo de ejecución}
+\observacion{Resumir}
+\observacion{Me da la impresión que esto es algo que va más con a parte técnica
+    que con la descripción de la solución}
 
 Para ejecutar un motor de reglas del tipo \gls{eca}, se debe tener en cuenta
 principalmente dos factores, 
@@ -306,11 +318,10 @@ cuando es lanzado el evento, la regla ejecuta la acción y pasa al estado
 
 Un motor de reglas \gls{eca}, requiere de un proceso que evalúe constantemente
 las reglas para verificar si las mismas deben ser lanzadas o
-no\cite{bailey2004event}\cite{galton2002two}, este motor puede utilizar el
-algoritmo de RETE\cite{de2001eca} para realizar esta verificación, en la
-propuesta presentada, la cantidad de reglas definidas, y la no dependencia
-circular entre ellas, hace innecesario la implementación de tal
-algoritmo\cite{de2001eca}. 
+no\cite{bailey2004event,galton2002two}, este motor puede utilizar el algoritmo
+de RETE\cite{de2001eca} para realizar esta verificación, en la propuesta
+presentada, la cantidad de reglas definidas, y la no dependencia circular entre
+ellas, hace innecesario la implementación de tal algoritmo\cite{de2001eca}. 
 
 El motor de reglas actúa sobre aquellas reglas en estado
 \emph{WAITING\_FOR\_CONDITION} e invoca al procedimiento que se encarga de
@@ -320,6 +331,16 @@ la acción de la regla y modifica el estado de la regla a \emph{FINISH}.
 
 
 \subsection{Grafo de estados}
+\observacion{De? Grafo de estado de qué?}
+
+\observacion{
+\begin{itemize}
+    \item Problema + escena
+    \item Solución + descripción de escenas simuladas
+    \item Tecnologías
+    \item Implementación de escenas
+\end{itemize}
+}
 
 La solución tiene varios escenarios, y dentro de cada escenario, existen varias
 pantallas que muestran información relevante de acuerdo a la situación de la
@@ -373,6 +394,8 @@ descripción general de los escenarios y se procede a explicar los detalles
 de los mismos, incluyendo las entidades, eventos y acciones que pueden ser realizados 
 en el mismo.
 
+\observacion{Se tiene que poder explicar esto sin ser tan verboso}
+
 \subsection{Inicio}
 
 La solución se inicia con un escenario que esta inspirado en el laboratorio de
@@ -381,13 +404,15 @@ usuario al utilizar la misma, sirve como un menú principal, desde
 este punto todas las opciones son accesibles para el usuario, este escenario es
 denominado~\emph{Inicio}.
 
-La primera vez que se inicia la solución, se muestra una pequeña ventana
+\fixme{La primera vez que}{} se inicia la solución se muestra una pequeña ventana
 solicitando el número de teléfono del usuario, se utiliza esta información como un
 identificador del usuario para así poder asociar la información del mismo con un
 alumno en particular.
 
 \subsubsection{Descripción del entorno}
 \label{sec:inicio_descripcion}
+
+\observacion{NO sería más práctico poner imágenes y descripciones breves?}
 
 La escena mostrada como pantalla de inicio de la aplicación muestra como fondo
 la sala de un hospital con los elementos típicos de estos lugares, esta es la
@@ -404,12 +429,18 @@ de auriculares.
 \label{fig:sala_perspectiva}
 \end{figure}
 
+
+\observacion{Resumir}
+
 Se observa en la figura~\ref{fig:sala_perspectiva} la decoración utilizada en
 el escenario \emph{Inicio}, mientras se muestran las opciones, se ejecuta una
 animación que recorre el escenario mostrando los detalles importantes, como la
 camilla, el lector de estadísticas vitales, y demás elementos del escenario.
 
 \subsubsection{Opciones}
+
+\observacion{Agregar imágenes con marcos y luego describirlos, en vez de las
+    imágenes actuales con demasiado texto}
 
 Las opciones disponibles en la pantalla de inicio son presentadas en forma de
 botones los cuales tienen una breve descripción que identifica la función que
@@ -449,6 +480,8 @@ en~\ref{sec:hemocultivo_hipotesis}.
 
 \subsubsection{Descripción del entorno}
 
+\observacion{Menos verboso y más imagenes}
+
 Al seleccionar el procedimiento de extracción de sangre en la pantalla de inicio 
 la aplicación inmediatamente muestra la escena del procedimiento, se muestra una 
 sala de hospital igual a la de la pantalla de inicio pero con un paciente en una 
@@ -460,6 +493,9 @@ procedimiento.
 
 
 \subsubsection{Entidades}
+
+\observacion{Ver la posibilidad de hacer el decoupling entre la descripción
+    general (requisitos) y la implementación final}
 
 En la extracción de sangre existen dos entidades principales, el \emph{paciente}
 y el \emph{usuario}, cada entidad mantiene un estado independiente de la otra
@@ -488,9 +524,9 @@ el paciente es:
     \item \textbf{Zonas presionadas}: son aquellas zonas que, una vez
         contaminadas por la extracción de una jeringa, han sido presionadas por
         el usuario.
-    \item \textbf{Contaminado}: define si alguna acción realizada por el usuario
-        provocó que el paciente se contamine, existen varias cadenas de eventos
-        que pueden hacer que esto ocurra:
+    \item \fixme{Contaminado}{?}: define si alguna acción realizada por el
+        usuario provocó que el paciente se contamine, existen varias cadenas de
+        eventos que pueden hacer que esto ocurra:
         \begin{itemize}
             \item Inyección de una jeringa cuando existe otra inyectada.
             \item Inyección en un lugar inadecuado.
@@ -503,6 +539,8 @@ el paciente es:
         Es importante notar que este estado no es afectado directamente por una
         acción del usuario, sino por la consecuencia de una acción.
 \end{itemize}
+
+\observacion{Ahora mismo el capítulo es un information dump}
 
 El \emph{usuario o enfermero} mantiene un estado en todo momento del cual
 dependen sus acciones, por ejemplo, si la mano del enfermero no está
@@ -561,6 +599,8 @@ que el usuario este hablando.
 
 \paragraph{Opciones}
 
+\observacion{Hay que resumir y reorganizar}
+
 Las \emph{Opciones} son aquellas acciones que puede realizar el usuario y afectan
 únicamente al paciente. Representan a los aspectos de bioseguridad, es decir,
 acciones como lavarse las manos, calzarse guantes, gorro, bata y tapaboca.
@@ -582,7 +622,9 @@ momento.
     torniquete) y un algodón para punzar (Cerca de la muñeca, es una figura
     blanca), todo en el brazo derecho.}
 \label{fig:hemocultivo_elementos}
+\observacion{Menos verboso}
 \end{figure}
+
 
 Los elementos, que podemos observar en la
 figura~\ref{fig:hemocultivo_elementos}, son:
@@ -659,6 +701,15 @@ acerca del progreso del usuario en cada paso.
 
 A continuación se da una breve descripción de las reglas utilizadas y sus
 diversos estados.
+
+\observacion{Si hay orden tienen que enumerar}
+\observacion{Quizás haya una manera de visualizar esto, para que se vea el orden
+    y las dependencias}
+\observacion{Definitivamente hay que visualizar esto y reducir la descripción
+    total. En todo caso hacer comentarios sobre cosas demasiado importantes
+    después, pero una lista como seta es demasiada sobreiformación y no se
+    entiende}
+
 
 \begin{itemize}
 \item \textbf{Explicar procedimiento}: define cuando el usuario ha explicado el
@@ -762,6 +813,7 @@ diversos estados.
 
 \paragraph{Retroalimentación y puntuación final}
 \label{sec:puntuacion_hemocultivo}
+\observacion{Más imágenes, menos descripción}
 
 Cada regla tiene asociado un peso, de acuerdo a la dificultad de realizar el
 paso, este peso es utilizado al final de la partida para darle una puntuación al
@@ -774,6 +826,8 @@ asociada para que al final de la partida se muestre una retroalimentación
 correcta al usuario por paso realizado o no.
 
 \subsubsection{Registro de actividad}
+
+\observacion{Resumir explicando por que y para que con una tabla de ejemplo}
 
 Cada acción que realiza el usuario dentro de la simulación provoca un evento, y
 estos eventos son registrados de manera transparente para el usuario.
@@ -820,11 +874,12 @@ derecha se encuentra el menú \emph{Opciones} y en la parte superior izquierda, 
 \emph{Elementos}.
 
 Al presionar el menú \emph{Opciones} aparecen las distintas
-acciones que puede realizar el usuario en cuanto a aspectos de bioseguridad, el 
-lavado de manos es idempotente, es decir no importa cuantas veces se presione, el 
-resultado será el mismo, en cambio los demás botones (bata, guante, tapaboca y gorro)
-representan la acción de calzar/descalzar, es decir, la primera vez que se presiona
-la opción bata, el estado del enfermero cambia a \emph{Con Bata}, si se presiona una
+acciones que puede realizar el usuario en cuanto a aspectos de bioseguridad, el
+lavado de manos es idempotente, \fixme{es decir no importa cuantas veces se
+    presione, el resultado será el mismo, en cambio los demás botones (bata,
+    guante, tapaboca y gorro) representan la acción de calzar}{Hace falta tanto
+    detalle?}/descalzar, es decir, la primera vez que se presiona la opción
+bata, el estado del enfermero cambia a \emph{Con Bata}, si se presiona una
 segunda vez, el estado cambia a \emph{Sin Bata}.
 
 En el menú \emph{Elementos} se despliegan opciones que representan a lo elementos que se
@@ -840,6 +895,9 @@ iconos representando los elementos que tiene actualmente el enfermero, estos
 incluyen los gorros, bata y tapaboca. El elemento que actualmente esta
 seleccionado se muestra en la parte superior izquierda de la pantalla, a
 diferencia de los indicadores de bioseguridad, se muestra un único icono a la vez.
+
+\observacion{Mucha sobre-información, resumir más y con grafos, imágenes,
+    tablas.}
 
 Para la utilización de los elementos, existe un menú contextual\footnote{Un menú
     que se despliega al presionar un elemento, es contextual pues varía de
@@ -886,6 +944,11 @@ a las hipótesis definidas en~\ref{sec:glasgow_hipotesis}.
 \emph{Exploración Glasgow}.
 
 \subsubsection{Entidades}
+
+\observacion{Acaso la única entidad no es el paciente?}
+\observacion{Problema de formato?}
+\observacion{Hay que separar la descripción de la simulación de la
+    implementación}
 
 Al igual que en \emph{Extracción de sangre}, existen dos entidades principales,
 pero en esta escena, el enfermero no almacena información alguna, y el
@@ -1026,8 +1089,10 @@ valores mínimos y máximos válidos\footnote{Los valores máximos se definen
 
 Para la evaluación del rendimiento del usuario al momento de llevar a cabo el
 procedimiento de valoración de la escala de Glasgow se tuvo un enfoque
-completamente diferente al del procedimiento de extracción de sangre debido a la
-naturaleza propia del procedimiento. 
+\fixme{completamente diferente al del procedimiento de extracción de sangre debido a la
+    naturaleza propia del procedimiento}{Concéntrense en lo que tienen que
+    explicar sin comparar con otros casos por que sino el párrafo se vuelve
+    largo y pierde foco}.
 
 Como se explicó anteriormente, el paciente puede estar en ciertos estados
 específicos dentro de la escala, y además dentro de cada estado reacciona de una
@@ -1051,15 +1116,18 @@ para la respuesta verbal, motora, ocular y nivel de gravedad del paciente.
 
 \subsubsection{Registro de actividad}
 
-Al igual que en la escena de \emph{Extracción de sangre}, las acciones del usuario
-son registradas en un archivo con formato \Gls{json} y enviadas a un servidor
-que almacena la información acerca de todos los usuarios.
+\fixme{Al igual que en la escena de \emph{Extracción de sangre}, las acciones
+    del usuario son registradas en un archivo con formato \Gls{json} y enviadas
+    a un servidor que almacena la información acerca de todos los usuarios.
+}{Concéntrense en lo que tienen que explicar sin comparar con otros casos por
+    que sino el párrafo se vuelve largo y pierde foco}
 
 Se almacena además, el diagnóstico del usuario, la puntuación del mismo y el
 estado inicial del paciente, así como el modo de la escena (evaluación o
 exploración).
 
 \subsubsection{Interfaz de usuario}
+\observacion{Queda medio flotando esto}
 
 La interfaz de usuario, como se observa en la figura~\ref{fig:glasgow_gui}, es
 muy sencilla, se compone de solo una opción permanente, la cual permite al
@@ -1107,6 +1175,7 @@ Adicionalmente a la información de la sesión, se permite al usuario reiniciar 
 escena, ir al menú, y compartir sus logros en las redes sociales.
 
 \subsubsection{Retroalimentación}
+\observacion{Cada retroalimentación debería ir con cada escena}
 
 La retroalimentación se logra a través de la pantalla de resultados, en ella se
 presenta información detalla de lo que realizó el usuario. 
@@ -1130,6 +1199,7 @@ fue insertada era incorrecto, otro posible valor de retroalimentación es
 \emph{Jeringa no insertada}.
 
 \subsubsection{Gamificación}
+\observacion{Esto se podría expandir con laguna imagen}
 
 En esta pantalla además se observan opciones que son estudiadas por la
 \emph{Gamificación}, entre ellas observamos la puntuación total, el tiempo

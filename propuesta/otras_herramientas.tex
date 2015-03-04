@@ -1,12 +1,17 @@
 \section{Entorno de desarrollo}
 
-La creación de la solución es un proceso complejo, el cual se compone de varios
-pasos necesarios, para llevar a cabo el desarrollo completo se debe recurrir a
-una gran cantidad de tecnologías, herramientas, \textit{frameworks}, y recursos.
+\observacion{El entorno de quien}
+
+\observacion{En este punto medio que se necesita entender la solución de una
+    manera abstracta primreo. Por que un backend?, por que un frontend? por que
+    photoshop?, falta la intro que explique}
+
+Este proceso se compone de varios pasos necesarios, para llevar a cabo el
+desarrollo completo se debe recurrir a una gran cantidad de tecnologías,
+herramientas, \textit{frameworks}, y recursos.
 
 En esta sección se describen todos las partes involucradas en el desarrollo de
-la solución propuesta, con excepción del motor gráfico, el cual es descrito
-en~\ref{sec:seleccion_plataforma}.
+la solución propuesta. 
 
 La solución se compone de dos partes, la primera es la aplicación que los
 usuarios utilizan para realizar las prácticas, denominada solución, y la segunda
@@ -20,6 +25,7 @@ citan y describen de manera breve las herramientas utilizadas por el
 \textit{backend}.
 
 \subsection{Herramientas de gestión de código}
+\observacion{Resumir}
 
 La gestión del código fuente desarrollado como parte de esta tesis se realizo
 mediante la utilización de la herramienta de control de código fuente
@@ -57,13 +63,15 @@ gratuito.
 
 \subsubsection{Unity Editor}
 
-El \Gls{ide} de \textit{Unity} es la herramienta en la se crean los juegos o
-simulaciones. Este \Gls{ide} importa todos los activos que se hayan seleccionado
-y los organiza dentro de él. Permite compilar las escenas con los terrenos,
-luces, audio, personajes, física, entre otros. Se puede agregar interacción a
-través de \textit{scripting}. En este \Gls{ide} se puede probar y editar en
-forma simultánea los juegos y desplegarlos en las plataformas
-elegidas\cite{unity3d}. 
+\observacion{Explicar esto con un lenguaje natural}
+
+El \Gls{ide} de \textit{Unity} es la herramienta en la se crean \fixme{los
+    juegos}{desambiguar} o simulaciones. Este \Gls{ide} importa todos los
+\fixme{activos}{?} que se hayan seleccionado y los organiza dentro de él.
+Permite compilar las escenas con los terrenos, luces, audio, personajes, física,
+entre otros. Se puede agregar interacción a través de \textit{scripting}. En
+este \Gls{ide} se puede probar y editar en forma simultánea los juegos y
+desplegarlos en las plataformas elegidas\cite{unity3d}. 
 
 Existen cinco vistas en el editor: explorador de proyectos, inspector,
 jerarquía, escena y juego. Cada una de estas vistas cuenta con las herramientas
@@ -92,6 +100,9 @@ gratuítos\footnote{\textit{Microsoft Visual Studio} permite el mismo nivel de
     era de pago durante el desarrollo de la solución}.
 
 \subsubsection{Lenguaje de programación}
+
+\observacion{Explicar el que se usa nomas.}
+\observacion{Buscar algo mejor para \cs{}}
 
 \textit{Unity3D} utiliza versiones limitadas\footnote{La definición del lenguaje
     es la misma, pero las librerías estándar no están completas} de tres
@@ -154,6 +165,8 @@ Las herramientas utilizadas para crear modelos 3D son las siguientes:
 \end{itemize}
 
 \subsection{Desarrollo del \textit{backend}}
+
+\observacion{Resumir}
 
 A fin de registrar las actividades del usuario, se necesita de un servidor que
 almacene los datos de todos los usuarios y las actividades que estos realizan
@@ -232,6 +245,10 @@ se pueden desplegar nuevas versiones de la aplicación, utiliza un repositorio
 actualiza este repositorio, la aplicación se despliega con la versión
 actualizada.
 
-\observacion{Tincho: Es necesario describir todas las librerias utilizadas?,
-    tanto del lado del Unity, como de Java, utilizamos aproximadamente 15
-    librerias}.
+% NOTA DEL TUTOR: no es necesario describir todas las librerías, hay que tratar
+% de explicar a más alto nivel al menos y mencionar que se necesita, pero sin
+% dedicar un párrafo completo.
+
+\observacion{Vendría bien esa explicación más general de la arquitectura con un
+    grafoo por lo menos, de como funciona : frontend -> datos -> nube ->
+    backend}
