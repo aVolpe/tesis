@@ -1,29 +1,31 @@
 \section{Desarrollo de Juegos serios}
 \label{sec:desarrollo}
 
-Según~\cite{education:games} un buen videojuego basado en el aprendizaje debe
-cumplir  los siguientes tres criterios:
+Una vez definido lo que es un juego serio, queda la tarea de definir como
+realizar uno, que factores deben ser tomados en cuenta y como encarar los
+problemas comunes con los que se enfrenta un diseñador de juegos serios.
+
+Según~\cite{education:games} un buen juego serio debe cumplir los siguientes
+tres criterios:
 
 \begin{itemize}
-\item \textbf{Implementación técnica:} actividad de programación y ejecución de
-    un patrón de diseño. Incluye la perfecta integración de los elementos de
-    diseño en el juego.
+
+\item \textbf{Implementación técnica}: se refiere a la actividad de programación
+    y ejecución de un patrón de diseño. Incluye la perfecta integración de los
+    elementos de diseño en el juego. 
+
 \item \textbf{Adecuación para la educación:} la capacidad del juego para hacer
     frente a las metas curriculares o educativas y la habilidad o el
     conocimiento del jugador relativo a los contenidos educativos que se aborde.
+
 \item \textbf{Integración total con los objetivos:} la integración del patrón de
     diseño y el juego en general con los objetivos educativos.
+
 \end{itemize}
 
-\fixme{En esta sección se describen las dimensiones que deben considerarse para
-    los videojuegos basados en  aprendizaje y las puntos que deben tenerse en
-    cuenta en el diseño y desarrollo  de un juego serio.}{Queda flotando?} 
 
-
-\subsection{Dimensiones para los videojuegos basados en aprendizaje}
-
-Las cuatro dimensiones que deben considerarse en el desarrollo de videojuegos
-educativos son las  siguientes\cite{education:games}:
+Adicionalmente, el diseño del mismo se tiene que centrar en cuatro factores o
+dimensiones, las cuales son\cite{education:games}:
 
 \begin{itemize}
 \item \textbf{Contexto:} es decir, donde ocurre el aprendizaje, lo que va desde
@@ -43,9 +45,8 @@ educativos son las  siguientes\cite{education:games}:
     lecciones.
 \end{itemize}
 
-Estos aspectos o dimensiones no pueden ser consideradas individualmente, todas
-estas relacionadas  como se muestra en el
-figura~\ref{fig:desarrollo_dimensiones}.
+Estas dimensiones no pueden ser consideradas individualmente, todas estas
+relacionadas  como se muestra en el figura~\ref{fig:desarrollo_dimensiones}.
 
 \begin{figure}[H]
 \centering
@@ -55,22 +56,16 @@ figura~\ref{fig:desarrollo_dimensiones}.
 \label{fig:desarrollo_dimensiones}
 \end{figure}
 
-Considerando estas dimensiones, a continuación se muestra un ejemplo de flujo de
-diseño basado en un juego serio desarrollado.
+\subsection[Flujo de diseño]{Flujo de diseño de un juego serio}
 
+\textit{Pereira}\cite{pereira2009design} en el diseño del juego \emph{Living
+    Forest} utiliza un conjunto de pasos bien definidos como modelo de creación
+de un juego serio a partir de la definición previa de las competencias básicas
+que se desean enseñar.
 
-\subsection{Flujo (Living Forest)}
-\observacion{De qué?}
-
-
-Pereira\cite{pereira2009design} en el diseño del juego \emph{Living Forest}
-utiliza los pasos definidos a continuación como modelo de creación de un juego
-serio a partir de la definición previa de las competencias básicas que se desean
-enseñar.
-
-Primero se definen las competencias básicas y luego se diseña y desarrolla el
-juego. A continuación la figura~\ref{fig:tics_flujo_diseño_prop} muestra el
-proceso de desarrollo y luego se explica cada ítem.
+Es importante notar que este modelo se adecua a las dimensiones y criterios
+definidos previamente. La obtención de las competencias básicas no forma parte
+de este flujo pues, se asume que es un paso previo al diseño.
 
 \begin{figure}[ht!]
 \centering
@@ -97,54 +92,45 @@ proceso de desarrollo y luego se explica cada ítem.
     \path [line] (8) -- (9);
     \path [line] (9) -- (10);
 \end{tikzpicture}
-
 \caption{Flujo de diseño propuesto de un juego serio}
 \label{fig:tics_flujo_diseño_prop}
 \end{figure}
 
+Teniendo las competencias básicas que se desea sean enseñadas, practicadas o
+perfeccionadas por el usuario mientras utiliza el juego serio a diseñar, los
+siguientes puntos que deben ser diseñados son
+(ver~\ref{fig:tics_flujo_diseño_prop}):
 
-\subsection{Partes del flujo de diseño}
-\observacion{Enumerar y no usar subsubsection}
-\observacion{Si explicamos esto en cierta medida se debería seguir la
-    estructura. O sino, es información sin utilidad, redundante}
+\begin{enumerate}
+\item \textbf{Objetivos de diseño:} definen cuál es el propósito del juego, donde
+    se toman en cuenta los objetivos pedagógicos, así como también objetivos que
+    garanticen que el mismo sea agradable, intuitivo y motivador.
 
-A continuación se describen cada una de las partes mencionadas
-en~\ref{fig:tics_flujo_diseño_prop}.
-
-\subsubsection{Objetivos de diseño}
-
-Definen cuál es el propósito del juego, donde se toman en cuenta los objetivos
-pedagógicos, así como también objetivos que garanticen que el mismo sea
-agradable, intuitivo y motivador.
-
-\subsubsection{Competencias básicas relacionadas con la educación} 
-
-Se identifican aquellas que influyen en el diseño del juego, se definen los
-conocimientos mínimos que se desea que tenga un usuario que lo utilice.
+\item \textbf{Competencias básicas relacionadas con la educación:} se identifican
+    aquellas que influyen en el diseño del juego, se definen los conocimientos
+    mínimos que se desea que tenga un usuario que lo utilice.
 
 Las competencias básicas pueden tener diferentes orígenes, en el ámbito
 académico se pude utilizar el plan de estudios, en una empresa se pueden
 utilizar los objetivos y la visión de la misma.
 
-\subsubsection{Investigación del dominio}
+\item \textbf{Investigación del dominio:} esta fase se encarga de recabar
+    información exacta acerca del dominio en el cual se desenvuelve el juego
+    serio, en esta fase es importante que participe un experto en el dominio,
+    por ejemplo, en el ámbito académico se puede contar con un profesor experto
+    en el dominio.
 
-Esta fase se encarga de recabar información exacta acerca del dominio en el cual
-se desenvuelve el juego serio, en esta fase es importante que participe un
-experto en el dominio, por ejemplo, en el ámbito académico se puede contar con
-un profesor experto en el dominio.
-
-Es importante realizar la pregunta \emph{¿Que nivel de detalle es necesario?},
+Es importante realizar la pregunta \emph{¿Que nivel de detalle es necesario?:},
 para así definir que contenido incluir, y que factores se deben analizar.
 
 Además es necesario investigar las acciones que se podrían realizar dentro del
 juego, como se desenvolverá el jugador, por cada acción definida, se deben
 analizar los elementos y factores relacionados que se deben modelar.
 
-\subsubsection{Diseño del juego}
-
-A partir de la idea original y basado en la información recogida se determina el
-papel desempeñado por el jugador (de acuerdo a la semántica y pragmática de las
-acciones y decisiones que está llamado a hacer). 
+\item \textbf{Diseño del juego:} a partir de la idea original y basado en la
+    información recogida se determina el papel desempeñado por el jugador (de
+    acuerdo a la semántica y pragmática de las acciones y decisiones que está
+    llamado a hacer). 
 
 Se define el nivel de aproximación a la realidad, el nivel de detalle del
 entorno, del jugador y de las acciones.
@@ -153,31 +139,27 @@ Otro factor que se debe tener en cuenta en esta fase es la cantidad de tiempo
 que pasará un jugador en el juego, se deben modelar todas las acciones del
 jugador y el entorno de acuerdo a este tiempo.
 
-\subsubsection{Tiempo de juego}
-
-El primer factor que se debe estudiar es el período de adaptación del jugador,
-lo que depende de la intuitividad del juego, este tiempo debe ser analizado por
-separado a la hora de realizar un análisis de los resultados.
+\item \textbf{Tiempo de juego:} el primer factor que se debe estudiar es el
+    período de adaptación del jugador, lo que depende de la intuitividad del
+    juego, este tiempo debe ser analizado por separado a la hora de realizar un
+    análisis de los resultados.
 
 Si el juego tiene una duración reducida, se tienen que analizar mecanismos para
 mostrar los resultados de las decisiones a largo plazo, además de como mostrar
 los resultados de las acciones de corto plazo.
 
-\subsubsection{Indicadores}
-
-Es todo aquello que muestre información relevante al jugador acerca de su
-estado, ejemplos de este tipo de indicadores son el puntaje, tiempo empleado,
-objetivos cumplidos. 
+\item \textbf{Indicadores:} es todo aquello que muestre información relevante al
+    jugador acerca de su estado, ejemplos de este tipo de indicadores son el
+    puntaje, tiempo empleado, objetivos cumplidos. 
 
 La definición de como se juzgará la calidad de una partida del jugador debe ser
 definida, normalmente mediante un puntaje general, el mismo debe mostrar
 claramente los resultados de las acciones, si las mismas fueron positivas o
 negativas para el logro final de los objetivos.
 
-\subsubsection{Representación e interacción}
-
-Representación se refiere a como se visualiza el entorno, e interacción como se
-relaciona el jugador con su entorno.
+\item \textbf{Representación e interacción:} representación se refiere a como se
+    visualiza el entorno, e interacción como se relaciona el jugador con su
+    entorno.
 
 Se inicia con un bosquejo de las representaciones de la escena del juego, para
 así poder definir los elementos que forman parte de la escena.
@@ -197,25 +179,25 @@ cámara se sitúa inmediatamente atrás y arriba de la cabeza), como será la
 interacción con la cámara, acercamientos y movimientos para contemplar el
 entorno.
 
-\subsubsection{Implementación} 
-
-En esta etapa se estudia el estado del arte de las plataformas tecnológicas
-disponibles para el desarrollo del juego, se toman en cuenta los factores como
-la disponibilidad de componentes, de documentación, lenguajes de programación y
-herramientas de pruebas automáticas.
+\item \textbf{Implementación:} en esta etapa se estudia el estado del arte de las
+    plataformas tecnológicas disponibles para el desarrollo del juego, se toman
+    en cuenta los factores como la disponibilidad de componentes, de
+    documentación, lenguajes de programación y herramientas de pruebas
+    automáticas.
 
 El proceso puede ser iterativo, entre sesiones de implementación y evaluación de
 lo implementado, para así poder realizar optimizaciones enfocadas especialmente
 en la estética, la retroalimentación y el estado del jugador.
 
-\subsubsection{Evaluación} 
-
-Durante el desarrollo del juego serio, se deben realizar varias sesiones de
-evaluación, por ejemplo, con los responsables o expertos y miembros de la
-audiencia objetivo. Así mismo, se debe realizar evaluaciones con los grupos de
-interés las cuales se centra en la adaptación del juego (usabilidad). 
+\item \textbf{Evaluación:} durante el desarrollo del juego serio, se deben
+    realizar varias sesiones de evaluación, por ejemplo, con los responsables o
+    expertos y miembros de la audiencia objetivo. Así mismo, se debe realizar
+    evaluaciones con los grupos de interés las cuales se centra en la adaptación
+    del juego (usabilidad). 
 
 La primera se centra en la validación del modelo de la simulación
 (refinamiento), mientras que la segunda evaluación sirve para probar el juego en
 un escenario (parecido al final) y evaluar los aspectos relacionados con el
 proceso de aprendizaje.  
+
+\end{enumerate}
