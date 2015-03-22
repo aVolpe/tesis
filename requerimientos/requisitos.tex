@@ -5,74 +5,89 @@
 A fin de que la solución propuesta pueda cumplir con las competencias básicas
 definidas por el plan de estudio, se definen varios tipos de requisitos.
 
-Las condiciones que afectan a la solución como una herramienta, son:
+Las condiciones generales que afectan a la solución como una herramienta, son:
 
-\observacion{El jugar es un termino que tiene sentido solo cuando se explica que
-    la solución es un juego}
 \begin{itemize}
-    \item Se debe permitir al \fixme{jugador}{Usuario} poder utilizar el entorno virtual en el
+\item Se debe permitir al usuario poder utilizar el entorno virtual en el
     momento y lugar que desee es decir, es decir, se le debe proveer ubicuidad.
-\item Las escenas presentadas, junto con lo elementos dentro de ellas deben ser
-    representados en tres dimensiones y deben ser lo mas realista
-    posible\revisar{Debería ser abreves, que el escenario sea realista, osea el
-        realismo es el requisito y que sea en 3D es una consecuencia}.
+
+\item Los escenarios presentados, junto con los elementos que los componen,
+    deberían ser lo suficientemente realistas para provocar un sentido de
+    inmersión al usuario.
+
 \item Cada escena representará un procedimiento de enfermería que debe ser
-    realizado por el jugador.
-\item El entorno debe permitir al jugador decidir libremente las acciones que
+    realizado por el usuario.
+
+\item El entorno debe permitir al usuario decidir libremente las acciones que
     quiere realizar, favoreciendo la exploración del entorno.
-\item El entorno no debe brindar pistas al jugador acerca de la forma en la que
+
+\item El entorno no debe brindar pistas al usuario acerca de la forma en la que
     se deben realizar las procedimientos.
-\item El entorno debe brindar al jugador información final acerca de su
+
+\item El entorno debe brindar al usuario información final acerca de su
     desempeño en la escena.
-\item La vision del jugador deberá poder se manipulada en tres dimensiones,
-    permitiendo acercar, alejar, mover y rotar la vision para poder observar el
-    entorno sin limitaciones.
-\item El final de una partida debe indicarse mediante un botón en un menu
-    ubicado en la pantalla principal de la escena.
+
+
 \end{itemize}
 
-\observacion{Esto hay que separar entre requisitos generales (ver +)}
-\observacion{No debería ir en otro capítulo?}
-
-Con respecto a la interacción del jugador con los diferentes elementos que
+Con respecto a la interacción del usuario con los diferentes elementos que
 pueden ser utilizados dentro de la simulación, denominados objetos, son:
 
 \begin{itemize}
+
 \item La selección de objetos debe ser homogénea, y los mismos pueden ser
     accedidos en cualquier momento, representando la mesa de elementos que
     poseen los enfermeros durante la práctica profesional.
+
 \item Debe ser claro que objeto actualmente esta en uso.
+
 \item Debe ser posible simular la selección y des-selección de objetos.
+
 \item Cada objeto disponible durante la simulación debe ser utilizado de
     manera independiente de los demás, y solamente un objeto a la vez.
+
 \end{itemize}
 
-La interacción entre el jugador y el paciente se toman los siguientes
-requisitos:
+Para la interacción entre el usuario, el paciente y el entorno se toman los
+siguientes requisitos:
 
 \begin{itemize}
-\item El jugador puede manipular el estado del paciente a través de objetos, la
+\item El usuario puede manipular el estado del paciente a través de objetos, la
     utilización de los mismos debe ser uniforme e intuitiva.
+
 \item Las acciones sobre los objetos no deben ser muy detalladas, no deben
-    distraer al jugador del objetivo principal de la simulación.
+    distraer al usuario del objetivo principal de la simulación.
+
 \item Todas las acciones sobre objetos que no son relevantes para el objetivo de
     la simulación, no deben ser simuladas, pero sí deben ser realizadas (por
     ejemplo puede existir una opción que indique la realización de cierta
     acción, pero la acción en sí no se simula).
+
+\item La vision del usuario deberá poder se manipulada en tres dimensiones,
+    permitiendo acercar, alejar, mover y rotar la vision para poder observar el
+    entorno sin limitaciones.
+
 \end{itemize}
 
-En cuanto a las acciones que realiza el jugador mientras utiliza la simulación,
+En cuanto a las acciones que realiza el usuario mientras utiliza la simulación,
 se consideran los siguientes requisitos:
 
 \begin{itemize}
-\item Las acciones realizadas por los jugadores en el entorno virtual deben ser
+\item Las acciones realizadas por los usuario es en el entorno virtual deben ser
     registradas.
+
 \item Cada acción realizada por el usuario debe ser validada por el entorno, de
     forma a ofrecer información correcta acerca de sus logros al final de la
     partida.
+
 \item La validez de una acción puede requerir en algunos casos que se hayan
     hecho algunas acciones previas, pueden requerir un orden definido, o pueden
     depender del entorno en el cual se realizan las mismas.
-\item No se deben dar pistas o mensajes al jugador durante la partida cuando
+
+\item No se deben dar pistas o mensajes al usuario durante la partida cuando
     este realice incorrectamente una acción.
+
+\item El final de una partida debe indicarse mediante un botón en un menu
+    ubicado en la pantalla principal de la escena.
+
 \end{itemize}
