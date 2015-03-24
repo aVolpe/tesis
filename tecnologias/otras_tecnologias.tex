@@ -1,10 +1,4 @@
-\section{Entorno de desarrollo}
-
-\observacion{El entorno de quien}
-
-\observacion{En este punto medio que se necesita entender la solución de una
-    manera abstracta primreo. Por que un backend?, por que un frontend? por que
-    photoshop?, falta la intro que explique}
+\section{Entorno de desarrollo de la solución}
 
 Este proceso se compone de varios pasos necesarios, para llevar a cabo el
 desarrollo completo se debe recurrir a una gran cantidad de tecnologías,
@@ -14,7 +8,7 @@ En esta sección se describen todos las partes involucradas en el desarrollo de
 la solución propuesta. 
 
 La solución se compone de dos partes, la primera es la aplicación que los
-usuarios utilizan para realizar las prácticas, denominada solución, y la segunda
+usuarios utilizan para realizar las prácticas, denominada \textit{Frontend}, y la segunda
 parte, es un servidor que se encarga de almacenar la información sobre los
 usuarios de la solución y como la utilizan, denominado \textit{Backend}.
 
@@ -24,33 +18,28 @@ las herramientas específicas de la creación de la simulación y por último, s
 citan y describen de manera breve las herramientas utilizadas por el
 \textit{backend}.
 
+La idea detrás de separar la solución en \textit{Frontend} y \textit{Backend} 
+es que ambas partes de la solución se podrán mantener de forma separada sin que 
+el cambio de una afecte el funcionamiento de la otra. 
+
 \subsection{Herramientas de gestión de código}
-\observacion{Resumir}
 
-La gestión del código fuente desarrollado como parte de esta tesis se realizo
+La gestión del código fuente desarrollado como parte de esta tesis fue realizado
 mediante la utilización de la herramienta de control de código fuente
-\textit{Git}, \textit{Git} es un software de control de versiones distrubido, de
-código abierto bajo la licencia \Gls{gnu}\cite{git}.
-
-El proveedor del servicio \textit{Git} utilizado es
-\textit{BitBucket}\cite{bitbucket}, el cual almacena repositorios \textit{Git},
-la principal característica y motivación por la cual se utiliza este servicio es
-que el mismo permite mantener varios repositorios privados de manera
-gratuita\cite{bitbucket}, de esta manera, se utilizan distintos repositorios,
-específicos para cada parte del presente trabajo, un repositorio para los
-documentos de las reuniones y la propuesta de tesis, un repositorio que mantiene
-el código fuente del libro de la tesis, un repositorio que mantiene el código
-fuente, imágenes y diferentes archivos multimedia de la solución, y finalmente
-un repositorio que mantiene el código fuente del servidor que almacena los datos
-de los usuario.
+\textit{Git}, \textit{Git} es un software de control de versiones distribuido,
+de código abierto bajo la licencia \Gls{gnu}\cite{git}. El proveedor del
+servicio \textit{Git} utilizado es \textit{BitBucket}\cite{bitbucket}, el cual
+almacena repositorios \textit{Git}, la principal característica y motivación por
+la cual se utiliza este servicio es que el mismo permite mantener varios
+repositorios privados de manera gratuita\cite{bitbucket}.
 
 \subsection{Desarrollo del \textit{frontend}}
 
 El desarrollo de la solución requiere de una variedad importante de tecnologías
-aparte del motor, las herramientas descritas en esta sección complementan al
+aparte del motor de videojuegos, las herramientas descritas en esta sección complementan al
 motor seleccionado y facilitan la creación de contenido.
 
-Se utilizo el \Gls{ide} \textit{Unity Editor} para la creación de las escenas,
+Se utilizó el \Gls{ide} \textit{Unity Editor} para la creación de las escenas,
 el \Gls{ide} \textit{MonoDevelop} y el lenguaje \cs{} para la programación de la
 interacción entre los componentes de la solución.
 
@@ -58,30 +47,25 @@ Adicionalmente se utilizaron varias herramientas de diseño para crear
 componentes 3D y 2D, \textit{Make Human} es utilizado para la creación de los
 pacientes, \textit{3Ds Max} permite la creación de objetos como gazas, y otros
 elementos utilizados dentro de la solución. En cuanto a los gráficos 2D, se
-utilizo \textit{Photoshop}, y diversas páginas web que proveían contenido
+utilizaron \textit{Photoshop}, y diversas páginas web que proveían contenido
 gratuito.
 
 \subsubsection{Unity Editor}
 
-\observacion{Explicar esto con un lenguaje natural}
+El \Gls{ide} de \textit{Unity} es la herramienta en la se crean los videojuegos
+o simulaciones. Este \Gls{ide} importa todos los \textit{asset}\footnote{Un
+    \textit{Asset} es un paquete \textit{Unity} que puede contener modelos,
+    librerias, sonidos, etc.}. Permite compilar las escenas con los terrenos,
+luces, audios, personajes, física, entre otros. Se puede agregar interacción a
+través de \textit{scripting}. En este \Gls{ide} se puede probar y editar en
+forma simultánea los videojuegos y desplegarlos en las plataformas
+elegidas\cite{unity3d}. 
 
-El \Gls{ide} de \textit{Unity} es la herramienta en la se crean \fixme{los
-    juegos}{desambiguar} o simulaciones. Este \Gls{ide} importa todos los
-\fixme{activos}{?} que se hayan seleccionado y los organiza dentro de él.
-Permite compilar las escenas con los terrenos, luces, audio, personajes, física,
-entre otros. Se puede agregar interacción a través de \textit{scripting}. En
-este \Gls{ide} se puede probar y editar en forma simultánea los juegos y
-desplegarlos en las plataformas elegidas\cite{unity3d}. 
-
-Existen cinco vistas en el editor: explorador de proyectos, inspector,
-jerarquía, escena y juego. Cada una de estas vistas cuenta con las herramientas
-necesarias que permiten el desarrollo del juego\cite{unity3d}.
-
-El editor se utiliza por que es única herramienta que permite crear escenas en
-\textit{Unity}, sin embargo, este \Gls{ide}, no permite la edición de código
-\footnote{Existen \textit{Assets} que permiten la edición de código dentro del
-    \textit{Unity Editor}, pero son pagas y de baja reputación}, por ello se
-necesita un editor externo de código.
+Este editor es la única herramienta que permite crear escenas en \textit{Unity},
+sin embargo, este \Gls{ide}, no permite la edición de código\footnote{Existen
+    \textit{Assets} que permiten la edición de código dentro del \textit{Unity
+        Editor}, pero son pagas y de baja reputación}, por ello se necesita un
+editor externo de código.
 
 
 \subsubsection{MonoDevelop}
@@ -101,35 +85,11 @@ gratuítos\footnote{\textit{Microsoft Visual Studio} permite el mismo nivel de
 
 \subsubsection{Lenguaje de programación}
 
-\observacion{Explicar el que se usa nomas.}
-\observacion{Buscar algo mejor para \cs{}}
-
 \textit{Unity3D} utiliza versiones limitadas\footnote{La definición del lenguaje
     es la misma, pero las librerías estándar no están completas} de tres
 lenguajes de programación: \cs{}, \textit{UnityScript}, y
 \textit{Boo}\cite{unity:script}. Estos lenguajes son compilados y orientados a
 objetos.
-
-\cs{} es un lenguaje de programación orientado a objetos diseñado por
-\textit{Microsoft}, es el lenguaje más utilizado por la comunidad, y el
-subconjunto de funcionalidades implementadas en \textit{Unity3D} hace que la
-mayoría de las librerías disponibles para \cs{} funcionen correctamente en
-\textit{Unity3D}.
-
-\textit{UnityScript} es un lenguaje normalmente confundido con
-\textit{JavaScript}, lenguaje del que esta inspirado, una de las principales
-diferencias es que \textit{UnityScript} es orientado a objetos, a través de
-clases, al contrario que \textit{JavaScript} que es orientado a objetos a través
-de prototipos. Otras diferencias menores con \textit{JavaScript}, es que en
-\textit{UnityScript}, el nombre del archivo es el nombre de una clase implícita
-que engloba el contenido del archivo\cite{us_vs_js}, por ello, las librerías
-disponibles para \textit{JavaScript} no son compatibles con
-\textit{UnityScript}.
-
-\textit{Boo} es un lenguaje inspirado en \textit{Python}, desarrollado bajo la
-licencia \Gls{mit}, la cantidad de librerías portables a \textit{Unity3D}
-disponibles es muy limitada y la aceptación de la comunidad hacia el lenguaje es
-pobre.
 
 Otra característica interesante es que, por el orden de compilación de los
 proyectos \textit{Unity3D}, los archivos \textit{UnityScript} y \textit{Boo} son
@@ -166,13 +126,25 @@ Las herramientas utilizadas para crear modelos 3D son las siguientes:
 
 \subsection{Desarrollo del \textit{backend}}
 
-\observacion{Resumir}
 
 A fin de registrar las actividades del usuario, se necesita de un servidor que
 almacene los datos de todos los usuarios y las actividades que estos realizan
 dentro de la solución.
 
-Este servicio debe proveer:
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{tecnologias/images/backend_diagrama.png}
+\caption{Diagrama de la interacción de los usuarios con el \textit{BackEnd}, se
+    puede observar a grandes rasgos, los componentes del sistema y los servicios
+    que ofrece.}
+\label{fig:backend_diagrama}
+\end{figure}
+
+
+Se puede observar en lineas generales como funciona este servicio
+en~\ref{fig:backend_diagrama}, desde el registro de actividades del usuario, a
+la comunicación con el \textit{backend}, su posterior traducción y persistencia
+en una base datos, así, este servicio debe proveer:
 
 \begin{itemize}
     \item \textbf{Alta disponibilidad}: el servidor debe estar disponible en
@@ -191,30 +163,12 @@ Para el desarrollo de la aplicación web que almacena los datos se utiliza
 los autores con la tecnología, y la facilidad que provee la misma para la
 realización de servicios web que permitan la interacción con la solución.
 
-\Gls{javaee} es un estándar de software empresarial de código abierto cuyo
-desarrollo es dirigido por la comunidad\cite{javaee}, la implementación
-utilizada es de \textit{RedHat} llamada \textit{JBoss} en su versión $7.1$,
-\textit{JBoss} es un esfuerzo de la comunidad dirigido por \textit{RedHat}. 
-
 Para los servicios se utiliza la arquitectura \Gls{rest}, la principal
 motivación para utilizar \Gls{rest} es la eficiencia en el uso de la
 red\cite{pautasso2008restful}, la cual es también la motivación para la
-utilización de \Gls{json}. 
-
-La implementación del lado del servidor de la arquitectura \Gls{rest} es
-\textit{RestEasy}, \textit{RestEasy} es un proyecto de código abierto dirigido
-por \textit{RedHat} y que forma parte de la plataforma \textit{JBoss}, de parte
-de la solución se utiliza la implementación por defecto de \textit{Unity3D}.
-
-Otro factor determinante es la facilidad de interacción que existe entre
-\textit{Unity3D} y los servicios \Gls{rest}, debido a que \Gls{rest} cumple con
-el protocolo HTTP, y en ambos ecosistemas (\textit{JavaEE} y \textit{Unity3d})
-existen implementaciones disponibles y de fácil utilización.
-
-Para el desarrollo del servidor web se utilizo el \Gls{ide} \textit{Eclipse}, el
-cual es un proyecto de código abierto dirigido por la \textit{Eclipse
-    Fundation}\cite{eclipse}, el mismo provee facilidades para el desarrollo de
-servicios web \Gls{rest}.
+utilización de \Gls{json}. La implementación del lado del servidor de la
+arquitectura \Gls{rest} es \textit{RestEasy}, de parte del \textit{frontend} se utiliza
+la implementación por defecto de \textit{Unity3D}.
 
 El almacenamiento permanente de los datos se logra con la utilización de
 \textit{PostgreSQL}, el cual es un motor de bases de datos de código abierto
@@ -228,27 +182,9 @@ accesibilidad, se utiliza la herramienta de plataforma como servicio de
 \textit{RedHat} llamada \textit{OpenShift}, la cual es un producto de código
 abierto dirigido por \textit{RedHat}.
 
-\textit{OpenShift} provee diferentes plataformas, entre las cuales se encuentran
-las herramientas seleccionadas \textit{PostgreSQL} 9.1 y \textit{JBoss
-    Application Server} 7.1.
-
 Además de dirigir el proyecto, \textit{RedHat} provee un servicio limitado y
 gratuito\cite{openshift:pricing}.\footnote{Existen versiones completas del
     producto mantenidas por \textit{RedHat}, las cuales tienen un costo mensual
     y de acuerdo a las funcionalidades utilizadas\cite{openshift:pricing}} Para
 esta tesis se utilizo el servicio gratuito con la plataforma \textit{JBoss
     Application Server 7.1} y \textit{PostgreSQL 9.1}.
-
-Otra característica importante de \textit{OpenShift} es la facilidad con la cual
-se pueden desplegar nuevas versiones de la aplicación, utiliza un repositorio
-\textit{GIT} para mantener el código de la última versión, y cada vez que se
-actualiza este repositorio, la aplicación se despliega con la versión
-actualizada.
-
-% NOTA DEL TUTOR: no es necesario describir todas las librerías, hay que tratar
-% de explicar a más alto nivel al menos y mencionar que se necesita, pero sin
-% dedicar un párrafo completo.
-
-\observacion{Vendría bien esa explicación más general de la arquitectura con un
-    grafoo por lo menos, de como funciona : frontend -> datos -> nube ->
-    backend}
