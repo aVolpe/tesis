@@ -112,7 +112,10 @@
 \newcommandx{\revisar}[2][1=]{\todo[size=\small,caption={Revision},linecolor=red,backgroundcolor=white,#1]{#2}}
 \newcommand{\tabletodo}[2][]{\begin{minipage}{3cm}\todo[inline,#1]{#2}\end{minipage}}
 \newcommand{\fixme}[2]{\uline{#1}\todo[linecolor=blue,backgroundcolor=green,size=\small]{#2}}
-\newcommand{\cs}{C$\sharp$ }
+%\newcommand{\cs}{C$\sharp$ }
+%\newcommand{\cs}{C\includegraphics{hash-symbol}}
+\newcommand{\cs}{%
+  {\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\fontseries{b}\selectfont\#}}}}
 
 %\newcommand{\fixme}[2]{\uline{#1}\todo[linecolor=black,backgroundcolor=green,size=\Small]{\begin{spacing}{0.5}#2\end{spacing}}}
 
