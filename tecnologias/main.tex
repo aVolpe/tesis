@@ -1,8 +1,12 @@
 \chapter{Tecnologías}
 \label{chap:tecnologias}
+\observacion{Para el desarrollo de videojuegos?}
+\observacion{Una sección más al final como un resumen/tabla/gráfico del stack
+    service móvil}
 
-Luego de definir los requerimientos y el alcance que tener la solución propuesta se
-deben seleccionar de manera adecuada las tecnologías que serán utilizadas para
+Luego de definir los requerimientos y el alcance \fixme{que tener}{es
+    fundamental revisar las tecnologías} \fixme{la solución propuesta se
+deben seleccionar de manera}{} adecuada las tecnologías que serán utilizadas para
 implementarla de tal forma que cumpla con todos los requerimientos, el esquema
 general de interacción se observa en~\ref{fig:componentes}.
 
@@ -20,11 +24,12 @@ criterios para seleccionar de entre ellos el más adecuado.
 \label{fig:componentes}
 \end{figure}
 
-Entrando un poco más en detalle dentro de la implementación de la solución, se describen 
+\fixme{Entrando un poco más en detalle}{} dentro de la implementación de la solución, se describen 
 las herramientas que son necesarias para el desarrollo del juego a más bajo nivel como el 
 lenguaje de programación, herramientas para modelado 3D, gestores de código
 fuente, entre otros. Estas tecnologías son agrupadas en tres partes principales:
 
+\observacion{Agregar footnotes para definir backend y frontend}
 \begin{itemize}
     \item \textbf{Herramientas de gestión de código}: se describen las
         tecnologías requeridas para gestionar y mantener código.
@@ -37,13 +42,14 @@ fuente, entre otros. Estas tecnologías son agrupadas en tres partes principales
         de la solución.
 \end{itemize}
 
-La tecnología necesaria debería permitir crear escenarios en tres dimensiones,
+\fixme{La tecnología necesaria debe permitir crear escenarios en tres dimensiones,
 animaciones y otros aspectos relacionados a los videojuegos, como iluminación,
 interacción entre componentes, etc, además de otros factores importantes como
-comunicación, audio, etc.
+comunicación, audio, etc.}{Esto no debería ir en frontend?}
 
 Los factores relacionados a los videojuegos son cubiertos por un \enquote{Motor
-de videojuegos}, y los demás factores deben ser tratados con software especial.
+de videojuegos}, y los demás factores deben ser tratados con software
+\fixme{especial}{?}.
 
 Es necesario un \textit{backend} que permita almacenar la información de todos
 los usuarios de tal forma a unificar el acceso a los registros de los usuarios,
@@ -52,9 +58,9 @@ para que puedan enviar los registros.
 
 También se requiere que pueda almacenar información de todos los usuarios, con la mayor
 cantidad de detalle posible, para así poder realizar análisis posteriores.
-La cantidad de tiempo utilizado, cantidad de procedimientos realizados y
-frecuencia de uso, son ejemplos de información que debe ser registrada para su
-posterior análisis.
+La \fixme{cantidad}{El tiempo tota por práctica} de tiempo utilizado, cantidad
+de procedimientos realizados y frecuencia de uso, son ejemplos de información
+que debe ser registrada para su posterior análisis.
 
 
 
