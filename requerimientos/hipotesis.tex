@@ -1,5 +1,5 @@
 \section{Alcance de la simulación}
-\label{sec:hipotesis}
+\label{sec:alcance}
 
 Para representar los procedimientos seleccionados y descritos en la
 sección\ref{sec:seleccion_escenas}, estos deben ser presentados dentro de
@@ -7,6 +7,7 @@ escenarios distintos con los elementos necesarios para poder llevarlos a cabo.
 Sin embargo, por limitaciones técnicas, tecnológicas y de tiempo, no es posible
 realizar una simulación de todos los pasos requeridos.
 
+\observacion{Más énfasis en el hecho que distrae a la parte pedagógica}
 Según~\cite{videojuegos:gonzaleztardon}, existe un compromiso visible entre
 realismo y credibilidad, tomando en cuenta que uno de los objetivos de la
 solución es la presentación de situaciones simplificadas que permitan transmitir
@@ -18,8 +19,9 @@ describirán a continuación sirven para acotar el
 alcance de la simulación, definen qué se simulará y cual es del detalle
 necesario para alcanzar las competencias básicas.
 
-A continuación se fundamentan por qué ciertos pasos serán simulados, representados 
-o no simulados dentro de la solución basados en limitaciones e hipótesis asumidas.
+\fixme{A continuación se fundamentan por qué ciertos pasos serán simulados,
+    representados o no simulados dentro de la solución basados en limitaciones e
+    hipótesis asumidas.}{Mover esto abajo de factores limitantes}
 
 Cada uno de los pasos están agrupados de acuerdo a cada uno de estos aspectos.
 
@@ -30,12 +32,15 @@ será simulado dentro de la solución. Se clasifican en tres: limitaciones técn
 importancia y facilidad de realización. Estos tres aspectos que influyen en qué partes 
 se simularán y qué partes se omitirán, se detallan a continuación.
 
+\observacion{No empezar con un ejemplo.}
 \begin{itemize}
-\item  \textbf{Limitaciones técnicas}: acciones como la simulación del agua        
-    (necesarios para el lavado de manos), requieren de requisitos de
-    hardware avanzados y un tiempo considerable de desarrollo. Las acciones
-    que escapan al alcance del hardware, del software o de tiempo de los
-    desarrolladores no son simuladas.
+\item  \textbf{Limitaciones técnicas}: 
+    
+    Acciones como la simulación del agua (necesarios para el lavado de manos),
+    requieren de requisitos de hardware avanzados y un tiempo considerable de
+    desarrollo. Las acciones que escapan al alcance del hardware, del software o
+    de tiempo de los desarrolladores no son simuladas. 
+    \observacio{Reformular capítulo anterior}
         
     Los pasos del procedimiento de extracción de sangre que no se simularán por 
     limitaciones técnicas son:
@@ -46,13 +51,15 @@ se simularán y qué partes se omitirán, se detallan a continuación.
     \end{itemize}
     
     
-\item  \textbf{Importancia}: no todos los pasos definidos en el procedimiento        
-    oficial son necesarios de simular, por ejemplo, la colocación de los
-    elementos cerca del lugar de trabajo, es un paso necesario en el
-    procedimiento, pero es considerado un paso poco importante y fácil de
+\item  \fixme{Importancia}{de qué?} 
+
+    No todos los pasos definidos en el procedimiento        
+    oficial son \fixme{necesarios}{mandatorios} de simular, por ejemplo, la
+    colocación de los elementos cerca del lugar de trabajo, es un paso necesario
+    en el procedimiento, pero es considerado un paso poco importante y fácil de
     realizar.
 
-    La importancia fue evaluada por profesionales del \Gls{iab}, los
+    La importancia es evaluada por profesionales del \Gls{iab}, los
     cuales dieron su apreciación acerca de cada aspecto simulado, el mismo
     es tenido en cuenta para determinar la importancia de cada
     acción.
@@ -67,7 +74,9 @@ se simularán y qué partes se omitirán, se detallan a continuación.
     
     
 \item \textbf{Facilidad de realización en la vida real o en el laboratorio}:
-    ciertos pasos son fáciles de realizar en la vida real pero requieren un
+    \observacion{Reformular título}
+
+    Ciertos pasos son fáciles de realizar en la vida real pero requieren un
     esfuerzo significativo para ser simulados con realismo, como preparar el
     equipo necesario.
 
@@ -99,14 +108,16 @@ se simularán y qué partes se omitirán, se detallan a continuación.
 \end{itemize}
 
 \subsection{Hipótesis}
+\label{sec:hipotesis}
+\observacion{No utilizar: existen, que debería, no son}
 
-Además de los pasos mencionados anteriormente, existen otros que son necesarios 
-representar pero no necesariamente simular de forma detallada, para estos 
-pasos se formularon hipótesis basadas en apreciaciones de 
-los profesores del \Gls{iab} y en pruebas de usabilidad de interfaz las cuales 
-son detalladas en el capítulo\ref{chap:evaluacion} y cuyos resultados se muestran 
-en el capítulo\ref{chap:analisis}. A continuación se detallan cada una de estas 
-hipótesis.
+\fixme{Además de los pasos mencionados anteriormente, existen otros pasos que
+    son necesarios representar pero no necesariamente simular de forma
+    detallada,}{Mejorar} para estos pasos se formularon hipótesis basadas en
+apreciaciones de los profesores del \Gls{iab} y en pruebas de usabilidad de
+interfaz las cuales son detalladas en el capítulo\ref{chap:evaluacion} y cuyos
+resultados se muestran en el capítulo\ref{chap:analisis}. A continuación se
+detallan cada una de estas hipótesis.
 
 % Hipótesis
 \begin{itemize}
@@ -152,11 +163,13 @@ hipótesis.
     \end{itemize}
     
 \item 
-    \textbf{Acciones por menú}: acciones como el de generar un estímulo doloroso
-    al paciente tienen limitaciones técnicas para su simulación pero no pueden
-    ser omitidas debido a su gran importancia en el procedimiento. Por lo tanto,
-    acciones como estas son realizadas a través de menús contextuales.
+    \textbf{Acciones por menú}: \fixme{}{Menú? UI?} acciones como el de generar
+    un estímulo doloroso al paciente tienen limitaciones técnicas para su
+    simulación pero no pueden ser omitidas debido a su gran importancia en el
+    procedimiento. Por lo tanto, acciones como estas son realizadas a través de
+    menús contextuales.
     
+    \observacion{No se debería hablar de soluciones aún}
     Los pasos del procedimiento de valoración de la escala de Glasgow que son
     importantes de simular pero poseen limitaciones técnicas son:
     \begin{itemize} 
@@ -167,16 +180,15 @@ hipótesis.
 
 \item 
     \textbf{Acciones de bioseguridad}: la bioseguridad, que es un aspecto
-    fundamental y transversal a todo procedimiento de enfermería. es un área muy amplia y 
-    transversal a todos los procedimientos de enfermería por lo que se considera 
-    que simular cada acción es complejo y que sólo basta con que el estudiante sepa 
-    el momento en el que debe realizarse cada una de estas acciones y por lo mismo,
-    es suficiente representarlas a través de opciones en la interfaz gráfica.
+    fundamental y transversal a todo procedimiento de enfermería. Es un área muy
+    amplia y transversal a todos los procedimientos de enfermería por lo que se
+    considera que simular cada acción es complejo y que sólo basta con que el
+    estudiante sepa el momento en el que debe realizarse cada una de estas
+    acciones y por lo mismo, es suficiente representarlas a través de opciones
+    en la interfaz gráfica.
     
-    Los pasos del procedimiento de extracción de sangre que son representados por 
-    opciones son:
-    %Las acciones de bioseguridad, se
-    %    realizan a través de una opción en la interfaz gráfica.
+    Los pasos del procedimiento de extracción de sangre que son representados
+    por opciones son:
     \begin{itemize}
         \item Asepsia de las manos.
         \item Vestirse con bata estéril, tapaboca estéril y gorro estéril.
