@@ -1,7 +1,4 @@
 \section{Backend de la solución}
-\observacion{Podrían explicar que hacen con estos datos, no listar resultados de
-    queries, pero sí explicar que tipo de información esperan obtener con esta
-    concretamente. Para qué?, Por qué?, intro a análisis}
 
 La solución almacena información detallada acerca de las acciones del usuario,
 las condiciones de estas acciones y el contexto en el cual fueron ejecutadas.
@@ -9,18 +6,18 @@ las condiciones de estas acciones y el contexto en el cual fueron ejecutadas.
 Esta información es almacenada en un servidor dedicado para su posterior
 análisis.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[scale=0.5]{solucion/images/backend_diagrama.png}
-\caption{Diagrama de la interacción de los usuarios con el \textit{BackEnd}, se
-    puede observar a grandes rasgos, los componentes del sistema y los servicios
-    que ofrece.}
-\label{fig:backend_diagrama2}
-\end{figure}
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[scale=0.5]{solucion/images/backend_diagrama.png}
+%\caption{Diagrama de la interacción de los usuarios con el \textit{BackEnd}, se
+    %puede observar a grandes rasgos, los componentes del sistema y los servicios
+    %que ofrece.}
+%\label{fig:backend_diagrama2}
+%\end{figure}
 
-En la figura~\ref{fig:backend_diagrama} se pueden observar los componentes
-principales de este sistema, y su interacción con los dispositivos móviles de
-los usuarios. 
+%En la figura~\ref{fig:backend_diagrama} se pueden observar los componentes
+%principales de este sistema, y su interacción con los dispositivos móviles de
+%los usuarios. 
 
 \subsection{Registro de usuarios}
 
@@ -38,6 +35,7 @@ solución. Estas encuestas son explicadas en detalle en~\ref{chap:evaluacion} y 
 resultados en~\ref{chap:analisis}.
 
 \subsection{Registro de eventos}
+\label{sec:backend_reg_eventos}
 
 Las acciones que realiza el usuario son almacenadas en un archivo temporal,
 dentro del dispositivo móvil del usuario, cuando este decide enviar la
@@ -69,3 +67,34 @@ La petición enviada desde la solución, contiene el número de teléfono del
 usuario, un identificador único generado por \textit{Unity3D} y una lista de
 eventos, en formato \Gls{json}.
 
+\subsection{Utilización de información}
+
+Las tablas~\ref{tab:glasgow_registro} y~\ref{tab:hemocultivo_registro} muestran
+como la información almacenada puede ser utilizada para evaluar las acciones de
+un usuario.
+
+Por ejemplo, se puede analizar cuantas veces los usuarios activaron el menú
+\enquote{Acciones de voz}, y de estas, cuantas veces lo utilizaron, para así
+poder comprobar la hipótesis \enquote{Comandos de voz}
+(ver~\ref{sec:hipotesis}), esta información es útil además para medir el
+nivel de sensibilidad necesaria para activar el menú.
+
+Además de las tablas~\ref{tab:glasgow_registro}
+y~\ref{tab:hemocultivo_registro}, existe información que puede ser extraída del
+registro de manera implícita, como:
+
+\begin{itemize}
+\item Cantidad de sesiones, de manera global y por usuario.
+\item Tiempo utilizado, por sesión, por usuario, por día, etc.
+\item Frecuencia de uso.
+\item Rango de tiempo en el cual se utilizo la solución.
+\item Evolución de los usuarios, comparando registros de varias sesiones.
+\end{itemize}
+
+Adicionalmente, al realizar una encuesta sobre los conocimientos de los alumnos
+al finalizar el periodo de prueba, se pueden utilizar los registros para
+verificar si las respuestas dadas en la encuesta corresponden a la utilización
+de la solución.
+
+El registro de actividad es la herramienta utilizada para realizar la evaluación
+del uso de la solución.

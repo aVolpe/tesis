@@ -1,72 +1,26 @@
 %! TEX root = ../main.tex
-\chapter{Propuesta de solución}
+\chapter{Solución}
 \label{chap:solucion}
 
-
-\observacion{\textbf{Mirti}:
+\todo[backgroundcolor=white,inline,caption={Nombres}]{Estos son los nombres
+    que pensamos: 
 \begin{itemize}
-\item Estructurar de nuevo el capítulo de solución 
-\item Que se quiere hacer,
-    que hay para hacer (herramientas), la solución en sí (más gráficos que
-    explicaciones)
-\item Grafo de dependencia de pasos (requisitos)
-\item Disminuir texto
-\item Elementos -> partes -> específico esc1 -> específico esc 2
-    \item Imágenes con indicaciones
-\item Que información se puede sacar de los logs
-\item Poner por partes la conclusión
-\item motor gráfico no es lo mismo motor de juegos
-\item Punto medio para descripción de los motores (definir los criterios que
-    todos deben tener)
-\item Ver formato de la tabla comparativa
-\end{itemize}
-}
-
-\observacion{Arturo:
-\begin{itemize}
-\item Decir que se quiere usar tecnologías móviles
-\item Grafo de dependencias
-\item No describir lo que se podría mostrar con una imagen
-\item Mencionar partes del motor de videojuegos
-\item Nuevo orden de caps:
-    \begin{enumerate}
-    \item Problema
-    \item Requisitos o descripción (incluir retroalmientación)
-        \begin{itemize}
-        \item Que se quiere hacer
-        \item Grafo de pasos
-        \end{itemize}
-    \item Motores y tecnologías
-        \begin{itemize}
-        \item motores (Descripción y comparación)
-        \item Simulación (entidades, etc)
-        \end{itemize}
-    \item Solución
-\end{enumerate}
-\item Presentar para el lunes
-    \begin{itemize}
-        \item Introducción
-        \item TICS
-        \item Formato de impresión (a la derecha)
-        \item Un capítulo siempre empieza en la página impar
-    \end{itemize}
+\item evTesai (seria algo como entorno virtual de salud)
+\item eve (Entorno virtual de enfemería)
 \end{itemize}}
 
-\fixme{En el capitulo anterior, se describieron los fundamentos teóricos del uso de
-    videojuegos serios en el ambiente educativo, dicha descripción se centra en
-    aquellas áreas que requieren más practica para la adquisición de la pericia
-    necesaria. Así, se identifico el área de enfermería como problemática, la
-    formación de enfermeros y se selecciona algunos procedimientos que serán
-    utilizados para el contenido de la solución}{}. A continuación se busca converger
-todos los aspectos descriptos en capítulos anteriores.
 
-La solución propuesta en este trabajo consiste en el desarrollo de una
-aplicación para dispositivos móviles que se define como un juego serio llamado
-\fixme{\Gls{yave}}{No es tarde para cambiar de nombre!}, basado en el
-\fixme{construccionismo}{?}, el cual incluye conceptos de la gamificación, y de
-simulación. El juego consiste en ofrecer a los usuarios, en este caso alumnos de
-enfermería, un medio en el cual puedan realizar procedimientos de enfermería y
-cuyo objetivo es servir como herramienta de apoyo en el aprendizaje.
+En capítulos anteriores se describieron los requerimientos que debe tener la 
+solución para abordar los problemas encontrados en el área de enfermería dando 
+una propuesta de solución y las tecnologías disponibles para la implementación 
+de esa solución. En este capítulo se describen los aspectos de la solución 
+en cuanto a su implementación teniendo en cuenta esos requerimientos y 
+utilizando esas tecnologías.
+
+La solución consiste en un juego serio para dispositivos móviles llamado \Gls{yave}, el cual 
+consiste en ofrecer a los usuarios, en este caso alumnos de enfermería, un medio en 
+el cual puedan realizar procedimientos de enfermería y cuyo objetivo es servir como 
+herramienta de apoyo en el aprendizaje.
 
 \Gls{yave} permite al usuario poder seleccionar el procedimiento que quiera
 realizar, dando la posibilidad de interactuar con un paciente y con una conjunto
@@ -75,49 +29,48 @@ procedimiento seleccionado. Además, contempla la posibilidad de realizar
 acciones relacionadas a la bioseguridad, y otros aspectos transversales a la
 educación de un enfermero.
 
-La solución no solo le permite al usuario realizar los procedimientos para
-poner en practica sus conocimientos sobre el mismo, sino también evaluará al
+La solución no sólo le permite al usuario realizar los procedimientos para
+poner en practica sus conocimientos sobre los mismos, sino también evaluará al
 usuario, dándole al final de cada sesión una puntuación y describiendo los
 pasos realizados correcta e incorrectamente, proporcionando información acerca
 de los puntos incorrectos.
 
+A continuación se detalla las arquitectura general de la solución para 
+dar una visión global de la solución, luego se detallan cada una de las partes en 
+la que se divide llamadas \emph{Frontend} y \emph{Backend}.
+
 \input{solucion/arquitectura}
+\input{solucion/interfaz}
 \input{solucion/inconvenientes}
 \input{solucion/backend}
 
-
-%%% SOLUCION
-% 1.1. Solución
-% 1.1.1. Partes de la simulación
-% 1.1.2. Grafo de estados
-% 1.1.3. Inicio
-% 1.1.4. Extracción de muestras de sangre
-% 1.1.5. Valoración de la escala de Glasgow
-% 1.1.6. Pantalla de resultados
-% 1.2. Inconvenientes de diseño
-% 1.2.1. Interfaz de usuario
-% 1.2.2. Validaciones de contenido
-% 1.3. Backend de la solución
-% 1.3.1. Registro de usuarios
-% 1.3.2. Registro de eventos
-% 1.3.3. Detalles de implementación
-
-
-%%%% PROPUESTA DE TINCHO
-% 1. Arquitectura general
-%       Grafo de estados
-%       Partes de la simulación (eventos, entidades, etc)
-%       Motor achicamos los suficiente, puede ser un \subsubsection
-% 2. Interfaz
-%       Inicio
-%       Hemocultivo
-%           Pantalla de resultados
-%       Glasgow
-%           Pantalla de resultados
-% X.    Inconvenientes de diseño
-%           Interfaz de usuario
-%           Validaciones de contenido
-% 3. Backend
-%       Registro de usuarios
-%       Registro de eventos
-%       Detalles de implementación
+% Arquitectura general
+%   Flujo
+%   DONDE PONER?: Motor de reglas.
+%       Yo digo poner acá para que los demás sean homogéneos
+%   Interacción con el entorno
+% Inicio
+% Extracción de sangre
+%   Entidades.
+%   Acciones.
+%   Evaluación.
+%       Reglas para la evaluación durante la ejecución.
+%   Registro de actividad.
+%   Interfaz de usuario.
+%   Retroalimentación y puntuación final.
+% Glasgow
+%   Entidades
+%   Acciones
+%   Evaluación
+%       Pantalla de diagnostico
+%   Registro de actividad
+%   Interfaz de usuario
+%   Retroalimentación y puntuación final
+% Inconvenientes de diseño
+%   Interfaz de usuario
+%   Validaciones de contenido
+% Backend de la solución
+%   Registro de usuario
+%   Registro de eventos
+%   Detalles de implementación
+%   Utilización de información
