@@ -1,51 +1,58 @@
 \section{Interfaz de usuario}
 \label{sec:interfaz}
 
-Adicionalmente a las pruebas y mencionadas, durante el desarrollo se realizó una
-prueba de interfaz para comprobar hipótesis sobre la interfaz del usuario,
-específicamente buscando la retroalimentación de usuarios acostumbrados a
-tecnología similar a la utilizada en la solución.
+Durante el desarrollo de la solución se realizó una prueba para evaluar la 
+interfaz de usuario, específicamente buscando la retroalimentación de usuarios 
+acostumbrados a tecnología similar a la utilizada en la solución.
 
-La prueba de interfaz de usuario se realiza con alumnos de la carrera de
-Ingeniería en Informática de la Facultad Politécnica que pertenece a la
-Universidad Nacional de Asunción\todox{Agregar al glosario}, sin experiencia
-previa tanto con la solución como con los procedimientos simulados, pero si
-familiarizados con la utilización de dispositivos móviles.
+Esta prueba ayuda en el proceso de diseño e implementación de la solución con 
+las características mencionadas en los objetivos del trabajo y acorde a los 
+requerimientos. De esta manera se pueden identificar los aspectos que deben 
+ser mejorados.
 
 La prueba consta de dos partes importantes involucradas en la recolección
 de datos para su posterior análisis. Estas partes son las siguientes:
 
 \begin{description}
 
-\item[Simulación] Luego de una explicación acerca de las funciones y manejos
-    generales de la solución por parte de los experimentadores, cada usuario
-    completa una tarea que se le es asignada, como ayuda, recibe un papel que
-    lista todos los pasos necesarios para llevar a cabo el procedimiento
-    Extracción de muestras para hemocultivo utilizando la solución.
+\item[Simulación:] Luego de una explicación acerca de las funciones y manejos
+    generales de la solución por parte de los encargados de la prueba, cada usuario
+    completa una tarea que consiste en realizar el procedimiento de extracción de 
+    muestra de sangre, como ayuda, recibe una hoja con una lista de todos los pasos 
+    necesarios para llevar a cabo el procedimiento utilizando la solución.
     	
     Las simulaciones son grabadas mediante programas de captura de pantalla, así
     como por detectores de eventos táctiles.
     	
-\item[Encuesta] Posteriormente se le provee a cada sujeto una encuesta a cada
+\item[Encuesta:] Posteriormente se le provee una encuesta a cada
     usuario la cuál es utilizada para obtener una idea general acerca de la
-    calidad de la simulación. 
+    calidad de la simulación según la percepción de los mismos. Esta encuesta 
+    contiene preguntas que son medidas mediante la escala de tipo Likert. 
 
 \end{description} 
 
-\observacion{Incompleta?}
 \subsection{Muestra}
 
-El número de muestras tomadas fue 8, ya que según~\cite{nielsen2000} son necesarios
-al menos 5 participantes para poder obtener resultados significativos en una prueba
-de usabilidad. Además,~\cite{ritch2009} asegura que la teoría de~\cite{nielsen2000}
-es verdadera especialmente para pruebas simples. 
+La prueba de interfaz de usuario se realiza con alumnos de la carrera de
+Ingeniería en Informática de la \Gls{fpuna}, sin experiencia previa tanto con la
+solución como con los procedimientos simulados, pero sí familiarizados con la
+utilización de dispositivos móviles. La muestra no requiere de sujetos que sean
+parte del \emph{Universo} ya que sólo está orientada a mejorar aspectos de
+interfaz de usuario y no el contenido de la solución, además se considera que la
+muestra puede brindar una evaluación más crítica debido a su familiarización con
+interfaces similares a la de la solución.
 
-Se fundamenta el número de participantes, y que es una prueba sencilla, por qué:
+El número de muestras tomadas fue 8, ya que según~\cite{nielsen2000} son
+necesarios al menos $5$ participantes para poder obtener resultados
+significativos en una prueba de usabilidad. Además,~\cite{ritch2009} asegura que
+la teoría de~\cite{nielsen2000} es verdadera especialmente para pruebas simples. 
+
+Se fundamenta el número de participantes, y que es una prueba sencilla, por que:
 
 \begin{itemize}
 
-\item La prueba que se esta ejecutando es sencilla (no debería tomar más de 10
-    minutos) 
+\item La prueba que se está ejecutando es sencilla ya no debería tomar más de $10$
+    minutos.
 
 \item Se busca solamente obtener información acerca de la interfaz, y no el
     funcionamiento en sí de la simulación, pues los usuarios no son expertos en
@@ -61,91 +68,124 @@ Se fundamenta el número de participantes, y que es una prueba sencilla, por qu�
 \end{itemize}
 
 \subsection{Variables}
+\label{sec:evaluacion_interfaz_variables}
+
+Antes de definir las variables, se deben primero definir los conceptos 
+relacionados a los tipos de acciones que pueden realizarse sobre el paciente 
+virtual en la solución, los mismos son:
+
+\begin{itemize}
+\item \textbf{Acción por menú contextual:} se refiere a las acciones que el usuario 
+    puede realizar utilizando el menú contextual que aparece sobre cada una de las
+    herramientas disponibles en la solución.
+\item \textbf{Acción por menú de la \Gls{gui}:} se refiere a las 
+    acciones que el usuario puede realizar seleccionando una opción en los menús 
+    principales que presenta la interfaz.
+\item \textbf{Acción por herramienta:} se refiere a las actividades que el usuario 
+    puede realizar cuando tiene seleccionada una herramienta y que no involucre el 
+    uso del menú contextual.
+\end{itemize}
+
 
 Las variables medidas durante las simulaciones y realización de la tarea son las
 siguientes:
 
-\observacion{Quizás convenga poner esto más adelante}
-
 \begin{itemize}
 
-\item Cantidad de opciones elegidas (agrupadas por opción): número de veces en
-    que el usuario selecciona una determinada opción.
+\item \textbf{Tiempo de realización de la primera acción por menú contextual:} 
+    cuanto tiempo le toma al usuario realizar una acción por menú contextual la 
+    primera vez.
 
-\item Cantidad de acciones realizadas (agrupadas por tipo): número de veces  en
-    que el usuario realiza una determinada acción.
+\item \textbf{Tiempo de realización de la primera acción por \Gls{gui}:} cuanto 
+    tiempo le toma al usuario realizar una acción por menú de 
+    interfaz gráfica de usuario la primera vez.
+    
+\item \textbf{Tiempo de realización de la primera acción por herramienta:} cuanto 
+    tiempo le toma al usuario realizar una acción por herramienta la primera vez.
+    
+\item \textbf{Tiempo de realización de las siguientes acciones por menú contextual:} 
+    cuanto tiempo le toma al usuario realizar una acción por menú 
+    contextual las siguientes veces.
 
-\item Número de pasos realizados: cantidad de pasos requeridos que son
-    realizados en la simulación. 
+\item \textbf{Tiempo de realización de las siguientes acciones por \Gls{gui}:} 
+    cuanto tiempo le toma al usuario realizar una acción 
+    por interfaz gráfica de usuario las siguientes veces.
 
-\item Cantidad de movimientos espaciales: número de veces en que se modifica el
-    estado de la cámara para realizar las acciones deseadas.
+\item \textbf{Tiempo de realización de las siguientes acciones por herramienta:} 
+    cuanto tiempo le toma al usuario realizar una acción por herramienta 
+    las siguientes veces.
 
-\item Tiempo de elección de opción: cuanto tiempo tarda el usuario en elegir una
-    determinada opción.
+\item \textbf{Tiempo total:} se refiere al tiempo empleado por el usuario para 
+    completar la tarea asignada.
 
-\item Tiempo de realización de acción: cuanto tiempo tarda el usuario en
-    realizar una determinada acción.
+\item \textbf{Número de pasos realizados:} cantidad de pasos requeridos en la tarea 
+    que son realizados por el usuario en la simulación. 
 
-\item Cantidad de intentos para realizar acciones: número de veces en que un
-    usuario intenta realizar correctamente una acción. 
+\item \textbf{Cantidad de movimientos espaciales por tipo:} número de veces en que se 
+    modifica el estado de la cámara para realizar las acciones deseadas agrupados por 
+    tipo (desplazamiento, acercamiento/desplazamiento).
 
 \end{itemize}
 
-En cuanto a la encuesta, las siguientes son las variables que fueron consideradas y medidas:
+En cuanto a la encuesta, las siguientes son las variables que fueron consideradas 
+y medidas:
 
 \begin{itemize}
 
-\item Calidad gráfica: realismo y calidad de los modelos utilizados.
+\item \textbf{Calidad gráfica:} realismo y calidad de los modelos utilizados.
 
-\item Interacción: desenvolvimiento en el entorno y utilización del hardware.
+\item \textbf{Interacción:} desenvolvimiento en el entorno y utilización del 
+    hardware.
 
-\item Interacción con objetos: utilización errónea de objetos.
+\item \textbf{Interacción con objetos:} utilización errónea de objetos.
 
-\item Características del entorno: realismo del escenario y de los objetos
-    utilizados.
+\item \textbf{Características del entorno:} realismo del escenario y de los 
+    objetos utilizados.
 
-\item Usabilidad de la interfaz: facilidad de uso de las opciones proveídas por
-    la interfaz.
+\item \textbf{Usabilidad de la interfaz:} facilidad de uso de las opciones 
+    proveídas por la interfaz.
 
-\item Integración con el hardware: facilidad de uso de la solución con un dispositivo móvil. 
+\item \textbf{Integración con el hardware:} facilidad de uso de la solución con 
+    un dispositivo móvil. 
 
 \end{itemize}
 
 \subsection{Métricas}
 
-Para el análisis de la opinión de los usuarios, se utiliza la escala de Likert
-explicada en~\ref{sec:likert}, y en el análisis de la interacción del usuario se
-utilizan las grabaciones registradas durante la prueba.
+Para el análisis de la encuesta realizada a los usuarios, se utiliza la escala de Likert
+con la \emph{Doble estandarización} explicada en~\ref{sec:likert}, y en el análisis de la 
+interacción del usuario con la solución se utilizan las grabaciones registradas durante la 
+prueba.
 
-Haciendo uso de estas variables descriptas anteriormente, las métricas
+Haciendo uso de las variables descriptas anteriormente, las métricas
 utilizadas son las siguientes:
 
 \begin{itemize}
     
-\item Media de error en la elección de opciones: se obtiene dividiendo la suma
-    de las opciones realizadas sobre la cantidad ideal. 
+\item \textbf{Tiempo promedio de realización de las siguientes acciones por menú contextual:} 
+    se obtiene dividiendo la cantidad total de tiempo empleado en realizar acciones por menú 
+    contextual por el número de veces que se realizaron esas acciones, a excepción de la primera 
+    vez. 
     
-\item Media de pasos correctos: se obtiene dividiendo la cantidad de pasos
-    requeridos realizados sobre la cantidad de pasos requeridos. 
+\item \textbf{Tiempo promedio de realización de las siguientes acciones por \Gls{gui}:} 
+    se obtiene dividiendo la cantidad total de tiempo empleado en realizar acciones por \Gls{gui} 
+    por el número de veces que se realizaron esas acciones, a excepción de la primera 
+    vez. 
     
-\item Cantidad de movimientos por tipo: número de movimientos que fueron
-    realizados agrupados por tipo (desplazamiento, acercamiento/
-    desplazamiento).
+\item \textbf{Tiempo promedio de realización de las siguientes acciones por herramienta:} 
+    se obtiene dividiendo la cantidad total de tiempo empleado en realizar acciones por 
+    herramienta por el número de veces que se realizaron esas acciones, a excepción de la 
+    primera vez. 
     
-\item Evolución del tiempo de elección de opciones: variación del tiempo
-    requerido para elegir una opción entre la primera vez y las demás ocasiones.
+\item \textbf{Promedio de pasos correctos:} se obtiene dividiendo la cantidad de 
+    pasos requeridos realizados por los usuarios sobre la cantidad de pasos requeridos. 
     
-\item Evolución del tiempo de realización de acciones: variación del tiempo
-    requerido para realizar una acción entre la primera vez y las demás
-    ocasiones.
+\item \textbf{Promedio de movimientos por tipo:} se obtiene dividiendo el número de 
+    movimientos que fueron realizados agrupados por tipo (desplazamiento, acercamiento/
+    desplazamiento) por la cantidad de usuarios.
     
-\item Media de error en la realización de acciones: se obtiene dividiendo la
-    cantidad de intentos para realizar una determinada acción sobre la cantidad
-    ideal.
+\item \textbf{Promedio del tiempo total:} se obtiene dividiendo el tiempo total empleado 
+    por los usuario para completar la tarea asignada por el número de usuarios.
 
 \end{itemize}
 
-\observacion{Replantear el orden, no se entiende bien quequiere lograr cada una
-    de las disintas pruebas en función de los objetivos. Agregar un parrafo a
-    cada prueba explicando en que y como contribuye a los objetivos}

@@ -1,35 +1,32 @@
 \section{Registro de actividades}
 \label{sec:registro}
 
-Las metodologías anteriormente descritas incluyen exámenes\revisar{?} que miden
+Las metodologías anteriormente descritas incluyen encuestas que miden
 el conocimiento del alumno y su opinión con respecto a la solución propuesta,
-pero para poder formar una opinión válida deben experimentar con la misma, para
-ello se instala la misma en los dispositivos móviles de los $11$ alumnos que
-aceptaron formar parte de la prueba y poseían móviles que cumplen con los requisitos
-mínimos.
+para poder formar una opinión válida primero deben experimentar con la misma, para
+ello se instala la solución en los dispositivos móviles de los alumnos que forman 
+parte de la población objetivo.
 
-La instalación se lleva a cabo en el \Gls{iab}, y se procede a mostrar un video
-de la simulación, explicar la interfaz y realizar una muestra de como
-desenvolverse en el entorno.
+La instalación de la solución se lleva a cabo en el \Gls{iab}, y se procede 
+a mostrar un vídeo de la simulación, explicar la interfaz y realizar una muestra 
+de como desenvolverse en el entorno.
 
-El periodo de prueba se extiende por 20 días, el mismo no es controlado, es
+El período de prueba se extiende por 20 días, el mismo no es controlado, es
 decir que existen factores que no pueden ser controlados, como:
 
 \begin{itemize}
     \item Tiempo dedicado a la simulación.
-    \item Que todas las acciones provengan del alumno deseado\revisar{Borrar}.
+    \item Que todas las acciones provengan del alumno.
     \item Solamente el conocimiento del alumno es puesto a prueba, es decir, no
         se puede controlar que no reciba ayuda externa.
 \end{itemize}
 
-\observacion{Reformular}
-
 Por estos motivos, el uso de la solución propuesta no puede ser considerado
-como único factor determinante de los resultados de la encuesta objetiva
+el único factor relacionado con los resultados de la encuesta objetiva
 descrita en~\ref{sec:objetiva}.
 
 La solución propuesta almacena información relacionada a la actividad del
-usuario, incluyendo cuando y como utiliza las opciones, los pasos que realiza,
+usuario, incluyendo cuando y como utiliza las acciones, los pasos que realiza,
 el orden y las condiciones de la escena cuando realiza cada acción.
 
 El registro como un todo es enviado cada vez que el usuario desee, este envío
@@ -37,6 +34,16 @@ requiere una conexión a internet por ello no es automático. Adicionalmente el
 último día de la prueba, todos los registros fueron enviados para que sean
 analizados.
 
+El registro de actividades ayuda a identificar las  fortalezas y debilidades 
+de la solución en cuanto al diseño y utilidad. Sobre todo, ayuda a medir 
+el impacto pedagógico al permitir contrarrestar el uso y desempeño del usuario 
+con el puntaje obtenido por el mismo en la \emph{Encuesta Objetiva}.
+
+\subsection{Muestra}
+
+La muestra esta conformada por los $11$ alumnos que aceptaron formar parte de 
+la prueba y poseían dispositivos móviles que cumplen con los requisitos
+mínimos.
 
 \subsection{Variables}
 
@@ -50,18 +57,53 @@ de como se utilizo la misma, se definen los criterios a medir:
 
 \begin{description}
 
-\item[Cantidad de sesiones] Se define como la cantidad de veces que un alumno
+\item[Cantidad de partidas:] se define como la cantidad de veces que un alumno
     inicia una escena. 
 
-\item[Tiempo total y tiempo por sesión] Es la cantidad de tiempo que dura cada
-    sesión, y la suma de todas las sesiones por usuario.
+\item[Tiempo total:] es la suma del tiempo empleado en todas las partidas.
 
-\item[Puntuación por regla completada] Las variables definidas
-    en~\ref{sec:objetiva}, pueden ser contrastados con la puntuación obtenida
-    por los alumnos en la simulación.
+\item[Tiempo total de partidas por usuario y por tipo:] es el tiempo total 
+    empleado para jugar las partidas discriminadas por tipo y por usuario.
+
+\item[Cantidad de acciones:] es la cantidad total de acciones realizadas por 
+    los usuarios.
+ 
+\item[Cantidad de partidas realizadas por usuario y por tipo:] es el número de 
+    partidas jugadas por usuario discriminado por el procedimiento al que 
+    corresponde.
+
+\item[Cantidad de usuarios:] es el número de usuarios que utilizaron la solución.
+    
+\item[Puntuación de las partidas:] Dado el registro de reglas cumplidas en una partida 
+    del procedimiento de extracción de sangre o el diagnóstico dado por el usuario 
+    en una partida del procedimiento de valoración de la escala de Glasgow, se 
+    puede obtener el desempeño del usuario en las partida. Esto puede ser contrastado 
+    con la puntuación obtenida por el usuario en la \emph{Encuesta Objetiva}.
+
+%\item[Puntuación por regla cumplida] Las variables definidas
+%    en~\ref{sec:objetiva}, pueden ser contrastadas con la puntuación obtenida
+%    por los alumnos en la simulación.
 
 \end{description}
 
+\subsection{Métricas}
 
-\observacion{No se entiende}
+\begin{description}
+\item[Promedio de tiempo por partida:] se obtiene dividiendo el tiempo total empleado 
+    en las partidas por el número de partidas.
+\item[Promedio de acciones por partida:] se obtiene dividiendo el cantidad total de 
+    acciones realizas por el usuario por el número de partidas.
+\item[Promedio de partidas por usuario:] se obtiene dividiendo el número total de partidas
+    por el número de usuarios que utilizaron la solución.
+\item[Total de sesiones jugadas por tipo:] es la suma de la cantidad de partidas jugadas por 
+    usuario y tipo.
+\item[Total de tiempo jugado por tipo:] es la suma de la cantidad de tiempo empleado en una 
+    partida por usuario y tipo.
+\item[Promedio de siguientes puntajes por tipo y por usuario:] se obtiene dividiendo la suma 
+    de los puntajes obtenidos en cada tipo de escenario por la cantidad de veces que jugó el 
+    usuario, a excepción de la primera vez.
+\end{description}
 
+Además de las métricas descriptas también se utiliza la correlación de Pearson como se 
+explica en \ref{sec:correlacion} para identificar las relaciones entre los datos obtenidos en 
+la \emph{Encuesta Objetiva} y los obtenidos en el \emph{Registro de actividades}.
