@@ -1,12 +1,11 @@
 %! TEX root = ../main.tex
-
 \section{Encuesta Subjetiva}
 
 
-\replantear{En el análisis de los resultados de las encuestas subjetivas,
-    existieron alumnos que no respondieron todas
-    las preguntas, para tratar este tipo de casos, es importante analizar la
-    naturaleza del patrón de datos faltantes\cite{carpita2011imputation}.}
+%\replantear{En el análisis de los resultados de las encuestas subjetivas,
+    %existieron alumnos que no respondieron todas
+    %las preguntas, para tratar este tipo de casos, es importante analizar la
+    %naturaleza del patrón de datos faltantes\cite{carpita2011imputation}.}
 
 La información recogida por la encuesta muestra que hay datos faltantes, como se
 explico en~\ref{sec:informacion_faltante}, esta información faltante es
@@ -29,7 +28,7 @@ La tabla~\ref{tab:subjetiva_conformidad_exploracion} nos muestra las respuestas
 de los alumnos a las preguntas relacionadas al factor exploración, son cuatro
 preguntas, las cuales fueron descritas en~\ref{sec:sub_exploracion}. 
 
-\begin{table}[!hbt]
+\begin{table}[H]
 \centering
 \begin{tabular}{@{} *{5}{r} @{}}
 \toprule
@@ -52,27 +51,68 @@ Alumno &
 9         & 5   & 7   & 7   & 7  \\
 10        & 6   & 7   & 6   & 6  \\
 11        & 7   & 6   & 7   & 6  \\
+\midrule
+\textbf{Promedio}  & \textbf{5}   & \textbf{6}   & \textbf{6}   & \textbf{6} \\
 \bottomrule
 \end{tabular}
 \caption{Resultados de la encuesta subjetiva relacionados al factor Exploración}
 \label{tab:subjetiva_conformidad_exploracion}
 \end{table}
 
-La tabla~\ref{tab:subjetiva_conformidad_gamificacion} muestra las respuestas de
-los alumnos a las preguntas relacionadas al factor \textit{Gamificación}, son
-cinco preguntas, las cuales fueron descritas en~\ref{sec:sub_gamificacion}. 
+La tabla~\ref{tab:subjetiva_conformidad_representacion} agrupa las respuestas de
+los alumnos según la calidad de presentación, son cinco preguntas, las cuales
+fueron descritas en~\ref{sec:sub_representacion}. 
 
-\begin{table}[!hbt]
+\begin{table}[H]
+\centering
+\begin{tabular}{@{} *{6}{r} @{}}
+\toprule
+& \multicolumn{5}{c}{Representación} \\
+\cmidrule(lr){2-6}
+& \multicolumn{3}{c}{Respuestas del paciente} & & \\
+\cmidrule(lr){2-4}
+Alumno &
+\parbox{2.5cm}{Movimientos motrices del paciente} &
+\parbox{2.5cm}{Movimientos oculares del paciente} &
+\parbox{2.5cm}{Reacción verbal del paciente} &
+\parbox{2.5cm}{Distinción entre los estados del paciente} &
+\parbox{2.5cm}{Acciones con las herramientas} \\
+\midrule
+1  & 6 & 6 & 2 & 5 & 2  \\
+2  & 4 & 5 & 5 & 6 & 4  \\
+3  & 5 & 3 & 3 & 3 & 3  \\
+4  & 6 & 5 & 2 & 4 & 2  \\
+5  & 2 & 2 & 6 & 6 & 6  \\
+6  & 6 & 4 & 6 & 6 & 6  \\
+7  & 7 & 6 & 5 & 7 & 5  \\
+8  & 6 & 7 & 7 & 7 & 5  \\
+9  & 5 & 6 & 2 & 7 & 6  \\
+10 & 6 & 4 & 4 & 4 & 5  \\
+11 & 6 & 4 & 6 & 6 & 5  \\
+\midrule
+\textbf{Promedio}  & \textbf{5} & \textbf{5} & \textbf{4} & \textbf{6} & \textbf{4} \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor
+    Representación}
+\label{tab:subjetiva_conformidad_representacion}
+\end{table}
+
+La tabla~\ref{tab:subjetiva_conformidad_motivacion} muestra las respuestas de
+los alumnos a las preguntas relacionadas al factor \textit{Motivación}, son
+cinco preguntas, las cuales fueron descritas en~\ref{sec:sub_motivacion}. 
+
+\begin{table}[H]
 \centering
 \begin{tabular}{@{} *{5}{r} @{}}
 \toprule
-& \multicolumn{4}{c}{Gamificación} \\
+& \multicolumn{4}{c}{Motivación} \\
 \cmidrule(lr){2-5}
 Alumno &
 \parbox{2.5cm}{Motivación del puntaje} &
 \parbox{2.5cm}{Importancia del puntaje} &
 \parbox{3cm}{Socialización de los puntajes} &
-\parbox{3cm}{Medición del tiempo como motivación} \\
+\parbox{3cm}{Medición del tiempo} \\
 \midrule
 1  & 6 & 4 & 4 & 7  \\
 2  & 7 & 4 & 6 & 6  \\
@@ -85,17 +125,19 @@ Alumno &
 9  & 7 & 7 & 7 & 7  \\
 10 & 7 & 4 & 5 & 7  \\
 11 & 5 & 4 & 5 & 6  \\
+\midrule
+\textbf{Promedio}  & \textbf{6}   & \textbf{5}   & \textbf{6}   & \textbf{6} \\
 \bottomrule
 \end{tabular}
-\caption{Resultados de la encuesta subjetiva relacionados al factor Gamificación}
-\label{tab:subjetiva_conformidad_gamificacion}
+\caption{Resultados de la encuesta subjetiva relacionados al factor motivación}
+\label{tab:subjetiva_conformidad_motivacion}
 \end{table}
 
 La tabla~\ref{tab:subjetiva_conformidad_inmersion} muestra las respuestas de
 los alumnos a las preguntas relacionadas al factor \textit{Inmersión}, son
 cinco preguntas, las cuales fueron descritas en~\ref{sec:sub_inmersion}. 
 
-\begin{table}[!hbt]
+\begin{table}[H]
 \centering
 \begin{tabular}{@{} *{6}{r} @{}}
 \toprule
@@ -119,27 +161,97 @@ Alumno &
 9  & 6 & 7 & 7 & 7 & 7  \\
 10 & 6 & 3 & 4 & 6 & 6  \\
 11 & 5 & 3 & 5 & 5 & 4  \\
+\midrule
+\textbf{Promedio}  & \textbf{6} & \textbf{6} & \textbf{6} & \textbf{6} & \textbf{6} \\
 \bottomrule
 \end{tabular}
 \caption{Resultados de la encuesta subjetiva relacionados al factor Inmersión}
 \label{tab:subjetiva_conformidad_inmersion}
 \end{table}
 
+La tabla~\ref{tab:subjetiva_conformidad_utilidad} agrupa las respuestas de los
+alumnos según la utilidad de la solución, son tres preguntas, las cuales fueron
+descritas en~\ref{sec:sub_utilidad}. 
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{} *{6}{r} @{}}
+\toprule
+& \multicolumn{3}{c}{Utilidad} \\
+\cmidrule(lr){2-4}
+Alumno &
+\parbox{4cm}{Simulación para complementar el estudio en clase y laboratorio} &
+\parbox{4cm}{Simulación como proveedor de facilidades para el estudio} &
+\parbox{4cm}{Interacción con el paciente} \\
+\midrule
+1  & 7 & 5 & 7  \\
+2  & 6 & 6 & 6  \\
+3  & 6 & 6 & 6  \\
+4  & 2 & 6 & 6  \\
+5  & 2 & 6 & 6  \\
+6  & 6 & 6 & 6  \\
+7  & 7 & 6 & 7  \\
+8  & 5 & 6 & 7  \\
+9  & 7 & 7 & 7  \\
+10 & 1 & 7 & 7  \\
+11 & 6 & 4 & 5  \\
+\midrule
+\textbf{Promedio}  & \textbf{5} & \textbf{6} & \textbf{6} \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor Utilidad}
+\label{tab:subjetiva_conformidad_utilidad}
+\end{table}
+
+La tabla~\ref{tab:subjetiva_conformidad_retroalimentacion} agrupa las respuestas
+de los alumnos según la calidad de retroalimentación, son tres preguntas, las
+cuales fueron descritas en~\ref{sec:sub_retroalimentacion}. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{} *{4}{r} @{}}
+\toprule
+& \multicolumn{3}{c}{Retroalimentación} \\
+\cmidrule(lr){2-4}
+Alumno &
+\parbox{4cm}{Detalles de los pasos realizados incorrectamente} &
+\parbox{4cm}{Retroalimentación suficiente respecto a los pasos realizados} &
+\parbox{4cm}{Representación iconográfica de conceptos y acciones en la \Gls{gui}} \\
+\midrule
+1  & 3 & 2 & 7  \\
+2  & 5 & 4 & 6  \\
+3  & 3 & 6 & 6  \\
+4  & 6 & 6 & 6  \\
+5  & 6 & 1 & 6  \\
+6  & 2 & 6 & 6  \\
+7  & 6 & 7 & 7  \\
+8  & 6 & 6 & 7  \\
+9  & 6 & 6 & 7  \\
+10 & 5 & 4 & 6  \\
+11 & 4 & 5 & 6  \\
+\midrule
+\textbf{Promedio}  & \textbf{5} & \textbf{5} & \textbf{6} \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la encuesta subjetiva relacionados al factor
+    Retroalimentación}
+\label{tab:subjetiva_conformidad_retroalimentacion}
+\end{table}
 
 La tabla~\ref{tab:subjetiva_conformidad_pedagogia} agrupa las respuestas de los
 alumnos según el factor pedagógico, son tres preguntas, las cuales fueron
 descritas en~\ref{sec:sub_pedagogia}. 
 
-\observacion{En el capítulo anterior faltaba muchos más, donde están?}
-\observacion{Agregar promedios generales}
-\begin{table}[!hbt]
+%\observacion{En el capítulo anterior faltaba muchos más, donde están?}
+\begin{table}[H]
 \centering
 \begin{tabular}{@{} *{4}{r} @{}}
 \toprule
 & \multicolumn{3}{c}{Pedagogía} \\
 \cmidrule(lr){2-4}
 Alumno &
-\parbox{4cm}{La solución para memorizar y comprender el procedimiento} &
+\parbox{4cm}{Potencial para memorizar y comprender el procedimiento} &
 \parbox{4cm}{Falta de pistas como ayuda al aprendizaje} &
 \parbox{4cm}{Suficiencia de los botones que indican acciones} \\
 \midrule
@@ -154,127 +266,25 @@ Alumno &
 9  & 7 & 7 & 7  \\
 10 & 6 & 7 & 7  \\
 11 & 5 & 6 & 5  \\
+\midrule
+\textbf{Promedio}  & \textbf{6} & \textbf{6} & \textbf{6} \\
 \bottomrule
 \end{tabular}
 \caption{Resultados de la encuesta subjetiva relacionados al factor Pedagogía}
 \label{tab:subjetiva_conformidad_pedagogia}
 \end{table}
 
-
-La tabla~\ref{tab:subjetiva_conformidad_representacion} agrupa las respuestas de
-los alumnos según la calidad de presentación, son cinco preguntas, las cuales
-fueron descritas en~\ref{sec:sub_representacion}. 
-
-\begin{table}[!hbt]
-\centering
-\begin{tabular}{@{} *{6}{r} @{}}
-\toprule
-& \multicolumn{5}{c}{Representación} \\
-\cmidrule(lr){2-6}
-Alumno &
-\parbox{2.5cm}{Movimientos motrices del paciente} &
-\parbox{2.5cm}{Movimientos oculares del paciente} &
-\parbox{2.5cm}{Reacción verbal del paciente} &
-\parbox{2.5cm}{Distinción entre los estados del paciente} &
-\parbox{2.5cm}{Acciones las herramientas} \\
-\midrule
-1  & 6 & 6 & 2 & 5 & 2  \\
-2  & 4 & 5 & 5 & 6 & 4  \\
-3  & 5 & 3 & 3 & 3 & 3  \\
-4  & 6 & 5 & 2 & 4 & 2  \\
-5  & 2 & 2 & 6 & 6 & 6  \\
-6  & 6 & 4 & 6 & 6 & 6  \\
-7  & 7 & 6 & 5 & 7 & 5  \\
-8  & 6 & 7 & 7 & 7 & 5  \\
-9  & 5 & 6 & 2 & 7 & 6  \\
-10 & 6 & 4 & 4 & 4 & 5  \\
-11 & 6 & 4 & 6 & 6 & 5  \\
-\bottomrule
-\end{tabular}
-\caption{Resultados de la encuesta subjetiva relacionados al factor
-    Representación}
-\label{tab:subjetiva_conformidad_representacion}
-\end{table}
-
-
-La tabla~\ref{tab:subjetiva_conformidad_retroalimentacion} agrupa las respuestas
-de los alumnos según la calidad de retroalimentación, son tres preguntas, las
-cuales fueron descritas en~\ref{sec:sub_retroalimentacion}. 
-
-\begin{table}[!hbt]
-\centering
-\begin{tabular}{@{} *{4}{r} @{}}
-\toprule
-& \multicolumn{3}{c}{Retroalimentación} \\
-\cmidrule(lr){2-4}
-Alumno &
-\parbox{4cm}{Detalles de los pasos realizados incorrectamente} &
-\parbox{4cm}{Suficiencia de los detalles de los pasos realizados incorrectamente} &
-\parbox{4cm}{Iconos para representar el estado del jugador} \\
-\midrule
-1  & 3 & 2 & 7  \\
-2  & 5 & 4 & 6  \\
-3  & 3 & 6 & 6  \\
-4  & 6 & 6 & 6  \\
-5  & 6 & 1 & 6  \\
-6  & 2 & 6 & 6  \\
-7  & 6 & 7 & 7  \\
-8  & 6 & 6 & 7  \\
-9  & 6 & 6 & 7  \\
-10 & 5 & 4 & 6  \\
-11 & 4 & 5 & 6  \\
-\bottomrule
-\end{tabular}
-\caption{Resultados de la encuesta subjetiva relacionados al factor
-    Retroalimentación}
-\label{tab:subjetiva_conformidad_retroalimentacion}
-\end{table}
-
-
-La tabla~\ref{tab:subjetiva_conformidad_utilidad} agrupa las respuestas de los
-alumnos según la utilidad de la solución, son tres preguntas, las cuales fueron
-descritas en~\ref{sec:sub_utilidad}. 
-
-
-\begin{table}[!hbt]
-\centering
-\begin{tabular}{@{} *{6}{r} @{}}
-\toprule
-& \multicolumn{3}{c}{Utilidad} \\
-\cmidrule(lr){2-4}
-Alumno &
-\parbox{4cm}{Simulación para complementar el estudio en clase y laboratorio} &
-\parbox{4cm}{Simulación provee más facilidades para el estudio} &
-\parbox{4cm}{Interacción con el paciente} \\
-\midrule
-1  & 7 & 5 & 7  \\
-2  & 6 & 6 & 6  \\
-3  & 6 & 6 & 6  \\
-4  & 2 & 6 & 6  \\
-5  & 2 & 6 & 6  \\
-6  & 6 & 6 & 6  \\
-7  & 7 & 6 & 7  \\
-8  & 5 & 6 & 7  \\
-9  & 7 & 7 & 7  \\
-10 & 1 & 7 & 7  \\
-11 & 6 & 4 & 5  \\
-\bottomrule
-\end{tabular}
-\caption{Resultados de la encuesta subjetiva relacionados al factor Utilidad}
-\label{tab:subjetiva_conformidad_utilidad}
-\end{table}
-
-\section{Agrupamiento de datos}
+\subsection{Agrupamiento de datos}
 
 Los resultados se resumen en la tabla~\ref{tab:subjetiva_conformidad_resumen},
 se muestra el número de alumno para identificar a un alumno y el promedio de sus
 respuestas en la encuesta, se muestra el promedio de las mismas.
 
-\begin{table}[!hbt]
+\begin{table}[H]
 \begin{tabular}{llllllllr}
 \toprule
 \textbf{\shortstack{Número de \\alumno}}         &
-\begin{sideways}\textbf{Gamificación}                    \end{sideways}        &
+\begin{sideways}\textbf{Motivación}                    \end{sideways}        &
 \begin{sideways}\textbf{Exploración}                     \end{sideways}        &
 \begin{sideways}\textbf{Inmersión}                       \end{sideways}        &
 \begin{sideways}\textbf{Pedagogía}                       \end{sideways}        &
@@ -300,8 +310,6 @@ Promedio Total & 6 & 6 & 6 & 6 & 5 & 5 & 6 & 6 \\
 \end{tabular}
 \caption{Resultados de la encuesta subjetiva}
 \label{tab:subjetiva_conformidad_resumen}
-\observacion{Utilizar aleatoriamente este}
-\observacion{Y los valore reescalados?}
 \end{table}
 
 Se observa que el el puntaje más bajo en el promedio final es 5 que significa
@@ -320,12 +328,12 @@ respuestas dadas por los usuarios. Estos valores son relativos a las respuestas
 originales dadas en la encuesta, los resultados se muestran en la
 tabla~\ref{tab:subjetiva_conformidad_corregida}.
 
-\begin{table}[!hbt]
+\begin{table}[H]
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
 \textbf{\shortstack{Número de \\alumno}}                                &
-\begin{sideways}\textbf{Gamificación}                    \end{sideways} &
+\begin{sideways}\textbf{Motivación}                    \end{sideways} &
 \begin{sideways}\textbf{Exploración}                     \end{sideways} &
 \begin{sideways}\textbf{Inmersión}                       \end{sideways} &
 \begin{sideways}\textbf{Pedagogía}                       \end{sideways} &
@@ -353,16 +361,73 @@ tabla~\ref{tab:subjetiva_conformidad_corregida}.
 \label{tab:subjetiva_conformidad_corregida}
 \end{table}
 
-Para obtener una mejor visión de las fortalezas y debilidades de la solución
-propuesta, se presenta el gráfico de kiviat~\ref{fig:subjetiva_kiviat}, en la
-misma se puede observar cuales son los puntos débiles de la solución.
+Es importante notar que los datos la
+tabla~\ref{tab:subjetiva_conformidad_corregida} son relativas a los datos de la
+tabla~\ref{tab:subjetiva_conformidad_resumen}, es decir, que la representación
+es el punto más débil, aún así, se ve que
+en~\ref{tab:subjetiva_conformidad_resumen} que el valor es $5$ de $7$, lo que
+indica que es un punto aceptable, y entre los factores analizados es el que
+menos aprobación obtuvo.
+
+
+Con la información obtenida, es posible \emph{Validar las hipótesis asumidas
+    durante el desarrollo de la solución}, el cual es uno de los objetivos de
+este capítulo. En la tabla~\ref{tab:resultado_resumen_hipotesis} se observa la
+opinion de los alumnos con respecto a las hipótesis asumidas
+en~\ref{sec:hipotesis}. Se observa una aceptación a las hipótesis asumidas.
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{lcr}
+\toprule
+Hipótesis                        & Promedio Subjetiva      & Promedio estandarizado \\
+\midrule
+Comandos de voz con interfaz     & De acuerdo              & $0,55$ \\
+Extracción uniforme de elementos & Parcialmente de acuerdo & $0,65$ \\
+Acciones de bioseguridad         & De acuerdo              & $0,58$ \\
+Representación iconográfica      & Parcialmente de acuerdo & $0,53$ \\
+Factores motivadores             & De acuerdo              & $0,65$ \\
+Falta de pistas                  & De acuerdo              & $0,61$ \\
+\bottomrule
+\end{tabular}
+\caption{Hipótesis con su aceptación}\label{tab:resultado_resumen_hipotesis}
+\end{table}
+
+Adicionalmente, se puede \emph{Evaluar los puntos fuertes y débiles de la
+    solución}, utilizando los datos con doble estandarización de la
+tabla~\ref{tab:subjetiva_conformidad_corregida}, se crea la
+tabla~\ref{tab:resultado_resumen_aspectos_aceptacion}, donde se observa la
+apreciación de los usuarios por cada aspecto estudiado.
+
+\begin{table}[!hbt]
+\centering
+\begin{tabular}{lcr}
+\toprule
+Hipótesis         & Promedio Subjetiva      & Promedio estandarizado \\
+\midrule
+Motivación        & De acuerdo              & $0.67$  \\
+Exploración       & De acuerdo              & $0.68$  \\
+Inmersión         & De acuerdo              & $0.63$  \\
+Pedagogía         & De acuerdo              & $0.67$  \\
+Representación    & Parcialmente de acuerdo & $0.53$  \\
+Retroalimentación & Parcialmente de acuerdo & $0.60$  \\
+Utilidad          & De acuerdo              & $0.69$  \\
+\bottomrule
+\end{tabular}
+\caption{Aceptación por aspecto de la solución}
+\label{tab:resultado_resumen_aspectos_aceptacion}
+\end{table}
+
+Para  obtener una mejor visión de las fortalezas y debilidades de la solución
+propuesta, se presenta el gráfico de \emph{kiviat}~\ref{fig:subjetiva_kiviat},
+en la misma se puede observar cuales son los puntos débiles de la solución.
 
 \begin{figure}[!ht]
 \begin{tikzpicture}[label distance=.15cm]
 \tkzKiviatDiagram[radial=2,
                     lattice=2, step=2,
                     scale=2.3]%
-                {Gamificación,
+                {Motivación,
                  Exploración,
                  Inmersión,
                  Pedagogía,
@@ -380,76 +445,68 @@ misma se puede observar cuales son los puntos débiles de la solución.
 \caption{Gráfico de Kiviat de los factores evaluados}
 \end{figure}
 
-En el gráfico se observa en la figura, que las principales debilidades de
-la solución son la representación y la retroalimentación.
+Se observa que las principales debilidades de la solución son la representación
+y la retroalimentación, y las fortalezas la utilidad, pedagogía, exploración, y
+la motivación.
 
-Es importante notar que los datos la figura~\ref{fig:subjetiva_kiviat}
-y~\ref{tab:subjetiva_conformidad_corregida} son relativas a los datos de la
-tabla~\ref{tab:subjetiva_conformidad_resumen}, es decir, que la representación
-es el punto más débil, pero se ve en~\ref{tab:subjetiva_conformidad_resumen}
-que el valor es 5 de 7, lo que indica que es un punto aceptable, y entre
-los factores analizados es el que menos aprobación obtuvo.
+\subsection{Preguntas abiertas}
+\label{sec:res_subjetiva_abiertas}
 
+En la parte final de la encuesta que completaron los alumnos, que formaron parte
+de la prueba, cuenta con preguntas abiertas, donde los alumnos expresaron sus
+opiniones sobre los aspectos que rodean al uso de este tipo de soluciones al
+aprendizaje de enfermería.
 
-
-\subsection{Correlacion}
-
-En la tabla~\ref{tab:subjetiva_correlacion} se muestra la correlación entre los
-factores analizados, las mismas fueron calculadas según lo explicado en la
-sección \todox{Agregar sección de correlación}. En resumen se pueden notar las
-siguientes correlaciones:
-
-\observacion{Algún comentario sobre esto?}
-\observacion{Que dicen estas correlaciones  para que se buscan?}
-\observacion{Como se interpretan y cuales son relevantes?}
 
 \begin{itemize}
-\item \textbf{Gamification y Exploración, 0.33} Correlación positiva moderada.
-\item \textbf{Gamification y Pedagogía, 0.27} Correlación positiva débil.
-\item \textbf{Gamificatoin e Inmersión, 0.48} Correlación positiva fuerte.
-\item \textbf{Gamification y Representación, 0.81} Correlación positiva muy fuerte.
-\item \textbf{Gamification y Retroalimentación, 0.66} Correlación positiva fuerte.
-\item \textbf{Gamification y Utilidad, 0.26} Correlación positiva débil.
-\item \textbf{Exploración y Pedagogía, 0.52} Correlación positiva fuerte.
-\item \textbf{Exploración e Inmersión, 0.53} Correlación positiva fuerte.
-\item \textbf{Exploración y Representación, 0.44} Correlación positiva fuerte.
-\item \textbf{Exploración y Retroalimentación, 0.37} Correlación positiva moderada.
-\item \textbf{Exploración y Utilidad, 0.69} Correlación positiva fuerte.
-\item \textbf{Pedagogía e Inmersión, 0.57} Correlación positiva fuerte.
-\item \textbf{Pedagogía y Representación, 0.23} Correlación positiva débil.
-\item \textbf{Pedagogía y Retroalimentación, 0.68} Correlación positiva fuerte.
-\item \textbf{Pedagogía y Utilidad, 0.54} Correlación positiva fuerte.
-\item \textbf{Inmersión y Representación, 0.39} Correlación positiva moderada.
-\item \textbf{Inmersión y Retroalimentación, 0.49} Correlación positiva fuerte.
-\item \textbf{Inmersión y Utilidad, 0.35} Correlación positiva moderada.
-\item \textbf{Representación y Retroalimentación, 0.51} Correlación positiva fuerte.
-\item \textbf{Representación y Utilidad, 0.36} Correlación positiva moderada.
-\item \textbf{Retroalimentación y Utilidad, 0.52} Correlación positiva fuerte.
+    \item El $100\%$ de los alumnos menciono que este tipo de soluciones son
+        beneficiosas para el aprendizaje de procedimientos de enfermería.
+    \item El $64\%$ de los alumnos menciono que la principal dificultad para
+        utilizar la solución es el factor tiempo.
+    \item El $45\%$ de los alumnos menciono que la solución esta completa,
+        mientras que el $18\%$ sugirió más elementos e interacción con el
+        paciente.
 \end{itemize}
 
-\begin{table}[!hbt]
-\centering
-\begin{tabular}{l|lllllllr}
-\toprule
-        &
-\begin{sideways}\textbf{Gamificación}                    \end{sideways}        &
-\begin{sideways}\textbf{Exploración}                     \end{sideways}        &
-\begin{sideways}\textbf{Inmersión}                       \end{sideways}        &
-\begin{sideways}\textbf{Pedagogía}                       \end{sideways}        &
-\begin{sideways}\textbf{Representación}                  \end{sideways}        &
-\begin{sideways}\textbf{Retroalimentación}               \end{sideways}        &
-\begin{sideways}\textbf{Utilidad}                        \end{sideways}      \\
-\midrule
-\textbf{Gamification}      & 1    & 0.33 & 0.27 & 0.48 & 0.81 & 0.66  & 0.27 \\
-\textbf{Exploración}       & 0.33 & 1    & 0.52 & 0.53 & 0.44 & 0.37  & 0.69 \\
-\textbf{Inmersión}         & 0.27 & 0.52 & 1    & 0.57 & 0.23 & 0.68  & 0.54 \\
-\textbf{Pedagogía}         & 0.48 & 0.53 & 0.57 & 1    & 0.39 & 0.49  & 0.35 \\
-\textbf{Representación}    & 0.81 & 0.44 & 0.23 & 0.39 & 1    & 0.51  & 0.36 \\
-\textbf{Retroalimentación} & 0.66 & 0.37 & 0.68 & 0.49 & 0.51 & 1     & 0.52 \\
-\textbf{Utilidad}          & 0.27 & 0.69 & 0.54 & 0.35 & 0.36 & 0.52  & 1 \\
-\bottomrule
-\end{tabular}
-\caption{Correlación entre los factores analizados} 
-\label{tab:subjetiva_correlacion}
-\observacion{Todo estaba correlacionado?}
-\end{table}
+
+%\begin{description}[style=unboxed]
+    %\item[¿En qué cree beneficia y en que perjudica el uso de estas herramientas
+        %como apoyo al aprendizaje?] La mayoría menciono que beneficia poder
+        %realizar la práctica en un entorno seguro, y que permite comprender mejor
+        %el procedimiento.
+
+        %En cuanto a las desventajas, puede provocar adicción, y no puede ser
+        %comparado con un escenario real.
+
+    %\item[¿Cree que son necesarios métodos para complementar al
+        %laboratorio/aula?, si es sí, ¿Que tipo de herramientas podrían ayudar?]
+        %Se menciono que este tipo de solución es útil para el aprendizaje,
+        %algunos alumnos reportaron que no son necesarios métodos adicionales
+
+    %\item[¿Que factores le impidió utilizar más a menudo la aplicación?] el
+        %principal factor que no permitió la utilización frecuente de la
+        %solución, es el tiempo disponible, se menciona la cantidad de horas
+        %requeridas por la facultad y el campo de prácticas.
+
+    %\item[¿Qué le hubiera gustado que incluyera la aplicación?, con respecto al
+        %contenido de las escenas, escenas simuladas y aspectos generales] Se
+        %mencionan otros procedimientos, una mejor visualización del enfermero,
+        %más interacción con el paciente, y en cuanto al entorno, más elementos.
+
+        %Es importante notar que casi la mitad de los alumnos menciono que los
+        %escenarios están completos y no necesitan ser expandidos.
+%\end{description}
+
+%se observa en general que la opinion de los alumnos es positiva en cuanto a la
+%utilización de este tipo de soluciones, y que una mayor cantidad de
+%procedimientos podría ayudar a la utilización más frecuente de la misma.
+
+%otro factor importante es el tiempo que disponen los alumnos, si bien uno de los
+%objetivos de este trabajo es que los usuarios puedan utilizar la solución en
+%cualquier momento, esto no se cumple para individuos que están condicionados por
+%factores externos, por ejemplo, el miedo a utilizar un dispositivo móvil en el
+%transporte público, y exámenes periódicos.
+
+Con esta información se puede \emph{determinar el nivel de aceptación de la
+    solución}, se observa que el $100\%$ de los alumnos cree que es beneficioso
+contar con este tipo de soluciones.

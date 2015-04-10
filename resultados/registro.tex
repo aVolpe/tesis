@@ -3,34 +3,51 @@
 
 Las actividad de los usuarios es registrada y almacenada para su análisis, a
 continuación se presentan los resultados de ese análisis, el mismo fue descrito
-en~\ref{sec:registro}.
+en~\ref{sec:registro}, en la tabla~\ref{tab:log_total} se observa un resumen del
+experimento, en cuanto a tiempo, partidas y acciones.
 
 
-\begin{table}[!hbt]
+\begin{table}[H]
+\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule
+\textbf{Variable}                         & \textbf{Valor} \\
+\midrule
+Tiempo total                     & 11134 \\
+Partidas                         & 99 \\
+Acciones                         & 2944 \\
+Promedio de tiempo por partida   & 112 \\
+Promedio de acciones por partida & 30 \\
+Promedio de partidas por usuario & 12,37 \\
+Usuarios                         & 8 \\
+\bottomrule
+\end{tabular}
+\caption{Resumen de la información extraída del registro de actividades.}
+\label{tab:log_total}
+\end{table}
+
+\begin{table}[H]
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
 & \multicolumn{2}{c}{Extracción de sangre} \\
 \cmidrule(lr){2-3} 
-Número de alumno\tabletodo{\#alumno o ver mejor forma de
-        decir que es uno  por fila} & 
-Sesiones jugadas & 
-Tiempo jugado \tabletodo{Tiempo en segundos}\\
+Alumno   & Sesiones jugadas & Tiempo jugado \\
 \midrule
- 1       & 5  & 1202 \\
- 2       & 19 & 2507 \\
- 4       & 5  & 398  \\
- 5       & 6  & 768  \\
- 6       & 17 & 2371 \\
- 7       & 7  & 707  \\
- 9       & 1  & 126  \\
-10       & 8  & 960  \\
+ 1       & 5                & 1202 \\
+ 2       & 19               & 2507 \\
+ 4       & 5                & 398  \\
+ 5       & 6                & 768  \\
+ 6       & 17               & 2371 \\
+ 7       & 7                & 707  \\
+ 9       & 1                & 126  \\
+10       & 8                & 960  \\
 \midrule
-Total:   & 68 & 9039 \\
+Total   & 68               & 9039 \\
 \bottomrule
 \end{tabular}
-\caption{Número de partidas y tiempo total por alumno, en la escena de
-    extracción de sangre.}
+\caption{Número de partidas y tiempo total por alumno en segundos, en la escena
+    de extracción de sangre.}
 \label{tab:log_hemocultivo_partida}
 \end{table}
 
@@ -40,19 +57,17 @@ participaron de la prueba o no se registro su actividad.
 
 Los registros pueden no ser registrados sí
 \begin{enumerate*}[label=\itshape\alph*\upshape)]
-    \item El usuario utilizo la solución, pero no envió los datos y, luego
+    \item el usuario utilizo la solución, no envió los datos y, luego
         desinstalo la solución o borro los datos de la misma, o,
-    \item El usuario no utilizo la solución.
+    \item el usuario no utilizo la solución.
 \end{enumerate*}
 
 En la tabla~\ref{tab:log_glasgow_random_partida}, se observa la cantidad de
 sesiones y tiempo total por alumno, en la escena de \textit{Glasgow}, en modo de
-evaluación.
+evaluación. Se observa que $5$ alumnos participaron en $22$ sesiones, en total
+jugaron $1768$ segundos.
 
-Se observa que $5$ alumnos participaron en $22$ sesiones, en total jugaron
-$1768$ segundos.
-
-\begin{table}[!hbt]
+\begin{table}[H]
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
@@ -69,13 +84,13 @@ Número de alumno   & Sesiones jugadas                            & Tiempo jugad
 Total & 22 & 1768 \\
 \bottomrule
 \end{tabular}
-\caption{Número de partidas y tiempo total por alumno, en la escena
+\caption{Número de partidas y tiempo total por alumno en segundos, en la escena
     \textit{Glasgow}, en modo evaluación}
 \label{tab:log_glasgow_random_partida}
 \end{table}
 
 
-\begin{table}[!hbt]
+\begin{table}[H]
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
@@ -88,10 +103,10 @@ Número de alumno   & Sesiones jugadas                            & Tiempo jugad
 4        & 3 & 89 \\
 6        & 1 & 79 \\
 \midrule
-Total:   & 9 & 327 \\
+Total   & 9 & 327 \\
 \bottomrule
 \end{tabular}
-\caption{Número de partidas y tiempo total por alumno, en la escena
+\caption{Número de partidas y tiempo total por alumno en segundos, en la escena
     \textit{Glasgow}, en modo exploración}
 \label{tab:log_glasgow_custom_partida}
 \end{table}
@@ -103,26 +118,26 @@ promedio de los puntajes siguientes obtenidos por cada usuario en los
 procedimientos de extracción de sangre y de la evaluación de la escala de
 Glasgow. Se debe tener en cuenta el tiempo y las cantidades de veces que cada
 alumno jugó cada uno de los procedimientos para valorar los resultados
-mostrados. En general, los puntajes no muestran una mejora importante en los
-puntajes\revisar{Esto contradice lo anterior}\revisar{Donde esta la de
-    extracción(??)}.
+mostrados. 
 
-\begin{table}[!hbt]
+\begin{table}[H]
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
-                   & \multicolumn{2}{c}{Extracción de sangre} \\
-                   \cmidrule(lr){2-3} 
-Número de alumno   & Primer Puntaje                            & Siguientes Puntajes \\
+& \multicolumn{2}{c}{Extracción de sangre} \\
+\cmidrule(lr){2-3} 
+Número de alumno  & Primer Puntaje & Siguientes Puntajes \\
 \midrule
- 1       & 18  & 13.5 \\
- 2       & 9 & 10.6 \\
- 4       & 3 & 3.3 \\
- 5       & 3 & 6.8  \\
- 6       & 3 & 5.8 \\
- 7       & 4 & 4 \\
- 9       & 16  &  \\
-10       & 3 & 7.2 \\
+ 1                & 11             & 14.3 \\
+ 2                & 9              & 10.6 \\
+ 4                & 3              & 3.3  \\
+ 5                & 3              & 6.8  \\
+ 6                & 3              & 5.8  \\
+ 7                & 4              & 4    \\
+ 9                & 16             & \\
+10                & 3              & 7.2  \\
+\midrule
+\textbf{Promedio} & 6.5            & 7.42 \\
 \bottomrule
 \end{tabular}
 \caption{Puntaje obtenido la primera vez y el promedio de las siguientes veces
@@ -131,19 +146,21 @@ Número de alumno   & Primer Puntaje                            & Siguientes Pun
 \end{table}
 
 
-\begin{table}[!hbt]
+\begin{table}[H]
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
 & \multicolumn{2}{c}{Glasgow (Evaluación)} \\
                    \cmidrule(lr){2-3} 
-Número de alumno   & Primer Puntaje                            & Siguientes Puntajes \\
+Número de alumno   & Primer Puntaje & Siguientes Puntajes \\
 \midrule
 1     & 1 & 1.5 \\
 2     & 2 & 2.3 \\
 4     & 1 & 1.5 \\
 6     & 2 & 2 \\
 7     & 0 & 1 \\
+\midrule
+\textbf{Promedio} & 1.2 & 1.66 \\
 \bottomrule
 \end{tabular}
 \caption{Puntaje obtenido la primera vez y el promedio de las siguientes veces
@@ -151,5 +168,12 @@ Número de alumno   & Primer Puntaje                            & Siguientes Pun
 \label{tab:log_glasgow_random_puntaje}
 \end{table}
 
-\observacion{Promedios  puntaje final no hay una forma de traficar el progreso?,
-    algo más generar, por que osino no dice nada}
+Se observa en las tablas~\ref{tab:log_hemocultivo_puntaje}
+y~\ref{tab:log_glasgow_random_puntaje} los alumnos que participaron de la prueba
+mejoran su desempeño a medida que aumenta el número de partidas. 
+
+Es importante notar que la cantidad de partidas no es uniforme entre los
+alumnos, es decir hay alumnos con más de $10$ partidas y usuarios con menos de
+$5$, por ello, no es posible demostrar que existe un progreso a medida que
+aumenta el número de partidas.
+
