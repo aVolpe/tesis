@@ -1,0 +1,138 @@
+% Este archivo no tiene padre 
+
+% Este archivo define todo lo relacionado a los motores de regidos por eventos.
+
+
+\section{Acciones condicionadas por eventos}
+\label{sec:eca}
+
+\observacion{Todo esto se podría juntar en una subsection que explique la
+    relación en los eventos, las interacciones y como combina el mundo. Además
+    hay que resumir más}
+
+Un evento es la ocurrencia de un hecho en particular, y son identificados por un
+nombre y un conjunto de parámetros, por ejemplo, un evento es cuando el
+enfermero inserta una Jeringa, el nombre de este evento es
+\enquote{jeringa.inserted}, y sus parámetros podrían ser el lugar y el tiempo de
+la inserción, así, la influencia del usuario en la simulación es una sucesión de
+eventos.
+
+Por cada acción que realiza el usuario dentro de la simulación, existe un evento
+relacionado, por consiguiente, es razonable estudiar algunos eventos para
+determinar si los pasos realizados corresponden con los deseados. 
+
+Para determinar si una sucesión de eventos es la correcta, se definen reglas,
+una regla es una asociación de una condición y una acción, la condición define
+si el entorno es el adecuado para realizar una acción, la cual es un
+procedimiento que realiza la lógica deseada.
+
+Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados
+eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos
+como triggers, es decir, una base de datos relacional (u orientada a objetos) es
+un motor de reglas \gls{eca}\cite{bailey2004event,behrends2006combining}.
+
+Las mismas pueden ser utilizadas para notificar que un determinado conjunto de
+eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
+información acerca de la utilización de un determinado recurso.
+
+
+\paragraph{Motivación}
+
+Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en
+forma de una única regla, la cual facilita la declaración de las
+mismas\cite{bailey2004event}.
+
+Son principalmente útiles para analizar el comportamiento en tiempo real de un
+sistema en una forma
+reactiva\cite{bailey2004event,de2001eca,bailey2002analysis}, esta característica
+esta impulsada principalmente por que son ejecutadas después de la ocurrencia de
+un evento, y el entorno no es modificado, pudiendo así acceder al mismo entorno
+que el qué lanzo el evento.
+
+
+\paragraph{Declaración}
+
+Una \gls{eca}, se define como\cite{bailey2004event,behrends2006combining}:
+
+\begin{displayquote}
+	 Cuando ocurren una serie de \emph{eventos}, y se cumple una
+	 \emph{condición}, entonces realizar una \emph{Acción}.
+\end{displayquote}
+
+Los \emph{eventos} determinan cuando una regla debe ser activada, los mismos se
+dividen en dos categorías\cite{behrends2006combining}, primitivos y compuestos,
+los primeros son detectables, por ejemplo, cuando se inserta una jeringa, y los
+compuestos, son la combinación de uno o más
+primitivos\cite{bailey2004event,behrends2006combining}. Los eventos
+compuestos, se unen mediante:
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item conjunción (\emph{y}),
+\item disyunción (\emph{o}), y
+\item secuencia (\emph{entonces}).
+\end{enumerate*}
+Sin embargo, no siempre son necesarios todas las posibles combinaciones, y las
+combinaciones sencillas son más fáciles de optimizar y
+probar\cite{bailey2004event}.
+
+La \emph{condición} de una regla determina si el entorno es el necesario para que la
+regla sea activada, en esta condición el entorno que lanzó el evento está
+disponible.
+
+La \emph{acción} a ejecutar describe la lógica que debe ser ejecutada cuando se han
+lanzado los eventos y la condición de la regla se ha cumplido.
+
+\paragraph{Dependencia entre reglas}
+
+\observacion{Cuanto de esto es de la literatura y cuanto es propuesta suya?}
+\observacion{Resumir}
+
+Las reglas pueden depender de otras reglas, lo cual se puede ver como que la
+finalización de una regla es un evento que otra regla espera para poder ser
+activada.
+
+Las reglas pueden agregar información a un contexto compartido por todas las
+reglas, de esta manera, se puede pasar parámetros entre distintas reglas, por
+ejemplo, la regla \emph{Retirar Torniquete}, depende de la regla \emph{Insertar
+Torniquete}, pero debe responder solamente al torniquete que ha activado
+la regla de inserción, es decir, el usuario puede extraer varios torniquetes, y
+la regla no debe activarse, hasta que se extraiga el torniquete que activo la
+primer regla.
+
+Así, la regla \emph{Retirar Torniquete} depende de la regla \emph{Insertar
+Torniquete}, y esta relación entre reglas, se da en dos
+formas\cite{bailey2004event}:
+
+\observacion{Cambiar los ejemplos a algo más general}
+
+\begin{itemize}
+\item  \emph{Dependencia fuerte:} la regla \emph{Retirar Torniquete} solamente podrá
+	ser elegida para ser lanzada cuando la regla \emph{Insertar Torniquete}
+	haya sido cumplida.
+\item  \emph{Dependencia de contexto}: la regla \emph{Retirar Torniquete} no se
+	activará cuando los eventos a los que escucha se terminen, sino cuando
+	los eventos a los que escucha sean lanzados con los parámetros adecuados
+	(se extraiga el torniquete que lanzó la regla de inserción).
+\end{itemize}
+
+\subsubsection{Modelo de ejecución}
+\label{sec:eca_ejecucion}
+\observacion{Me da la impresión que esto es algo que va más con a parte técnica
+    que con la descripción de la solución}
+
+Para ejecutar un motor de reglas del tipo \gls{eca}, se debe tener en cuenta
+principalmente dos factores, 
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item  Cómo se verifica el cumplimiento de cada regla, y, 
+\item  Qué ocurre cuando varias reglas son lanzadas al mismo tiempo
+\end{enumerate*}.
+
+Para ambos casos se puede tomar un enfoque \emph{inmediato}, es decir que
+inmediatamente cuando se lanza un evento, o se cumple una condición, se ejecuta
+la regla. Además existen otros dos modos de ejecución, \emph{diferido}, y
+\emph{desacoplado}, en el primero, se espera hasta que el lanzador del evento
+culmine su trabajo, y luego se ejecuta la regla, pero en la misma unidad de
+trabajo, mientras que en la ejecución desacoplada, se encolan los trabajos y
+otro hilo es el encargado de ejecutar las reglas. Estos modos están inspirados
+en las bases de datos relacionales, el modo diferido se ejecuta en la misma
+transacción, y el desacoplado, inmediatamente después de que la transacción
+termine\cite{bailey2004event}.

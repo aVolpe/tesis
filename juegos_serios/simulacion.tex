@@ -1,0 +1,323 @@
+% Este archivo no tiene padre 
+
+% En este archivo se describen los elementos de la simulación, no tiene padre
+% por que en esta parte se describe de manera breve las características de
+% la simulación, el texto que aquí se pone debería usarse para expandir
+% esta descripción.
+
+\subsection{Solución}
+
+La simulación se compone de tres elementos principales, entidades (que son
+objetos de la vida real), acciones (que son provocadas por las entidades) y
+eventos (que son el resultado de una acción). 
+
+Existen otros elementos dentro de la simulación, como la sala y la iluminación,
+los mismos son importantes para crear un entorno similar a la realidad y son
+estáticos, es decir no interactúan con el usuario más que para limitar la
+exploración en el escenario y/o resaltar aspectos relevantes.
+
+\subsubsection{Entidades}
+
+Una entidad es cualquier objeto o componente en el sistema que requiera la representación
+explícita en el modelo\cite{banks2000dm}. Las entidades tienen atributos. Los
+atributos son las características de una determinada entidad que son exclusivos
+de esa entidad.
+
+Una entidad tiene en todo momento, un estado y una lista de acciones que
+puede realizar, esta lista de acciones esta definida por el estado del mismo,
+las condiciones en la que se encuentra el entorno y la práctica actual.
+
+La entidad \enquote{Enfermero} es la que es controlada por el usuario, a través
+de la interacción con la interfaz gráfica.
+
+\subsubsection{Acciones}
+
+Las entidades se comunican a través de acciones, las cuales pueden tener
+diversos orígenes, siempre una entidad inicia una acción. Las acciones provocan
+cambios en el ambiente y provocan eventos. Las acciones no solo las
+realiza el usuario, sino cualquier entidad.
+
+Como ejemplo, una acción es esterilizar las manos, esta acción provoca un
+cambio en el ambiente (las manos ahora son estériles) y fue realizada por la
+interacción entre el usuario y la interfaz gráfica.
+
+\subsubsection{Eventos}
+
+Los eventos son ocurrencias instantáneas que cambian el estado de un
+sistema\cite{banks2000dm}, cada acción que se realiza provoca otra acción, y los
+eventos son el mecanismo que tiene una entidad para ser notificada de las
+acciones de otras entidades.
+
+Un evento es una consecuencia de una acción, por ejemplo, cuando el usuario 
+realiza la acción \emph{Limpiar manos}, se crea el evento \emph{Manos Limpias}. 
+Cualquier entidad de la simulación puede reaccionar ante diversos eventos, 
+por ejemplo, la entidad \emph{Enfermero} reacciona ante el evento \emph{Manos
+Limpias}, y cambia su estado interno para reflejar este evento (de ahora en 
+más, se considera que las manos del enfermero están limpias).
+
+Los Eventos son útiles para que varias entidades puedan reaccionar ante
+una acción, cuando el enfermero extrae la jeringa del paciente, se crea un
+evento para notificar este cambio, y el paciente reacciona de diversas maneras,
+por ejemplo, desde ese momento, la zona de donde se extrajo la jeringa, pasa a 
+estar contaminada. 
+
+Existe otro componente además de las entidades que depende de los eventos 
+para cambiar su estado, y es el \emph{Motor de Reglas}, este motor escucha
+todos los eventos relacionados con las reglas, y se encarga de evaluar, así
+es notificado de los cambios en el entorno.
+
+\subsubsection{Interacción la escena}
+
+El usuario se desenvuelve en un entorno de tres dimensiones, en el cual realiza las
+actividades relacionadas a la práctica, se distinguen dos tipos de movimientos
+principales que el usuario puede realizar:
+
+\begin{itemize}
+    \item \textbf{Alejamiento o acercamiento}: es el acto de acercar o alejar la
+        cámara, y por consiguiente al usuario del paciente. Se realiza
+        utilizando dos dedos, para realizar un acercamiento, mientras se
+        mantiene presionada la pantalla con ambos dedos, se procede a alejar un
+        dedo del otro, para realizar un alejamiento, se debe acercar ambos
+        dedos.
+    \item \textbf{Rotación}: se refiere al movimiento de rotación alrededor de
+        un foco, que en ambas escenas es el paciente, para realizarla, se utiliza
+        un dedo, y se mueve el dedo en cualquier dirección, la cámara, se moverá
+        en la dirección contraria.
+\end{itemize}
+
+
+\subsubsection{Acciones condicionadas por eventos}
+\observacion{Mover esto a juegos\_serios/alternativas y dejar aquí solo lo
+    específico a la solución}
+
+\observacion{Todo esto se podría juntar en una subsection que explique la
+    relación en los eventos, las interacciones y como combina el mundo. Además
+    hay que resumir más}
+
+Un evento es la ocurrencia de un hecho en particular, y son identificados por un
+nombre y un conjunto de parámetros, por ejemplo, un evento es cuando el
+enfermero inserta una Jeringa, el nombre de este evento es
+\enquote{jeringa.inserted}, y sus parámetros podrían ser el lugar y el tiempo de
+la inserción, así, la influencia del usuario en la simulación es una sucesión de
+eventos.
+
+Por cada acción que realiza el usuario dentro de la simulación, existe un evento
+relacionado, por consiguiente, es razonable estudiar algunos eventos para
+determinar si los pasos realizados corresponden con los deseados. 
+
+Para determinar si una sucesión de eventos es la correcta, se definen reglas,
+una regla es una asociación de una condición y una acción, la condición define
+si el entorno es el adecuado para realizar una acción, la cual es un
+procedimiento que realiza la lógica deseada.
+
+Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados
+eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos
+como triggers, es decir, una base de datos relacional (u orientada a objetos) es
+un motor de reglas \gls{eca}\cite{bailey2004event,behrends2006combining}.
+
+Las mismas pueden ser utilizadas para notificar que un determinado conjunto de
+eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
+información acerca de la utilización de un determinado recurso.
+
+
+\paragraph{Motivación}
+
+Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en
+forma de una única regla, la cual facilita la declaración de las
+mismas\cite{bailey2004event}.
+
+Son principalmente útiles para analizar el comportamiento en tiempo real de un
+sistema en una forma
+reactiva\cite{bailey2004event,de2001eca,bailey2002analysis}, esta característica
+esta impulsada principalmente por que son ejecutadas después de la ocurrencia de
+un evento, y el entorno no es modificado, pudiendo así acceder al mismo entorno
+que el qué lanzo el evento.
+
+Definir si las acciones de un usuario son correctas utilizando un motor
+\gls{eca} es sencillo teniendo en cuenta que sólo se deben definir un
+conjunto de acciones que se deben realizar, y agregar una acción que verifica si
+los pasos realizados fueron los correctos.
+
+\paragraph{Declaración}
+
+Una \gls{eca}, se define como\cite{bailey2004event,behrends2006combining}:
+
+\begin{displayquote}
+	 Cuando ocurren una serie de \emph{eventos}, y se cumple una
+	 \emph{condición}, entonces realizar una \emph{Acción}.
+\end{displayquote}
+
+Los \emph{eventos} determinan cuando una regla debe ser activada, los mismos se
+dividen en dos categorías\cite{behrends2006combining}, primitivos y compuestos,
+los primeros son detectables, por ejemplo, cuando se inserta una jeringa, y los
+compuestos, son la combinación de uno o más
+primitivos\cite{bailey2004event,behrends2006combining}. Los eventos
+compuestos, se unen mediante:
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item conjunción (\emph{y}),
+\item disyunción (\emph{o}), y
+\item secuencia (\emph{entonces}).
+\end{enumerate*}
+Sin embargo, no siempre son necesarios todas las posibles combinaciones, y las
+combinaciones sencillas son más fáciles de optimizar y
+probar\cite{bailey2004event}.
+
+La \emph{condición} de una regla determina si el entorno es el necesario para que la
+regla sea activada, en esta condición el entorno que lanzó el evento está
+disponible.
+
+La \emph{acción} a ejecutar describe la lógica que debe ser ejecutada cuando se han
+lanzado los eventos y la condición de la regla se ha cumplido.
+
+\paragraph{Dependencia entre reglas}
+
+\observacion{Cuanto de esto es de la literatura y cuanto es propuesta suya?}
+\observacion{Resumir}
+
+Las reglas pueden depender de otras reglas, lo cual se puede ver como que la
+finalización de una regla es un evento que otra regla espera para poder ser
+activada.
+
+Las reglas pueden agregar información a un contexto compartido por todas las
+reglas, de esta manera, se puede pasar parámetros entre distintas reglas, por
+ejemplo, la regla \emph{Retirar Torniquete}, depende de la regla \emph{Insertar
+Torniquete}, pero debe responder solamente al torniquete que ha activado
+la regla de inserción, es decir, el usuario puede extraer varios torniquetes, y
+la regla no debe activarse, hasta que se extraiga el torniquete que activo la
+primer regla.
+
+Así, la regla \emph{Retirar Torniquete} depende de la regla \emph{Insertar
+Torniquete}, y esta relación entre reglas, se da en dos
+formas\cite{bailey2004event}:
+
+\begin{itemize}
+\item  \emph{Dependencia fuerte:} la regla \emph{Retirar Torniquete} solamente podrá
+	ser elegida para ser lanzada cuando la regla \emph{Insertar Torniquete}
+	haya sido cumplida.
+\item  \emph{Dependencia de contexto}: la regla \emph{Retirar Torniquete} no se
+	activará cuando los eventos a los que escucha se terminen, sino cuando
+	los eventos a los que escucha sean lanzados con los parámetros adecuados
+	(se extraiga el torniquete que lanzó la regla de inserción).
+\end{itemize}
+
+\paragraph{Representación}
+
+La definición de las reglas se realiza de la siguiente forma;
+\begin{algorithm}[H]
+\caption{Creación de regla de verificación de calzado de guantes}
+\label{alg:rule:guante}
+\lstset{style=sharpc}
+\begin{lstlisting}
+Rule.New(``Regla de verificacion de calzado de guantes'').
+     When(``enfermero.guantes.calzar'').
+     Then(e => e.Patient.ManosLimpias()).
+\end{lstlisting}
+\end{algorithm}
+%TODO agregar indice de algoritmos
+
+La regla anterior controla que el estudiante ha realizado la acción ``Calzarse
+los guantes'', y en ese momento tenga las manos limpias, la variable \emph{e},
+es el entorno, y a través de la propiedad \emph{Patient} obtiene el estado del
+paciente en ese momento.
+
+\paragraph{Modelo de ejecución}
+\observacion{Resumir}
+\observacion{Me da la impresión que esto es algo que va más con a parte técnica
+    que con la descripción de la solución}
+
+Para ejecutar un motor de reglas del tipo \gls{eca}, se debe tener en cuenta
+principalmente dos factores, 
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item  Cómo se verifica el cumplimiento de cada regla, y, 
+\item  Qué ocurre cuando varias reglas son lanzadas al mismo tiempo
+\end{enumerate*}.
+
+Para ambos casos se puede tomar un enfoque \emph{inmediato}, es decir que
+inmediatamente cuando se lanza un evento, o se cumple una condición, se ejecuta
+la regla. Además existen otros dos modos de ejecución, \emph{diferido}, y
+\emph{desacoplado}, en el primero, se espera hasta que el lanzador del evento
+culmine su trabajo, y luego se ejecuta la regla, pero en la misma unidad de
+trabajo, mientras que en la ejecución desacoplada, se encolan los trabajos y
+otro hilo es el encargado de ejecutar las reglas. Estos modos están inspirados
+en las bases de datos relacionales, el modo diferido se ejecuta en la misma
+transacción, y el desacoplado, inmediatamente después de que la transacción
+termine\cite{bailey2004event}.
+
+La propuesta implementada, utiliza una ejecución inmediata, principalmente por
+la sencillez de las reglas, es decir, las reglas no realizan un proceso complejo,
+solamente controlan el estado del entorno y lo validan.
+
+Además, la ejecución inmediata es importante por que el entorno no sufre
+modificaciones entre el evento lanzado y la ejecución de la regla, según
+\cite{bailey2004event}, este es el factor más importante para determinar el tipo
+de ejecución deseado.
+
+
+
+\paragraph{Estados de una regla}
+
+Una regla puede estar en uno de los siguientes estados:
+
+\begin{description}
+\item[BEGIN] Es una regla que recién fue creada, no realiza ninguna
+	acción.
+\item[WAITING\_FOR\_RULE] Es un estado en el que esta esperando que otras reglas
+	sean lanzadas. En este estado, es un suscriptor de las reglas por la que
+	espera, y no forma parte del ciclo de ejecución del motor de reglas.
+\item[WAITING\_FOR\_EVENT] Es un estado en el que esta escuchando que sean
+	lanzados los eventos a los que escucha, este es el estado principal. En
+	este estado, es un suscriptor de los eventos por los que espera, y no
+	forma parte del ciclo de ejecución del motor de reglas. Se diferencia
+	del estado anterior, en que los eventos escuchados pueden ser lanzados
+	por cualquier objeto del entorno, no necesariamente una regla.
+\item[WAITING\_FOR\_CONDITION] La regla ya no espera por ningún evento y las
+	reglas de las que depende ya han sido lanzadas, se verifica cada cierto
+	tiempo si el entorno cumple con una condición definida. 
+\item[FINISH] La regla ha sido lanzada, con un resultado no determinado, se pudo
+	haber cumplido, como no, es el estado final de una regla. Cuando una
+	regla llega a este estado, se lanza su evento de finalización.
+\end{description}
+
+Una regla puede estar en solo un estado, y solamente se permite que el estado
+avance, desde \emph{BEGIN} hasta \emph{FINISH}.
+
+
+\paragraph{Ciclo de vida}
+
+Cuando una regla es definida, e insertada al motor de reglas, inmediatamente
+pasa al estado \emph{BEGIN}, luego se verifica si la misma depende de otras
+reglas, sí este es el caso, pasa al estado \emph{WAITING\_FOR\_RULE} y escucha a
+los eventos de finalización de las reglas por las que espera.
+
+Una vez que las reglas por las que espera han sido finalizadas, la regla pasa al estado
+\emph{WAITING\_FOR\_EVENT} sí deben escuchar por algún evento, en caso contrario
+pasan al estado \emph{WAITING\_FOR\_CONDITION}.
+
+Una vez que la regla está en estado \emph{WAITING\_FOR\_CONDITION}, pasa a un
+motor que ejecuta su condición cada cierto tiempo, si la condición se cumple, la
+regla se ejecuta, y la misma pasa a estado \emph{FINISH}, momento en el cual
+notifica a las reglas que dependen de ella que ha sido lanzada.
+
+Una vez que la regla esta en estado \emph{FINISH}, la misma sale del esquema de
+ejecución, y solo esta disponible para obtener resultados.
+
+Según el ejemplo de la regla definida en el código\ref{alg:rule:guante}, la
+regla al terminar de ser construida pasa a estado \emph{BEGIN}, al no depender
+de otras reglas, pasa inmediatamente al estado \emph{WAITING\_FOR\_EVENT},
+cuando es lanzado el evento, la regla ejecuta la acción y pasa al estado
+\emph{FINISH}.
+
+\paragraph{Motor de ejecución}
+
+Un motor de reglas \gls{eca}, requiere de un proceso que evalúe constantemente
+las reglas para verificar si las mismas deben ser lanzadas o
+no\cite{bailey2004event,galton2002two}, este motor puede utilizar el algoritmo
+de RETE\cite{de2001eca} para realizar esta verificación, en la propuesta
+presentada, la cantidad de reglas definidas, y la no dependencia circular entre
+ellas, hace innecesario la implementación de tal algoritmo\cite{de2001eca}. 
+
+El motor de reglas actúa sobre aquellas reglas en estado
+\emph{WAITING\_FOR\_CONDITION} e invoca al procedimiento que se encarga de
+validar si la regla puede ser activada (el procedimiento es único por cada
+regla), si el mismo determina que la regla puede ser lanzada, el motor ejecuta
+la acción de la regla y modifica el estado de la regla a \emph{FINISH}.
