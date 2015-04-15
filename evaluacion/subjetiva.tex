@@ -32,6 +32,7 @@ $12$ es suficiente para obtener resultados estadísticamente válidos.
 
 \subsection{Variables}
 \label{sec:variables}
+\observacion{Parece haber tanta referencia como para separar}
 
 A continuación se describen las variables que tienen por objetivo demostrar la
 validez de las hipótesis planteadas en este trabajo descritas en el
@@ -44,24 +45,23 @@ buscan ser evaluados.
 Cabe volver a resaltar que la medición de estas variables se realizan
 exclusivamente de acuerdo a las valoraciones dadas por la muestra en cada uno de
 las preguntas que forman parte de la encuesta.
-%De acuerdo a los objetivos planteados en la sección~\ref{sec:objetivos}, se
-%busca describir los factores\revisar{?} analizados en las pruebas y las variables
-%relacionadas a los mismos, las cuales, tienen por objetivo demostrar la validez
-%de las hipótesis planteadas en este trabajo.
-
-%Las variables se presentaran agrupadas en factores, los mismos representan
-%aquellos aspectos de la solución propuesta que buscan ser evaluados.
 
 \subsubsection{Exploración}
 \label{sec:sub_exploracion}
+\observacion{Creo que el nombre es confuso por que parece referirse al tema de
+interacción con el entorno}
 
-Este factor esta relacionado con la característica que posee la solución en
-cuanto a la oportunidad que brinda al usuario para explorar cada uno de los
-elementos del entorno simulado (paciente, herramientas propias del
-procedimiento). En este sentido, se busca proveer facilidad de uso, intuitividad
-y realismo en cuanto a las acciones y situaciones que se presentan en la
-solución para que de esta manera, los elementos que la componen no representen
-para el jugador un obstáculo que impida su uso.
+\observacion{Se podría simplificar el siguiente párrafo} 
+
+Este factor esta \fixme{relacionado}{} con \fixme{la característica}{} que posee
+la solución en cuanto a la \fixme{oportunidad}{} que \fixme{brinda}{} al usuario
+para \fixme{explorar}{} cada uno de los elementos del entorno simulado
+(paciente, herramientas propias del procedimiento). En este sentido, se busca
+proveer facilidad de uso, intuitividad y realismo en cuanto a las acciones y
+situaciones que se presentan en la solución para que de esta manera, los
+elementos que la componen no representen para el jugador un obstáculo que impida
+su uso.
+\observacion{El factor que mide la eficiencia es acaso a explorar el entorno?}
 
 Las variables que miden este aspecto son las siguientes:
 
@@ -104,18 +104,6 @@ Las variables que miden estos aspectos son las siguientes:
 \item [Respuestas del paciente:] se refiere a la suficiencia de las respuestas 
     motrices, oculares y verbales que realiza el paciente en la escena 
     correspondiente a la valoración de la escala de Glasgow.
-
-%\item [Movimientos motrices del paciente] se refiere a la suficiencia de los
-%    movimientos motrices que realiza el paciente en el escena correspondiente a
-%    la valoración de la escala de Glasgow.
-
-%\item [Movimientos oculares del paciente] se refiere a la suficiencia de los
-%    movimientos oculares que realiza el paciente en la escena correspondiente a
-%    la valoración del escala de Glasgow.
-
-%\item [Reacción verbal del paciente] se refiere a la suficiencia de las
-%    reacciones o respuestas verbales que realiza el paciente en la escena
-%    correspondiente a la valoración de la escala de Glasgow.
 
 \item[Distinción entre los estados del paciente:] se refiere a si los diferentes
     estados del paciente son distinguidos correctamente en el procedimiento de
@@ -167,10 +155,11 @@ Las variables que miden estos aspectos son las siguientes:
 \subsubsection{Inmersión}
 \label{sec:sub_inmersion}
 
-Este factor esta relacionado con el sentimiento de formar parte de la escena. Es
-decir, se trata de evaluar que tanto un jugador puede sentir que realmente se
-encuentra dentro del juego para que de este modo el pueda entrar en ambiente
-para realizar los procedimientos que se le presenten en sus partidas de juego.
+Este factor esta \fixme{relacionado con el sentimiento}{Percepción?} de formar
+parte de la escena. Es decir, se trata de evaluar que tanto un jugador puede
+sentir que realmente se encuentra dentro del juego para que de este modo el
+pueda entrar en ambiente para realizar los procedimientos que se le presenten en
+sus partidas de juego.
 
 Las variables que miden este aspecto son las siguientes:
 
@@ -184,6 +173,7 @@ Las variables que miden este aspecto son las siguientes:
     que los procedimientos presentados en las partidas sean cortos contribuye a
     repetir las partidas varias veces de seguido entrando en un estado de
     inmersión.
+    \observacion{El titulo de este punto tiene un ?}
 
 \item[Gráficos en tres dimensiones para entender el entorno:] se refiere a la
     importancia que tiene el uso de gráficos en tres dimensiones para que el
@@ -204,14 +194,12 @@ Las variables que miden este aspecto son las siguientes:
 \subsubsection{Utilidad}
 \label{sec:sub_utilidad}
 
-%Decia que replantee cambie utilidad por potencial y saque lo de "que pueda tener la solucion"
 Este factor está relacionado con el potencial de la solución como herramienta 
 de apoyo al proceso de aprendizaje de los estudiantes de enfermería.
 
 Las variables que miden este aspecto son las siguientes: 
 
 \begin{description}
-% que tanto potencial, pedia que replantee
 \item[Simulación para complementar el estudio en clase y laboratorio:] se
     refiere a que tanto potencial tienen las herramientas alternativas como la
     simulación pueden complementar a los métodos de aprendizaje tradicionales
@@ -226,10 +214,10 @@ Las variables que miden este aspecto son las siguientes:
     pueda interactuar con un paciente que responde a las acciones del jugador 
     implica una mejora con respecto a otros materiales utilizados en los 
     laboratorios de práctica.
-    %\revisar{Mejor que el maniqui? lo puede complicar por que no se
-    %    midio esto.}.
 
 \end{description}
+
+\observacion{Algunos parecen estar fuera de lugar (los que tienen ?)}
 
 \subsubsection{Retroalimentación}
 \label{sec:sub_retroalimentacion}
@@ -281,19 +269,21 @@ Las variables que miden este aspecto son las siguientes:
 \item[Suficiencia de los botones que indican acciones:] se refiere a que tan
     suficiente es representar determinadas acciones  con un botón debido a
     limitaciones en la tecnología.
+    \observacion{?}
 
 \end{description}
 
 
 \subsection{Métricas}
 
-La métrica utilizada en las preguntas cerradas es la escala de Likert haciendo uso de 
-la \emph{Doble estandarización}, como se describe en la sección~\ref{sec:likert}. Esto ayuda 
-a determinar los puntos fuertes y débiles de los aspectos evaluados.
+La métrica utilizada en las preguntas cerradas es la escala de Likert haciendo
+uso de la \emph{Doble estandarización}, como se describe en la
+sección~\ref{sec:likert}. Esto ayuda a determinar los puntos fuertes y débiles
+de los aspectos evaluados.
 
-Además se utilizan promedios hallados teniendo en cuenta las respuestas de los usuarios 
-en cada una de las preguntas cerradas para determinar el nivel de aceptación promedio en cuanto a los 
-temas abordados en las preguntas.
+Además se utilizan promedios hallados teniendo en cuenta las respuestas de los
+usuarios en cada una de las preguntas cerradas para determinar el nivel de
+aceptación promedio en cuanto a los temas abordados en las preguntas.
 
 
 

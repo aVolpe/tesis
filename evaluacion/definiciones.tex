@@ -2,19 +2,17 @@
 
 \section{Métricas generales}
 
-Se definen métricas generales como aquellas que son utilizadas por más de una
-prueba o encuesta que forma parte de la evaluación. Se describen aquellas que se
+\observacion{No se entiende} 
+Se definen métricas generales  que son utilizadas por más de una prueba o
+encuesta que forma parte de la evaluación. Se describen aquellas que se
 consideran que son requeridas detallar.
 
 A continuación se describe la escala de Likert que es una métrica utilizada en
 la \emph{Encuesta subjetiva} y en la encuesta correspondiente a la \emph{Prueba
-    de interfaz de usuario}. Por otra parte se describe también en que consiste
-la correlación de Pearson, métrica que es utilizada para medir el grado de
-relación entre variables de las encuestas realizadas, registros de actividades,
-entre otros.
-
-%Existen métricas que son usadas por más de una prueba, a continuación se
-%describen estas métricas.
+de interfaz de usuario}. Por otra parte se describe también en que consiste la
+correlación de Pearson, métrica que es utilizada para medir el grado de relación
+entre variables de las encuestas realizadas, registros de actividades, entre
+otros.
 
 Cabe destacar que en~\cite{norman2010likert} se demuestra que, aunque el tamaño
 de la muestra sea pequeña, los datos no puedan ser distribuidos normalmente o
@@ -62,6 +60,7 @@ normalización, $s_1$ se define como:
 s_1{_i}=\frac{s-\min_i}{\max_i-\min_i}
 \end{equation}
 
+\observacion{Considerar resumir}
 Y luego siendo:
 \begin{itemize}
 	\item $groupmin_i$ la respuesta ajustada de menor valor en el grupo $i$.
@@ -94,14 +93,9 @@ define como:
 p_k = \frac{\sum_{i=1}^n{r_{k_i}}}{t_k}
 \end{equation}
 
-%Cabe destacar que en \cite{norman2010likert} se demuestra que aunque el tamaño de la muestra 
-%sea pequeña, los datos no puedan ser distribuidos normalmente o los datos sean de 
-%escalas de tipo Likert los métodos paramétricos como el análisis de varianza, la 
-%regresión y la correlación pueden ser utilizados.
-
-
 \subsubsection{Manejo de información faltante}
 \label{sec:informacion_faltante}
+\observacion{No repetir tanto existe}
 
 En toda encuesta pueden existir preguntas que no son respondidas por los encuestados, 
 en este tipo de situaciones existen tres posibles formas de categorizar el 
@@ -125,16 +119,16 @@ reemplazo para escalas del tipo Likert.
 
 Las técnicas de reemplazo se clasifican en tres grandes
 grupos\cite{tsikriktsis2005review}:
-\begin{enumerate*}[label=\itshape\alph*\upshape.]
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
 \item basadas en el promedio,
 \item basadas en regresión, e,
 \item imputación \emph{hot deck}.
 \end{enumerate*}
 
-De estas técnicas se seleccionó la sustitución basada por promedio ya que las
-relaciones entre las variables son bajas y los datos faltantes son menos del
-$10\%$. La sustitución basada por promedio se divide nuevamente en tres
-grupos\cite{tsikriktsis2005review}; promedio
+\fixme{De estas técnicas se seleccionó la sustitución}{Resaltar}. Basada por
+promedio ya que las relaciones entre las variables son bajas y los datos
+faltantes son menos del $10\%$. La sustitución basada por promedio se divide
+nuevamente en tres grupos\cite{tsikriktsis2005review}; promedio
 \begin{enumerate*}[label=\itshape\alph*\upshape.]
 \item total,
 \item del subgrupo, y,
