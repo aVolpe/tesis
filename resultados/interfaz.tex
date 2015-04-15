@@ -1,16 +1,11 @@
 %! TEX root = ../main.tex
 \section{Interfaz de Usuario}
 \label{sec:res_INTERFAZ}
-
-%Previamente a las pruebas realizadas con la población objetivo y durante el
-%desarrollo de la solución se realiza una prueba de interfaz para encontrar
-%problemas en la misma que puedan impedir su fácil uso por los usuarios finales.
-%Posterior a la prueba se realizaron modificaciones para la mejora de la misma
-%según los resultados que se presentan a continuación.
+\observacion{Pruebas preliminares de usabilidad}
 
 En la sección~\ref{sec:interfaz} se describe la prueba de interfaz realizada
-durante el desarrollo de la solución, a fin de validar las hipótesis asumidas y
-evaluar la usabilidad de la solución.
+durante el desarrollo de \fixme{la solución}{de la UI}, a fin de validar las
+hipótesis asumidas y evaluar la usabilidad de la solución.
 
 Esta prueba se divide en dos partes, en la primera, denominada
 \emph{Simulación}, los sujetos de prueba utilizan la aplicación, y en la
@@ -23,10 +18,12 @@ Las grabaciones realizadas a las sesiones de los usuarios se utilizan para medir
 el grado de facilidad de aprendizaje de la interfaz de usuario.
 
 Dados los tres grupo descriptos en~\ref{sec:evaluacion_interfaz_variables}, la
-tabla~\ref{tab:interfaz_tiempo_acciones} nos muestra el tiempo, en segundos,
+tabla~\ref{tab:interfaz_tiempo_acciones} \fixme{muestra}{tiempo} el tiempo, en segundos,
 que le tomo a cada usuario realizar cada una de las acciones la primera vez y
 el tiempo que les tomo en promedio las demás veces, para cada una de los grupos
 de acciones.
+
+\observacion{Hacer énfasis en la comparación entre el primer y los siguientes}
 
 \begin{table}[!hbt]
 \centering
@@ -53,8 +50,9 @@ de acciones.
 \end{table}
 
 En la tabla~\ref{tab:interfaz_tiempo_acciones} se observa consistentemente una
-mejora en el tiempo de realización de una acción con respecto a la primera vez
-que es realizada. 
+\fixme{mejora}{En relación a qué?} en el tiempo de realización de una acción con
+respecto a la primera vez que es realizada. 
+
 \begin{figure}[hbt!]
 \centering
 \includegraphics[width=14cm]{resultados/imagenes/interfaz_tiempo_actividades.png}
@@ -76,6 +74,9 @@ La tabla~\ref{tab:interfaz_cantidad_espaciales} nos muestra la cantidad de
 movimientos espaciales realizados por los usuarios, se observa que en promedio
 se desplazaron $10,88$ veces por el escenario, y $6,75$ veces acercaron o
 alejaron la cámara del paciente.
+
+\observacion{Hay que dejar bien en claro de donde sale esto, por que es
+importante entender el significado de esta diferencia}
 
 \begin{table}[H]
 \centering
@@ -157,18 +158,18 @@ adaptación.
 \end{table}
 
 La tabla~\ref{tab:interfaz_acciones} nos muestra la cantidad de acciones que
-realizaron los alumnos, junto con las acciones correctas o necesarias para
-llevar a cabo el procedimiento. Se observa que en promedio realizaron $16.75$
-acciones correctas, esto permite identificar en que parte de procedimiento los
-usuarios tienen inconvenientes.
+realizaron los alumnos, junto con las acciones correctas para llevar a cabo el
+procedimiento. Se observa que en promedio realizaron $16.75$ acciones correctas,
+esto permite identificar en que parte de procedimiento los usuarios tienen
+inconvenientes en cuanto al uso de la interfaz.
 
 \subsection{Encuesta}
 
-Como fue descripta en la sección~\ref{sec:interfaz} la encuesta es realizada a
-cada usuario, y es utilizada para obtener el grado de disconformidad de los
-mismos. Se utiliza la disconformidad para resaltar los puntos débiles, y así,
-aquellas variables que tengan el mayor porcentaje serán las que deben ser
-arregladas.
+\fixme{Como fue descripta en la sección~\ref{sec:interfaz} la encuesta es
+realizada a cada usuario}{Mejorar}, y es utilizada para obtener el grado de
+disconformidad de los mismos. Se utiliza la disconformidad para resaltar los
+puntos débiles, y así, aquellas variables que tengan el mayor porcentaje serán
+las que deben ser arregladas.
 
 Las preguntas que forman parte de la  encuesta son agrupadas en cuanto a
 aspectos de calidad gráfica, interacción con el entorno, interacción con los
@@ -183,6 +184,9 @@ $50\%$, la interacción con los objetos que llega al $49\%$. Luego, se pueden
 observar también otras disconformidades con menor porcentaje, las
 características del entorno con un  $33\%$, la integración con el hardware con
 un  $27\%$ y por ultimo, la calidad gráfica con un  $17\%$.
+
+\observacion{Hay que explicar que estas pruebas se hicieron de forma previa a
+las demás y que se arreglan algunos casos}
 
 \begin{table}[H]
 \centering
@@ -209,8 +213,8 @@ tecnologías similares. Otros puntos débiles encontrados en esta prueba son la
 interacción con el entorno y  con los objetos.
 
 Como resultado de esta prueba, la interfaz y la interacción con objetos y
-elementos sufren modificaciones a fin de que sean más fáciles de utilizar para
-un usuario no técnico.
+elementos sufren modificaciones a fin de su utilización con usuarios no
+técnicos.
 
 Las demás pruebas mencionadas en este capítulo son realizadas con la versión
 final de la solución, la cual es obtenida luego de las mejoras realizadas a los
