@@ -25,6 +25,7 @@
 \usepackage{tabulary}
 \usepackage{titlesec}
 \usepackage[newcommands]{ragged2e}
+\usepackage{pdfpages}
 \newcommand{\removed}[1]{\uline{#1}}
 
 % PACKAGE titlesec
@@ -67,7 +68,7 @@
 \author{Mirta González y Arturo Volpe}
 \degree{Informática}
 
-\advisor{Ing.}{Martín Abente Lahaye,M.Sc.}
+\advisor{Ing.}{Martín Abente Lahaye, M.Sc.}
 
 \logosource{./util/logo.jpg}
 \institution{Universidad Nacional de Asunción}
@@ -131,6 +132,8 @@
 \makeindex
 
 \begin{document}
+\observacion{Poner juego serio en el titulo de la tesis, en lugar del
+    construccionismo}
 
 \include{acronimos}
 
@@ -160,15 +163,12 @@
 \include{problema/main}
 \include{requerimientos/main}
 \include{tecnologias/main}
-\include{propuesta/main}
+\include{solucion/main}
 \include{evaluacion/main}
 \include{resultados/main}
 \include{conclusion/main}
 \include{futuro/main}
 
-\printbibliography
+\printbibliography{}
 
 \end{document}
-
-
-
