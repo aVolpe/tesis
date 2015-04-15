@@ -6,20 +6,10 @@ las condiciones de estas acciones y el contexto en el cual fueron ejecutadas.
 Esta información es almacenada en un servidor dedicado para su posterior
 análisis.
 
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[scale=0.5]{solucion/images/backend_diagrama.png}
-%\caption{Diagrama de la interacción de los usuarios con el \textit{BackEnd}, se
-    %puede observar a grandes rasgos, los componentes del sistema y los servicios
-    %que ofrece.}
-%\label{fig:backend_diagrama2}
-%\end{figure}
-
-%En la figura~\ref{fig:backend_diagrama} se pueden observar los componentes
-%principales de este sistema, y su interacción con los dispositivos móviles de
-%los usuarios. 
-
 \subsection{Registro de usuarios}
+
+\observacion{Una vez que definen lo que son los registros pueden referirse como
+registros}
 
 Para poder determinar a qué usuario corresponde qué conjunto de datos, durante la
 instalación de la solución en los dispositivos móviles de los usuarios, se ingresa como
@@ -51,9 +41,9 @@ servidor \textit{BackEnd}.
 \subsection{Detalles de implementación}
 
 El \textit{BackEnd} es un sistema web, desarrollado en \textit{Java}, y
-desplegado en un servicio \textit{OpenShift}, el cual está disponible $24$ horas
-al día, los $7$ días a la semana, asegurando así, que cuando el usuario desee
-enviar datos lo pueda hacer sin problemas.
+\fixme{desplegado}{Language} en un servicio \textit{OpenShift}, el cual está
+disponible $24$ horas al día, los $7$ días a la semana, asegurando así, que
+cuando el usuario desee enviar datos lo pueda hacer sin problemas.
 
 El sistema tiene dos servicios web que permiten el registro de usuarios y el
 registro de eventos, ambos reciben una lista de elementos y los almacenan en una

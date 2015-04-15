@@ -3,8 +3,11 @@
 \section{Arquitectura general}
 \label{sec:solucion}
 
+\observacion{Esta sección 7 deberá empezar con una descripción general (gráfico)
+y debe ir explicando parte por parte}
+
 A continuación se describe la arquitectura propuesta para la realización de una
-juego serio, se utiliza la guía básica definida por~\cite{pereira2009design} y
+juego serio, \fixme{se utiliza}{} la guía básica definida por~\cite{pereira2009design} y
 descrita en~\ref{sec:desarrollo}.
 
 Esta sección se enfoca en los aspectos técnicos de la creación del juego serio,
@@ -12,10 +15,13 @@ las competencias básicas relacionadas con la educación (segundo paso de la gu�
 descrita en~\ref{sec:desarrollo}) se definieron en las
 secciones~\ref{sec:glasgow} y~\ref{sec:hemocultivo}.
 
-La solución se basa en escenas, una escena es un procedimiento definido
+La solución se basa en escena\fixme{s, u}{}na escena es un procedimiento definido
 en~\ref{sec:seleccion_escenas}, cada escena tiene sus propias entidades, eventos
-y requisitos específicos. Adicionalmente existe otra escena denominada
-\enquote{Inicio} que es la escena donde se inicia la solución.
+y requisitos específicos. \fixme{Adicionalmente existe otra escena denominada
+Inicio que es la escena donde se inicia la solución.}{?}
+%Inicio estaba en un \enquote
+
+\observacion{Grafo de la arquitectura? Esta un poco desordenado}
 
 Adicionalmente la solución cuenta con pantallas, que son vistas donde el usuario
 puede seleccionar varias opciones, a continuación se describe el funcionamiento
@@ -25,10 +31,12 @@ y a continuación se evalúa al alumno durante su experiencia con la solución.
 
 \subsection{Flujo de la solución}
 
-La solución tiene varios escenarios, y dentro de cada escenario, existen varias
-pantallas que muestran información relevante de acuerdo a la situación de la
-simulación, la figura~\ref{fig:grafo_estados} es una representación abstracta
-de este flujo de acciones disponibles dentro de la solución.
+\observacion{Mejorar siguiente parrafo}
+La solución consiste varios escenarios, y cada escenario, \fixme{existen}{Se
+    presenta?} varias pantallas que muestran información relevante de acuerdo a
+la situación de la simulación, la figura~\ref{fig:grafo_estados} es una
+representación abstracta de este flujo de acciones disponibles dentro de la
+solución.
 
 \begin{figure}[H] 
 \centering 
@@ -50,10 +58,10 @@ opciones, que conducen a los escenarios \emph{Extracción de Sangre} y
 \end{enumerate*}
 
 
-El escenario \emph{Extracción de Sangre} finaliza al presionar la opción
+\fixme{El escenario \emph{Extracción de Sangre} finaliza al presionar la opción
 \emph{Finalizar Partida} y luego se muestra la pantalla \emph{Resultados}, con
 información de retroalimentación y la opciones de compartir resultado y volver
-a la escena \emph{Inicio}.
+a la escena \emph{Inicio}.}{Finalizar }
 
 Para iniciar el escenario \emph{Glasgow} existen dos caminos:
 \begin{enumerate}
@@ -78,10 +86,11 @@ escena es siempre la misma.
 
 \subsection{Interacción con la escena}
 
-El usuario se desenvuelve en un entorno de tres dimensiones, en el cual realiza las
-actividades relacionadas a la práctica, se distinguen dos tipos de movimientos
-principales que el usuario puede realizar:
+El usuario se desenvuelve en un entorno de tres dimensiones, en el cual realiza
+las actividades relacionadas a la práctica, se distinguen dos tipos de
+\fixme{movimientos}{acciones} principales que el usuario puede realizar:
 
+\observacion{Transformación del punto de vista}
 \begin{itemize}
     \item \textbf{Alejamiento o acercamiento}: es el acto de acercar o alejar la
         cámara, y por consiguiente al usuario del paciente. Se realiza
@@ -103,9 +112,9 @@ principales que el usuario puede realizar:
     Motor, no se ponen en la parte de extracción de sangre para mantener la
     consistencia con glasgow.}
 
-En la sección~\ref{sec:eca} se definió lo que son las \Gls{eca}, y los mismos
-son utilizados para poder realizar la evaluación del
-alumno en la solución.
+\fixme{En la sección~\ref{sec:eca} se definió lo que son las \Gls{eca}}{Mejorar
+    castellano}, y los mismos son utilizados para poder realizar la evaluación
+del alumno en la solución.
 
 Definir si las acciones de un usuario son correctas utilizando un motor
 \Gls{eca} es sencillo teniendo en cuenta que sólo se deben definir un
@@ -134,6 +143,8 @@ realizado la acción \enquote{Calzarse los guantes}, y en ese momento tenga las
 manos limpias.
 
 \subsubsection{Estados de una regla}
+\observacion{Hacer referencia a la figura 7.2 o mover adelante (la figura del
+    ciclo de vida)}
 
 Una regla puede estar en uno de los siguientes estados:
 
@@ -168,9 +179,10 @@ importante notar que una regla solo puede avanzar en este flujo.
 Un motor de reglas \gls{eca}, requiere de un proceso que evalúe constantemente
 las reglas para verificar si las mismas deben ser lanzadas o
 no\cite{bailey2004event,galton2002two}, un algoritmo comúnmente utilizado para
-realizar la verificación es el algoritmo de \enquote{RETE}\cite{de2001eca}, la
-cantidad de reglas definidas, y la no dependencia circular entre ellas, hace
-innecesario la implementación de tal algoritmo\cite{de2001eca}. 
+realizar la verificación es el algoritmo de \enquote{RETE}\revisar{Tener el
+    algoritmo en la presentación, como anexo}\cite{de2001eca}, la cantidad de
+reglas definidas, y la no dependencia circular entre ellas, hace innecesario la
+implementación de tal algoritmo\cite{de2001eca}. 
 
 De acuerdo a la descripción dada en~\ref{sec:eca_ejecucion}, la propuesta
 implementada utiliza una ejecución inmediata, principalmente por la sencillez
