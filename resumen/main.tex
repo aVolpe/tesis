@@ -1,0 +1,84 @@
+\documentclass[conference]{IEEEtran}
+\pagestyle{plain}
+
+\let\proof\relax 
+\let\endproof\relax
+\usepackage{float}
+\usepackage{amsmath,amsthm}
+
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-noshorthands]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{array}
+\usepackage{perpage}
+\usepackage{backnaur}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\MakePerPage{footnote}
+\addbibresource{../bibliography.bib}
+
+\newcommand{\foreign}[1]{{\it #1}}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\renewcommand{\thetable}{\arabic{table}}
+
+
+\makeatletter
+\long\def\@makecaption#1#2{\ifx\@captype\@IEEEtablestring%
+\footnotesize\begin{center}{\normalfont\footnotesize #1}\\
+{\normalfont\footnotesize\scshape #2}\end{center}%
+\@IEEEtablecaptionsepspace
+\else
+\@IEEEfigurecaptionsepspace
+\setbox\@tempboxa\hbox{\normalfont\footnotesize {#1.}~~ #2}%
+\ifdim \wd\@tempboxa >\hsize%
+\setbox\@tempboxa\hbox{\normalfont\footnotesize {#1.}~~ }%
+\parbox[t]{\hsize}{\normalfont\footnotesize \noindent\unhbox\@tempboxa#2}%
+\else
+\hbox to\hsize{\normalfont\footnotesize\hfil\box\@tempboxa\hfil}\fi\fi}
+\makeatother
+
+\begin{document}
+
+
+\title{Construccionismo como apoyo a la enseñanza tradicional:  una
+	aplicación a la formación de profesionales del área de enfermería}
+
+\author{\IEEEauthorblockN{Mirta Gonzalez}
+\IEEEauthorblockA{Facultad Politécnica\\
+    Universidad Nacional de Asunción\\
+    San Lorenzo, Paraguay\\
+    Email: mirti.gonz@gmail.com}
+\and
+\IEEEauthorblockN{Arturo Volpe}
+\IEEEauthorblockA{Facultad Politécnica\\
+    Universidad Nacional de Asuncién\\
+    San Lorenzo, Paraguay\\
+    Email: arturovolpe@gmail.com}}
+
+\maketitle
+\thispagestyle{plain}
+
+
+\begin{abstract}
+Lo fundamental de todo proceso pedagógico es el aprendizaje y no la enseñanza.
+Es el aprendizaje del estudiante y su participación el logro deseado.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+    juego serio, simulación, e-Educación, open source, enfermería,
+    construccionismo
+\end{IEEEkeywords}
+
+
+\printbibliography{}
+
+\end{document}
