@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+\documentclass[conference]{util/IEEEtran}
 \pagestyle{plain}
 
 \let\proof\relax 
@@ -20,6 +20,14 @@
 \usepackage{backnaur}
 \usepackage{enumerate}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tkz-kiviat}
+\usepackage[bookmarks]{hyperref}
+\usepackage{booktabs}
+\usepackage{rotating}
+\usepackage{glossaries}
+\usetikzlibrary{shapes,arrows}
+
 
 \MakePerPage{footnote}
 \addbibresource{../bibliography.bib}
@@ -45,13 +53,48 @@
 \hbox to\hsize{\normalfont\footnotesize\hfil\box\@tempboxa\hfil}\fi\fi}
 \makeatother
 
+
+\newtoks\customtok
+
+
+\renewcommand*{\newacronymhook}{%
+ \edef\dosetkeys{\noexpand\setkeys{glossentry}{user1={},\the\glskeylisttok}}%
+ \dosetkeys
+ \ifcsempty{@glo@useri}%
+ {%
+   \expandafter\customtok\expandafter{\the\glsshorttok}%
+ }%
+ {%
+   \edef\custom{\the\glsshorttok, \csexpandonce{@glo@useri}}%
+   \expandafter\customtok\expandafter{\custom}%
+ }%
+}
+
+\newcommand*{\custompostdesc}[1]{%
+  \ifcsempty{glo@#1@useri}{}{(\glsentryuseri{#1})}%
+}
+
+\renewcommand*{\CustomAcronymFields}{%
+  user1={},%
+  name={\the\glsshorttok},%
+  description={\the\glslongtok\noexpand\custompostdesc{\the\glslabeltok}},%
+  first={\the\glslongtok\space(\the\customtok)},%
+  firstplural={\the\glslongtok\noexpand\acrpluralsuffix\space(\the\customtok)}%
+  text={\the\glsshorttok},%
+  plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
+}
+
+\makeglossaries
+
 \begin{document}
 
+\include{acronimos}
 
-\title{Construccionismo como apoyo a la enseñanza tradicional:  una
+
+\title{Juego serio como apoyo a la enseñanza tradicional:  una
 	aplicación a la formación de profesionales del área de enfermería}
 
-\author{\IEEEauthorblockN{Mirta Gonzalez}
+\author{\IEEEauthorblockN{Mirta González}
 \IEEEauthorblockA{Facultad Politécnica\\
     Universidad Nacional de Asunción\\
     San Lorenzo, Paraguay\\
@@ -68,14 +111,32 @@
 
 
 \begin{abstract}
-Lo fundamental de todo proceso pedagógico es el aprendizaje y no la enseñanza.
-Es el aprendizaje del estudiante y su participación el logro deseado.
+%Lo fundamental de todo proceso pedagógico es el aprendizaje y no la enseñanza.
+%Es el aprendizaje del estudiante y su participación el logro deseado.
+
+Este trabajo introduce el uso de las TICs en forma de juegos serios como 
+área de investigación. Se da una breve reseña de la inclusión de las 
+tecnologías en la educación, desde su uso tradicional como proveedor de información hasta su rol actual en la construcción de conocimiento. 
+
+Posteriormente se describen las principales características y áreas de 
+aplicación de los juegos serios como herramienta educativa. Para luego 
+introducirlo como solución tecnológica a las problemáticas del área de 
+enfermería, las problemáticas y los detalles de la solución en forma 
+de juego serio también son descritas.
+
+Finalmente, se detallan las metodologías utilizadas para evaluar la 
+solución junto con los resultados obtenidos más importantes. Estos resultados 
+junto con la experiencia de desarrollar la solución permiten
+obtener conclusiones e identificar posibles trabajos futuros en al área por lo 
+que son detallados como parte final de este documento.
+
+
 
 \end{abstract}
 
 \begin{IEEEkeywords}
-    juego serio, simulación, e-Educación, open source, enfermería,
-    construccionismo
+    Juego serio, simulación, enfermería, educación, ubicuidad, aprendizaje, 
+    construccionismo, tecnologías de la información y la educación. 
 \end{IEEEkeywords}
 
 
@@ -103,72 +164,18 @@ Es el aprendizaje del estudiante y su participación el logro deseado.
 \input{introduccion}
 \input{tics}
 \input{juegos_serios}
+\input{problema}
+\input{solucion}
+\input{evaluacion}
+\input{conclusiones}
+\input{trabajos_futuros}
+%\section{Conclusiones}
+%1 paginas
+%Todas las conclusiones
 
-\section{Problema}
-1/2 página
-\begin{itemize}
-\item Estado actual
-\item Prácticas en laboratorio
-\item Problemas actuales
-\item Propuesta de solución
-\end{itemize}
-
-
-\section{Solucion}
-3 paginas
-\subsection{Tecnologías usadas (unity)}
-1 Parrafo
-\subsection{Arquitectura}
-1 Página
-\subsubsection{Frontend}
-\begin{itemize}
-\item Interacción con el entorno(cámara, movimientos)
-\item Interacción con los objetos
-\item Interacción con el paciente
-\item Registro de actividades
-\end{itemize}
-\subsubsection{Backend}
-Descripción general
-
-\subsection{Escenas}
-\subsubsection{Extracción de sangre}
-\begin{itemize}
-\item Objetivos
-\item Que se hace
-\item fotos
-\end{itemize}
-\subsubsection{Glasgow}
-\begin{itemize}
-\item Objetivos
-\item Que se hace
-\item fotos
-\end{itemize}
-
-\section{Evaluación}
-
-%Comentarios de tincho:
-% A quien se le hizo el test (muestra)
-% Correlación
-% Resumen de todo
-% Encuesta objetiva
-% Explicar a quien se le hizo el test, resumen, correlación
-3 paginas
-\subsection{Muestra}
-Los tres gráficos (estos gráficos son de la ubicación)
-\subsection{Variables}
-\subsection{Resultados}
-\begin{itemize}
-\item Aceptación de la solución (estrella de kiviat)
-\item Correlación
-\end{itemize}
-
-\section{Conclusiones}
-1 paginas
-Todas las conclusiones
-
-\section{Trabajos futuros}
-1/2 páginas
-Resumen de los trabajos futuros
+%\section{Trabajos futuros}
+%1/2 páginas
+%Resumen de los trabajos futuros
 
 \printbibliography{}
 
