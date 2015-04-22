@@ -7,8 +7,8 @@
 y debe ir explicando parte por parte}
 
 A continuación se describe la arquitectura propuesta para la realización de una
-juego serio, \fixme{se utiliza}{} la guía básica definida por~\cite{pereira2009design} y
-descrita en~\ref{sec:desarrollo}.
+juego serio, \fixme{se utiliza}{} la guía básica definida
+por~\cite{pereira2009design} y descrita en~\ref{sec:desarrollo}.
 
 Esta sección se enfoca en los aspectos técnicos de la creación del juego serio,
 las competencias básicas relacionadas con la educación (segundo paso de la guía
@@ -84,13 +84,12 @@ volver a la escena \emph{Inicio}.
 Todos los escenarios son utilizados de manera similar, la interacción con la
 escena es siempre la misma.
 
-\subsection{Interacción con la escena}
+\subsection{Transformaciones del punto de vista del usuario}
 
 El usuario se desenvuelve en un entorno de tres dimensiones, en el cual realiza
-las actividades relacionadas a la práctica, se distinguen dos tipos de
-\fixme{movimientos}{acciones} principales que el usuario puede realizar:
+las actividades relacionadas a la práctica, se distinguen dos tipos de acciones
+principales que el usuario puede realizar:
 
-\observacion{Transformación del punto de vista}
 \begin{itemize}
     \item \textbf{Alejamiento o acercamiento}: es el acto de acercar o alejar la
         cámara, y por consiguiente al usuario del paciente. Se realiza
@@ -112,9 +111,8 @@ las actividades relacionadas a la práctica, se distinguen dos tipos de
     Motor, no se ponen en la parte de extracción de sangre para mantener la
     consistencia con glasgow.}
 
-\fixme{En la sección~\ref{sec:eca} se definió lo que son las \Gls{eca}}{Mejorar
-    castellano}, y los mismos son utilizados para poder realizar la evaluación
-del alumno en la solución.
+En la sección~\ref{sec:eca} se describen los \Gls{eca}, y los mismos son
+utilizados para poder realizar la evaluación del alumno en la solución.
 
 Definir si las acciones de un usuario son correctas utilizando un motor
 \Gls{eca} es sencillo teniendo en cuenta que sólo se deben definir un

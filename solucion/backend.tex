@@ -11,17 +11,18 @@ análisis.
 \observacion{Una vez que definen lo que son los registros pueden referirse como
 registros}
 
-Para poder determinar a qué usuario corresponde qué conjunto de datos, durante la
-instalación de la solución en los dispositivos móviles de los usuarios, se ingresa como
-un dato adicional el número de teléfono del mismo, estos datos se registran
-en el \textit{BackEnd} al mismo tiempo en el que se muestra la solución al usuario.
+Para poder determinar a qué usuario corresponde qué conjunto de datos, durante
+la instalación de la solución en los dispositivos móviles de los usuarios, se
+ingresa como un dato adicional el número de teléfono del mismo, estos datos se
+registran en el \textit{BackEnd} al mismo tiempo en el que se muestra la
+solución al usuario.
 
 De esta forma, en el sistema se encuentran los datos proveídos por la
 simulación, así como el nombre del usuario. Es necesario almacenar el nombre del
 usuario para las diversas encuestas que se realizan (las encuestas para alumnos
-que participaron en la prueba no son anónimas), de esta manera se puede
-saber, dada una encuesta, a que alumno corresponde y el uso que le dio a la
-solución. Estas encuestas son explicadas en detalle en~\ref{chap:evaluacion} y sus 
+que participaron en la prueba no son anónimas), de esta manera se puede saber,
+dada una encuesta, a que alumno corresponde y el uso que le dio a la solución.
+Estas encuestas son explicadas en detalle en~\ref{chap:evaluacion} y sus
 resultados en~\ref{chap:analisis}.
 
 \subsection{Registro de eventos}
@@ -32,11 +33,11 @@ dentro del dispositivo móvil del usuario, cuando este decide enviar la
 información, estos datos se transmiten por la red a un servidor que almacena el
 \textit{BackEnd}.
 
-Una vez que el usuario envía sus datos de uso, el archivo de registros
-local se limpia, permitiendo así que nuevos registros sean añadidos.
-Adicionalmente, existe un archivo de respaldo, que contiene toda la información
-que se registró del usuario, incluyendo aquellas que ya fueron enviadas al
-servidor \textit{BackEnd}.
+Una vez que el usuario envía sus datos de uso, el archivo de registros local se
+limpia, permitiendo así que nuevos registros sean añadidos. Adicionalmente,
+existe un archivo de respaldo, que contiene toda la información que se registró
+del usuario, incluyendo aquellas que ya fueron enviadas al servidor
+\textit{BackEnd}.
 
 \subsection{Detalles de implementación}
 
@@ -49,9 +50,9 @@ El sistema tiene dos servicios web que permiten el registro de usuarios y el
 registro de eventos, ambos reciben una lista de elementos y los almacenan en una
 base de datos \textit{PostgreSQL}.
 
-Estos dos servicios implementan un mecanismo de seguridad sencillo, basado en usuario y
-contraseña, el único objetivo de este mecanismo, es que los datos no sean
-fácilmente accesibles, pues contienen datos sensibles.
+Estos dos servicios implementan un mecanismo de seguridad sencillo, basado en
+usuario y contraseña, el único objetivo de este mecanismo, es que los datos no
+sean fácilmente accesibles, pues contienen datos sensibles.
 
 La petición enviada desde la solución, contiene el número de teléfono del
 usuario, un identificador único generado por \textit{Unity3D} y una lista de
