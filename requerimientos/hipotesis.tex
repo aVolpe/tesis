@@ -125,11 +125,12 @@ detallan cada una de estas hipótesis.
 
 % Hipótesis
 \begin{itemize}
-\item 
-    \textbf{Comandos de voz con interfaz}:  para enviar una petición o informarle 
-    sobre algo al paciente (por ejemplo, darle detalles del procedimiento), 
-    no es necesario identificar las palabras del usuario, sino más bien detectar
-    que ha hablado y listar las posibles acciones que se pueden realizar.
+
+\item \textbf{Comandos de voz con interfaz}:  para enviar una petición o
+    informarle sobre algo al paciente (por ejemplo, darle detalles del
+    procedimiento), no es necesario identificar las palabras del usuario, sino
+    más bien detectar que ha hablado y listar las posibles acciones que se
+    pueden realizar.
     
     Los pasos del procedimiento de extracción de sangre que son representados por 
     comando de voz son:
@@ -149,10 +150,10 @@ detallan cada una de estas hipótesis.
         \item Medir la respuesta motora por medio de peticiones al paciente.
     \end{itemize}
 
-\item
-    \textbf{Extracción uniforme de elementos}: para realizar la acción de extraer 
-    un elemento utilizado en el paciente, se considera que realizarlo de una sola 
-    manera para todos los elementos convierte a la interfaz más intuitiva.
+\item \textbf{Extracción uniforme de elementos}: para realizar la acción de
+    extraer un elemento utilizado en el paciente, se considera que realizarlo de
+    una sola manera para todos los elementos convierte a la interfaz más
+    intuitiva.
 
     Los pasos del procedimiento de extracción de sangre que cumplen con la extracción 
     uniforme son:
@@ -162,12 +163,10 @@ detallan cada una de estas hipótesis.
         \item Extraer jeringa.
     \end{itemize}
     
-\item 
-    \textbf{Acciones por menú}: \fixme{}{Menú? UI?} acciones como el de generar
-    un estímulo doloroso al paciente tienen limitaciones técnicas para su
+\item \textbf{Acciones por interfaz de usuario}: acciones como generar un
+    estímulo doloroso al paciente tienen limitaciones técnicas para su
     simulación pero no pueden ser omitidas debido a su gran importancia en el
-    procedimiento. Por lo tanto, acciones como estas son realizadas a través de
-    menús contextuales.
+    procedimiento.
     
     \observacion{Hacer que esto sea una decisión de diseño y no una hipótesis}
     \observacion{No se debería hablar de soluciones aún}
@@ -185,6 +184,8 @@ detallan cada una de estas hipótesis.
     estudiante sepa el momento en el que debe realizarse cada una de estas
     acciones y por lo mismo, es suficiente representarlas a través de opciones
     en la interfaz gráfica.
+
+    \revisar{Mirar resumen, esta mejor descrito ahí}
     
     Los pasos del procedimiento de extracción de sangre que son representados
     por opciones son:
@@ -196,12 +197,27 @@ detallan cada una de estas hipótesis.
     \end{itemize}
     
 \item
-    \textbf{Representación iconográfica}
+    \textbf{Representación iconográfica}: para representar el estado del
+    enfermero es suficiente mostrar una imagen representativa. Es decir, que
+    para mostrar que el enfermero tiene una gorra, es suficiente mostrar una
+    imagen de una gorra.
+    
+    Esta hipótesis se aplica para las opciones de bioseguridad, las opciones
+    para la utilización de elementos así como para la representación del
+    elemento seleccionado.
 \item 
-    \textbf{Factores motivantes}
+    \textbf{Factores motivantes}: indicadores de rendimiento, como un puntaje al
+    final de cada procedimiento, y el tiempo total dentro del procedimiento,
+    impactan positivamente en el involucramiento del usuario.
+
+    La interacción social es otro factor que incrementa el nivel de compromiso
+    del usuario.
 
 \item 
-    Falta de pistas
+    \textbf{Falta de pistas}: la ausencia de signos visuales que indiquen las
+    acciones que debe realizar el usuario durante la experiencia, permite al
+    usuario probar sus conocimientos, e impide al usuario avanzar en el
+    procedimiento utilizando una técnica de \emph{prueba y error}.
 
 \end{itemize}
 % Simulados

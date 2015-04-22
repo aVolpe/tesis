@@ -141,10 +141,16 @@ realizado la acción \enquote{Calzarse los guantes}, y en ese momento tenga las
 manos limpias.
 
 \subsubsection{Estados de una regla}
-\observacion{Hacer referencia a la figura 7.2 o mover adelante (la figura del
-    ciclo de vida)}
 
-Una regla puede estar en uno de los siguientes estados:
+El ciclo de vida de una regla, como se observa en la figura~\ref{fig:rule_flow},
+se compone de los siguientes estados:
+
+\begin{figure}
+\centering
+\includegraphics[width=12cm]{solucion/images/rules_flow.png}
+\caption{Ciclo de vida de una regla}
+\label{fig:rule_flow}
+\end{figure}
 
 \begin{enumerate}
 \item \textbf{BEGIN} Es una regla que recién fue creada, no realiza ninguna
@@ -162,15 +168,6 @@ Una regla puede estar en uno de los siguientes estados:
 \item \textbf{FINISH:} Estado final de una regla.
 \end{enumerate}
 
-\begin{figure}
-\centering
-\includegraphics[width=12cm]{solucion/images/rules_flow.png}
-\caption{Ciclo de vida de una regla}
-\label{fig:rule_flow}
-\end{figure}
-
-En la figura~\ref{fig:rule_flow} se observa la evolución de una regla, es
-importante notar que una regla solo puede avanzar en este flujo.
 
 \subsubsection{Motor de ejecución}
 
