@@ -4,7 +4,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{csquotes} \usepackage{graphicx}
+\usepackage{csquotes} 
+\usepackage{graphicx}
 \usepackage[showframe=false, left=40mm, right=20mm]{geometry}
 \usepackage{pdflscape}
 \usepackage[inline]{enumitem}
@@ -26,6 +27,13 @@
 \usepackage{titlesec}
 \usepackage[newcommands]{ragged2e}
 \usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
+\usepackage{glossaries}
+\usepackage{etoolbox}
+\usepackage[xindy]{imakeidx}
+\usepackage[colorinlistoftodos,prependcaption,spanish]{todonotes}
+
 \newcommand{\removed}[1]{\uline{#1}}
 
 % PACKAGE titlesec
@@ -41,14 +49,6 @@
 % Agregar bullets al entorno description
 \setlist[description]{font=\quad$\bullet\enskip$\bfseries}
 
-\usepackage{tikz}
-\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
-
-\usepackage{glossaries}
-\usepackage{etoolbox}
-\usepackage[xindy]{imakeidx}
-
-\usepackage[colorinlistoftodos,prependcaption,spanish]{todonotes}
 
 \DeclareUnicodeCharacter{00E3}{á}
 
@@ -63,7 +63,7 @@
 \addbibresource{bibliography.bib} 
 
 %Datos de la tesís
-\title{Construccionismo como complemento a la enseñanza tradicional:  una
+\title{Juegos serios como complemento a la enseñanza tradicional:  una
 	aplicación a la formación de profesionales del área de enfermería}
 \author{Mirta González y Arturo Volpe}
 \degree{Informática}
@@ -132,14 +132,14 @@
 \makeindex
 
 \begin{document}
-\observacion{Poner juego serio en el titulo de la tesis, en lugar del
-    construccionismo}
 
 \include{acronimos}
 
 \maketitle
 
 % Tabla de contenidos
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
 \tableofcontents
 % Lista de figuras
 \listoffigures
