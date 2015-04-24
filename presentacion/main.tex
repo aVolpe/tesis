@@ -1,0 +1,67 @@
+\documentclass{beamer}
+\usepackage{pgfpages}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% Buscar más en http://deic.uab.es/~iblanes/beamer_gallery/individual/Malmoe-dolphin-default.html
+\usetheme{Malmoe}
+%\usecolortheme{dolphin}
+\usecolortheme{lily}
+
+
+\setbeameroption{show notes on second screen} %un-comment to see the notes
+
+
+\author[Mirta González y Arturo Volpe]{Mirta González \quad Arturo Volpe}
+
+\title[Juegos serios como apoyo a la enseñanza
+tradicional\hspace{2em}\insertframenumber/\inserttotalframenumber]%
+{Juegos serios como apoyo a la enseñanza tradicional:  una aplicación a la
+    formación de profesionales del área de enfermería}
+
+%\date{Mayo, 2014} %leave out for today's date to be insterted
+
+\institute{Universidad Nacional de Asunción\\Facultad Politécnica}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{There Is No Largest Prime Number}
+\framesubtitle{The proof uses \textit{reductio ad absurdum}.}
+\begin{theorem}
+There is no largest prime number.
+\end{theorem}
+\begin{proof}
+\begin{enumerate}
+\item<1-| alert@1> Suppose $p$ were the largest prime number.
+\item<2-> Let $q$ be the product of the first $p$ numbers.
+\item<3-> Then $q+1$ is not divisible by any of them.
+\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+number not in the first $p$ numbers.\qedhere
+\end{enumerate}
+\end{proof}
+\end{frame}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents[currentsection]
+\end{frame}
+\note{Hola como estas}
+
+\section{Parte 1}
+\begin{frame}
+    \frametitle{Introducción}
+\end{frame}
+
+\section{Parte 2}
+\begin{frame}
+    \frametitle{TIC's en la educación}
+\end{frame}
+
+\section{Parte 3}
+\begin{frame}
+    \frametitle{Juegos Serios}
+\end{frame}
+\end{document}
