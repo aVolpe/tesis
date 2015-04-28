@@ -1,16 +1,46 @@
 \section{Evaluación}
 
-\begin{frame}{Pruebas preliminares}
+\begin{frame}[fragile]
+\frametitle{Pruebas preliminares}
+
+\begin{filecontents}{interfazuso.dat}
+n   p       s
+1	9.38	6.48
+2   5.88	4.64
+3   7.75	3.13
+\end{filecontents}
+\pgfplotstableread{interfazuso.dat}{\InterfazUso}
 
 \begin{figure}
     \begin{subfigure}[b]{.5\linewidth}
         \centering
-        \includegraphics[height=3cm]{../resultados/imagenes/interfaz_tiempo_actividades.png}
+        \begin{tikzpicture}[scale=.45]
+           \begin{axis}[ybar,%
+              legend pos=outer north east,
+              xmin=0,
+              xmax=4,
+              xtick=data,
+              symbolic x coords={0,1,2,3,4},
+              ymin=0,ymax=10,
+              %ytick={0,2,4,6,8,10},
+              xticklabels={Contextual,Interfaz,Herramienta},
+              ylabel= Tiempo,
+              xlabel= Tipo de acción,
+              bar width=10pt,
+              %enlarge x limits={abs=2},
+                ]   
+        \addplot[color=blue,ybar,fill=blue!75,area legend] table [x = {n}, y = {p}] {\InterfazUso};
+        \addlegendentry{Primer}
+        \addplot[color=red,ybar,fill=red!75,area legend] table [x = {n}, y = {s}]
+        {\InterfazUso};
+        \addlegendentry[align=left]{Promedio \\ siguientes}
+        \end{axis}
+        \end{tikzpicture}
         \caption{Tiempo por tipo de actividad}
     \end{subfigure}\hfill
     \pause
     \begin{subtable}[b]{.5\linewidth}
-        \tiny
+        \scriptsize
         \centering
         \begin{tabular}{lr}
         \toprule
@@ -34,19 +64,53 @@
 \begin{figure}
     \begin{subfigure}[b]{.3\linewidth}
         \centering
-        \includegraphics[height=2cm]{../resultados/imagenes/ubicacion_acceso_internet.png}
+        \begin{tikzpicture}[thick,scale=0.4, every node/.style={transform shape}]
+            \pie[
+                %explode=.2,
+                text=legend,
+                %style=drop shadow,
+                %radius=3,
+                %scale font,
+                explode={0.1,0.1,0.3,0.3}
+                ]%
+            {%
+                31.2 / Plan pos-pago,
+                57   / Paquetes pre-pago,
+                5.4  / Sin acceso,
+                6.4  / Acceso ocasional}
+        \end{tikzpicture}
         \caption{Acceso a internet}
     \end{subfigure}\hfill
     \pause{}
     \begin{subfigure}[b]{.3\linewidth}
         \centering
-        \includegraphics[height=2cm]{../resultados/imagenes/ubicacion_sistemas_operativos.png}
+        \begin{tikzpicture}[thick,scale=0.4, every node/.style={transform shape}]
+            \pie[
+                text=legend,
+                rotate=61.3,
+                explode={.1,.2,.2,.2}
+                ]%
+            {%
+            61.3 / Android,
+             8.6 / Symbian,
+            12.9 / Windows Phone,
+            17.2 / Otros}
+        \end{tikzpicture}
         \caption{Sistema operativo}
     \end{subfigure}\\
     \pause{}
     \begin{subfigure}[b]{.5\linewidth}
         \centering
-        \includegraphics[height=2cm]{../resultados/imagenes/ubicacion_requisitos_minimos.png}
+        \begin{tikzpicture}[thick,scale=0.4, every node/.style={transform shape}]
+            \pie[
+                text=legend,
+                explode=.1
+                ]%
+            {%
+                81.7 / Cumple,
+                18.3 /  No Cumple
+            }
+        \end{tikzpicture}
         \caption{Cumplimiento de requisitos}
     \end{subfigure}
 \end{figure}
@@ -116,6 +180,7 @@ Promedio usuarios & \textbf{3.82} \\
 \note{El Incrmeento es del $10\%$}
 
 \end{frame}
+
 \begin{frame}{Encuesta para evaluar la solución (I)}
 
 \begin{figure}
@@ -295,6 +360,7 @@ n    p    s
 \end{figure}
 
 \end{frame}
+
 \begin{frame}{Correlación}
 
 

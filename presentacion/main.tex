@@ -23,6 +23,8 @@
 \setbeamercovered{transparent}
 \setbeamercolor{block title}{use=structure,fg=white,bg=blue!75!white}
 \setbeamercolor{block body}{use=structure,fg=black,bg=gray!20!white}
+\newcommand{\cs}{%
+  {\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\fontseries{b}\selectfont\#}}}}
 %
 %
 %\setbeameroption{show notes on second screen} % Descomentar para no ver comentarios
@@ -68,14 +70,14 @@ tradicional\hspace{2em}\insertframenumber/\inserttotalframenumber]%
 \tableofcontents
 \end{frame}
 
-%\input{introduccion.tex}
-%\input{tics.tex}
+\input{introduccion.tex}
+\input{tics.tex}
 \input{juegos_serios.tex}
 \input{problema.tex}
-%\input{tecnologia.tex}
-%\input{implementacion.tex}
+\input{tecnologia.tex}
+\input{implementacion.tex}
 \input{analisis.tex}
-%\input{./conclusion.tex}
-%\input{./futuro.tex}
+\input{conclusiones.tex}
+\input{futuro.tex}
 
 \end{document}

@@ -28,3 +28,7 @@
 **/.directory
 **/*.loa
 **/*.tdo
+**/*.nav
+**/*.snm
+**/*.vrb
+**/*.dat
