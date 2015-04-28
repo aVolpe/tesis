@@ -1,10 +1,6 @@
 \section{Alcance de la simulación}
 \label{sec:alcance}
 
-\observacion{Agregar hipótesis de motivación (puntaje, facebook, etc)}
-\observacion{Agregar hipótesis de iconos}
-\observacion{Agregar hipótesis de Falta de pistas}
-
 Para representar los procedimientos seleccionados y descritos en la
 sección\ref{sec:seleccion_escenas}, estos deben ser presentados dentro de
 escenarios distintos con los elementos necesarios para poder llevarlos a cabo.
@@ -23,28 +19,28 @@ describirán a continuación sirven para acotar el
 alcance de la simulación, definen qué se simulará y cual es del detalle
 necesario para alcanzar las competencias básicas.
 
-\fixme{A continuación se fundamentan por qué ciertos pasos serán simulados,
-    representados o no simulados dentro de la solución basados en limitaciones e
-    hipótesis asumidas.}{Mover esto abajo de factores limitantes}
+%\fixme{A continuación se fundamentan por qué ciertos pasos serán simulados,
+%    representados o no simulados dentro de la solución basados en limitaciones e
+%    hipótesis asumidas.}{Mover esto abajo de factores limitantes}
 
-Cada uno de los pasos están agrupados de acuerdo a cada uno de estos aspectos.
+%Cada uno de los pasos están agrupados de acuerdo a cada uno de estos aspectos.
 
 \subsection{Factores limitantes}
 
-Se refieren a cada uno de los aspectos que determinan si un paso 
-será simulado dentro de la solución. Se clasifican en tres: limitaciones técnicas, 
-importancia y facilidad de realización. Estos tres aspectos que influyen en qué partes 
-se simularán y qué partes se omitirán, se detallan a continuación.
+A continuación se describen los factores que determinan por qué ciertos pasos relacionados 
+a los procedimientos no serán simulados dentro de la solución. Estos factores se clasifican 
+en tres: limitaciones técnicas, importancia y facilidad de realización. Estos tres aspectos 
+que influyen en qué partes se simularán y qué partes se omitirán, se detallan a continuación.
 
-\observacion{No empezar con un ejemplo.}
+
 \begin{itemize}
-\item  \textbf{Limitaciones técnicas}: 
+\item  \textbf{Limitaciones técnicas.} 
     
-    Acciones como la simulación del agua (necesarios para el lavado de manos),
-    requieren de requisitos de hardware avanzados y un tiempo considerable de
-    desarrollo. Las acciones que escapan al alcance del hardware, del software o
-    de tiempo de los desarrolladores no son simuladas. 
-    \observacion{Reformular capítulo anterior}
+    Las acciones que escapan al alcance del hardware, del software o
+    de tiempo de los desarrolladores no son simuladas. Un ejemplo de este 
+    tipo de acciones es la simulación del agua (necesarios para el lavado de manos) 
+    que requiere de requisitos de hardware avanzados y un tiempo considerable de
+    desarrollo.
         
     Los pasos del procedimiento de extracción de sangre que no se simularán por 
     limitaciones técnicas son:
@@ -55,12 +51,12 @@ se simularán y qué partes se omitirán, se detallan a continuación.
     \end{itemize}
     
     
-\item  \fixme{Importancia}{de qué?} 
+\item \textbf{Importancia de representación.}
 
     No todos los pasos definidos en el procedimiento        
-    oficial son \fixme{necesarios}{mandatorios} de simular, por ejemplo, la
+    oficial requieren ser simulados, por ejemplo, la
     colocación de los elementos cerca del lugar de trabajo, es un paso necesario
-    en el procedimiento, pero es considerado un paso poco importante y fácil de
+    en el procedimiento, pero es considerado un paso de menor importancia y fácil de
     realizar.
 
     La importancia es evaluada por profesionales del \Gls{iab}, los
@@ -69,7 +65,7 @@ se simularán y qué partes se omitirán, se detallan a continuación.
     acción.
     
     Los pasos del procedimiento de extracción de sangre que no se simularán por 
-    no ser importantes para la simulación son:
+    no ser importantes de representar para la simulación son:
     \begin{itemize}
         \item Llevar el equipo en la unidad donde se encuentra el paciente.
         \item Extraer el protector de la aguja.
@@ -77,8 +73,7 @@ se simularán y qué partes se omitirán, se detallan a continuación.
     \end{itemize}
     
     
-\item \textbf{Facilidad de realización en la vida real o en el laboratorio}:
-    \observacion{Reformular título}
+\item \textbf{Facilidad de realización.}
 
     Ciertos pasos son fáciles de realizar en la vida real pero requieren un
     esfuerzo significativo para ser simulados con realismo, como preparar el
@@ -113,15 +108,15 @@ se simularán y qué partes se omitirán, se detallan a continuación.
 
 \subsection{Hipótesis}
 \label{sec:hipotesis}
-\observacion{No utilizar: existen, que debería, no son}
 
-\fixme{Además de los pasos mencionados anteriormente, existen otros pasos que
-    son necesarios representar pero no necesariamente simular de forma
-    detallada,}{Mejorar} para estos pasos se formularon hipótesis basadas en
-apreciaciones de los profesores del \Gls{iab} y en pruebas de usabilidad de
-interfaz las cuales son detalladas en el capítulo\ref{chap:evaluacion} y cuyos
-resultados se muestran en el capítulo\ref{chap:analisis}. A continuación se
-detallan cada una de estas hipótesis.
+En este apartado se detallan las hipótesis asumidas durante el desarrollo de 
+la solución. Algunas de ellas envuelven la forma de representación de acciones 
+dentro de la simulación, estas hipótesis están  basadas en apreciaciones de los 
+profesores del \Gls{iab} y en pruebas de usabilidad de interfaz las cuales son 
+detalladas en el capítulo\ref{chap:evaluacion} y cuyos resultados se muestran en el capítulo\ref{chap:analisis}. Otras hipótesis representan asunciones de los autores 
+en cuanto a la utilidad de ciertos aspectos de la simulación.
+
+Las hipótesis formuladas son las siguientes:
 
 % Hipótesis
 \begin{itemize}
@@ -161,19 +156,6 @@ detallan cada una de estas hipótesis.
     \begin{itemize}
         \item Extraer torniquete.
         \item Extraer jeringa.
-    \end{itemize}
-    
-\item \textbf{Acciones por interfaz de usuario}: acciones como generar un
-    estímulo doloroso al paciente tienen limitaciones técnicas para su
-    simulación pero no pueden ser omitidas debido a su gran importancia en el
-    procedimiento.
-    
-    \observacion{Hacer que esto sea una decisión de diseño y no una hipótesis}
-    \observacion{No se debería hablar de soluciones aún}
-    Los pasos del procedimiento de valoración de la escala de Glasgow que son
-    importantes de simular pero poseen limitaciones técnicas son:
-    \begin{itemize} 
-    \item Realizar estímulos dolorosos en diferentes partes del cuerpo. 
     \end{itemize}
     
 \item 
@@ -218,15 +200,40 @@ detallan cada una de estas hipótesis.
     acciones que debe realizar el usuario durante la experiencia, permite al
     usuario probar sus conocimientos, e impide al usuario avanzar en el
     procedimiento utilizando una técnica de \emph{prueba y error}.
+    
+\item 
+    \textbf{Ubicuidad}: darle a los usuarios la posibilidad de poder utilizar 
+    la solución en cualquier lugar y momento le ayuda a tener más oportunidades 
+    de poner a prueba sus conocimientos.
 
 \end{itemize}
 % Simulados
 
-\subsection{Pasos de exploración}
+%\subsection{Pasos de exploración}
+\subsection{Decisiones de diseño}
 
-Los demás pasos no mencionados previamente deben ser simulados de forma 
-integra ya que no se ven afectados por ninguna de las hipótesis y criterios previamente
-descriptos.
+No todas las acciones que deben ser realizadas dentro de la simulación están 
+limitadas por factores o se encuentran envueltas dentro de una hipótesis. La 
+representación de estas acciones fueron definidas por decisiones de diseño 
+de los autores, estas decisiones junto con los pasos involucrados son detallados 
+a continuación.
+
+\begin{itemize}
+
+\item \textbf{Acciones por interfaz de usuario:} acciones como generar un
+    estímulo doloroso al paciente tienen limitaciones técnicas para su
+    simulación pero no pueden ser omitidas debido a su gran importancia en el
+    procedimiento.
+ 
+    Los pasos del procedimiento de valoración de la escala de Glasgow que son
+    importantes de simular pero poseen limitaciones técnicas son:
+    \begin{itemize} 
+    \item Realizar estímulos dolorosos en diferentes partes del cuerpo. 
+    \end{itemize}
+    
+\item \textbf{Simulación integra de pasos:} Los pasos no mencionados de los procedimientos  
+deben ser simulados de forma integra ya que no se ven afectados por 
+ninguna de las hipótesis, factores limitantes y criterios descritos con anterioridad.
 
 La evaluación de estos pasos depende de elecciones que haga el usuario, por ejemplo
 la elección de una zona de punción depende del usuario, existen varios lugares posibles, 
@@ -253,3 +260,4 @@ Los pasos de valoración de la escala de Glasgow que también cumplen con esto s
 \end{itemize}
 
 
+\end{itemize}
