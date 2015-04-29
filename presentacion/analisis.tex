@@ -64,7 +64,7 @@ n   p       s
 \begin{figure}
     \begin{subfigure}[b]{.3\linewidth}
         \centering
-        \begin{tikzpicture}[thick,scale=0.4, every node/.style={transform shape}]
+        \begin{tikzpicture}[thick,scale=0.35, every node/.style={transform shape}]
             \pie[
                 %explode=.2,
                 text=legend,
@@ -84,7 +84,7 @@ n   p       s
     \pause{}
     \begin{subfigure}[b]{.3\linewidth}
         \centering
-        \begin{tikzpicture}[thick,scale=0.4, every node/.style={transform shape}]
+        \begin{tikzpicture}[thick,scale=0.35, every node/.style={transform shape}]
             \pie[
                 text=legend,
                 rotate=61.3,
@@ -101,7 +101,7 @@ n   p       s
     \pause{}
     \begin{subfigure}[b]{.5\linewidth}
         \centering
-        \begin{tikzpicture}[thick,scale=0.4, every node/.style={transform shape}]
+        \begin{tikzpicture}[thick,scale=0.35, every node/.style={transform shape}]
             \pie[
                 text=legend,
                 explode=.1
@@ -137,7 +137,7 @@ n	total        muestra	    control
 \end{filecontents}
 \pgfplotstableread{objetiva.dat}{\Objetiva}
 
-\begin{tikzpicture}
+\begin{tikzpicture}[thick,scale=0.8, every node/.style={transform shape}]
 \begin{axis}[
     title={},
     xlabel={Pregunta},
@@ -303,7 +303,7 @@ n   p   s
 
 \begin{figure}
 \centering
-\begin{tikzpicture}[scale=.85]
+\begin{tikzpicture}[scale=.8]
    \begin{axis}[ybar,%
       legend pos=outer north east,
       symbolic x coords={1,2,4,5,6,7,9,10},
@@ -340,7 +340,7 @@ n    p    s
 
 \begin{figure}
 \centering
-\begin{tikzpicture}[scale=.85]
+\begin{tikzpicture}[scale=.8]
    \begin{axis}[ybar,%
       legend pos=outer north east,
       symbolic x coords={1,2,4,6,7},
