@@ -1,58 +1,33 @@
-
-\section{Diseño de la aplicación}
+%! TEX root = ../main.tex
+\section{Diseño de juego serios}
 
 En esta sección se detallan las conclusiones obtenidas en cuanto al proceso de
 diseño de la solución en diferentes aspectos. La etapa de diseño se basa en 
 crear un prototipo de la aplicación acorde a las características del problema.
 
-\subsection{Retroalimentación constante con profesores y alumnos}
+%\observacion{Ver lo de que no hace falta simular todo}
 
-Es valiosa la retroalimentación que pueda obtenerse de parte de los profesores,
-así como también la retroalimentación de los estudiantes ya que son estos
-últimos los que utilizan la herramienta. Es importante tener una buena relación
-con los profesores, y además mantener su interés en el proyecto, pues es
-necesario obtener la mayor cantidad de conocimientos y detalles en cuanto al
-contenido de la aplicación y, sobre todo, para que los profesores evalúen cada
-paso realizado. Los estudiantes pueden brindar información sobre el contenido y
-sus necesidades desde otro punto de vista totalmente válido pues son los
-usuarios finales de la aplicación.
+\subsection{Validar constantemente el contenido con profesionales del área}
 
-% COMUNICACIÓN CON PROFESIONALES
-Debido a la apretada agenda que poseen los profesionales de salud, poder
-reunirse con ellos frecuentemente y en un largo periodo de tiempo para validar
-ideas y contenido de la aplicación resulta ser muy difícil, por lo cual es
-importante recabar la máxima cantidad de información en cada reunión.
+Una buena relación con los profesionales del área de estudio permite la
+adquisición de valiosa información a través de reuniones, comentarios y
+validaciones. La perspectiva con la que se analiza un juego serio es distinta de
+acuerdo al profesional, es útil la perspectiva de los profesionales del área en
+aspectos pedagógicos, el nivel de detalle de cada paso simulado y las
+características del entorno.
 
-\subsection{Realismo y facilidad de uso de la \Gls{gui}}
+En este trabajo se mantuvo una buena relación con los profesionales, frecuentes
+reuniones ayudaron a validar y detectar errores en el diseño. Los profesionales
+permitieron encontrar errores en las reglas definidas para la evaluación, y la
+presentación de la escenografía de manera a mejorar su nivel de realismo.
 
-En cuanto a la interacción del usuario con la aplicación, siempre es preferible
-que sea lo más natural posible. La forma de uso de la aplicación no debería ser
-un obstáculo para utilizarla. La forma en que los elementos son representados y
-utilizados dentro de la aplicación debe ser realista, o en todo caso debe
-representar de la mejor manera la realidad de acuerdo a las limitaciones y sin
-distraer al alumno del objetivo pedagógico.
+Más allá de lo expuesto, estas validaciones con profesionales permiten que se
+sientan parte del proyecto, manteniendo el interés y la predisposición para
+ayudar al proyecto.
 
-Las hipótesis relacionadas que se detallaron en este trabajo fueron confirmadas
-en~\ref{sec:res_subjetiva} con los resultados de las pruebas realizadas. En
-cuanto a las limitaciones, tanto tecnológicas como de utilización, presentadas
-por los dispositivos móviles dificultan la interacción con el entorno. 
 
-La interacción a través de dispositivos móviles debe ser cuidadosamente diseñada
-para proveer de una interacción fluida y significativa.
-
-\subsection{Ubicuidad de los dispositivos móviles}
-
-Según datos obtenidos en la \emph{Encuesta de ubicación} el $98\%$ de los estudiantes 
-encuestados cuenta con al menos un dispositivo móvil inteligente por lo que la idea 
-de brindarles ubicuidad como uno de los objetivos del presenta trabajo resultó factible, 
-no sólo por que contaban con este medio sino por que ello significaba brindarles la 
-oportunidad de utilizar la herramienta en cualquier lugar y momento.
-
-De hecho, los usuarios que evaluaron la solución mencionaron en promedio estar
-\enquote{De acuerdo} con el uso de dispositivos móviles como tecnología de apoyo
-como se muestra en~\ref{sec:res_subjetiva}.
-
-\subsection{Aspectos lúdicos como motivación}
+\subsection{Motivar a través de la utilización de aspectos lúdicos, como el
+    puntaje y la medición del tiempo}
 
 Los juegos serios no sólo permiten al estudiante experimentar, poner a prueba y
 adquirir conocimientos sino que, debido a sus características lúdicas, ayuda en
@@ -62,23 +37,70 @@ opciones tecnológicas utilizadas en el ámbito educativo.
 En este sentido, en los resultados obtenidos de la evaluación de la solución se
 muestra que en promedio los usuarios manifestaron estar \enquote{De acuerdo} con
 el efecto motivacional de la solución en cuanto al uso de puntaje, tiempo y
-socialización, como se observa en~\ref{sec:res_subjetiva}.
+socialización, como se observa en la sección~\ref{sec:res_subjetiva}.
+
+Los datos mostrados en la tabla~\ref{tab:subjetiva_conformidad_motivacion}
+permiten concluir que el principal factor motivador es la visualización de un
+puntaje que resuma el desempeño del usuario. Adicionalmente se observa que otros
+factores que influyen son la medición del tiempo y, en menor medida, la
+posibilidad de compartir a través de redes sociales el rendimiento.
+
+\subsection{Utilizar escenarios aleatorios para favorecer la exploración}
+
+Permitir al usuario explorar y descubrir las diferentes posibilidades que ofrece
+el entorno, es un factor clave en la metodología construccionista. Utilizar
+entornos que varían de forma aleatoria entre las distintas sesiones de juego
+permite al usuario la posibilidad de explorar.
+
+En la solución propuesta, el factor aleatorio es lo que más favorece a la
+exploración. Como se observa en la sección~\ref{sec:res_subjetiva}, la
+utilización de un paciente con un estado no determinado permite al usuario
+explorar las diversas formas que tiene para interactuar con el mismo.
+
+%El alcance de la simulación de las herramientas debe incluir solamente lo
+%necesario para llevar a cabo el objetivo, incluso ciertas actividades pueden no
+%ser incluidas completamente para mantener la consistencia entre los distintos
+%elementos.
 
 
+\subsection{Proveer retroalimentación al finalizar cada escenario}
 
-    
-%\subsection{Pedagogía}
-% (reuniones, escena, opciones, etc)
- 
- 
-%\subsection{Accesibilidad}
+El momento en el que se provee información al usuario acerca de sus acciones
+tiene un impacto en el potencial pedagógico de un juego serio, si se provee
+información muy frecuente se puede obtener una herramienta del tipo \emph{Prueba
+    y Error} que poco aporte al aprendizaje. Si la retroalimentación se posterga
+demasiado, el usuario puede olvidar el contexto en que se generó dicha
+retroalimentación.
+
+En la solución, la retroalimentación es mostrada al terminar una sesión, se
+evita que el usuario pierda el contexto creando simulaciones cortas y mostrando
+información acerca de los pasos realizados incorrectamente. Proveer información
+acerca del rendimiento al final de cada escenario, como se indica en la
+sección~\ref{sec:res_subjetiva}, tiene un impacto positivo.
+
+\subsection{Proveer ubicuidad para aumentar la utilización}
 
 
-%\subsection{Comunicación con profesionales}
+Los alumnos están de acuerdo con la utilización de este tipo de herramientas
+para el apoyo al aprendizaje, como se observa en la
+sección~\ref{sec:res_subjetiva} y~\ref{sec:res_subjetiva_abiertas}.
 
+La ubicuidad permite a los usuarios una experiencia más frecuente, como se
+observa en la sección~\ref{sec:res_subjetiva}, lo que es considerado por los
+usuarios como útil. Esta es una de las principales ventajas de los juegos serios
+frente a otras formas de apoyo al aprendizaje como los laboratorios.
 
-%\subsection{Retroalimentación}
+\subsection{Imágenes representativas son útiles para indicar el estado de
+    entidades}
 
-%\subsection{Utilización de las \Gls{tic}}
+La forma de presentar al usuario información de objetos que no son visibles
+en la simulación 
 
-%\subsection{Aspectos Lúdicos}
+Utilizar imágenes representativas para presentar al usuario información de
+objetos que no son visibles en el escenario es un factor que debe ser estudiado
+al momento de diseñar un juego serio, pues existe información que es necesaria
+mostrar cuya simulación es muy compleja, por ejemplo, las manos correctamente
+esterilizadas.
+
+La utilización de imágenes representativas tiene aprobación positiva de los
+usuarios, como se observa en la sección~\ref{sec:res_subjetiva}.

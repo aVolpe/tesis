@@ -1,23 +1,71 @@
+%! TEX root = ../main.tex
 
 \section{Desarrollo de la aplicación}
 
 En esta sección se detallan las conclusiones obtenidas en cuanto al proceso de
-implementación de la solución en diferentes aspectos.
+implementación de la solución.
 
-\subsection{Importancia del uso de motores de videojuegos}
+\subsection{Utilizar un motor de videojuegos}
 
-La utilización de motores gráficos modernos facilita la creación de juegos
-serios, relacionados a procedimientos del área de enfermería, permiten crear y
-manipular entornos realistas sin demasiadas complicaciones. 
+La utilización de motores de videojuegos facilita la creación de juegos serios.
+Los motores actuales permiten crear y manipular entornos complejos, desarrollar
+aplicaciones para diversas plataformas, y cuentan con librerías para las tareas
+comunes (como manipulación de perspectiva, creación de animaciones, etc). 
+
+La utilización de motores de videojuegos permiten al desarrollador centrarse en
+aspectos específicos del juego serio y a no invertir el tiempo en aspectos
+comunes a los motores, como, un motor de física, detectores de colisiones,
+reproducción de contenido multimedia, motores de animaciones, inteligencia
+artificial, comunicación, \textit{streaming}, administración de memoria, etc.
+
+En este trabajo se utiliza \textit{Unity3D}, el cual facilita las tareas a
+través de un \gls{ide} complejo, diversas herramientas para la creación de
+animaciones, y gestión de librerías. Uno de los factores más interesantes de
+\textit{Unity3D} es su tienda de librerías, donde se puede adquirir modelos en
+tres dimensiones de calidad a precios bajos e incluso de manera gratuita.
+
+\subsection{Seleccionar herramientas de acuerdo a las características necesarias}
 
 Una buena elección del motor gráfico de acuerdo a las características de la
 aplicación que se desea implementar es sumamente importante y los criterios de
-selección utilizados en este trabajo y mencionados
-en~\ref{sec:seleccion_plataforma} pueden ser de gran ayuda en la selección.
+selección utilizados en este trabajo y mencionados en la
+sección~\ref{sec:seleccion_plataforma} pueden ser de gran ayuda en la selección.
 
-\subsection{Pruebas para mejoras durante el desarrollo}
+Las limitaciones técnicas, de tiempo y monetarias del equipo de desarrollo
+también deben ser tenidas en cuenta al momento de la selección de una
+herramienta.
 
-La realización de prueba de usuarios es interesante durante el desarrollo de una
+Junto a estos criterios, la información proveída en la
+sección~\ref{sec:motores}, permitió seleccionar a \textit{Unity3D} como el motor
+de videojuego necesario para desarrollar la solución utilizada para evaluar a
+los juegos serios en el aprendizaje en este trabajo.
+
+\subsection{Probar el desarrollo de manera frecuente}
+
+En el desarrollo de juegos serios es útil realizar pruebas preliminares para
+analizar y evaluar las decisiones de diseño, a fin de minimizar los obstáculos
+presentes para los usuarios finales. Los aspectos que se deben probar y validar
+son:
+
+\begin{itemize}
+    \item Calidad gráfica.
+    \item Nivel de detalle del entorno.
+    \item Integración con el hardware.
+    \item Desenvolvimiento en el entorno a través de la interfaz.
+    \item Interacción con objetos y entidades.
+    \item Usabilidad de la \gls{gui}.
+\end{itemize}
+
+Las pruebas preliminares realizadas a la solución, cuyos resultados se observan
+en la sección~\ref{sec:res_interfaz}, permite identificar fortalezas y
+debilidades. 
+
+En el caso específico de la solución, los problemas detectados incluyen falta de
+naturalidad en la utilización de objetos y falta de intuitividad en el uso de la
+\Gls{gui}. Estos problemas son solucionados en la versión que se presenta a los
+usuarios finales.
+
+La realización de prueba con usuarios es útil durante el desarrollo de una
 aplicación ya que permiten visualizar los errores en su funcionamiento y de esta
 manera se pueden corregir las debilidades encontradas de manera temprana,
 siempre es mejor detectar la mayor cantidad de errores en el menor tiempo
@@ -29,34 +77,31 @@ problemas con la interacción con el entorno y con los objetos. Como resultado s
 aplicaron mejoras que permitieron mejorar el uso y la intuitividad de la
 interfaz.
 
-\subsection{Validaciones de contenido de la aplicación}
+\subsection{Crear entornos en tres dimensiones para aumentar la inmersión}
 
-La realización de validaciones tanto del contenido como de la representación de
-la aplicación por parte de los profesionales es de suma importancia, debido a
-que son a los estudiantes del área a los que va dirigido la solución. Estas
-validaciones deben centrarse en los detalles en los que los mismos ponen mayor
-interés.
+Escenarios en tres dimensiones similares a los lugares conocidos por los
+usuarios ayudan permite a los mismos sentirse parte de la simulación. 
 
-Estas validaciones no sólo permiten encontrar errores sino que permiten asegurar
-que la forma de implementación de ciertos aspectos es correcta. En el caso de la
-solución, esto permitió corregir errores en las reglas definidas para la
-evaluación del procedimiento de extracción de muestras de sangre, y la
-presentación de la escenografía de manera tal que fuera más realista.
+En la solución presentada en este trabajo, se utiliza un escenario en tres
+dimensiones similar a un escenario conocido por los usuarios finales (un
+laboratorio de prácticas), el mismo fue diseño en base a observaciones
+realizadas en una visita guiada por profesionales del \gls{iab}. En la
+sección~\ref{sec:res_subjetiva} se observa que los usuarios valoran
+positivamente la influencia del escenario en la inmersión.
 
-Más allá de lo expuesto, estas validaciones con profesionales permiten que se
-sientan parte del proyecto, manteniendo el interés y predisposición de los
-profesionales.
+\subsection{Proveer retroalimentación clara al realizar una acción}
 
+La forma de notificar al usuario en el momento en el que realiza una acción,
+debe ser fácilmente observable y distinguible, de esta manera el usuario puede
+tener la certeza de que se realizo la acción deseada.  
 
-%En cuanto a las
-%limitaciones, tanto tecnológicas como de utilización, presentadas por los
-%dispositivos móviles dificultan la interacción con el entorno, la interacción a
-%través de dispositivos móviles debe ser cuidadosamente diseñada para proveer de
-%una interacción fluida.
+En la solución, cuando el usuario interactúa con un objeto, en la
+sección~\ref{sec:res_subjetiva} se observa que mientras más vistosa es la
+reacción del paciente, mejor es la recepción de los usuarios. Movimientos
+discretos como la apertura ocular y el movimiento de los ojos, tienen una pobre
+aceptación, en cambio, movimientos vistosos como el movimiento de las piernas,
+brazos y el cuerpo en general, tienen una aceptación positiva.
 
-%\subsection{Tecnología}
-%\subsection{Nivel de detalle}
-%\subsection{Interacción con objetos}
-%\subsection{Partes que son necesarias pero no simulables}
-    
-%(lo de bioseguridad)
+La forma de representar las alteraciones del entorno luego de realizar una
+acción deben ser claras.
+
