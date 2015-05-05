@@ -1,0 +1,76 @@
+%! TEX root = ../main.tex
+
+\section{Encuesta de ubicación}
+\label{sec:ubicacion}
+
+Para recabar información acerca del nivel de acceso  de los alumnos a la
+tecnología, se realiza una encuesta que cuenta con diez preguntas, las cuales
+buscan conocer sobre el modelo de dispositivo móvil, el acceso a
+Internet, y la predisposición de cada alumno a ayudar en la prueba.
+
+Con los resultados de la encuesta de ubicación tecnológica, se seleccionan
+aquellos alumnos que posean dispositivos móviles que superan o igualan las
+especificaciones descriptas más adelante. De esta encuesta se obtendrán los 
+usuarios que formarán parte de la población que evaluará la versión final de 
+la solución.
+
+\subsection{Muestra}
+
+En el año $2014$, el \Gls{iab} cuenta con $124$ alumnos en el cuarto año distribuidos en
+tres secciones, el cual es considerado el \emph{Universo}. De los 124, 93 de
+ellos estuvieron interesados en participar de la prueba y completaron la encuesta.
+
+\subsection{Variables}
+
+Se definen $2$ factores necesarios para que un alumno pueda ser considerado como
+sujeto de prueba, el primero es la predisposición del mismo a participar de la
+prueba y el segundo es que posea un dispositivo móvil que supere los requisitos
+mínimos. Además de estos dos factores, la conexión a internet es requerida, pues 
+los registros de actividad de cada dispositivo deben ser enviados y almacenados 
+para su posterior interpretación y análisis. A continuación se describen las variables 
+consideradas.
+
+
+\begin{itemize}
+
+\item \textbf{Requisitos mínimos:} son aquellos requerimientos técnicos con los que 
+    debe cumplir completamente el dispositivo móvil del usuario para que la 
+    solución tenga un desempeño que garantice una experiencia fluida a la hora de 
+    utilizarla. Estos requisitos son:
+    \begin{itemize}
+        %%\item Sistema Operativo Android $4.0$ o superior
+        \item Memoria ram de $512$MB o superior.
+        \item Velocidad de procesador de $800$ GHz o superior.
+        \item \Gls{gpu} Mali 400 o superior.
+        %\item Conexión frecuente a internet.
+    \end{itemize}
+    Los requisitos de \textit{hardware} mencionados, son requeridos por las
+    características de la simulación, una \Gls{gpu} es requerida por los gráficos en 
+    tres dimensiones.
+
+\item \textbf{Tipo de acceso a internet:} el tipo de acceso a internet que posee el 
+    usuario en su dispositivo móvil. Puede ser una de las siguientes opciones:
+    plan post-pago, paquetes pre-pago, acceso ocasional y sin acceso.
+    
+\item \textbf{Sistema Operativo:} se refiere al tipo de sistema operativo que posee 
+    el dispositivo móvil del usuario.
+
+    \observacion{Donde se menciona?}
+    
+\end{itemize}
+
+\subsection{Métricas}
+
+Las métricas utilizadas para estudiar los datos recogidos son sencillas ya que
+sólo buscan determinar la población que evaluará la solución, estas métricas son
+las siguientes:
+
+\begin{itemize}
+\item Porcentaje de encuestados con dispositivos móviles que cumplen y que no cumplen con 
+los requisitos mínimos.
+\item Porcentaje del tipo de acceso a internet de los usuarios.
+\item Porcentaje del tipo de sistema operativo que poseen los dispositivos móviles de los 
+encuestados.
+\end{itemize}
+
+
