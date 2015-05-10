@@ -1,4 +1,5 @@
-\documentclass[xcolor=table,handout]{beamer}
+%\documentclass[xcolor=table,handout]{beamer}
+\documentclass[xcolor=table]{beamer}
 \usepackage{etex}
 \usepackage{pgfpages}
 \usepackage[utf8]{inputenc}
@@ -26,22 +27,40 @@
 \setbeamercolor{block body}{use=structure,fg=black,bg=gray!20!white}
 \newcommand{\cs}{%
   {\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\fontseries{b}\selectfont\#}}}}
-%
-%
+
+
 %\setbeameroption{show notes on second screen} % Descomentar para no ver comentarios
 
-% Esto agrega un número romano a los siguientes, para romper un frame en dos
-% utilizar
-%       \framebreak{}
-\setbeamertemplate{frametitle continuation}[from second][(\insertcontinuationcountroman)]
+
+\newcounter{sectionframestart}
+\newcounter{sectiontotal}
 
 \AtBeginSection[]
-{
-  \begin{frame}
-    \frametitle{Índice}
-    \tableofcontents[currentsection]
-  \end{frame}
+{%
+    \setcounter{sectionframestart}{\numexpr \value{framenumber}+1}
 }
+
+\newcommand\subsectnum{%
+    \ifnum \value{sectiontotal}>2%
+      (%
+       %\number\numexpr \insertpagenumber-\insertsectionstartpage+1\relax~de~%
+       %\number\numexpr \insertsectionendpage-\insertsectionstartpage+1\relax%
+       \number\numexpr \value{framenumber}-\value{sectionframestart}+1\relax%
+       ~de~%
+       \arabic{sectiontotal}%
+      )
+    \else
+
+    \fi
+}
+
+%\addtobeamertemplate{frametitle}{\stepcounter{frameinsectionnumber}\arabic{frameinsectionnumber}}{}
+
+\addtobeamertemplate{frametitle}{\centering\insertsectionhead~\subsectnum\relax}
+%\makeatletter
+  %\CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+  %\renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+%\makeatother
 
 
 %%%%%%%%%%%%%%%%%%%%%
