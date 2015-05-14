@@ -2,129 +2,160 @@
 
 \section{Solución}
 
+
 Se diseña y desarrolla un Juego Serio para dispositivos móviles llamado
-\textit{eTesai}, el cual consiste ofrece a los  estudiantes de enfermería un
-medio para realizar procedimientos de enfermería y cuyo objetivo es servir como
-herramienta de apoyo en el aprendizaje.
+\textit{eTesai}, el cual ofrece a los estudiantes de enfermería un medio para
+realizar procedimientos de enfermería y cuyo objetivo es servir como herramienta
+de apoyo al aprendizaje. La solución propuesta permite evaluar a los juegos
+serios en los aspectos de diseño, implementación y evaluación.
+
+Los procedimientos simulados son seleccionados en conjunto con los profesionales
+del área de enfermería del \gls{iab} y son, la extracción de muestras de sangre
+y la evaluación del paciente utilizando la escala de \textit{Glasgow}. 
 
 \subsection{Arquitectura}
 
-En la figura~\ref{fig:full_architecture} se observa los componentes de la
+En la figura~\ref{fig:full_architecture} se observan los componentes de la
 solución, y las herramientas utilizadas para su desarrollo.
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[scale=0.29]{images/full.png}
-\caption{Esquema general de componentes de \textit{eTesai}}
+\caption{Esquema general de componentes de la solución.}
 \label{fig:full_architecture}
 \end{figure}
 
-La solución se compone de un \textit{FrontEnd} que es una aplicación
-\textit{Android}, la cual es utilizada por los estudiantes de enfermería. Los
-registros de uso del \textit{FrontEnd} son almacenados bajo demanda en un
-servidor \textit{BackEnd}, el cual se encarga de asociar los registros con los
-alumnos y almacenarlos de manera persistente.
-
+La solución se compone de un \textit{front-end}\footnote{El \textit{front-end}
+    es la parte de la solución que interactúa con el usuario. Se encarga de
+    realizar una simulación, de interpretar las acciones del usuario y evaluar
+    el rendimiento del usuario.} que consiste en una aplicación \textit{Android}, la cual
+es utilizada por los estudiantes de enfermería. Los registros del uso del
+\textit{front-end} son almacenados bajo demanda en un servidor
+\textit{back-end}\footnote{El \textit{back-end} es la parte de la solución que
+    se encarga de almacenar la información de los usuarios y sus acciones dentro
+    del \textit{front-end}.}, el cual se encarga de asociar los registros con
+los alumnos y almacenarlos de manera persistente.
 
 \subsection{Tecnologías utilizadas}
 
-El motor de videojuegos utilizado para el desarrollo de \textit{eTesai} es
+El motor de videojuegos utilizado para el desarrollo del \textit{front-end} es
 \textit{Unity3D}, en su versión gratuita. \textit{Unity3D} es desarrollado por
 \textit{Unity Technologies} y posee un motor de \textit{renderizado}, un flujo
-de trabajo para la creación de contenido 3D interactivo, y permite mezclar
+de trabajo para la creación de contenido interactivo, y permite mezclar
 contenido 3D, 2D, sonidos y animaciones en un entorno de desarrollo integrado.
 \textit{Unity3D} permite desarrollar aplicaciones para múltiples sistemas
 operativos, como \textit{Android, iOs, Windows Phone}, entre
 otros\cite{unity3d}.
 
 % Agregar referencias
-El \textit{Backend} es desarrollado utilizando \textit{Java EE 7}, servicios web
+El \textit{back-end} es desarrollado utilizando \textit{Java EE 7}, servicios web
 \textit{REST}, y \textit{Eclipse} como entorno de desarrollo integrado. El
-código fuente del \textit{FrontEnd} es desarrollado con \textit{MonoDevelop}.
+código fuente del \textit{front-end} es desarrollado con \textit{MonoDevelop}.
 
-\subsection{Hipótesis asumidas}
+\subsection{Front-end}
 
-Existen acciones que requieren de un esfuerzo significativo para ser simuladas,
-por ello. Estas acciones deben formar parte del procedimiento, pero el nivel de
-detalle simulado no es importante, por ello se formulan hipótesis sobre estos
-que permiten guiar la simulación de los mismos.
-
-Estas hipótesis son:
-
-\begin{itemize}
-\item 
-    \textbf{Comandos de voz con interfaz}:  para enviar una petición o informarle 
-    sobre algo al paciente (por ejemplo, dar detalles del procedimiento), 
-    no es necesario identificar las palabras del usuario, sino más bien detectar
-    que ha hablado y listar las posibles acciones que se pueden realizar.
-    
-\item \textbf{Extracción uniforme de elementos}: para realizar la acción de
-    extraer un elemento utilizado en el paciente, se considera que realizarlo de
-    una sola manera para todos los elementos convierte a la interfaz más
-    intuitiva.
-
-\item \textbf{Acciones por interfaz de usuario}: acciones que se realizan
-    directamente sobre el paciente (sin la utilización de elementos), son
-    complejas de simular, es suficiente con una opción en la interfaz que
-    permita al usuario realizarlas. 
-    
-\item \textbf{Acciones de bioseguridad}: la bioseguridad, que es un aspecto
-    fundamental y transversal a todo procedimiento de enfermería. Se considera
-    suficiente que el estudiante sepa el momento en el que deba realizar
-    acciones relacionadas con la bioseguridad.
-    
-\item \textbf{Representación iconográfica}: para representar el estado del
-    enfermero es suficiente mostrar una imagen representativa. Es decir, que
-    para mostrar que el enfermero tiene una gorra, es suficiente mostrar una
-    imagen de una gorra. Esta hipótesis se aplica para las opciones de
-    bioseguridad, las opciones para la utilización de elementos así como para la
-    representación del elemento seleccionado.
-
-\item \textbf{Factores motivantes}: indicadores de rendimiento, como un puntaje
-    al final de cada procedimiento, y el tiempo total dentro del procedimiento,
-    impactan positivamente en el involucramiento del usuario. La interacción
-    social es otro factor que incrementa el nivel de compromiso del usuario.
-
-\item \textbf{Falta de pistas}: la ausencia de signos visuales que indiquen las
-    acciones que debe realizar el usuario durante la experiencia, permite al
-    usuario probar sus conocimientos, e impide al usuario avanzar en el
-    procedimiento utilizando una técnica de \emph{prueba y error}.
-
-\end{itemize}
-
-\subsection{Frontend}
-
-El \textit{FrontEnd} es una aplicación \textit{Android}, con un flujo que se observa en la
+El \textit{front-end} consiste en una aplicación \textit{Android}, con un flujo que se observa en la
 figura~\ref{fig:flujo_frontend}, la misma se inicia en la escena \emph{Inicio},
 que permite al usuario seleccionar varias opciones y navegar a las demás
 escenas.
 
-\begin{figure}[H]
+\begin{figure}
 \centering
-\includegraphics[scale=0.29]{../solucion/images/grafo_escenas.png}
+\includegraphics[width=8.5cm]{../solucion/images/grafo_escenas.png}
 \caption{Flujo de pantallas de la solución}
 \label{fig:flujo_frontend}
 \end{figure}
 
-En las escenas, el usuario tiene dos formas de interactuar con el punto de
-vista, la solución permite \textit{a)} alejar o acercar la cámara, y,
-\textit{b)} mover la cámara alrededor del paciente.
+La simulación posee dos mecanismos para interactuar con el punto de vista del
+usuario, \textit{a)} alejar o acercar la cámara, y, \textit{b)} mover la cámara
+alrededor del paciente.
 
 Las acciones realizadas por los usuarios, así como el resultado de sus acciones,
-son registradas en el dispositivo del usuario, y luego es enviada a un servidor
-para su persistencia.
+son registradas en el dispositivo del usuario, y luego son enviadas al
+\textit{back-end} para su persistencia.
 
-\subsection{Backend}
+\subsection{Back-end}
 
-La solución almacena información detallada acerca de las acciones del usuario,
+El servidor \textit{back-end} almacena la información del usuario, se encarga
+de recibir y asociar los datos almacenados por el \textit{front-end} en una
+base datos para su posterior análisis.
+
+
+Almacena información detallada acerca de las acciones del usuario,
 las condiciones de estas acciones y el contexto en el cual fueron ejecutadas.
+La información almacenada permite reproducir las sesiones de juego
+de los usuarios. Esta información es útil para analizar los puntos débiles y
+fuertes, tanto de los usuarios como de la solución.
 
-Esta información es almacenada en un servidor dedicado para su posterior
-análisis.
+\subsection{Alcance}
 
-La información almacenada en el servidor permite reproducir completamente la
-sesión de juego de un usuario, esta información es interesante para analizar los
-puntos débiles y fuertes de los usuarios y de la solución.
+Realizar una simulación de todos los aspectos que están presentes en un
+procedimiento de enfermería es un proceso complejo. Cuando existe una gran
+cantidad de detalles, los usuarios tienden a centrase en estos detalles y no en
+los factores pedagógicos\cite{videojuegos:gonzaleztardon}, por esto, uno de los
+objetivos de la solución es la presentación de situaciones simplificadas que
+permitan construir conocimiento.
+
+Las limitaciones técnicas\footnote{Las limitaciones técnicas se relacionan con
+    la dificultad para simular un determinado paso, teniendo en cuenta
+    consideraciones de \textit{hardware, software} y tiempo.}, la importancia de
+la representación\footnote{La importancia de representación es que tan útil es
+    un determinado paso para los objetivos pedagógicos.} y la facilidad de
+realización en la vida real\footnote{La facilidad de realización en la vida real
+    se refiera a que tan fácil es realizar el paso en la vida real.} son los
+factores utilizados para acotar el alcance de la simulación.
+
+Algunas acciones requieren un esfuerzo significativo para ser simuladas y deben
+formar parte del procedimiento. El nivel de detalle simulado para estas acciones
+no es importante, por ello se formulan las siguientes hipótesis que permiten
+guiar la simulación de los mismos:
+
+
+\begin{enumerate}[\bfseries H1.:]
+%\begin{enumerate}[label=\bfseries H\arabic*:]
+
+\item \textbf{Interacción a través de la voz}: para enviar una petición o
+    informarle sobre algo al paciente, no es necesario utilizar reconocimiento
+    del habla, sino más bien detectar que ha hablado y listar las posibles
+    acciones que se puedan realizar. Los comandos de voz hacen más interactiva a
+    la \gls{gui}.
+    
+\item \textbf{Extracción de elementos}: para realizar la acción de extraer un
+    elemento utilizado en el paciente, se considera que realizarlo de una sola
+    manera para todos los elementos disponibles en la solución aporta una
+    interfaz más intuitiva.
+
+\item \textbf{Bioseguridad}: la bioseguridad\footnote{La bioseguridad es la
+        aplicación de conocimientos, técnicas y equipamientos para prevenir a
+        personas, laboratorios, áreas hospitalarias y medio ambiente de la
+        exposición a agentes potencialmente infecciosos o considerados de riesgo
+        biológico\cite{world2005manual}.} es un área amplia y transversal a
+    todos los procedimientos de enfermería, por lo que se considera complejo
+    simular cada acción. Es suficiente el usuario sepa en que momento realizar
+    cada una de las acciones. Realizar la simulación de todos los procedimientos
+    de bioseguridad escapa al alcance del trabajo.
+
+\item \textbf{Representación iconográfica}: para representar el estado de los
+    objetos es suficiente mostrar una imagen representativa. Ciertos estados son
+    complejos de simular (como la esterilización de las manos), realizar una
+    simulación de los estados de los objetos es complejo y requiere un nivel de
+    detalle que desviará al usuario de los objetivos pedagógicos.
+    
+\item \textbf{Motivación}: indicadores de rendimiento, como un puntaje al final
+    de cada procedimiento, y el tiempo total dentro del procedimiento, impactan
+    positivamente en el involucramiento del usuario. La interacción social es
+    otro factor que incrementa el nivel de compromiso del usuario.
+
+\item \textbf{Retroalimentación limitada}: la ausencia de signos visuales que
+    indiquen las acciones que debe realizar el usuario durante la experiencia,
+    permite al usuario probar sus conocimientos, e impide al usuario avanzar en
+    el procedimiento utilizando una técnica de \emph{prueba y error}.
+
+\item \textbf{Movilidad}: permitir la utilización de la solución en el
+    dispositivo móvil de los alumnos, permite evaluar el potencial de los juegos
+    serios frente a las alternativas (laboratorio, aula y campo de prácticas).
+
+\end{enumerate}
 
 \subsection{Escenas}
 
@@ -132,20 +163,31 @@ La solución presenta procedimientos de enfermería en forma de escenas simulada
 Los procedimientos son seleccionados en conjunto con profesionales del área de
 enfermería del \gls{iab}. 
 
-El procedimiento de extracción de muestras sangre, es representada dentro de la
-solución en la escena \emph{Extracción de muestras Sangre}. El procedimiento de
-evaluación de un paciente utilizando la escala de \textit{Glasgow}, es
-representado en la escena \emph{Glasgow}.
+El procedimiento de venopunción, es representada dentro de la solución en la
+escena \emph{Venopunción}. El procedimiento de evaluación de un paciente
+utilizando la escala de \textit{Glasgow}, es representado en la escena
+\emph{Glasgow}.
 
-\subsection{Extracción de muestras sangre}
+\subsection{Venopunción}
 
-En la figura~\ref{fig:hemocultivo_principal} se observa el inicio de la escena
-\emph{Extracción de muestras de sangre}, el objetivo principal de este
-procedimiento es extraer muestras de la sangre del paciente para su análisis en
-un laboratorio. El procedimiento formal, según los profesores del
-\gls{iab} y~\cite{oms:extraccion}, cuenta con $22$ pasos.
+El procedimiento denominado \emph{Venopunción} es utilizado frecuentemente para
+extraer muestras de sangre. Es un procedimiento invasivo que ofrece un medio
+directo de acceso al sistema vascular. El procedimiento formal, según los
+profesores del \gls{iab} y~\cite{oms:extraccion}, cuenta con $22$ pasos.
 
-\begin{figure}[H] 
+Este procedimiento es considerado como uno de los apropiados de acuerdo a la
+apreciación de los profesionales del \Gls{iab}. 
+Los factores que influyen en la selección incluyen: 
+a) la facilidad de evaluación del desempeño del alumno debido a que los pasos
+están bien definidos, y, 
+b) los alumnos tienden a cometer equivocaciones en puntos críticos del
+procedimiento.
+
+En la figura~\ref{fig:hemocultivo_principal} se observa el inicio de la escena,
+el objetivo principal de este procedimiento es extraer muestras de la sangre del
+paciente para su análisis en un laboratorio.
+
+\begin{figure} 
 \centering 
 \includegraphics[width=8cm]{../solucion/images/hemocultivo_principal.jpg}
 \caption{Pantalla principal de la escena \emph{Extracción de muestras extracción
@@ -175,10 +217,10 @@ opciones de bioseguridad y de utilización de elementos.
 \label{fig:hemocultivo_gui}
 \end{figure}
 
-Durante el procedimiento se utiliza un motor de reglas condicionado por
-eventos\cite{bailey2004event,behrends2006combining}, este motor permite
-reaccionar ante las acciones del usuario y verificar el cumplimiento de los
-pasos del procedimiento. 
+Para la evaluación del desempeño del alumno durante la partida se utiliza un motor
+de reglas condicionado por eventos\cite{bailey2004event,behrends2006combining},
+este motor permite reaccionar ante las acciones del usuario y verificar el
+cumplimiento de los pasos del procedimiento. 
 
 \begin{figure}
 \centering 
@@ -201,25 +243,35 @@ se muestra el tiempo que le tomó al usuario completar el procedimiento.
 
 \subsection{Glasgow}
 
-La escena \emph{Valoración de la escala de Glasgow}, cuya interfaz principal se
-observa en la figura~\ref{fig:glasgow_principal}, el objetivo principal de esta
-escena es diagnosticar el estado de conciencia de un paciente en estado crítico,
-utilizando la escala de \textit{Glasgow}\cite{protocolo}. 
+La escala de \textit{Glasgow} es utilizada como una herramienta de valoración objetiva
+del estado de conciencia de pacientes en estado crítico. Se evalúa la respuesta
+motora, verbal y ocular del paciente.
 
-\begin{figure}[H]
+Permite al usuario explorar el entorno, es un procedimiento que requiere un
+nivel alto de pericia, y solo algunos alumnos tienen la posibilidad de
+realizarlo durante las prácticas de campo debido a que requiere pacientes en
+estado crítico. El objetivo principal de esta escena es diagnosticar el estado
+de conciencia de un paciente en estado crítico, utilizando la escala de
+\textit{Glasgow}\cite{protocolo}. 
+
+La interfaz principal se observa en la figura~\ref{fig:glasgow_principal}, en
+esta figura se observa al paciente al que se debe diagnosticar. Esta escena
+tiene dos versiones. La primera versión, denominada \emph{Evaluación}, se inicia
+con un paciente en un estado aleatorio. La tarea el alumno es diagnosticar el
+estado del paciente. En la segunda versión, denominada \emph{Exploración}, el
+usuario elige el estado inicial del paciente, y sirve para que el mismo observe
+como reacciona un paciente con un diagnostico dado.
+
+\begin{figure}
 \centering
 \includegraphics[width=8cm]{../solucion/images/glasgow_principal.jpg}
 \caption{Interfaz de la escena de \emph{Valoración de la escala de Glasgow.}}
 \label{fig:glasgow_principal}
 \end{figure}
 
-Esta escena tiene dos versiones. La primera versión, denominada
-\emph{Evaluación}, se inicia con un paciente en un estado aleatorio, y la tarea
-el alumno es descubrir el estado del paciente. En la segunda versión, denominada
-\emph{Exploración}, el usuario elige el estado inicial del paciente, y sirve
-para que el mismo observe como reacciona un paciente con un diagnostico dado.
 
-El protocolo indica que el enfermero debe analizar tres aspectos del paciente,
+
+El protocolo indica que el enfermero debe valorar tres aspectos del paciente,
 la visión (del $1$ al $4$), la audición (del $1$ al $5$) y la capacidad motora
 (del $1$ al $6$)\cite{protocolo}. Realizada la valoración del
 paciente, el enfermero debe sumar los puntajes obtenidos, y así realizar un
@@ -235,15 +287,16 @@ de $3$ a $8$ el daño es severo\cite{helmick2007mild}.
 \end{figure}
 
 El diagnostico del usuario es contrastado con el estado real del paciente, para
-mostrar el resultado de la escena, en la figura~\ref{fig:glasgow_resultado}
-marcado por el $1$ se observa la retroalimentación dada al usuario.
+mostrar el resultado de la escena, en el punto $1$ de la
+figura~\ref{fig:glasgow_resultado} se observa la retroalimentación dada al
+usuario.
 
-Para el cálculo del puntaje final que se le mostrará al usuario, por cada
-respuesta dada en la \emph{Pantalla de diagnóstico} se asigna una puntuación de
-acuerdo a que tan cerca estuvo el usuario de la respuesta correcta. Se suman
-estos valores y se calcula el porcentaje de acierto. El puntaje final junto a el
-tiempo que tardó el usuario realizando el procedimiento son presentados como se
-observa en la figura~\ref{fig:glasgow_resultado} marcado por el $2$.
+Para el cálculo del puntaje final, por cada respuesta dada en la \emph{Pantalla
+    de diagnóstico} se asigna una puntuación de acuerdo a que tan cerca estuvo
+el usuario de la respuesta correcta. Se suman estos valores y se calcula el
+porcentaje de acierto. El puntaje final junto a el tiempo que tardó el usuario
+realizando el procedimiento son presentados como se observa en el punto $2$ de
+la figura~\ref{fig:glasgow_resultado}.
 
 \begin{figure}
 \centering

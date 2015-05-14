@@ -12,6 +12,7 @@
 \usepackage{csquotes}
 \usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
 \usepackage{tabularx}
+\usepackage{tabulary}
 \usepackage{pdflscape}
 \usepackage{listings}
 \usepackage{subfigure}
@@ -57,6 +58,7 @@
 \hbox to\hsize{\normalfont\footnotesize\hfil\box\@tempboxa\hfil}\fi\fi}
 \makeatother
 
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 \newtoks\customtok
 
@@ -95,8 +97,14 @@
 \include{acronimos}
 
 
-\title{Juego serio como apoyo a la enseñanza tradicional:  una
-	aplicación a la formación de profesionales del área de enfermería}
+\title{Juegos serios como apoyo a la formación de profesionales: Una aplicación al área de enfermería}
+% Juegos serios como herramienta educativa: una aplicación a la formación de 
+%profesionales del área de enfermería.
+%Juegos serios para evaluar la utilización de las tecnologías en la educación.
+%Juegos serios como apoyo a la formación de profesionales. Una aplicación al 
+% área de enfermería.
+% Evaluación de los juegos serios como apoyo a la formación de profesionales: 
+% Una aplicación al área de enfemería.
 
 \author{\IEEEauthorblockN{Mirta González}
 \IEEEauthorblockA{Facultad Politécnica\\
@@ -116,15 +124,9 @@
 
 \begin{abstract}
 
-Este trabajo describe el uso de las TIC's en forma de juegos serios como área de
-investigación. Se da una breve reseña de la inclusión de las tecnologías en la
-educación, desde su uso tradicional como proveedor de información hasta su rol
-actual en la construcción de conocimiento. 
+Este trabajo describe el uso de las \gls{tic} en el proceso de aprendizaje, especialmente en forma de juegos serios como área de investigación. Se da una breve reseña de la inclusión de las tecnologías en la educación, desde su uso tradicional como proveedor de información hasta su rol actual en la construcción de conocimiento. 
 
-Se describen las principales características y áreas de
-aplicación de los juegos serios como herramienta educativa. Se
-introduce a los juegos serios como solución tecnológica a las problemáticas del área de
-enfermería, las problemáticas y los detalles de la solución en forma de juego
+Se describen las principales características y áreas de aplicación de los juegos serios como herramienta educativa. Se introduce a los juegos serios como solución tecnológica a las problemáticas del área de enfermería, las problemáticas y los detalles de la solución en forma de juego
 serio también son descritas.
 
 Finalmente, se detallan las metodologías utilizadas para evaluar la solución y
@@ -138,8 +140,7 @@ a la educación, así como también identificar posibles trabajos futuros en el
 \end{abstract}
 
 \begin{IEEEkeywords}
-    Juego serio, simulación, enfermería, educación, ubicuidad, aprendizaje, 
-    construccionismo, tecnologías de la información y la educación. 
+    Juegos serios, simulación, enfermería, educación, ubicuidad, aprendizaje, tecnologías de la información y la educación. 
 \end{IEEEkeywords}
 
 
@@ -170,15 +171,8 @@ a la educación, así como también identificar posibles trabajos futuros en el
 \input{problema}
 \input{solucion}
 \input{evaluacion}
-\input{conclusiones}
+%\input{conclusiones}
 \input{trabajos_futuros}
-%\section{Conclusiones}
-%1 paginas
-%Todas las conclusiones
-
-%\section{Trabajos futuros}
-%1/2 páginas
-%Resumen de los trabajos futuros
 
 \printbibliography{}
 
