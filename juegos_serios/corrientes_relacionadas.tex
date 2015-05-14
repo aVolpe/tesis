@@ -182,3 +182,23 @@ disponible.
 La \emph{acción} a ejecutar describe la lógica que debe ser ejecutada cuando se han
 lanzado los eventos y la condición de la regla se ha cumplido.
 
+\subsubsection{Modelo de ejecución}
+\label{sec:eca_ejecucion}
+
+Para ejecutar un motor de reglas del tipo \gls{eca}, se debe tener en cuenta
+principalmente dos factores, 
+\begin{enumerate*}[label=\itshape\alph*\upshape)]
+\item  Cómo se verifica el cumplimiento de cada regla, y, 
+\item  Qué ocurre cuando varias reglas son lanzadas al mismo tiempo
+\end{enumerate*}.
+
+Para ambos casos se puede tomar un enfoque \emph{inmediato}, es decir que
+inmediatamente cuando se lanza un evento, o se cumple una condición, se ejecuta
+la regla. Además existen otros dos modos de ejecución, \emph{diferido}, y
+\emph{desacoplado}, en el primero, se espera hasta que el lanzador del evento
+culmine su trabajo, y luego se ejecuta la regla, pero en la misma unidad de
+trabajo, mientras que en la ejecución desacoplada, se encolan los trabajos y
+otro hilo es el encargado de ejecutar las reglas. Estos modos están inspirados
+en las bases de datos relacionales, el modo diferido se ejecuta en la misma
+transacción, y el desacoplado, inmediatamente después de que la transacción
+termine\cite{bailey2004event}.
