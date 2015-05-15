@@ -6,7 +6,7 @@
 \setbeamercovered{transparent}
 
 \let\oldincludegraphics\includegraphics
-\renewcommand*{\includegraphics}[2][]{%
+\newcommand*{\includegraphicsx}[2][]{%
     \begin{tikzpicture}%
       {\node[opacity=\transparent@value/100] {\oldincludegraphics[#1]{#2}};}%
     \end{tikzpicture}%
