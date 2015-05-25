@@ -1,30 +1,24 @@
-\section{Motores de videojuegos}
-\observacion{Unificar videojuego vs videojuegos, etc}
+\section{Motor de videojuego}
+\label{sec:motores}
 
-\fixme{Para el desarrollo de videojuegos se utilizan programas o herramientas
-    especializadas en ello llamadas Motores de videojuegos (esto estaba entre
-    paréntesis). A
-    continuación se da una breve introducción de lo que es un motor de
-    videojuego.}{Mejorar}
-
-El término \enquote{motor de videojuegos} hace referencia a una serie de rutinas
-de programación que permiten el diseño, la creación, el desarrollo y la
+El término \enquote{motor de videojuego} hace referencia a un \textit{framework}
+ que permite el diseño, la creación, el desarrollo y la
 representación gráfica de un videojuego\cite{videojuego:telechea}.
 
-Además, la gran mayoría de estos motores ofrecen a su vez características y
-funciones que facilitan la construcción del videojuego, como el motor de física
-(software capaz de realizar \enquote{simulaciones} de ciertos sistemas físicos
+La mayoría de los motores ofrecen características y
+funciones que facilitan la construcción del videojuego, como un motor de física
+\footnote{Un motor de física es un software capaz de realizar \enquote{simulaciones} de ciertos sistemas físicos
 como la dinámica de un cuerpo rígido, el movimiento de un fluido o la
-elasticidad) o detector de colisiones, sonidos, \textit{scripting}, animaciones,
-inteligencia artificial, comunicación a través de redes, \textit{streaming},
+elasticidad\cite{videojuego:telechea}.}, detector de colisiones, animaciones,
+inteligencia artificial, comunicación a través de redes,
 administración de memoria, etc\cite{videojuego:telechea}.
 
 El motor de videojuego a utilizar depende de las características que posea el
-videojuego que se quiere \fixme{desarrollar}{Es el core del trabajo}, las cuales
-fueron descritas en \ref{chap:requerimientos}. A continuación se da una breve
+videojuego que se quiere desarrollar, las cuales
+fueron descritas en el capítulo \ref{chap:requerimientos}. A continuación se da una breve
 descripción de los motores de videojuegos más utilizados actualmente, se definen
 los criterios de selección y se realiza una comparación entre los mismos, para
-la elección del motor de videojuegos que más se adecue a las necesidades de la
+la elección del motor de videojuego que más se adecue a las necesidades de la
 solución. Entre los aspectos que son comparados se encuentran la distribución,
 librerías, tiendas, licencias, curva de aprendizaje, lenguajes de programación,
 entre otros.
@@ -32,31 +26,29 @@ entre otros.
 \subsection{Unreal Development Kit}
 
 Es la edición gratuita de \textit{Unreal Engine 3}. \textit{Unreal Engine} es el
-motor de videojuegos desarrollado por \textit{Epic Games}\cite{unrealengine}.
+motor de videojuego desarrollado por \textit{Epic Games}\cite{unrealengine}.
 
 \Gls{udk} proporciona acceso al motor de juegos 3D y a la herramienta
-profesional que se utiliza en el desarrollo de videojuegos
-\fixme{blockbuster}{?}, visualización arquitectónica, el desarrollo de juegos
+profesional que se utiliza en el desarrollo de videojuegos, visualización arquitectónica, el desarrollo de juegos
 para móviles, modelos 3D, películas digitales y más. Utilizando \Gls{udk} se
-pueden implementar juegos y aplicaciones en \textit{Windows PC}, \textit{iOS} y
+pueden implementar juegos y aplicaciones en \textit{Windows}, \textit{iOS} y
 \textit{Mac}\cite{unrealengine}.
 
 Posee su propio entorno de desarrollo, las rutinas de programación pueden ser escritas 
 en los lenguajes de programación Unreal Script y C++, y una comunidad 
-grande donde se puede recurrir. Además soporta formatos de modelos 
+donde se puede recurrir. Además soporta formatos de modelos 
 3D como fbx, dds, raw y ASE\cite{unrealengine}.
 
 \subsection{Blender Game Engine}
 
-\enquote{Blender Game Engine} es el motor de videojuegos de \textit{Blender Foundation} 
+\enquote{Blender Game Engine} es el motor de videojuego de \textit{Blender Foundation} 
 que permite crear aplicaciones 3D interactivas o simulaciones, desarrollado bajo 
 la licencia \Gls{gnu}\cite{blender}.
 
 \textit{Blender Game Engine} genera las escenas de forma continua en tiempo real
 e incorpora facilidades para la interacción del usuario durante el proceso de
-\textit{renderización}, procesa la lógica de sonido, de la física y la 
+\textit{renderizado},\footnote{Proceso que genera imágenes a partir de modelos 3D.} procesa la lógica de sonido, de la física y la 
 representación de simulaciones en orden secuencial\cite{blender}.
-\observacion{Footnote para renderización}
 
 Posee la posibilidad de exportar en plataformas como
 \textit{Windows, Linux y Mac OS}. También incluye básico en desarrollo para 
@@ -69,12 +61,12 @@ como 3ds, dae, fbx, dxf\cite{blender}.
 
 \subsection{CryEngine}
 
-\enquote{CryEngine} es el motor de videojuegos desarrollado por \textit{Crytek}.
+\enquote{CryEngine} es el motor de videojuego desarrollado por \textit{Crytek}.
 Existe una versión gratuita denominada \enquote{CryEngine Free SDK} con todas
 las funcionalidades, esta versión esta disponible para su descarga, pero ya ha
 sido descontinuada\cite{cryengine:sdk}.
 
-Este motor de videojuegos permite exportar a plataformas como iOS y
+Este motor de videojuego permite exportar a plataformas como iOS y
 Android\cite{cryengine}. Posee su propio entorno de desarrollo, las rutinas de
 programación pueden ser escritas en los lenguajes de programación C++ y Lua, y
 una comunidad de tamaño moderado donde se puede recurrir. Además sólo soporta
@@ -88,12 +80,12 @@ sus propios formatos 3D\cite{cryengine}.
 Un producto relacionado es el \enquote{ShiVa Server}, el cual permite el
 desarrollo de aplicaciones multijugador. Las características de este servidor,
 incluyen comunicación \textit{VoIp}, etc\cite{shiva}, esta es
-una opción interesante para el desarrollo del \textit{backend}.
+una opción interesante para el desarrollo del \textit{back-end}.
 
 \textit{ShiVa} puede exportar juegos y aplicaciones a una cantidad variada de 
 plataformas, incluyendo móviles como \textit{iOS, Android, BlackBerry y Windows
-Phone}, de escritorio como \textit{Windows, Mac OS X y Linux}, los
-navegadores web con soporte \textit{Flash y HTML5}, así como consolas como la
+Phone}, escritorios como \textit{Windows, Mac OS X y Linux}, los
+navegadores web con soporte \textit{Flash y HTML5}, así como consolas que incluyen la
 \textit{Xbox 360, PlayStation3 y Nintendo Wii}. El \Gls{ide} se ejecuta en
 \textit{Windows} y \textit{Mac OS X}\cite{shiva}. 
 
@@ -106,7 +98,7 @@ comunidad moderada donde se puede recurrir. Además sólo soporta el formato
 \subsection{Unity3D}
 
 \textit{Unity} es un motor para el desarrollo de juegos, desarrollado por
-\textit{Unity Technologies}. Posee una versión pagada y una
+\textit{Unity Technologies}. Posee una versión paga y una
 gratuita\cite{unity3d}.
 
 Posee un motor de \textit{renderizado} y un flujo de trabajo para la creación de
@@ -118,7 +110,7 @@ Entre las plataformas móviles soportadas, encontramos a \textit{iOS, Andriod,
 Windows Phone 8, BlackBerry 10}, entre las plataformas de escritorio a 
 \textit{Windows, Mac y Linux}, plataformas web como \textit{Internet Explorer,
     Mozzilla Firefox, Google Chrome}\footnote{Requiere un \textit{plugin} para
-    el navegador que está disponible para \textit{Windows y Mac}}, y entre
+    el navegador que está disponible para \textit{Windows y Mac}.}, y entre
 plataformas de consolas a \textit{Xbox 360, Xbox One, Wii, Wii U, Nintendo
     3DS}\cite{unity3d}.
 

@@ -1,25 +1,22 @@
 %! TEX root = ../main.tex
-\section{Selección de motor de videojuegos}
+\section{Selección del motor de videojuego}
 \label{sec:seleccion_plataforma}
 
 En esta sección se comparan los motores de videojuegos \textit{Unreal Engine,
-    CryEngine, Blender Game Engine, ShiVa3D y Unity3D} \fixme{según unos
-    criterios de selección que serán citados a continuación}{Explicar en que se
-    basan}. Estos criterios están relacionados con los requisitos que debe
-cumplir la solución.
-
-Además, se justifica la elección del motor de videojuegos a utilizarse para 
+    CryEngine, Blender Game Engine, ShiVa3D y Unity3D} según criterios relacionados 
+con los requisitos que debe cumplir la solución. Estos criterios son citados a continuación, 
+además, se selecciona y justifica la elección del motor de videojuego a utilizarse para 
 el desarrollo de la solución propuesta.
 
 \subsection{Criterios de selección}
 
-En el momento de seleccionar la herramienta o motor de juego que se ajuste mejor
+Para seleccionar el motor de videojuego que se ajuste mejor
 a la solución propuesta para facilitar su desarrollo y el cumplimiento de los
-requisitos definidos en~\ref{sec:requisitos}, se tuvieron en cuenta los
+requisitos definidos en el capítulo~\ref{sec:requisitos}, se tuvieron en cuenta los
 siguientes criterios:
 
 \begin{itemize}
-\item Licencia de uso
+\item Licencia de uso del motor.
 \item Plataformas móviles.
 \item Lenguajes de programación para el desarrollo.
 \item Tienda de librerías y paquetes.
@@ -34,9 +31,23 @@ siguientes criterios:
 
 \subsection{Comparación}
 
-A continuación se compararan los criterios citados anteriormente para cada uno
-de los motores teniendo en cuenta tanto aspectos técnicos como de aprendizaje y
-de uso.
+En la tabla~\ref{tab:comparacion_motores_juegos} se comparan los criterios citados 
+anteriormente para cada uno de los motores teniendo en cuenta tanto aspectos técnicos 
+como de aprendizaje y de uso.
+
+Teniendo en cuenta el resultado de esta comparación y de acuerdo a los
+requisitos que debe reunir la solución propuesta se elige a \textit{Unity3D}
+como el motor de videojuego ideal para el desarrollo de este trabajo.
+
+Las ventajas principales de esta elección son la cantidad de plataformas móviles
+diferentes a las que se puede exportar y distribuir la aplicación ya que uno de
+los ejes del trabajo es brindarle movilidad al usuario. Además, \textit{Unity}
+posee una gran comunidad de desarrolladores lo cual es importante en los
+momentos en el que se poseen dudas que se desean aclarar con rapidez.
+
+\textit{Unity} posee una gran tienda donde se pueden encontrar desde modelos en
+tres dimensiones y librerías de sonidos hasta librerías que ofrecen extender o
+incluir funcionalidades. 
 
 \newgeometry{bottom=1cm}
 
@@ -85,16 +96,4 @@ Lenguajes de desarrollo & Unreal Script y C++ & C++, Lua & FlowGraph
 \end{sidewaystable}
 \restoregeometry
 
-Por todo lo expuesto en~\ref{tab:comparacion_motores_juegos} y de acuerdo a los
-requisitos que debe reunir la solución propuesta se elige a \textit{Unity3D}
-como el motor de juego ideal para el desarrollo de este trabajo.
 
-Las ventajas principales de esta elección son la cantidad de plataformas móviles
-diferentes a las que se puede exportar y distribuir la aplicación ya que uno de
-los ejes del trabajo es brindarle ubicuidad al usuario. Además, \textit{Unity}
-posee una gran comunidad de desarrolladores la cual es importante en los
-momentos en el que se poseen dudas que se desean aclarar con rapidez.
-
-\textit{Unity} posee una gran tienda donde se pueden encontrar desde modelos en
-tres dimensiones y librerías de sonidos hasta librerías que ofrecen extender o
-incluir funcionalidades. 

@@ -1,71 +1,59 @@
-\chapter{Tecnologías}
+\chapter{Tecnologías y herramientas}
 \label{chap:tecnologias}
 \observacion{Para el desarrollo de videojuegos?}
 \observacion{Una sección más al final como un resumen/tabla/gráfico del stack
     service móvil}
 
-Luego de definir los requerimientos y el alcance \fixme{que tener}{es
-    fundamental revisar las tecnologías} \fixme{la solución propuesta se deben
-    seleccionar de manera}{} adecuada las tecnologías que serán utilizadas para
-implementarla de tal forma que cumpla con todos los requerimientos, el esquema
-general de interacción se observa en~\ref{fig:componentes}.
-
-En este capítulo se describen en detalle estas tecnologías haciendo énfasis
-especial a la selección del motor de videojuegos, el cual es la principal
-herramienta requerida, por lo mismo, se describen los principales motores
-utilizados en la actualidad y se definen criterios para seleccionar de entre
-ellos el más adecuado.
+Luego de definir los requerimientos y el alcance que debe tener la solución propuesta, 
+es fundamental la revisión y la selección de las tecnologías disponibles para
+implementar la solución. 
 
 
-\begin{figure}
+%En este capítulo se describen en detalle estas tecnologías haciendo énfasis
+%especial a la selección del motor de videojuegos, el cual es la principal
+%herramienta requerida, por lo mismo, se describen los principales motores
+%utilizados en la actualidad y se definen criterios para la selección del más adecuado.
+
+El esquema general de componentes de la solución se observa en la figura~\ref{fig:componentes}.
+
+\begin{figure}[H]
 \begin{center}
-    \includegraphics[scale=0.5]{tecnologias/images/completo.png}
+    \includegraphics[scale=0.5]{tecnologias/images/full.png}
 \end{center}
 \caption{Esquema general de los componentes}
 \label{fig:componentes}
 \end{figure}
 
-\fixme{Entrando un poco más en detalle}{} dentro de la implementación de la
-solución, se describen las herramientas que son necesarias para el desarrollo
-del juego a más bajo nivel como el lenguaje de programación, herramientas para
-modelado 3D, gestores de código fuente, entre otros. Estas tecnologías son
-agrupadas en tres partes principales:
+La arquitectura se compone de un \textit{front-end}\footnote{El \textit{front-end}
+    es la parte de la solución que interactúa con el usuario. Se encarga de
+    realizar una simulación, de interpretar las acciones del usuario y evaluar
+    el rendimiento del usuario.} que consiste en una aplicación móvil, la cual
+es utilizada por los alumnos de enfermería. Los registros de uso del \textit{front-end} son 
+almacenados bajo demanda en un servidor
+\textit{back-end}\footnote{El \textit{back-end} es la parte de la solución que
+    se encarga de almacenar la información de los usuarios y sus acciones dentro
+    del \textit{front-end}.}, el cual se encarga de asociar los registros con
+los alumnos y almacenarlos de manera persistente.
 
-\observacion{Agregar footnotes para definir backend y frontend}
+Así, las herramientas necesarias para el desarrollo se agrupan en:
+
 \begin{itemize}
-    \item \textbf{Herramientas de gestión de código}: se describen las
+    \item \textbf{Herramientas de gestión de código}: 
         tecnologías requeridas para gestionar y mantener código.
-    \item \textbf{Desarrollo del \textit{frontend}}: se describen aquellas tecnologías
-        utilizadas para el desarrollo del videojuego en sí. El \textit{frontend} es la
-        parte de la solución que interactúa con el usuario y por lo tanto es lo
-        que él puede percibir.
-    \item \textbf{Desarrollo del \textit{backend}}: se describen aquellas tecnologías
-        utilizadas para procesar las acciones que los usuarios realizan dentro
-        de la solución.
+    \item \textbf{Desarrollo del \textit{front-end}}: 
+        tecnologías utilizadas para el desarrollo del videojuego en sí. 
+    \item \textbf{Desarrollo del \textit{back-end}}: 
+        tecnologías utilizadas para procesar las acciones que los usuarios
+        realizan dentro de la solución.
 \end{itemize}
 
-\fixme{La tecnología necesaria debe permitir crear escenarios en tres
-    dimensiones, animaciones y otros aspectos relacionados a los videojuegos,
-    como iluminación, interacción entre componentes, etc, además de otros
-    factores importantes como comunicación, audio, etc.}{Esto no debería ir en
-    frontend?}
+La herramienta principal para el desarrollo del front-end es el motor de videojuegos, por lo 
+mismo, se debe seleccionar adecuadamente de acuerdo a las características de la solución que 
+se desea desarrollar.
 
-Los factores relacionados a los videojuegos son cubiertos por un \enquote{Motor
-    de videojuegos}, y los demás factores deben ser tratados con software
-\fixme{especial}{?}.
-
-Es necesario un \textit{backend} que permita almacenar la información de todos
-los usuarios de tal forma a unificar el acceso a los registros de los usuarios,
-esto implica que los usuarios deberán tener una conexión a Internet ocasional
-para que puedan enviar los registros.
-
-También se requiere que pueda almacenar información de todos los usuarios, con
-la mayor cantidad de detalle posible, para así poder realizar análisis
-posteriores. La \fixme{cantidad}{El tiempo tota por práctica} de tiempo
-utilizado, cantidad de procedimientos realizados y frecuencia de uso, son
-ejemplos de información que debe ser registrada para su posterior análisis.
-
-
+A continuación se describen los principales motores de videojuegos utilizados en la actualidad y se 
+definen los criterios para seleccionar el más adecuado. Posteriormente se describen las 
+tecnologías que son necesarias para la implementación de la solución a más bajo nivel.
 
 \input{tecnologias/motor_videojuegos}
 \input{tecnologias/seleccion_motor}
