@@ -2,15 +2,12 @@
 
 %En esta sección se explicarán las metodologías utilizadas para 
 %evaluar la solución y los principales resultados obtenidos.
-
-En la tabla~\ref{tab:metodologia} se observan las metodologías utilizadas
-para la evaluación de la solución incluyendo la determinación de la muestra.
-
 \begin{table}[H]
 \centering
-\begin{tabulary}{.5\textwidth}{rLLLL}
+\caption{Metodologías utilizadas en la evaluación de la solución}
+\begin{tabulary}{.5\textwidth}{RLLL}
 \toprule
-\textbf{Prueba}        & \textbf{Determinar la muestra} & \textbf{Evaluar el uso y la aceptación de la solución} & \textbf{Evaluar el conocimiento de los alumnos} \\
+\textbf{Prueba}        & \textbf{Determinar la muestra} & \textbf{Evaluar el uso y la aceptación} & \textbf{Evaluar el conocimiento} \\
 \midrule
 \textbf{Participantes} & \multicolumn{3}{c}{Alumnos de la carrera de enfermería del IAB} \\
 \midrule
@@ -20,14 +17,16 @@ para la evaluación de la solución incluyendo la determinación de la muestra.
 \midrule
 \textbf{Duración}      & 10 minutos                                                         & 20 días                        & 20 minutos\\
 \midrule
-\textbf{Fases}           & \tabitem Presentación.          & \tabitem Explicación de la interfaz. & \tabitem Explicación de la prueba.\\
-                & \tabitem Encuesta.              & \tabitem Utilización de la solución. & \tabitem Encuesta sobre conocimiento\\
-                & \tabitem Recopilación de datos. & \tabitem Encuesta de apreciación.    & \tabitem Recopilación de datos.\\
-                &                                 & \tabitem Recopilación de datos.\\
+\textbf{Fases}   & \tabitem Presentación. & \tabitem Explicación de la interfaz. & \tabitem Explicación de la prueba.\\
+                 & \tabitem Encuesta.     & \tabitem Utilización de la solución. & \tabitem Encuesta sobre conocimiento\\
+                 &                       & \tabitem Encuesta de apreciación.    & \\
 \bottomrule
 \end{tabulary}
 \label{tab:metodologia}
 \end{table}
+
+En el cuadro~\ref{tab:metodologia} se observan las metodologías utilizadas
+para la evaluación de la solución incluyendo la determinación de la muestra.
 
 A continuación se describen los detalles de la metodologías utilizadas junto con
 los principales resultados obtenidos.
@@ -43,15 +42,12 @@ los principales resultados obtenidos.
 \subsection{Encuesta para determinar la muestra}
 \label{encuesta_muestra}
 
-Con esta encuesta se determinó el nivel de
-acceso a la tecnología de los estudiantes del cuarto año de Licenciatura en
-Enfermería del \gls{iab}, además del tipo de acceso a Internet, tipo de sistema
-operativo de sus teléfonos móviles y si cumplían con los requisitos técnicos
-para utilizar la solución. Estos requisitos son los siguientes:  memoria RAM de
-$512$MB. o superior, velocidad de procesador de $800$ GHz. o superior y GPU Mali
-400 o superior. 
-
-A continuación se muestran los resultados.
+Con esta encuesta se determinó el nivel de acceso a la tecnología de los
+estudiantes del cuarto año de Licenciatura en Enfermería del \gls{iab}, además
+del tipo de acceso a Internet, sistema operativo de sus teléfonos móviles y si
+cumplían con los requisitos técnicos para utilizar la solución. Estos requisitos
+son los siguientes:  memoria RAM de $512MB.$ o superior, velocidad de procesador
+de $800 GHz.$ o superior y tarjeta de video compatible con \emph{OpenGL ES 2.0}. 
 
 \begin{figure}[H]
 \centering
@@ -71,7 +67,7 @@ A continuación se muestran los resultados.
 % TODO se debe ver los requisitos en esta misma página.
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[thick,scale=0.7, every node/.style={transform shape}]
     \pie[
@@ -92,7 +88,7 @@ A continuación se muestran los resultados.
 \label{fig:ubicacion_acceso_internet}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[thick,scale=0.7, every node/.style={transform shape}]
     \pie[
@@ -111,7 +107,6 @@ A continuación se muestran los resultados.
 \label{fig:ubicacion_sistemas_operativos}
 \end{figure}
 
-
 Del $18.3\%$ de los que cumplían con los requisitos, $11$ alumnos estuvieron
 dispuestos a evaluar la solución. 
 
@@ -121,20 +116,25 @@ con tecnología similar, y~\cite{ritch2009} define el rango de usuarios
 necesarios para resultados estadísticamente válidos, cuando los mismos no tienen experiencia con la tecnología, de $10$ a $12$.
 % La muestra utilizada en las pruebas de la solución es de $11$ usuarios.
 
+%\FloatBarrier
+
 \subsection{Encuesta para evaluar la solución}
 \label{encuesta_solucion}
-Con esta encuesta se busca identificar las fortalezas y debilidades de la 
-solución, además de evaluar la solución en cuanto a factores de exploración, 
-representación, motivación, inmersión, retroalimentación y pedagogía. También se busca valorar el nivel de aceptación de la solución y la validación de las 
+
+Con esta encuesta se busca identificar las fortalezas y debilidades de la
+solución, además de evaluar la solución en cuanto a factores de exploración,
+representación, motivación, inmersión, retroalimentación y pedagogía. También se
+busca valorar el nivel de aceptación de la solución y la validación de las
 hipótesis planteadas como parte del diseño de la solución.
 
-La encuesta cuenta con $27$ preguntas cerradas, es decir de una sola respuesta 
-en una lista de opciones, y con $4$ preguntas abiertas, es decir los encuestados pueden dar respuestas libres a las preguntas. 
+La encuesta cuenta con $27$ preguntas cerradas, es decir de una sola respuesta
+en una lista de opciones, y con $4$ preguntas abiertas, es decir los encuestados
+pueden dar respuestas libres a las preguntas. 
 
 En las preguntas cerradas la métrica utilizada es la escala de Likert
 \cite{Allen:2007} de 7 valores posibles cuyo valor más alto es
-\enquote{Totalmente de acuerdo} y el más bajo es \enquote{Totalmente en 
-desacuerdo}. 
+\enquote{Totalmente de acuerdo} y el más bajo es \enquote{Totalmente en
+    desacuerdo}. 
 
 Una vez valoradas y registradas todas las respuestas y con el 
 objetivo de eliminar las tendencias en la forma en la que son completadas las
@@ -143,26 +143,40 @@ Estandarización} recomendado en~\cite{Pagolu2011}, el promedio estandarizado
 refleja los puntos fuertes y débiles relativos a la valoración más alta y baja.
 
 En el cuadro~\ref{tab:resultado_resumen_aspectos_aceptacion} se observa 
-la aceptación de los usuarios por aspecto estudiando. El 
+la aceptación de los usuarios por aspecto estudiando. En el 
 cuadro~\ref{tab:resultado_resumen_hipotesis} se observa la aceptación
 de los usuarios por hipótesis asumida.  
 
-\begin{table}
+\begin{table}[b]
 \centering
 \caption{Aceptación por aspecto de la solución}
-\begin{tabular}{lcr}
+\begin{tabulary}{.50\textwidth}{LRLL}
 \toprule
-Factores        & Promedio encuesta      & Promedio estandarizado \\
+\textbf{Factor}                   & \shortstack{\textbf{Promedio encuesta} \\ (Promedio estandarizado)} & \textbf{Puntos fuertes}             & \textbf{Puntos débiles} \\
 \midrule
-Motivación               & De acuerdo              & $0.67$  \\
-Facilidad de exploración & De acuerdo              & $0.68$  \\
-Sensación de Inmersión   & De acuerdo              & $0.63$  \\
-Pedagogía                & De acuerdo              & $0.67$  \\
-Representación           & Parcialmente de acuerdo & $0.53$  \\
-Retroalimentación        & Parcialmente de acuerdo & $0.60$  \\
-Utilidad                 & De acuerdo              & $0.69$  \\
+Motivación           & De acuerdo (0.67)              & \tabitem Puntaje                    & \tabitem Tiempo  \\
+                     &                                & \tabitem Socialización              & \\
+\midrule
+Exploración          & De acuerdo (0.68)              & \tabitem Aleatoriedad               & \tabitem Utilización    \\
+                     &                                & \tabitem Funciones                  & \\
+\midrule
+Inmersión            & De acuerdo (0.63)              & \tabitem Escenografía               & \tabitem Pertenencia\\
+                     &                                & \tabitem Gráficos                   & \\
+                     &                                & \tabitem Ordenes verbales           & \\
+\midrule
+Pedagogía            & De acuerdo (0.67)              & \tabitem Comprensión                & \\
+                     &                                & \tabitem Retroalimentación limitada & \\
+\midrule
+Representación       & Parcialmente de acuerdo (0.53) & \tabitem Movimientos motrices       & \tabitem Reacción verbal\\
+                     &                                &                                     & \tabitem Estados del paciente\\
+\midrule
+Retroalimentación    & Parcialmente de acuerdo (0.60) & \tabitem Detalles de los pasos      & \tabitem Iconos \\
+                     &                                &                                     & \\
+\midrule
+Utilidad             & De acuerdo (0.69)              & \tabitem Complemento                & \tabitem Interacción \\
+                     &                                & \tabitem Facilitador                & \\
 \bottomrule
-\end{tabular}
+\end{tabulary}
 \label{tab:resultado_resumen_aspectos_aceptacion}
 \end{table}
 
@@ -187,34 +201,32 @@ H7. Ubicuidad               & De acuerdo              & $0,66$ \\
 \label{tab:resultado_resumen_hipotesis}
 \end{table}
 
-
-
-\begin{figure}
-\centering
-\begin{tikzpicture}[label distance=.15cm]
-\tkzKiviatDiagram[scale=.5,%
-                    lattice=9,
-                    %step=10,
-                    ]
-                {Motivación,
-                 Exploración,
-                 Inmersión,
-                 Pedagogía,
-                 Representación,
-                 Retroalimentación,
-                 Utilidad}
-\tkzKiviatLine[thick,
-                color=blue!25!white,
-                mark=ball,
-                ball color=blue,
-                mark size=5pt,
-                opacity=.2, 
-                fill=blue!20](6.7,6.8,6.3,6.7,5.3,6.0,6.9)
-\tkzKiviatGrad[prefix={$0,$}](1) 
-\end{tikzpicture}
-\label{fig:subjetiva_kiviat}
-\caption{Gráfico de Kiviat de los factores evaluados}
-\end{figure}
+%\begin{figure}
+%\centering
+%\begin{tikzpicture}[label distance=.15cm]
+%\tkzKiviatDiagram[scale=.5,%
+                    %lattice=9,
+                    %%step=10,
+                    %]
+                %{Motivación,
+                 %Exploración,
+                 %Inmersión,
+                 %Pedagogía,
+                 %Representación,
+                 %Retroalimentación,
+                 %Utilidad}
+%\tkzKiviatLine[thick,
+                %color=blue!25!white,
+                %mark=ball,
+                %ball color=blue,
+                %mark size=5pt,
+                %opacity=.2, 
+                %fill=blue!20](6.7,6.8,6.3,6.7,5.3,6.0,6.9)
+%\tkzKiviatGrad[prefix={$0,$}](1) 
+%\end{tikzpicture}
+%\label{fig:subjetiva_kiviat}
+%\caption{Gráfico de Kiviat de los factores evaluados}
+%\end{figure}
 
 \subsection{Encuesta para evaluar el conocimiento}
 
@@ -231,9 +243,10 @@ De esta manera se busca evaluar la influencia pedagógica  de la solución en el
 aprendizaje. Dado que la cantidad de partidas jugadas por usuario por tipo de
 procedimiento no es considerada suficiente no se pueden considerar las
 diferencias entre la muestra y el grupo de control como absolutas. En el
-cuadro~\ref{tab:objetiva_rendimiento_por_pregunta} se observan los resultados de esta prueba.
+cuadro~\ref{tab:objetiva_rendimiento_por_pregunta} se observan los resultados de
+esta prueba. %ver si agregar lo del metodo de evaluacion
 
-\begin{table}
+\begin{table}[H]
 \centering
 \caption{Rendimiento promedio de usuarios por pregunta}
 \begin{tabular}{lrrr}
@@ -257,7 +270,7 @@ EG3. Respuesta ocular     & 0.45 & 0.28 & 0.29 \\
 EG4. Respuesta motora     & 0.18 & 0.32 & 0.31 \\
 EG5. Respuesta verbal     & 0.36 & 0.45 & 0.45 \\
 \midrule
-\textbf{Promedio}: & 3.82 & 3.47 & 3.49  \\
+\textbf{Sumatoria}: & 3.82 & 3.47 & 3.49  \\
 \bottomrule
 \end{tabular}
 
@@ -274,33 +287,12 @@ El registro de actividades ayuda a identificar las  fortalezas y debilidades de
 la solución en cuanto al diseño y utilidad. Sobre todo, ayuda a medir el impacto
 pedagógico al permitir contrarrestar el uso y desempeño del usuario con el
 puntaje obtenido por el mismo en la encuesta utilizada para medir el
-conocimiento. El principal resultado obtenido es la correlación de 
-Pearson\cite{BoslaughStatistics2008} entre los datos del registro de actividades y de la encuesta de conocimiento considerando sólo a la muestra.
+conocimiento. Los principales resultados obtenidos utilizando la correlación de 
+Pearson\cite{BoslaughStatistics2008} entre los datos del registro de actividades y 
+de la encuesta de conocimiento considerando sólo a la muestra son los mostrados en el 
+cuadro~\ref{tab:all_correlation}.
 
-%\begin{table}[H]
-%\centering
-%\caption{Correlación entre factores estudiados} 
-%\begin{tabular}{lrrrrrr}
-%\toprule
-%        &
-%\begin{sideways}\textbf{Tiempo de Uso}\end{sideways}             &
-%\begin{sideways}\textbf{Encuesta solución}\end{sideways}        &
-%\begin{sideways}\textbf{Encuesta conocimiento}\end{sideways}         &
-%\begin{sideways}\textbf{Puntaje Máximo Extracción}\end{sideways} &
-%\begin{sideways}\textbf{Puntaje Máximo Glasgow}\end{sideways}    \\
-%\midrule
-%Tiempo de Uso             & 1    & -0.2  & 0.15  & 0.62 & 0.78 \\
-%Encuesta solución         & -0.2 & 1     & -0.07 & 0.04 & -0.28\\
-%Encuesta conocimiento     & 0.15 & -0.07 & 1     & 0.44 & 0.02 \\
-%Puntaje máximo Extracción & 0.62 & 0.04  & 0.44  & 1    & 0.44 \\
-%Puntaje máximo Glasgow    & 0.78 & -0.28 & 0.02  & 0.44 & 1    \\
-%\bottomrule               
-%\end{tabular}
-%
-%\label{tab:all_correlation}
-%\end{table}
-
-\begin{table}[H]
+\begin{table}
 \centering
 \caption{Correlación entre factores estudiados} 
 \begin{tabular}{lrrrrrr}
