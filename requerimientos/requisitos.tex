@@ -2,8 +2,8 @@
 \section{Requisitos de la solución}
 \label{sec:requisitos}
 
-A fin de que la solución propuesta pueda cumplir con las competencias básicas
-definidas por el plan de estudio, se definen varios tipos de requisitos.
+En esta sección se definen los requisitos necesarios para que la solución propuesta pueda 
+cumplir con las competencias básicas definidas por el plan de estudio.
 
 \subsection{Requisitos generales}
 
@@ -11,78 +11,68 @@ Las condiciones generales que afectan a la solución como una herramienta, son:
 
 \begin{itemize}
 \item Se debe permitir al usuario poder utilizar el entorno virtual en el
-    momento y lugar que desee es decir, es decir, se le debe proveer ubicuidad.
+    momento y lugar que desee, es decir, se le debe proveer movilidad.
 
 \item Los escenarios presentados, junto con los elementos que los componen,
-    deberían ser lo suficientemente realistas para provocar un sentido de
+    deben ser lo suficientemente realistas para provocar un sentido de
     inmersión al usuario.
 
-\item Cada escena representará un procedimiento de enfermería que debe ser
+\item Cada escena debe representar un procedimiento de enfermería que debe ser
     realizado por el usuario.
 
-\item El entorno debe permitir al usuario decidir libremente las acciones que
+\item Se debe permitir al usuario decidir libremente las acciones que
     quiere realizar, favoreciendo la exploración del entorno.
 
-\item El entorno no debe brindar pistas al usuario acerca de la forma en la que
-    se deben realizar las procedimientos.
+\item No se debe brindar informaciones al usuario durante los procedimientos acerca de la 
+	forma en la que deben realizarlos.
 
-\item El entorno debe brindar al usuario información acerca de su desempeño en
+\item Se debe brindar al usuario información acerca de su desempeño en
     la escena al final de la misma.
+    
+\item Las acciones realizadas por los usuario en el entorno virtual deben ser
+    registradas.
 
 \end{itemize}
 
-\subsection{Requisitos de interacción con objetos}
+\subsection{Requisitos de interacción}
 
-Con respecto a la interacción del usuario con los diferentes elementos que
-pueden ser utilizados dentro de la simulación, denominados objetos, son:
+Los requisitos con respecto a la interacción del usuario con el entorno y los diferentes 
+elementos que lo componen, son:
+
+%Con respecto a la interacción del usuario con el entorno y los diferentes elementos que
+%pueden ser utilizados dentro de la simulación, denominados objetos, son:
 
 \begin{itemize}
 
-\item La selección de objetos debe ser homogénea, y los mismos pueden ser
+\item La selección de elementos debe ser homogénea, y los mismos deben poder ser
     accedidos en cualquier momento, representando la mesa de elementos que
     poseen los enfermeros durante la práctica profesional.
 
-\item Debe ser claro que objeto actualmente esta en uso.
+\item Debe ser claro que elemento actualmente está en uso.
 
-\item Debe ser posible simular la selección y des-selección de objetos.
+\item Debe ser posible simular la selección y des-selección de elementos.
 
-\item Cada objeto disponible durante la simulación debe ser utilizado de
-    manera independiente de los demás, y solamente un objeto a la vez.
+\item Cada elemento disponible durante la simulación debe ser utilizado de
+    manera independiente de los demás, y solamente un elemento a la vez.
 
-\end{itemize}
+\item El usuario debe poder manipular el estado del paciente a través de elementos.
 
-\subsection{Requisitos de interacción con el entorno}
-\observacion{No se entiende la diferencia con el anterior}
-
-Para la interacción entre el usuario, el paciente y el entorno se toman los
-siguientes requisitos:
-
-\begin{itemize}
-\item El usuario puede manipular el estado del paciente a través de objetos, la
-    utilización de los mismos debe ser uniforme e intuitiva.
-
-\item Las acciones sobre los objetos no deben ser muy detalladas, no deben
+\item Las acciones sobre los elementos no deben ser muy detalladas, no deben
     distraer al usuario del objetivo principal de la simulación.
 
-\item Todas las acciones sobre objetos que no son relevantes para el objetivo de
-    la simulación, no deben ser simuladas, pero sí deben ser realizadas (por
-    ejemplo puede existir una opción que indique la realización de cierta
-    acción, pero la acción en sí no se simula).
-
-\item La visión del usuario deberá poder ser manipulada en tres dimensiones,
-    permitiendo acercar, alejar, mover y rotar la visión para poder observar el
-    entorno sin limitaciones.
+\item La visión del usuario debe poder ser manipulada en tres dimensiones,
+    permitiendo acercar, alejar y mover la visión para poder observar el
+    entorno.
 
 \end{itemize}
 
-\subsection{Requisitos de interfaz}
+\subsection{Requisitos de evaluación al usuario}
 
 En cuanto a las acciones que realiza el usuario mientras utiliza la simulación,
-se consideran los siguientes requisitos:
+se consideran los siguientes requisitos para su validación:
 
 \begin{itemize}
-\item Las acciones realizadas por los usuario es en el entorno virtual deben ser
-    registradas.
+
 
 \item Cada acción realizada por el usuario debe ser validada por el entorno, de
     forma a ofrecer información precisa acerca de sus logros al final de la
@@ -92,45 +82,8 @@ se consideran los siguientes requisitos:
     hecho algunas acciones previas, pueden requerir un orden definido, o pueden
     depender del entorno en el cual se realizan las mismas.
 
-\item No se deben dar pistas o mensajes al usuario durante la partida cuando
-    este realice incorrectamente una acción.
-
-\item El final de una partida debe indicarse mediante un botón en un menu
-    ubicado en la pantalla principal de la escena.
+\item No se deben dar indicios o mensajes al usuario durante la partida cuando
+    realice incorrectamente una acción.
 
 \end{itemize}
 
-Luego de haber definido los procedimientos, el alcance de los mismos y los requisitos 
-que debe cumplir la solución, vale la pena mencionar ciertas características 
-necesarias que también deben tenerse en cuenta a la hora de implementar la 
-solución.
-
-Una de estas características esta enfocada al uso de la solución en cualquier 
-lugar y momento, por lo que es un requisito que pueda ser utilizada desde 
-un dispositivo móvil.
-
-Otra característica importante, enfocada ya a la interacción del alumno con la 
-solución, es que debe ser representada en tres dimensiones para proveer un entorno 
-de inmersión y realismo, permitiendo al alumno explorar y examinar los detalles del 
-entorno a medida que va realizando el procedimiento.
-
-El siguiente capítulo se encarga de los conceptos, tecnologías y opciones 
-disponibles para el desarrollo de una solución que cumpla con los requisitos y 
-características descritas.
-
-%Definidos los procedimientos, el alcance de los mismos y los requisitos que debe
-%tener cada procedimiento, vale la pena mencionar ciertas características
-%necesarias que debe tener la solución propuesta.
-
-%Debe ser utilizada desde un dispositivo móvil, así se puede ejecutar en
-%cualquier momento, siendo el requisito que los alumnos tengan tiempo.
-
-%La solución debe ser en tres dimensiones para proveer un entorno de inmersión
-%y realismo, permitiendo al alumno explorar y examinar los detalles del entorno
-%a la medida que realizan el procedimiento.
-
-%Definidos los requisitos, el siguiente capitulo se encarga de los conceptos,
-%tecnologías y opciones disponibles para el desarrollo de una solución que cumpla
-%con los requisitos.
-
-\observacion{Creo que lo dst debería ser un poco más formal}

@@ -4,17 +4,25 @@
 Para representar los procedimientos seleccionados y descritos en la
 sección\ref{sec:seleccion_escenas}, estos deben ser presentados dentro de
 escenarios distintos con los elementos necesarios para poder llevarlos a cabo.
-Sin embargo, por limitaciones técnicas, tecnológicas y de tiempo, no es posible
+Sin embargo, por limitaciones técnicas y de tiempo, no es posible
 realizar una simulación de todos los pasos requeridos.
 
-\observacion{Más énfasis en el hecho que distrae a la parte pedagógica}
-Según~\cite{videojuegos:gonzaleztardon}, existe un compromiso visible entre
-realismo y credibilidad, tomando en cuenta que uno de los objetivos de la
-solución es la presentación de situaciones simplificadas que permitan transmitir
-conocimiento, mientras más realismo exista, más detalles existirán y por
-consiguiente, los usuarios tendrán que concentrarse en un mayor número de
-detalles, lo que resulta contraproducente con el objetivo de la
-solución\cite{videojuegos:gonzaleztardon}. 
+%\observacion{Más énfasis en el hecho que distrae a la parte pedagógica}
+%Según~\cite{videojuegos:gonzaleztardon}, existe un compromiso visible entre
+%realismo y credibilidad, tomando en cuenta que uno de los objetivos de la
+%solución es la presentación de situaciones simplificadas que permitan transmitir
+%conocimiento, mientras más realismo exista, más detalles existirán y por
+%consiguiente, los usuarios tendrán que concentrarse en un mayor número de
+%detalles, lo que resulta contraproducente con el objetivo de la
+%solución\cite{videojuegos:gonzaleztardon}. 
+
+Es importante notar que no es un objetivo de la solución realizar una
+simulación detallada de los procedimientos, sino proveer una experiencia que
+permita al usuario comprender el procedimiento y sumergirse en el entorno.
+Según~\cite{videojuegos:gonzaleztardon} es necesario definir minuciosamente
+qué factores son simulados y cuáles no, pues si se simulan demasiados
+factores, el usuario podría perderse en los detalles y dejar de lado los objetivos 
+pedagógicos. 
 
 Los criterios e hipótesis que se describirán a continuación sirven para acotar
 el alcance de la simulación, definen qué se simulará y cual es el detalle
@@ -29,10 +37,7 @@ necesario para alcanzar las competencias básicas.
 \subsection{Factores limitantes}
 
 A continuación se describen los factores que determinan por qué ciertos pasos
-relacionados a los procedimientos no serán simulados dentro de la solución.
-Estos factores se clasifican en tres: limitaciones técnicas, importancia y
-facilidad de realización. Estos tres aspectos que influyen en qué partes se
-simularán y qué partes se omitirán, se detallan a continuación.
+de los procedimientos no serán simulados dentro de la solución. Los factores son:
 
 
 \begin{itemize}
@@ -43,7 +48,7 @@ simularán y qué partes se omitirán, se detallan a continuación.
     es la simulación del agua (necesarios para el lavado de manos) que requiere
     de requisitos de hardware avanzados y un tiempo considerable de desarrollo.
         
-    Los pasos del procedimiento de extracción de sangre que no se simularán por
+    Los pasos del procedimiento venopunción que no se simulan por
     limitaciones técnicas son:
     \begin{itemize}
         \item Tensar la zona de punción.
@@ -55,16 +60,13 @@ simularán y qué partes se omitirán, se detallan a continuación.
 \item \textbf{Importancia de representación.}
 
     No todos los pasos definidos en el procedimiento oficial requieren ser
-    simulados, por ejemplo, la colocación de los elementos cerca del lugar de
+    simulados para alcanzar los objetivos pedagógicos, por ejemplo, la colocación 
+    de los elementos cerca del lugar de
     trabajo, es un paso necesario en el procedimiento, pero es considerado un
-    paso de menor importancia y fácil de realizar.
-
-    La importancia es evaluada por profesionales del \Gls{iab}, los cuales
-    dieron su apreciación acerca de cada aspecto simulado, el mismo es tenido en
-    cuenta para determinar la importancia de cada acción.
+    paso de menor importancia. La importancia es evaluada por profesionales del \Gls{iab}.
     
-    Los pasos del procedimiento de extracción de sangre que no se simularán por 
-    no ser importantes de representar para la simulación son:
+    Los pasos del procedimiento venopunción que no se simulan por 
+    no ser importantes de representar en la simulación son:
     \begin{itemize}
         \item Llevar el equipo en la unidad donde se encuentra el paciente.
         \item Extraer el protector de la aguja.
@@ -75,20 +77,16 @@ simularán y qué partes se omitirán, se detallan a continuación.
 \item \textbf{Facilidad de realización.}
 
     Ciertos pasos son fáciles de realizar en la vida real pero requieren un
-    esfuerzo significativo para ser simulados con realismo, como preparar el
-    equipo necesario.
-
-    La facilidad que tienen los alumnos con las acciones fue determinada por
-    profesores del \Gls{iab}, determinaron qué acciones son fáciles de realizar
-    para los alumnos y cuáles presentan mayores dificultades en su vida
-    profesional.
-
+    esfuerzo significativo para ser simulados, por ejemplo, preparar el
+    equipo necesario. La facilidad que tienen los alumnos con las acciones es 
+    determinada por profesores del \Gls{iab}.
+    
     Otro aspecto que influye en la facilidad de realización de los
     procedimientos es la familiarización, si los alumnos están familiarizados
-    con los procedimientos, estos no son simulados.
+    con los procedimientos, estos no se simulan.
         
-    Los pasos del procedimiento de extracción de sangre que no se simularán por
-    ser fáciles de realizar por los alumnos son:
+    Los pasos del procedimiento venopunción que no se simulan por
+    ser fáciles de realizar son:
         
     \begin{itemize}
         \item Preparar el equipo.
@@ -96,7 +94,7 @@ simularán y qué partes se omitirán, se detallan a continuación.
     \end{itemize}
     
     Los pasos del procedimiento de valoración de la escala de Glasgow 
-    que no se simularán por la misma razón son:
+    que no se simulan por la misma razón son:
     \begin{itemize}
     \item Preparar el material.
     \item Preparar al paciente.
@@ -108,49 +106,49 @@ simularán y qué partes se omitirán, se detallan a continuación.
 \subsection{Hipótesis}
 \label{sec:hipotesis}
 
-En este apartado se detallan las hipótesis asumidas durante el desarrollo de 
+En este apartado se detallan las hipótesis asumidas durante el diseño de 
 la solución. Algunas de ellas envuelven la forma de representación de acciones 
 dentro de la simulación, estas hipótesis están  basadas en apreciaciones de los 
 profesores del \Gls{iab} y en pruebas de usabilidad de interfaz las cuales son 
-detalladas en el capítulo\ref{chap:evaluacion} y cuyos resultados se muestran en
-el capítulo\ref{chap:evaluacion}. Otras hipótesis representan asunciones de los autores 
+detalladas en el capítulo~\ref{chap:evaluacion}. Otras hipótesis representan 
+asunciones de los autores 
 en cuanto a la utilidad de ciertos aspectos de la simulación.
 
 Las hipótesis formuladas son las siguientes:
 
 % Hipótesis
-\begin{itemize}
+\begin{enumerate}[label=\bfseries H\arabic*:]
 
-\item \textbf{Comandos de voz con interfaz}:  para enviar una petición o
+\item \textbf{Interacción a través de la voz}: para enviar una petición o
     informarle sobre algo al paciente (por ejemplo, darle detalles del
-    procedimiento), no es necesario identificar las palabras del usuario, sino
+    procedimiento) no es necesario identificar las palabras del usuario, sino
     más bien detectar que ha hablado y listar las posibles acciones que se
     pueden realizar.
     
-    Los pasos del procedimiento de extracción de sangre que son representados por 
+    Los pasos del procedimiento de venopunción que son representados por 
     comando de voz son:
     
     \begin{itemize}
         \item Explicar procedimiento.
-        \item Solicitar al paciente que cierre el puño.
-        \item Solicitar al paciente que abra el puño.
+        \item Solicitar al paciente que cierre la mano.
+        \item Solicitar al paciente que abra la mano.
     \end{itemize}
     
-    y, los pasos del procedimiento de valoración de la escala de Glasgow 
+    Los pasos del procedimiento de valoración utilizando de la escala de \emph{Glasgow} 
     que son representados por la misma razón son:
+    
     \begin{itemize}
-        \item Explicar el procedimiento.
         \item Medir la respuesta ocular por medio de peticiones al paciente.
         \item Medir la respuesta verbal por medio de preguntas al paciente.
         \item Medir la respuesta motora por medio de peticiones al paciente.
     \end{itemize}
 
-\item \textbf{Extracción uniforme de elementos}: para realizar la acción de
+\item \textbf{Extracción de elementos}: para realizar la acción de
     extraer un elemento utilizado en el paciente, se considera que realizarlo de
-    una sola manera para todos los elementos convierte a la interfaz más
+    una sola manera para todos los elementos disponibles aportan a una interfaz más
     intuitiva.
 
-    Los pasos del procedimiento de extracción de sangre que cumplen con la extracción 
+    Los pasos del procedimiento de venopunción que cumplen con la extracción 
     uniforme son:
     
     \begin{itemize}
@@ -158,55 +156,41 @@ Las hipótesis formuladas son las siguientes:
         \item Extraer jeringa.
     \end{itemize}
     
-\item 
-    \textbf{Acciones de bioseguridad}: la bioseguridad, que es un aspecto
-    fundamental y transversal a todo procedimiento de enfermería. Es un área muy
-    amplia y transversal a todos los procedimientos de enfermería por lo que se
-    considera que simular cada acción es complejo y que sólo basta con que el
-    estudiante sepa el momento en el que debe realizarse cada una de estas
-    acciones y por lo mismo, es suficiente representarlas a través de opciones
-    en la interfaz gráfica.
-
-    \revisar{Mirar resumen, esta mejor descrito ahí}
+\item \textbf{Bioseguridad}: la bioseguridad es un área amplia y transversal a
+    todos los procedimientos de enfermería, por lo que se considera complejo
+    simular cada acción. Se considera suficiente que el usuario sepa en que momento
+    realizar cada una de las acciones de bioseguridad. 
     
-    Los pasos del procedimiento de extracción de sangre que son representados
-    por opciones son:
+    Los pasos del procedimiento de venopunción relacionados a la bioseguridad son:
     \begin{itemize}
         \item Asepsia de las manos.
-        \item Vestirse con bata estéril, tapaboca estéril y gorro estéril.
+        \item Vestir con bata estéril, tapaboca estéril y gorro estéril.
         \item Calzar guantes.
         \item Extraer guantes, bata, tapaboca y gorro.
     \end{itemize}
     
-\item
-    \textbf{Representación iconográfica}: para representar el estado del
-    enfermero es suficiente mostrar una imagen representativa. Es decir, que
-    para mostrar que el enfermero tiene una gorra, es suficiente mostrar una
-    imagen de una gorra.
+\item \textbf{Representación iconográfica}: para representar el estado de los
+    objetos es suficiente mostrar una imagen representativa. Ciertos estados son
+    complejos de simular (como la esterilización de las manos), realizar una
+    simulación de los estados de los objetos es complejo y requiere un nivel de
+    detalle que desviará al usuario de los objetivos pedagógicos.
     
-    Esta hipótesis se aplica para las opciones de bioseguridad, las opciones
-    para la utilización de elementos así como para la representación del
-    elemento seleccionado.
-\item 
-    \textbf{Factores motivantes}: indicadores de rendimiento, como un puntaje al
-    final de cada procedimiento, y el tiempo total dentro del procedimiento,
-    impactan positivamente en el involucramiento del usuario.
+\item \textbf{Motivación}: indicadores de rendimiento, como un puntaje al final
+    de cada procedimiento, y el tiempo total dentro del procedimiento, impactan
+    positivamente en el involucramiento del usuario. La interacción social es
+    otro factor que incrementa el nivel de compromiso del usuario.
 
-    La interacción social es otro factor que incrementa el nivel de compromiso
-    del usuario.
+\item \textbf{Retroalimentación limitada}: la ausencia de signos visuales que
+    indiquen las acciones que debe realizar el usuario durante la experiencia,
+    permite al usuario probar sus conocimientos, y le impide avanzar en
+    el procedimiento utilizando una técnica de \emph{prueba y error}.
 
-\item 
-    \textbf{Falta de pistas}: la ausencia de signos visuales que indiquen las
-    acciones que debe realizar el usuario durante la experiencia, permite al
-    usuario probar sus conocimientos, e impide al usuario avanzar en el
-    procedimiento utilizando una técnica de \emph{prueba y error}.
-    
-\item 
-    \textbf{Ubicuidad}: darle a los usuarios la posibilidad de poder utilizar 
-    la solución en cualquier lugar y momento le ayuda a tener más oportunidades 
-    de poner a prueba sus conocimientos.
+\item \textbf{Movilidad}: el uso de la solución en los dispositivos móviles de
+    los usuarios permite más oportunidades de poner a prueba los conocimientos
+    con respecto a alternativas tradicionales.
 
-\end{itemize}
+
+\end{enumerate}
 % Simulados
 
 %\subsection{Pasos de exploración}
@@ -222,26 +206,25 @@ continuación.
 
 \item \textbf{Acciones por interfaz de usuario:} acciones como generar un
     estímulo doloroso al paciente tienen limitaciones técnicas para su
-    simulación pero no pueden ser omitidas debido a su gran importancia en el
+    simulación, pero no pueden ser omitidas debido a su gran importancia en el
     procedimiento.
  
-    Los pasos del procedimiento de valoración de la escala de Glasgow que son
-    importantes de simular pero poseen limitaciones técnicas son:
+    El paso del procedimiento Valoración utilizando la escala de Glasgow que es
+    importante de simular y posee limitaciones técnicas es:
     \begin{itemize} 
     \item Realizar estímulos dolorosos en diferentes partes del cuerpo. 
     \end{itemize}
     
-\item \textbf{Simulación integra de pasos:} Los pasos no mencionados de los
-    procedimientos  deben ser simulados de forma integra ya que no se ven
-    afectados por ninguna de las hipótesis, factores limitantes y criterios
-    descritos con anterioridad.
+\item \textbf{Simulación integra de pasos:} 
+	los pasos no mencionados en las hipótesis, factores limitantes y criterios descritos 
+	anteriormente, deben ser simulados de manera íntegra.
+	
+	Una característica de estos pasos es que dependen de la forma en la que son 
+	realizados, por ejemplo la elección de una zona de punción, es posible punzar en cualquier
+	parte del brazo, pero solo algunos lugares son válidos. 
 
-La evaluación de estos pasos depende de elecciones que haga el usuario, por
-ejemplo la elección de una zona de punción depende del usuario, existen varios
-lugares posibles, de los cuales solo algunos son válidos. 
-
-Los pasos del procedimiento de extracción de sangre que cumplen con esto son:
-\begin{itemize}
+	Los pasos del procedimiento de venopunción que cumplen con esto son:
+	\begin{itemize}
     \item Elegir zona a punzar.
     \item Colocar torniquete.
     \item Esterilizar zona de punción.
@@ -250,15 +233,14 @@ Los pasos del procedimiento de extracción de sangre que cumplen con esto son:
     \item Extraer muestra de sangre.
     \item Colocar algodón en zona de punción.
     \item Presionar zona punción con el algodón.
-\end{itemize}
+	\end{itemize}
 
-Los pasos de valoración de la escala de Glasgow que también cumplen con esto son:
-\begin{itemize}
+	Los pasos de Valoración utilizando la escala de Glasgow que cumplen con esto son:
+	\begin{itemize}
     \item Registrar la puntuación de la respuesta ocular.
     \item Registrar la puntuación de la respuesta motora.
     \item Registrar la puntuación de la  respuesta verbal.
     \item Registrar el diagnóstico final.
-\end{itemize}
-
+	\end{itemize}
 
 \end{itemize}
