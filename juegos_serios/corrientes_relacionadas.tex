@@ -14,24 +14,26 @@ como se observa en la figura~\ref{fig:corrientes_relacionadas}.
 \label{fig:corrientes_relacionadas}
 \end{figure}
 
-Cuando se utilizan aspectos de videojuegos con simulaciones, se obtienen videojuegos
-cuyo objetivo es entretener mientras son similares a la realidad, dentro de esta
+Cuando se utilizan aspectos de videojuegos con simulaciones, se obtienen videojuegos 
+similares a la realidad cuyo objetivo es entretener, dentro de esta
 categoría podemos encontrar juegos como \emph{Gran Turismo}; si mezclamos
 factores relacionados al aprendizaje y a las simulaciones se obtienen
 simulaciones sin interacción con el usuario que buscan mostrar o enseñar como se
-comportan distintos fenómenos físicos, sociales, etc.
+comportan distintos fenómenos físicos, sociales, etc. Una simulación educativa se 
+diferencia de un juego serio en que este último hace uso de las características y 
+tecnologías de un videojuego para enseñar algo específico. 
 
-Un simulación educativa se diferencia de un juego serio en que este último hace uso 
-de las características y tecnologías de un videojuego para enseñar algo específico. Los 
-\emph{Edutainment} pueden ser vistos como los predecesores de los juegos
-serios, los mismos son descritos en~\ref{sec:edutainment}.
+El uso de videojuegos junto con técnicas de aprendizaje da como resultado los 
+\emph{Edutainment}, estos pueden ser vistos como los predecesores de los juegos
+serios, los mismos son descritos en la sección~\ref{sec:edutainment}.
 
 %\observacion{Que hace que sea un juego serio y no una SE}
 
-Usualmente un videojuego tiene un conjunto de reglas que deben ser cumplidas para 
+
+Un juego serio tiene un conjunto de pasos que deben ser cumplidas para 
 que se considere que una partida fue jugada de manera correcta, lo que se traduce 
-en un buen desempeño del jugador, estas reglas suelen ser manejadas
-por un motor de reglas que se encarga de determinar el cumplimiento o no de las mismas.
+en un buen desempeño del jugador. Cada paso puede ser traducido a una regla
+y ser validadas por un motor de reglas. 
 
 \subsection{Simulaciones}
 
@@ -51,7 +53,7 @@ reglas hasta complejos entornos. La simulación demostró ser una herramienta mu
 encarar situaciones muy difíciles de representar en entornos completamente
 controlados y provee mecanismos para comprobar la efectividad de la herramienta. 
 
-Actualmente la simulación se utiliza más en el ámbito empresarial pues las
+Actualmente la simulación se utiliza mayormente en el ámbito empresarial pues las
 empresas son las más necesitadas de innovar en el ámbito de la enseñanza. Un
 ejemplo de esta necesidad se da, por ejemplo, en el entrenamiento de nuevos
 vendedores, es muy difícil enseñar a un vendedor como debe vender los productos
@@ -115,90 +117,43 @@ prácticas\cite{charsky:2010}.
 %\end{itemize}
 
 
-\subsection{Acciones condicionadas por eventos}
+\subsection{Motores de acciones condicionadas por eventos}
 \label{sec:eca}
 
-Un evento es la ocurrencia de un hecho en particular, y es identificado por un
-nombre y un conjunto de parámetros. Por cada acción que realiza el usuario dentro 
-de una simulación, existe un evento relacionado, por consiguiente, es razonable 
-estudiar algunos eventos para determinar si las acciones del usuario son correctas.
+Un evento es la ocurrencia de un hecho en particular. Por cada acción que realiza el usuario dentro  de una simulación, existe un evento relacionado, por consiguiente, es razonable  estudiar algunos eventos para determinar si las acciones del usuario son correctas.
 
-Para determinar si una sucesión de eventos es la correcta, se definen reglas,
-una regla es una asociación de una condición y una acción, la condición define
-si el entorno es el adecuado para realizar una acción, la cual es un
-procedimiento que realiza la lógica deseada.
+Para determinar si una sucesión de eventos es la correcta, se definen reglas, una regla es una asociación de una condición y una acción, la condición define si el entorno es el adecuado para realizar una acción, la cual es un procedimiento que realiza la lógica deseada.
 
-Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados
-eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos
-como triggers, es decir, una base de datos relacional (u orientada a objetos) es
-un motor de reglas \gls{eca}\cite{bailey2004event,behrends2006combining}.
+Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos como triggers, es decir, una base de datos relacional (u orientada a objetos) es un motor de reglas \gls{eca}\cite{bailey2004event,behrends2006combining}.
 
-Las mismas pueden ser utilizadas para notificar que un determinado conjunto de
-eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
-información acerca de la utilización de un determinado recurso.
+Las mismas pueden ser utilizadas para notificar que un determinado conjunto de eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar información acerca de la utilización de un determinado recurso.
 
 
-\subsubsection{Motivación}
+% \subsubsection{Motivación}
 
-Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en
-forma de una única regla, lo cual facilita la declaración de las
-mismas\cite{bailey2004event}.
-
-Son principalmente útiles para analizar el comportamiento en tiempo real de un
-sistema en una forma reactiva\cite{bailey2004event,de2001eca,bailey2002analysis}, 
-esta característica está impulsada principalmente por que son ejecutadas después 
-de la ocurrencia de un evento, y el entorno no es modificado, pudiendo así acceder 
-al mismo entorno que el que lanzó el evento.
+Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en forma de una única regla, lo cual facilita la declaración de las mismas\cite{bailey2004event}.  Son principalmente útiles para analizar el comportamiento en tiempo real de un sistema en una forma reactiva\cite{bailey2004event,de2001eca,bailey2002analysis},  esta característica está impulsada principalmente por que son ejecutadas después  de la ocurrencia de un evento, y el entorno no es modificado, pudiendo así acceder  al mismo entorno que el que lanzó el evento.
 
 
-\subsubsection{Declaración}
-
-Una \gls{eca}, se define como\cite{bailey2004event,behrends2006combining}:
-
-\begin{displayquote}
-	 Cuando ocurren una serie de \emph{eventos}, y se cumple una
-	 \emph{condición}, entonces realizar una \emph{Acción}.
-\end{displayquote}
-
-Los \emph{eventos} determinan cuando una regla debe ser activada, los mismos se
-dividen en dos categorías\cite{behrends2006combining}, primitivos y compuestos,
-los primeros son detectables, por ejemplo, cuando se inserta una jeringa, y los
-compuestos, son la combinación de uno o más
-primitivos\cite{bailey2004event,behrends2006combining}. Los eventos
-compuestos, se unen mediante:
-\begin{enumerate*}[label=\itshape\alph*\upshape)]
-\item conjunción (\emph{y}),
-\item disyunción (\emph{o}), y
-\item secuencia (\emph{entonces}).
-\end{enumerate*}
-Sin embargo, no siempre son necesarias todas las posibles combinaciones, y las
-combinaciones sencillas son más fáciles de optimizar y
-probar\cite{bailey2004event}.
-
-La \emph{condición} de una regla determina si el entorno es el necesario para que la
-regla sea activada, en esta condición el entorno que lanzó el evento está
-disponible.
-
-La \emph{acción} a ejecutar describe la lógica que debe ser ejecutada cuando se han
-lanzado los eventos y la condición de la regla se ha cumplido.
-
-\subsubsection{Modelo de ejecución}
-\label{sec:eca_ejecucion}
-
-Para ejecutar un motor de reglas del tipo \gls{eca}, se debe tener en cuenta
-principalmente dos factores, 
-\begin{enumerate*}[label=\itshape\alph*\upshape)]
-\item  Cómo se verifica el cumplimiento de cada regla, y, 
-\item  Qué ocurre cuando varias reglas son lanzadas al mismo tiempo
-\end{enumerate*}.
-
-Para ambos casos se puede tomar un enfoque \emph{inmediato}, es decir que
-inmediatamente cuando se lanza un evento, o se cumple una condición, se ejecuta
-la regla. Además existen otros dos modos de ejecución, \emph{diferido}, y
-\emph{desacoplado}, en el primero, se espera hasta que el lanzador del evento
-culmine su trabajo, y luego se ejecuta la regla, pero en la misma unidad de
-trabajo, mientras que en la ejecución desacoplada, se encolan los trabajos y
-otro hilo es el encargado de ejecutar las reglas. Estos modos están inspirados
-en las bases de datos relacionales, el modo diferido se ejecuta en la misma
-transacción, y el desacoplado, inmediatamente después de que la transacción
-termine\cite{bailey2004event}.
+%\subsubsection{Modelo de ejecución}
+%\label{sec:eca_ejecucion}
+%
+%Para ejecutar un motor de reglas del tipo \gls{eca}, se deben tener en cuenta
+%dos factores, 
+%\begin{enumerate*}[label=\itshape\alph*\upshape)]
+%\item  Cómo se verifica el cumplimiento de cada regla, y, 
+%\item  Qué ocurre cuando varias reglas son lanzadas al mismo tiempo
+%\end{enumerate*}.
+%
+%Para ambos casos se puede tomar un enfoque \emph{inmediato}, es decir que
+%inmediatamente cuando se lanza un evento, o se cumple una condición, se ejecuta
+%la regla. Además existen otros dos modos de ejecución, \emph{diferido}, y
+%\emph{desacoplado}, en el primero, se espera hasta que el lanzador del evento
+%culmine su trabajo, y luego se ejecuta la regla, pero en la misma unidad de
+%trabajo, mientras que en la ejecución desacoplada, se encolan los trabajos y
+%otro hilo es el encargado de ejecutar las reglas. Estos modos están inspirados
+%en las bases de datos relacionales, el modo diferido se ejecuta en la misma
+%transacción, y el desacoplado, inmediatamente después de que la transacción
+%termine\cite{bailey2004event}.
+%
+%El modo inmediato es ideal para la evaluación de un juego serio, 
+%pues permite un acceso completo al contexto.
