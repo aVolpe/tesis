@@ -9,10 +9,10 @@
 \usepackage{rotating}
 \usepackage{bm}
 \usepackage{url}
-
+   
 \usepackage{graphicx}
 \usepackage{multicol}
-
+\usepackage{tabulary}
 %\usepackage{times}
 %\usepackage{helvet}
 %\usepackage{bookman}
@@ -66,7 +66,8 @@
 \setlength{\parskip}{0pt}%
 \setlength{\parsep}{0pt}%
 }
-
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\setlength{\leftmargini}{1em}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Begin of Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,6 +111,7 @@
 }
 
 \hyphenation{resolution occlusions}
+
 %%
 \begin{poster}%
   % Poster Options
@@ -132,7 +134,7 @@
   % Format of text header
   eyecatcher=true,
   headerborder=closed,
-  headerheight=0.1\textheight,
+  headerheight=0.12\textheight,
 %  textfont=\sc, An example of changing the text font
   headershape=roundedright,
   headershade=shadelr,
@@ -144,14 +146,14 @@
   linewidth=2pt
   }
   % Eye Catcher
-  {\includegraphics[height=5em]{imagenes/logouna.png}} 
+  {\includegraphics[height=7em]{imagenes/logouna.png}} 
   % Title
   {\bf\textsc{Juegos serios como apoyo a la formación de profesionales: Una aplicación al área de enfermería}\vspace{0.5em}}
   % Authors
   {\textsc{ Mirta González y Arturo Volpe }}
   % University logo
   {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
-    \includegraphics[height=9.0em]{imagenes/logopol.png}
+    \includegraphics[height=9em]{imagenes/logopol.png}
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,89 +169,142 @@
     %
     % A coloured circle useful as a bullet with an adjustably strong filling
     \newcommand{\colouredcircle}{%
-      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=lightblue,line width=0.03em] (0,0) circle(0.18em);}}
+      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em);
+          \draw[draw=black,fill=lightblue,line width=0.03em] (0,0) circle(0.18em);}\-\ }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{Introducción}{name=introduccion,column=0,row=0}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  	El rol de las Tecnologías de la Información y la Comunicación (TIC's) en la 		educación es, tradicionalmente, un mecanismo más para transmitir el 
-  	conocimiento del maestro al alumno, reemplazando libros y presentaciones\cite{laptop:instructionism}. Actualmente las nuevas corrientes pedagógicas 
-  	requieren que el rol de las tecnologías en la educación sea más activo dentro  
-  	del proceso de aprendizaje, ayudando incluso al alumno en la construcción del  
-  	conocimiento.
-
-	Este trabajo se centra en los juegos serios, que se definen como videojuegos 
+    El rol de las Tecnologías de la Información y la Comunicación (TIC's) en la
+    educación es, tradicionalmente, un mecanismo más para transmitir el
+    conocimiento del maestro al alumno. Actualmente las nuevas corrientes
+    pedagógicas requieren que su rol en la educación sea más activo dentro  del
+    proceso de aprendizaje, ayudando incluso al alumno en la construcción del
+    conocimiento. 
+  	
+  	Este trabajo se centra en los juegos serios, que se definen como videojuegos 
 	que tienen un objetivo pedagógico específico, sin descuidar los aspectos  
-	lúdicos ni la implicación del usuario\cite{sg:aoverview,ludus:sg,abt1987serious}.
+	lúdicos ni el involucramiento del usuario\cite{abt1987serious}.
    \vspace{0.3em}
  }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Objetivo General}{name=objetivo,column=0,below=introduccion}{
+  \headerbox{Objetivo General}{name=objetivo,column=0,below=introduccion}{%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   Identificar y valorar los factores pedagógicos, de diseño, de implementación y 
-   de evaluación que influyen a la creación de herramientas educativas que utilizan 
-   las corrientes pedagógicas actuales apoyadas en las TIC's. 
+   Identificar y valorar los factores pedagógicos, de diseño, de implementación
+   y de evaluación que influyen a la creación de herramientas educativas que
+   utilizan las corrientes pedagógicas actuales apoyadas en las TIC's,
+   especialmente los juegos serios. 
 
    \vspace{0.3em}
   }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Problema}{name=problema,column=0,below=objetivo}{
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Este trabajo se centra en las problemáticas referentes al área de
-enfermería proponiendo una solución basada en las TIC's. Se considera como
-campo de estudio al Instituto Doctor Andrés Barbero, cuyos estudiantes del último año de la carrera de Licenciatura en Enfermería son tomados como población objetivo.
 
-Uno de los principales inconvenientes de los estudiantes es la poca
-disponibilidad de tiempo que poseen\cite{iab:tesis_alumnos}, la difícil 
-personalización de la enseñanza en las prácticas\cite{iab:tesis_alumnos} y el nerviosismo ante las primeras prácticas.
 
-Según~\cite{humphreys2013developing} los alumnos de enfermería son estudiantes
-divergentes, es decir aprenden a través de experimentación activa, e
-interiorizan el conocimiento reflexionando sobre la experiencia. Los juegos
-serios son una herramienta ideal para este tipo de
-estudiantes\cite{humphreys2013developing}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Motivación}{name=problema,column=0,below=objetivo}{%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %Este trabajo se centra en las problemáticas referentes al área de
+%enfermería proponiendo una solución basada en las TIC's. Se considera como
+%campo de estudio al Instituto Doctor Andrés Barbero, cuyos estudiantes del %último año de la carrera de Licenciatura en Enfermería son tomados como %población objetivo.
+\begin{itemize}
+\item Los estudiantes de enfermería poseen poca disponibilidad de tiempo para
+    actividades extras debido al tiempo que dedican a las prácticas, a las
+    clases teóricas y al transporte\cite{iab:tesis_alumnos}.
+\item La personalización de la enseñanza es difícil debido a la gran cantidad de
+    alumnos\cite{iab:tesis_alumnos}.
+\item Los estudiantes de enfermería aprenden a través de la experimentación
+    activa y reflexionando sobre su experiencia, los juegos serios son una
+    herramienta ideal para este tipo de
+    estudiantes\cite{humphreys2013developing}.
+%\item La mayoría los juegos serios ofrecen una experiencia muy guiada, %dificultando el desarrollo del pensamiento crítico y la toma 
+%de decisiones.
+
+\end{itemize}
+
+%Uno de los principales inconvenientes de los estudiantes es la poca
+%disponibilidad de tiempo que poseen\cite{iab:tesis_alumnos}, la difícil 
+%personalización de la enseñanza en las prácticas\cite{iab:tesis_alumnos} y el %nerviosismo ante las primeras prácticas.
+
+%Según~\cite{humphreys2013developing} los alumnos de enfermería son estudiantes
+%divergentes, es decir aprenden a través de experimentación activa, e
+%interiorizan el conocimiento reflexionando sobre la experiencia. Los juegos
+%serios son una herramienta ideal para este tipo de
+%estudiantes\cite{humphreys2013developing}. 
  \vspace{0.3em}
   }
+    
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Referencias}{name=referencias,column=0,below=problema}{
+  \headerbox{Conclusiones}{name=conclusiones,column=0,below=problema, above=bottom}{%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \smaller
-    %\printbibliography{}
-    \bibliographystyle{plain} % Plain referencing style
-    \renewcommand{\refname}{}
-    \bibliography{../bibliography} % Use the example bibliography file sample.bib
+\begin{itemize}
+%\item La solución es válida como herramienta educativa de apoyo a los
+    %estudiantes de enfermería, dándoles la posibilidad de probar sus
+    %conocimientos en cualquier lugar y momento.
+
+%\item  No se considera que se aprenda mejor con respecto otros métodos, sino
+    %que, ya sea por motivación, interés o curiosidad,
+    %puede ayudar en el proceso de enseñanza-aprendizaje dándole un rol más
+    %activo a las TIC's. 
+
+%\item Los datos muestran una mejoría del $10\%$ entre los alumnos que utilizaron
+%    y los que no utilizaron la solución. 
+    
+%\item Las correlaciones indican que los usuarios que más tiempo dedicaron a la solución,
+%    mejor rendimiento obtuvieron en los procedimientos. Además aquellos
+%    que mejor puntaje alcanzaron en la solución, mejor nota obtuvieron en la prueba
+%    de conocimiento.
+    
+\item La solución obtuvo una aceptación positiva en todos los factores estudiados.
+\item Los usuarios que utilizaron más tiempo la solución obtuvieron mejores puntuaciones 
+en el juego.
+\item Los usuarios con mejor puntuación en el juego obtuvieron mejor nota en la 
+prueba de conocimiento.
+\item Los estudiantes consideraron a la solución como una herramienta útil para 
+el apoyo de sus clases teóricas, prácticas de laboratorio y prácticas de campo.
+\item La utilización de la solución se dio mayormente en horarios extracurriculares, 
+acentuándose así la importancia de la movilidad proveída.
+
+\end{itemize}
+    \vspace{0.3em}
   }
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Solución propuesta}{name=solucion,column=1,span=2,row=0}{
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Solución propuesta}{name=solucion,column=1,span=2,row=0}{%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Se diseña y desarrolla un Juego Serio para dispositivos móviles llamado
 \textit{eTesai}, el cual ofrece a los estudiantes de enfermería un medio para
-realizar procedimientos de enfermería y cuyo objetivo es servir como 		herramienta de apoyo al aprendizaje. En la figura se observa los componentes 
-de la solución, y las herramientas utilizadas para su desarrollo.
+realizar procedimientos de enfermería y cuyo objetivo es servir como herramienta
+de apoyo al aprendizaje. En la figura se observa los componentes de la solución,
+y las herramientas utilizadas para su desarrollo.
 
 \begin{center}
-	\includegraphics[scale=0.32]{../resumen/images/full.png}
+	\includegraphics[scale=0.3]{../resumen/images/full.png}
 \end{center}
 
 \begin{multicols}{2}
     \begin{itemize}
-    \item \textbf{Front-end:} es una aplicación \textit{Android}, la cual es utilizada por los estudiantes de enfermería para realizar procedimientos 
-    de enfermería. Las escenas presentadas corresponden a los siguientes 
-    procedimientos:
- 
-   \textbf{Extracción de muestras de sangre}
-  
-  	El objetivo principal de este procedimiento es extraer muestras de la sangre 
-  	del paciente para su análisis en un laboratorio.
+
+    \item \textbf{Front-end:} es una aplicación \textit{Android}, la cual es
+        utilizada por los estudiantes para realizar procedimientos
+        de enfermería. 
+        
+        Las escenas presentadas corresponden a los siguientes
+        procedimientos:
+        
+        \begin{itemize}
+        
+        \item \textbf{Venopunción}
+      
+        El objetivo principal de este procedimiento es extraer muestras de la sangre 
+        del paciente para su análisis en un laboratorio.
     	\begin{center}
     		\includegraphics[width=4cm]{../solucion/images/hemocultivo_gui.jpg}
     	\end{center}
 		
-	\textbf{Valoración de la escala de Glasgow}
+        \item \textbf{Valoración de la escala de Glasgow}
 	
 		El objetivo principal de esta escena es diagnosticar el estado de 
 		conciencia de un paciente en estado crítico, utilizando la escala 
@@ -257,8 +312,11 @@ de la solución, y las herramientas utilizadas para su desarrollo.
 		\begin{center}
 		\includegraphics[width=4cm]{../solucion/images/glasgow_comandos_voz.jpg}
 		\end{center}
-		
-    \item \textbf{Back-end:} los registros de uso del \textit{front-end} son almacenados bajo demanda en un servidor \textit{back-end}, el cual se encarga de asociar los registros con los alumnos y almacenarlos de manera persistente.
+		\end{itemize}
+    \item \textbf{Back-end:} los registros de uso del \textit{front-end} son
+        almacenados bajo demanda en un servidor \textit{back-end}, el cual se
+        encarga de asociar los registros con los alumnos y almacenarlos de
+        manera persistente.
     \end{itemize}
 \end{multicols}
 
@@ -269,20 +327,34 @@ de la solución, y las herramientas utilizadas para su desarrollo.
   \headerbox{Resultados obtenidos}{name=resultados,column=1, span=2, row=0,below=solucion}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{multicols}{2}
+\textbf{Metodología utilizada}
+\begin{center}
+\scriptsize 
+\begin{tabular}{ll}
+\toprule
+\textbf{Variables}        & Aceptación, uso y conocimiento\\
+\midrule
+\textbf{Participantes}    & \shortstack{Alumnos del 4to año de Enfermería \\del Instituto Dr. Andrés Barbero}\\
+\midrule
+\textbf{Fases y duración} & \tabitem Instalación de la aplicación. \textbf{2 min} \\
+					      & \tabitem Explicación de la GUI. \textbf{10 min} \\
+					      & \tabitem Utilización de la aplicación. \textbf{20 días}\\
+					      & \tabitem Encuesta de apreciación. \textbf{20 min} \\
+					      & \tabitem Encuesta sobre conocimiento. \textbf{20 min} \\
+					      & \tabitem Recopilación de datos  \\
 
-\begin{itemize}
-\item \textbf{Aceptación de la solución}
 
-Los niveles de aceptación de la muestra fueron obtenidos a través de 
-una encuesta compuesta por 27 preguntas cerradas de tipo Likert y 
-4 preguntas abiertas.
+\bottomrule
+\end{tabular}
+\end{center}
 
+\textbf{Encuesta de apreciación}
 \begin{center}
 
 \scriptsize 
 \begin{tabular}{lc}
 \toprule
-Factores        & Promedio encuesta  \\
+Factores                 & Promedio encuesta  \\
 \midrule
 Motivación               & De acuerdo    			\\
 Facilidad de exploración & De acuerdo               \\
@@ -316,34 +388,47 @@ Utilidad                 & De acuerdo               \\
 %                        fill=blue!20](6.7,6.8,6.3,6.7,5.3,6.0,6.9)
 %     \tkzKiviatGrad[prefix={$0,$},unity=1](1) 
 % \end{tikzpicture}
+  
  \end{center}
- 
- \item \textbf{Comparación de conocimientos}
-	
-	Los datos fueron obtenidos en base a un examen realizado a los 
-	que formaron parte de la población objetivo, estos exámenes 
-	constaban de 5 preguntas sobre extracción de sangre y 5 preguntas 
-	sobre la valoración con la escala de Glasgow.	
-	
-	\begin{center}
+
+\textbf{Encuesta de conocimiento}
+\begin{center}
 		\scriptsize 
 		\begin{tabular}{lr}
 			\toprule
-			Promedio muestra & \textbf{3.82} \\
-			Promedio grupo control  & \textbf{3.47} \\
+			Puntaje promedio de la muestra    & \textbf{3.82} \\
+			Puntaje promedio de grupo control & \textbf{3.47} \\
 			\midrule
-			Promedio total    & \textbf{3.49} \\
+			Promedio total                    & \textbf{3.49} \\
 			\bottomrule
 		\end{tabular}
 	\end{center}
  
- 
- \item \textbf{Correlaciones}
- 
- 	Las correlaciones se realizaron con datos obtenidos en exámenes tomados a la muestra después de su interacción con la solución y de los registros de actividades de usuario.
 	
-	\begin{center}
+\textbf{Uso de la solución}
+\begin{center}
+    \scriptsize
+\begin{tabular}{lr}
+\toprule
+Partidas                         & 99 \\
+Periodo de uso                 & 04/11/2014 \\
+Última partida                   & 23/11/2014 \\
+\midrule
+Tiempo total       & 11.134 s \\
+Promedio de tiempo por partida   & 112 s
+\\\midrule
+Acciones           & 2.944 \\
+Promedio de acciones por partida & 30
+\\\midrule
+Usuarios           & 8 \\
+Promedio de partidas por usuario & 12
+\\\bottomrule
+\end{tabular}                                                      
+\end{center}
 
+\textbf{Correlación: utilización y conocimiento}
+	\begin{center}
+	
 	\scriptsize 
 	\begin{itemize}
 		\item \textbf{Puntaje máx juego \textit{Extracción de Sangre} y promedio 
@@ -362,10 +447,6 @@ Utilidad                 & De acuerdo               \\
 	\end{itemize}
 		
 	\end{center}
-	
-	
-\end{itemize}
-
 
 \end{multicols}
    \vspace{0.3em}
@@ -382,13 +463,18 @@ Utilidad                 & De acuerdo               \\
   %	hola
   %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Conclusiones}{name=questions,column=1,span=2,below=resultados,above=bottom}{
+  \headerbox{Referencias}{name=referencias,column=1,span=2,below=resultados,above=bottom}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   La solución es válida como herramienta educativa de apoyo a los 
-   estudiantes de enfermería, dándoles la posibilidad de probar sus conocimientos en cualquier 
-   lugar y momento. No se considera que se aprenda mejor con respecto otros métodos, sino que, 
-   ya sea por motivación, interés, curiosidad o los aspectos lúdicos, puede ayudar en el
-   proceso de enseñanza-aprendizaje dándole un rol más activo a las TIC's en este ámbito. 
+%   La solución es válida como herramienta educativa de apoyo a los 
+%   estudiantes de enfermería, dándoles la posibilidad de probar sus conocimientos en cualquier 
+%   lugar y momento. No se considera que se aprenda mejor con respecto otros métodos, sino que, 
+%   ya sea por motivación, interés, curiosidad o los aspectos lúdicos, puede ayudar en el
+%   proceso de enseñanza-aprendizaje dándole un rol más activo a las TIC's en este ámbito. 
+\smaller
+    %\printbibliography{}
+    \bibliographystyle{plain} % Plain referencing style
+    \renewcommand{\refname}{}
+    \bibliography{../bibliography} % Use the example bibliography file sample.bib
    \vspace{0.3em}
   }
 
