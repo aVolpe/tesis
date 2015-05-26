@@ -1,6 +1,5 @@
 % This is the outer theme file of the AAU simple theme.
-% Copyright (c) 2014 by Jesper Kjær Nielsen <jkn@es.aau.dk>
-%
+% Copyright (c) 2014 by Jesper Kjær Nielsen <jkn@es.aau.dk> %
 % This program is free software: you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
@@ -50,12 +49,14 @@
 \setlength{\beamer@borderwidth}{2mm}
 % inner radius of border of the logo frame
 \newlength{\beamer@logoinnerradius}
-\setlength{\beamer@logoinnerradius}{1.1\beamer@logoradius}
+\setlength{\beamer@logoinnerradius}{.8\beamer@logoradius}
 % radius of the outer border of the logo frame
 \newlength{\beamer@logoouterradius}
+%\setlength{\beamer@logoouterradius}{\beamer@logoinnerradius}
 \setlength{\beamer@logoouterradius}{\beamer@logoinnerradius+\beamer@borderwidth}
 % radius of the counters
 \newlength{\beamer@counterradius}
+%\setlength{\beamer@counterradius}{.9\beamer@logoinnerradius}
 \setlength{\beamer@counterradius}{\beamer@logoinnerradius/2+\beamer@logoouterradius/2}
 % the progress
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,7 +114,8 @@
   \begin{tikzpicture}[overlay]
     \coordinate (UL) at (0,0); %upper left corner of the slide
     \coordinate (HLR) at (\paperwidth,-\beamer@height); %lower right of the header
-    \coordinate (logopos) at ([shift={(-\beamer@logoouterradius-\beamer@borderwidth,\beamer@height-\beamer@logoouterradius-0.5\beamer@borderwidth)}] HLR);%coordinate of the logo
+    %\coordinate (logopos) at ([shift={(-\beamer@logoouterradius-\beamer@borderwidth,-\beamer@height-\beamer@logoouterradius-0.5\beamer@borderwidth)}] HLR);%coordinate of the logo
+    \coordinate (logopos) at ([shift={(-\beamer@logoouterradius-\beamer@borderwidth,\beamer@height-27)}] HLR);%coordinate of the logo
     %draw the background of the header, the circle and the logo
     {\usebeamercolor{AAUsimple}%
       \usebeamercolor{normal text}%
@@ -121,11 +123,15 @@
       \draw[draw=none,fill=AAUsimple.bg] (UL) rectangle (HLR);
       % draw the outer circle
       \fill[fill=AAUsimple.fg] (logopos) circle (\beamer@logoouterradius);
+      %\draw[fill=AAUsimple.fg] (logopos) ellipse (.7cm and .9cm);
       % draw the inner circle
       \fill[fill=normal text.bg] (logopos) circle (\beamer@logoinnerradius);
+      %\fill[fill=normal text.bg] (logopos) ellipse (.69cm and .89cm);
       % place the logo
       %\node at (logopos) {\includegraphics[width=1.8\beamer@logoradius]{AAUgraphics/aau_logo_new_circle}};
-      \node at (logopos) {\includegraphics[width=1.45\beamer@logoradius]{../util/logo.png}};
+      %\node at (logopos) {\pgfuseimage{logoperpage}}};
+      \node at (logopos)
+      {\includegraphics[width=1.10\beamer@logoradius]{../util/logo.pdf}};
 
       %% draw progress circle/bar
       \ifx\beamer@progressstyle\beamer@progressfixedCircCnt% the circular counter with a fixed counter

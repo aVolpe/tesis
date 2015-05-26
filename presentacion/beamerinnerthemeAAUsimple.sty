@@ -32,6 +32,8 @@
     \begin{minipage}[c][\textheight][c]{\textwidth}
       \vfill
       \centering
+      {\inserttitlegraphic}\vspace*{\baselineskip}
+
       {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle}
 
       {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle}\vspace*{\baselineskip}
@@ -44,7 +46,6 @@
         {\usebeamerfont{institute}\insertinstitute}
       \end{beamercolorbox}\vspace*{\baselineskip}
       
-      {\inserttitlegraphic}\vspace*{\baselineskip}
     \end{minipage}
   }
   
@@ -53,12 +54,13 @@
   \defbeamertemplate{final page}{text}[1]{%
     \begin{minipage}[c][\textheight][c]{\textwidth}
       \centering
-      \vfill
+      {\inserttitlegraphic}
+      \vspace*{\baselineskip}
+      \vspace*{\baselineskip}
       \begin{beamercolorbox}[wd=\textwidth,center,sep=2\baselineskip]{frametitle}
           #1
       \end{beamercolorbox}
       \vfill
-      {\inserttitlegraphic}\vspace*{\baselineskip}
     \end{minipage}
   }
   \newcommand{\finalpage}[1]{%
