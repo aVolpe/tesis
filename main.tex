@@ -41,10 +41,10 @@
 \newcommand{\removed}[1]{\uline{#1}}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
-\usetikzlibrary{shapes,arrows,shadows,backgrounds}
-\pgfdeclarelayer{foreground}
 \pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
+\usetikzlibrary{shapes,arrows,shadows}
 
 % PACKAGE titlesec
 \setcounter{secnumdepth}{4}
