@@ -1,4 +1,4 @@
-\section{Backend de la solución}
+\section{Back-end}
 
 La solución almacena información detallada acerca de las acciones del usuario,
 las condiciones de estas acciones y el contexto en el cual fueron ejecutadas.
@@ -8,42 +8,46 @@ análisis.
 
 \subsection{Registro de usuarios}
 
-\observacion{Una vez que definen lo que son los registros pueden referirse como
-registros}
+%\observacion{Una vez que definen lo que son los registros pueden referirse como
+%registros}
 
-Para poder determinar a qué usuario corresponde qué conjunto de datos, durante
+Para determinar a qué usuario corresponde qué conjunto de datos, durante
 la instalación de la solución en los dispositivos móviles de los usuarios, se
 ingresa como un dato adicional el número de teléfono del mismo, estos datos se
-registran en el \textit{BackEnd} al mismo tiempo en el que se muestra la
+registran en el \textit{back-end} en el mismo momento en el que se muestra la
 solución al usuario.
 
 De esta forma, en el sistema se encuentran los datos proveídos por la
-simulación, así como el nombre del usuario. Es necesario almacenar el nombre del
+simulación, así como el nombre del usuario y su número de teléfono. Es necesario 
+almacenar el nombre del
 usuario para las diversas encuestas que se realizan (las encuestas para alumnos
 que participaron en la prueba no son anónimas), de esta manera se puede saber,
 dada una encuesta, a que alumno corresponde y el uso que le dio a la solución.
-Estas encuestas son explicadas en detalle en~\ref{chap:evaluacion} y sus
-resultados en~\ref{chap:analisis}.
+Estas encuestas y sus resultados son detallados en~\ref{chap:evaluacion}.
 
 \subsection{Registro de eventos}
 \label{sec:backend_reg_eventos}
 
-Las acciones que realiza el usuario son almacenadas en un archivo temporal,
+Las acciones que realiza el usuario en la solución son almacenadas en un archivo temporal,
 dentro del dispositivo móvil del usuario, cuando este decide enviar la
-información, estos datos se transmiten por la red a un servidor que almacena el
-\textit{BackEnd}.
+información, estos datos se transmiten por la red a un servidor \textit{back-end} que los 
+almacena.
 
 Una vez que el usuario envía sus datos de uso, el archivo de registros local se
 limpia, permitiendo así que nuevos registros sean añadidos. Adicionalmente,
 existe un archivo de respaldo, que contiene toda la información que se registró
 del usuario, incluyendo aquellas que ya fueron enviadas al servidor
-\textit{BackEnd}.
+\textit{back-end}.
+
+El registro de eventos permite reproducir las partidas de los usuarios, permitiendo 
+analizar por ejemplo cuáles fueron los mayores inconvenientes, y cuál fue el desempeño 
+del usuario en cada partida.
 
 \subsection{Detalles de implementación}
 
-El \textit{BackEnd} es un sistema web, desarrollado en \textit{Java}, y
-\fixme{desplegado}{Language} en un servicio \textit{OpenShift}, el cual está
-disponible $24$ horas al día, los $7$ días a la semana, asegurando así, que
+El \textit{back-end} es un sistema web, desarrollado en el lenguaje de programación \textit{Java}, y
+desplegado en un servicio \textit{OpenShift}, el cual está
+disponible $24$ horas al día, los $7$ días de la semana, asegurando así, que
 cuando el usuario desee enviar datos lo pueda hacer sin problemas.
 
 El sistema tiene dos servicios web que permiten el registro de usuarios y el
@@ -64,9 +68,9 @@ Las tablas~\ref{tab:glasgow_registro} y~\ref{tab:hemocultivo_registro} muestran
 como la información almacenada puede ser utilizada para evaluar las acciones de
 un usuario.
 
-Por ejemplo, se puede analizar cuantas veces los usuarios activaron el menú
-\enquote{Acciones de voz}, y de estas, cuantas veces lo utilizaron, para así
-poder comprobar la hipótesis \enquote{Comandos de voz}
+Por ejemplo, se puede analizar cuantas veces los usuarios activaron el 
+\enquote{menú de comandos de voz}, y de estas, cuantas veces lo utilizaron, para así
+poder comprobar la hipótesis \enquote{Interacción a través de la voz}
 (ver~\ref{sec:hipotesis}), esta información es útil además para medir el
 nivel de sensibilidad necesaria para activar el menú.
 
@@ -83,8 +87,8 @@ registro de manera implícita, como:
 \end{itemize}
 
 Adicionalmente, al realizar una encuesta sobre los conocimientos de los alumnos
-al finalizar el periodo de prueba, se pueden utilizar los registros para
-verificar si las respuestas dadas en la encuesta corresponden a la utilización
+al finalizar el período de prueba de la solución, se pueden utilizar los registros para
+verificar si las respuestas dadas en la encuesta corresponden con la utilización
 de la solución.
 
 El registro de actividad es la herramienta utilizada para realizar la evaluación
