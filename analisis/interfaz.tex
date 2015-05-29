@@ -1,6 +1,6 @@
 %! TEX root = ../main.tex
 
-\section{Interfaz de usuario}
+\section{Prueba preliminar de usabilidad}
 \label{sec:interfaz}
 
 Durante el desarrollo de la solución se realizó una prueba para evaluar la 
@@ -17,29 +17,29 @@ de datos para su posterior análisis. Estas partes son las siguientes:
 
 \begin{description}
 
-\item[Simulación:] Luego de una explicación acerca de las funciones y manejos
+\item[Simulación:] luego de una explicación acerca de las funciones y manejos
     generales de la solución por parte de los encargados de la prueba, cada usuario
-    completa una tarea que consiste en realizar el procedimiento de extracción de 
-    muestra de sangre, como ayuda, recibe una hoja con una lista de todos los pasos 
-    necesarios para llevar a cabo el procedimiento utilizando la solución.
+    completa una tarea que consiste en realizar el procedimiento de venopunción con la 
+    solución, como ayuda, recibe una hoja con una lista de todos los pasos 
+    necesarios para llevar a cabo el procedimiento.
     	
-    Las simulaciones son grabadas mediante programas de captura de pantalla, así
+    Las simulaciones son grabadas con programas de captura de pantalla, así
     como por detectores de eventos táctiles.
     	
-\item[Encuesta:] Posteriormente se le provee una encuesta a cada
-    usuario la cuál es utilizada para obtener una idea general acerca de la
-    calidad de la simulación según la percepción de los mismos. Esta encuesta 
+\item[Encuesta:] posteriormente se le provee una encuesta a cada
+    usuario la cual es utilizada para obtener una idea general acerca de la
+    calidad de la simulación según la percepción de los usuarios. Esta encuesta 
     contiene preguntas que son medidas mediante la escala de tipo Likert. 
 
 \end{description} 
 
 \subsection{Muestra}
 
-La prueba de interfaz de usuario se realiza con alumnos de la carrera de
+La prueba de usabilidad de la interfaz de usuario se realiza con alumnos de la carrera de
 Ingeniería en Informática de la \Gls{fpuna}, sin experiencia previa tanto con la
 solución como con los procedimientos simulados, pero sí familiarizados con la
 utilización de dispositivos móviles. La muestra no requiere de sujetos que sean
-parte del \emph{Universo}\revisar{Unificar término y formato} ya que sólo está
+parte del \emph{población objetivo} ya que sólo está
 orientada a mejorar aspectos de interfaz de usuario y no el contenido de la
 solución, además se considera que la muestra puede brindar una evaluación más
 crítica debido a su familiarización con interfaces similares a la de la
@@ -50,24 +50,24 @@ necesarios al menos $5$ participantes para poder obtener resultados
 significativos en una prueba de usabilidad. Además,~\cite{ritch2009} asegura que
 la teoría de~\cite{nielsen2000} es verdadera especialmente para pruebas simples. 
 
-Se fundamenta el número de participantes, y que es una prueba sencilla, por que:
+Se fundamenta el número de participantes, y que es una prueba sencilla, ya que:
 
 \begin{itemize}
 
-\item La prueba que se está ejecutando es sencilla ya no debería tomar más de $10$
-    minutos.
+\item La prueba no debería tomar más de $10$ minutos en ser realizada.
 
 \item Se busca solamente obtener información acerca de la interfaz, y no el
     funcionamiento en sí de la simulación, pues los usuarios no son expertos en
     el área y no tienen conocimiento acerca las tareas.
 
-\item No se busca medir el aprendizaje del usuario en temas no relacionados a la
-    interfaz, es decir, no se mide el aprendizaje del usuario en el tema
-    simulado\revisar{No se entiende, no se mide el aspecto pedagógico solo la
-    interfaz gráfica de la simulación}.
+\item No se busca evaluar el aspecto pedagógico de la solución sino sólo su interfaz gráfica.
+%\item No se busca medir el aprendizaje del usuario en temas no relacionados a la
+%    interfaz, es decir, no se mide el aprendizaje del usuario en el tema
+%    simulado\revisar{No se entiende, no se mide el aspecto pedagógico solo la
+%    interfaz gráfica de la simulación}.
 
-\item El procedimiento esta bien definido y los pasos necesarios están a
-    disposición del usuario en todo momento.
+\item El procedimiento de enfermería a realizarse con la solución está bien definido 
+y los pasos necesarios están a disposición del usuario en todo momento.
 
 \end{itemize}
 
@@ -78,49 +78,57 @@ Antes de definir las variables, se deben primero definir los conceptos
 relacionados a los tipos de acciones que pueden realizarse sobre el paciente 
 virtual en la solución, los mismos son:
 
-\observacion{Cual se encarga del diseño de la simulación?}
+%\observacion{Cual se encarga del diseño de la simulación?}
 \begin{itemize}
 \item \textbf{Acción por menú contextual:} se refiere a las acciones que el usuario 
-    puede realizar utilizando el menú contextual que aparece sobre cada una de las
-    herramientas disponibles en la solución.
+    puede realizar utilizando el menú contextual que aparece sobre cada uno de los elementos 
+    disponibles en la solución.
 \item \textbf{Acción por menú de la \Gls{gui}:} se refiere a las 
     acciones que el usuario puede realizar seleccionando una opción en los menús 
-    principales que presenta la interfaz.
-\item \textbf{Acción por herramienta:} se refiere a las actividades que el usuario 
-    puede realizar cuando tiene seleccionada una herramienta y que no involucre el 
+    principales que presenta la interfaz de la solución.
+\item \textbf{Acción con elemento:} se refiere a las actividades que el usuario 
+    puede realizar cuando tiene seleccionado un elemento y que no involucre el 
     uso del menú contextual.
 \end{itemize}
 
 
-Las variables medidas durante las simulaciones y realización de la tarea son las
+Las variables medidas durante la realización de la tarea con la solución son las
 siguientes:
 
-\observacion{No repetir tanto la descripción en el título}
+%\observacion{No repetir tanto la descripción en el título}
 
 \begin{itemize}
 
-\item \textbf{Tiempo de realización de la primera acción por menú contextual:} 
-    cuanto tiempo le toma al usuario realizar una acción por menú contextual la 
-    primera vez.
+\item \textbf{Tiempo de realización de la primera acción por tipo:} cuanto tiempo 
+	le toma al usuario realizar la primera vez una acción agrupado por tipo (por menú 
+	contextual, por menú de la \Gls{gui}, con elementos).
 
-\item \textbf{Tiempo de realización de la primera acción por \Gls{gui}:} cuanto 
-    tiempo le toma al usuario realizar una acción por menú de 
-    interfaz gráfica de usuario la primera vez.
-    
-\item \textbf{Tiempo de realización de la primera acción por herramienta:} cuanto 
-    tiempo le toma al usuario realizar una acción por herramienta la primera vez.
-    
-\item \textbf{Tiempo de realización de las siguientes acciones por menú contextual:} 
-    cuanto tiempo le toma al usuario realizar una acción por menú 
-    contextual las siguientes veces.
+%\item \textbf{Tiempo de realización de la primera acción por menú contextual:} 
+%    cuanto tiempo le toma al usuario realizar una acción por menú contextual la 
+%    primera vez.
+%
+%\item \textbf{Tiempo de realización de la primera acción por \Gls{gui}:} cuanto 
+%    tiempo le toma al usuario realizar una acción por menú de 
+%    interfaz gráfica de usuario la primera vez.
+%    
+%\item \textbf{Tiempo de realización de la primera acción por herramienta:} cuanto 
+%    tiempo le toma al usuario realizar una acción por herramienta la primera vez.
 
-\item \textbf{Tiempo de realización de las siguientes acciones por \Gls{gui}:} 
-    cuanto tiempo le toma al usuario realizar una acción 
-    por interfaz gráfica de usuario las siguientes veces.
-
-\item \textbf{Tiempo de realización de las siguientes acciones por herramienta:} 
-    cuanto tiempo le toma al usuario realizar una acción por herramienta 
-    las siguientes veces.
+\item \textbf{Tiempo de realización de las siguientes acciones por tipo:} cuanto tiempo 
+	le toma al usuario realizar las siguientes veces una acción agrupado por 
+	tipo (por menú contextual, por menú de la \Gls{gui}, con elementos).
+ 
+%\item \textbf{Tiempo de realización de las siguientes acciones por menú contextual:} 
+%    cuanto tiempo le toma al usuario realizar una acción por menú 
+%    contextual las siguientes veces.
+%
+%\item \textbf{Tiempo de realización de las siguientes acciones por \Gls{gui}:} 
+%    cuanto tiempo le toma al usuario realizar una acción 
+%    por interfaz gráfica de usuario las siguientes veces.
+%
+%\item \textbf{Tiempo de realización de las siguientes acciones por herramienta:} 
+%    cuanto tiempo le toma al usuario realizar una acción por herramienta 
+%    las siguientes veces.
 
 \item \textbf{Tiempo total:} se refiere al tiempo empleado por el usuario para 
     completar la tarea asignada.
@@ -130,9 +138,9 @@ siguientes:
 
 \item \textbf{Cantidad de movimientos espaciales por tipo:} número de veces en que se 
     modifica el estado de la cámara para realizar las acciones deseadas agrupados por 
-    tipo (desplazamiento, acercamiento/desplazamiento).
+    tipo (desplazamiento, acercamiento/alejamiento).
 
-    \observacion{Esto donde entra?}
+%    \observacion{Esto donde entra?}
 
 \end{itemize}
 
@@ -161,29 +169,37 @@ y medidas:
 
 \subsection{Métricas}
 
-Para el análisis de la encuesta realizada a los usuarios, se utiliza la escala
+Para la medición de las variables relacionadas a la encuesta,  se utiliza la escala
 de Likert con la \emph{Doble estandarización} explicada en la
-sección~\ref{sec:likert}, y en el análisis de la interacción del usuario con la
-solución se utilizan las grabaciones registradas durante la prueba.
+sección~\ref{sec:likert}. 
 
-Haciendo uso de las variables descriptas anteriormente, las métricas
-utilizadas son las siguientes:
+En cambio, para la medición de las variables relacionadas a la interacción del usuario con 
+la solución se utilizan las grabaciones registradas durante las pruebas y las
+las siguientes métricas:
+
+%Para el análisis de la encuesta realizada a los usuarios, se utiliza la escala
+%de Likert con la \emph{Doble estandarización} explicada en la
+%sección~\ref{sec:likert}, y en el análisis de la interacción del usuario con la
+%solución se utilizan las grabaciones registradas durante la prueba.
+%
+%Haciendo uso de las variables descriptas anteriormente, las métricas
+%utilizadas son las siguientes:
 
 \begin{itemize}
     
 \item \textbf{Tiempo promedio de realización de las siguientes acciones por menú contextual:} 
     se obtiene dividiendo la cantidad total de tiempo empleado en realizar acciones por menú 
-    contextual por el número de veces que se realizaron esas acciones, a excepción de la primera 
+    contextual por el número de veces que se realizaron esas acciones, sin considerar la primera 
     vez. 
     
 \item \textbf{Tiempo promedio de realización de las siguientes acciones por \Gls{gui}:} 
     se obtiene dividiendo la cantidad total de tiempo empleado en realizar acciones por \Gls{gui} 
-    por el número de veces que se realizaron esas acciones, a excepción de la primera 
+    por el número de veces que se realizaron esas acciones, sin considerar la primera 
     vez. 
     
 \item \textbf{Tiempo promedio de realización de las siguientes acciones por herramienta:} 
     se obtiene dividiendo la cantidad total de tiempo empleado en realizar acciones por 
-    herramienta por el número de veces que se realizaron esas acciones, a excepción de la 
+    herramienta por el número de veces que se realizaron esas acciones, sin considerar la 
     primera vez. 
     
 \item \textbf{Promedio de pasos correctos:} se obtiene dividiendo la cantidad de 
@@ -194,22 +210,28 @@ utilizadas son las siguientes:
     desplazamiento) por la cantidad de usuarios.
     
 \item \textbf{Promedio del tiempo total:} se obtiene dividiendo el tiempo total empleado 
-    por los usuario para completar la tarea asignada por el número de usuarios.
+    por los usuarios para completar la tarea asignada por el número de usuarios.
 
 \end{itemize}
 
-\subsection{Resultados de la simulación}
+\subsection{Resultados obtenidos}
+\label{sec:res_interfaz}
+
+A continuación de muestran y analizan los resultados obtenidos en la prueba. Los resultados 
+se dividen en \emph{simulación} y \emph{encuesta} para una mejor comprensión.
+
+\subsubsection{Simulación}
 
 Las grabaciones realizadas a las sesiones de los usuarios se utilizan para medir
 el grado de facilidad de aprendizaje de la interfaz de usuario.
 
-Dados los tres grupo descriptos en~\ref{sec:evaluacion_interfaz_variables}, la
-tabla~\ref{tab:interfaz_tiempo_acciones} \fixme{muestra}{tiempo} el tiempo, en segundos,
-que le tomo a cada usuario realizar cada una de las acciones la primera vez y
-el tiempo que les tomo en promedio las demás veces, para cada una de los grupos
+Dados los tres tipos de acciones descritos en~\ref{sec:evaluacion_interfaz_variables}, la
+tabla~\ref{tab:interfaz_tiempo_acciones} muestra el tiempo, en segundos,
+que le tomo a cada usuario realizar una acción la primera vez y 
+el tiempo que les tomo en promedio las demás veces, para cada uno de los tipos 
 de acciones.
 
-\observacion{Hacer énfasis en la comparación entre el primer y los siguientes}
+%\observacion{Hacer énfasis en la comparación entre el primer y los siguientes}
 
 \begin{table}[!hbt]
 \centering
@@ -235,40 +257,77 @@ de acciones.
 \label{tab:interfaz_tiempo_acciones}
 \end{table}
 
-En la tabla~\ref{tab:interfaz_tiempo_acciones} se observa consistentemente una
-\fixme{mejora}{En relación a qué?} en el tiempo de realización de una acción con
-respecto a la primera vez que es realizada. 
-
-\begin{figure}[hbt!]
-\centering
-\includegraphics[width=14cm]{resultados/imagenes/interfaz_tiempo_actividades.png}
-\caption{Tiempo por tipo de actividad}
-\label{fig:interfaz_tiempo_acciones}
-\end{figure}
+En la tabla~\ref{tab:interfaz_tiempo_acciones} se observa consistentemente una 
+mejora en el tiempo de realización de un tipo de acción con respecto a la primera vez 
+que es realizada. 
 
 En la figura~\ref{fig:interfaz_tiempo_acciones} se observa como en promedio el
 usuario aprende, y en las siguientes acciones similares demora menos tiempo,
 este es un factor importante y es el objetivo de esta prueba pues muestra que la
-interfaz es fácil de usar, y con tres movimientos básicos, el usuario puede
+interfaz es fácil de usar, y con tres tipos de acciones, el usuario puede
 utilizarla sin mayores inconvenientes. Se observa una mejoría del $30\%$ en las
-acciones \emph{Menú Contextual}, $21\%$ en las acciones de tipo \emph{Menú de la
-    Interfaz} y finalmente, una mejoría del $60\%$ en las acciones de tipo
-\emph{Herramienta}.
+\emph{Acciones por menú contextual}, $21\%$ en las \emph{Acciones por menú de la
+    \Gls{gui}} y finalmente, una mejoría del $60\%$ en las \emph{Acciones con elementos}.
 
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=14cm]{resultados/imagenes/interfaz_tiempo_actividades.png}
+%\caption{Tiempo por tipo de actividad}
+%\label{fig:interfaz_tiempo_acciones}
+%\end{figure}
 
-La tabla~\ref{tab:interfaz_cantidad_espaciales} nos muestra la cantidad de
+\begin{filecontents}{interfazuso.dat}
+n   p       s
+1	9.38	6.48
+2   5.88	4.64
+3   7.75	3.13
+\end{filecontents}
+\pgfplotstableread{interfazuso.dat}{\InterfazUso}
+
+\begin{figure}[H]
+    
+        \centering
+        \begin{tikzpicture}[scale=1]
+           \begin{axis}[ybar,%
+              legend pos=outer north east,
+              xmin=1,
+              xmax=3,
+              x=2.5cm,
+              enlarge x limits={abs=1cm},
+              xtick=data,
+              symbolic x coords={0,1,2,3,4},
+              ymin=0,ymax=10,
+              %ytick={0,2,4,6,8,10},
+              xticklabels={Contextual,Interfaz,Herramienta},
+              ylabel= Tiempo (s),
+              xlabel= Tipo de acción,
+              bar width=10pt,
+              %enlarge x limits={abs=2},
+                ]   
+        \addplot[color=blue,ybar,fill=blue!75,area legend] table [x = {n}, y = {p}] {\InterfazUso};
+        \addlegendentry{Primer}
+        \addplot[color=red,ybar,fill=red!75,area legend] table [x = {n}, y = {s}]
+        {\InterfazUso};
+        \addlegendentry[align=left]{Promedio \\ siguientes}
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Tiempo por tipo de acción}
+        \label{fig:interfaz_tiempo_acciones}
+\end{figure}
+
+En la tabla~\ref{tab:interfaz_cantidad_espaciales} se observa la cantidad de
 movimientos espaciales realizados por los usuarios, se observa que en promedio
 se desplazaron $10,88$ veces por el escenario, y $6,75$ veces acercaron o
 alejaron la cámara del paciente.
 
-\observacion{Hay que dejar bien en claro de donde sale esto, por que es
-importante entender el significado de esta diferencia}
+%\observacion{Hay que dejar bien en claro de donde sale esto, por que es
+%importante entender el significado de esta diferencia}
 
 \begin{table}[H]
 \centering
 \begin{tabular}{lrrr}
 \toprule
-\textbf{Jugador}  & \textbf{Movimiento} & \textbf{Zoom} & \textbf{Total} \\
+\textbf{Jugador}  & \textbf{Desplazamiento} & \textbf{Acercamiento/alejamiento} & \textbf{Total} \\
 \midrule
 1        & 18         & 2    & 20 \\
 2        & 7          & 8    & 15 \\
@@ -286,17 +345,17 @@ importante entender el significado de esta diferencia}
 \label{tab:interfaz_cantidad_espaciales}
 \end{table}
 
-No existe una cantidad mínima o máxima que el usuario debería acercar o mover la
-cámara, en cambio, los datos mostrados en~\ref{tab:interfaz_cantidad_espaciales},
-muestran que no son necesarias demasiadas acciones, juntando esta información,
-con la información proveída en la tabla~\ref{tab:interfaz_tiempo_total}, se ve
-que en promedio los usuarios realizaron $1,7$ movimientos por minuto.
+No existe una cantidad mínima o máxima de movimientos que el usuario debe realizar para acercar, 
+alejar o desplazar la cámara. Los datos mostrados en la tabla~\ref{tab:interfaz_cantidad_espaciales} 
+muestran que no son necesarias demasiados movimientos. Teniendo en cuenta esta información y la 
+proveída en la tabla~\ref{tab:interfaz_tiempo_total}, se concluye 
+que en promedio los usuarios realizan $1,7$ movimientos por minuto.
 
 \begin{table}[!hbt]
 \centering
 \begin{tabular}{lrrr}
 \toprule
-\textbf{Alumno} & \textbf{Tiempo} \\
+\textbf{Alumno} & \textbf{Tiempo (min)} \\
 \midrule
 1        & 8:32 \\
 2        & 6:03 \\
@@ -319,13 +378,17 @@ muestra que en promedio a cada alumno le tomo $7:41$ minutos realizar todos los
 pasos especificados, es importante notar que este tiempo incluye el tiempo de
 adaptación. 
 
+La tabla~\ref{tab:interfaz_acciones} nos muestra la cantidad de pasos
+realizados por los alumnos de un total de 19. Se observa que en promedio 
+realizaron $16.75$ pasos.
+%esto permite identificar en que parte del procedimiento los usuarios tienen
+%inconvenientes en cuanto al uso de la interfaz.
 
-
-\begin{table}[!hbt]
+\begin{table}[H]
 \centering
 \begin{tabular}{lrrr}
 \toprule
-\textbf{Alumno} & \textbf{Pasos requeridos} \\
+\textbf{Alumno} & \textbf{Pasos realizados (19)} \\
 \midrule
 1 & 19 \\
 2 & 15 \\
@@ -339,47 +402,40 @@ adaptación.
 \textbf{Promedio} & \textbf{16,75} \\
 \bottomrule
 \end{tabular}
-\caption{Acciones realizadas por usuario}
+\caption{Pasos realizados por alumno}
 \label{tab:interfaz_acciones}
 \end{table}
 
-La tabla~\ref{tab:interfaz_acciones} nos muestra la cantidad de acciones que
-realizaron los alumnos, junto con las acciones correctas para llevar a cabo el
-procedimiento. Se observa que en promedio realizaron $16.75$ acciones correctas,
-esto permite identificar en que parte de procedimiento los usuarios tienen
-inconvenientes en cuanto al uso de la interfaz.
 
-\subsection{Resultados de la encuesta}
-\label{sec:res_interfaz}
 
-\fixme{Como fue descripta en la sección~\ref{sec:interfaz} la encuesta es
-realizada a cada usuario}{Mejorar}, y es utilizada para obtener el grado de
-disconformidad de los mismos. Se utiliza la disconformidad para resaltar los
-puntos débiles, y así, aquellas variables que tengan el mayor porcentaje serán
-las que deben ser arregladas.
+\subsubsection{Encuesta}
 
-Las preguntas que forman parte de la  encuesta son agrupadas en cuanto a
-aspectos de calidad gráfica, interacción con el entorno, interacción con los
-objetos, características del entorno, usabilidad de la interfaz e integración
-con el hardware.
 
-Luego de estas agrupaciones obtenemos el resultado que se muestra en la
-tabla~\ref{tab:interfaz_disconformidad_metrica}. En esta tabla se puede observar
-que las mayores disconformidades son con respecto a la usabilidad de la interfaz
-que llega al $51\%$, la interacción de los usuarios con el entorno que llega al
-$50\%$, la interacción con los objetos que llega al $49\%$. Luego, se pueden
-observar también otras disconformidades con menor porcentaje, las
+La encuesta es utilizada para obtener el grado de
+disconformidad de los usuarios con respecto a la solución. Se utiliza la disconformidad 
+para resaltar los puntos débiles, así, aquellas variables que tengan el mayor porcentaje serán
+las que deban ser mejoradas.
+
+%Las preguntas que forman parte de la  encuesta son agrupadas en cuanto a
+%aspectos de calidad gráfica, interacción con el entorno, interacción con los
+%objetos, características del entorno, usabilidad de la interfaz e integración
+%con el hardware.
+
+En la tabla~\ref{tab:interfaz_disconformidad_metrica} se observan que las mayores 
+disconformidades son la usabilidad de la interfaz de usuario que llega al $51\%$, la 
+interacción de los usuarios con el entorno que llega al $50\%$ y la interacción con los 
+objetos que llega al $49\%$. Otras disconformidades con menor porcentaje son las
 características del entorno con un  $33\%$, la integración con el hardware con
-un  $27\%$ y por ultimo, la calidad gráfica con un  $17\%$.
+un $27\%$ y por último la calidad gráfica con un $17\%$.
 
-\observacion{Hay que explicar que estas pruebas se hicieron de forma previa a
-las demás y que se arreglan algunos casos}
+%\observacion{Hay que explicar que estas pruebas se hicieron de forma previa a
+%las demás y que se arreglan algunos casos}
 
 \begin{table}[H]
 \centering
 \begin{tabular}{lr}
 \toprule
-Métrica & Disconformidad \\
+Variable & Disconformidad (0-1)\\
 \midrule
 Calidad Gráfica         & 0.17 \\
 Interacción Entorno     & 0.50\\
@@ -389,20 +445,23 @@ Usabililidad Interfaz   & 0.51\\
 Integración Hardware    & 0.27\\
 \bottomrule
 \end{tabular}
-\caption{Disconformidad por métrica}
+\caption{Disconformidad por variable}
 \label{tab:interfaz_disconformidad_metrica}
 \end{table}
 
-La conclusión de esta prueba de interfaz, es que si bien, pudo ser utilizada sin
-mayores inconvenientes, existe un alto grado de disconformidad con la interfaz,
-además cabe resaltar, los sujetos de prueba son personas acostumbradas al uso de
-tecnologías similares. Otros puntos débiles encontrados en esta prueba son la
-interacción con el entorno y  con los objetos.
+%La conclusión de esta prueba de interfaz, es que si bien, pudo ser utilizada sin
+%mayores inconvenientes, existe un alto grado de disconformidad con la interfaz,
+%además cabe resaltar, los sujetos de prueba son personas acostumbradas al uso de
+%tecnologías similares. Otros puntos débiles encontrados en esta prueba son la
+%interacción con el entorno y  con los objetos.
 
-Como resultado de esta prueba, la interfaz y la interacción con objetos y
-elementos sufren modificaciones a fin de su utilización con usuarios no
-técnicos.
+Como consecuencia de los resultados obtenidos, la usabilidad de interfaz y la interacción con objetos y 
+con el entorno son mejoradas para obtener la versión final de la solución que es utilizada por 
+los estudiantes de enfermería. Las demás pruebas mencionadas en este capítulo son realizadas con 
+la versión final de la solución.
+%elementos sufren modificaciones a fin de su utilización con usuarios no
+%técnicos.
 
-Las demás pruebas mencionadas en este capítulo son realizadas con la versión
-final de la solución, la cual es obtenida luego de las mejoras realizadas a los
-puntos débiles detectados por esta prueba.
+%Las demás pruebas mencionadas en este capítulo son realizadas con la versión
+%final de la solución, la cual es obtenida luego de las mejoras realizadas a los
+%puntos débiles detectados por esta prueba.

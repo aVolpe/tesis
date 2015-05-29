@@ -1,18 +1,22 @@
 %! TEX root = ../main.tex
 
-\section{Métricas generales}
+\section{Métricas generales utilizadas en la evaluación}
 
-En esta sección se definen las métricas que son utilizadas por las pruebas y
-encuestas que forman parte de esta evaluación.
+En esta sección se describen aquellas métricas que son utilizadas por 
+más de una metodología para la evaluación de la solución, las 
+cuales se consideran que son importantes detallar.
+%En esta sección se definen las métricas que son utilizadas por las pruebas y
+%encuestas que forman parte de esta evaluación.
 
-La escala de \textit{Likert} que es una métrica utilizada en la \emph{Encuesta subjetiva}
-y en la encuesta correspondiente a la \emph{Prueba de interfaz de usuario}. Por
-otra parte se describe también en que consiste la correlación de \textit{Pearson},
-métrica que es utilizada para medir el grado de relación entre variables de las
-encuestas realizadas, registros de actividades, entre otros.
+Una de estas métricas es la escala de \textit{Likert}, la cual es una métrica utilizada 
+en la \emph{Encuesta para evaluar la solución}
+y en la encuesta correspondiente a la \emph{Prueba preliminar de usabilidad}. Otra métrica 
+utilizada es la correlación de \textit{Pearson}, esta
+métrica es utilizada para medir el grado de relación entre variables de las
+encuestas realizadas, los registros de actividades, entre otros.
 
 Cabe destacar que en~\cite{norman2010likert} se demuestra que, aunque el tamaño
-de la muestra sea pequeña, los datos no puedan ser distribuidos normalmente o
+de la muestra sea pequeña y los datos no puedan ser distribuidos normalmente o
 los datos sean de escalas de tipo \textit{Likert}, los métodos paramétricos como
 el análisis de varianza, la regresión y la correlación pueden ser utilizados.
 
@@ -20,8 +24,8 @@ el análisis de varianza, la regresión y la correlación pueden ser utilizados.
 \subsection{Escala de Likert}
 \label{sec:likert}
 
-Para la valoración de las variables medidas en la \emph{Prueba de interfaz de
-    usuario} y la {Encuesta subjetiva} se utiliza la escala de
+Para la valoración de las variables medidas en la \emph{Prueba preliminar de usabilidad} y 
+la {Encuesta para evaluar la solución} se utiliza la escala de
 \textit{Likert}\cite{Allen:2007} de 7 valores posibles. La escala de
 \textit{Likert} es utilizada para permitir a las personas indicar cuánto están
 de acuerdo o en desacuerdo con respecto a ciertos puntos. Los valores
@@ -58,7 +62,7 @@ normalización, $s_1$ se define como:
 s_1{_i}=\frac{s-\min_i}{\max_i-\min_i}
 \end{equation}
 
-\observacion{Considerar resumir}
+%\observacion{Considerar resumir}
 Y luego siendo:
 \begin{itemize}
 	\item $groupmin_i$ la respuesta ajustada de menor valor en el grupo $i$.
@@ -91,55 +95,55 @@ define como:
 p_k = \frac{\sum_{i=1}^n{r_{k_i}}}{t_k}
 \end{equation}
 
-\subsubsection{Manejo de información faltante}
-\label{sec:informacion_faltante}
-\observacion{No repetir tanto existe}
-
-En toda encuesta pueden existir preguntas que no son respondidas por los encuestados, 
-en este tipo de situaciones existen tres posibles formas de categorizar el 
-patrón de ocurrencia de la falta de 
-respuestas\cite{leite2010performance,tsikriktsis2005review}:
-
-\begin{description}
-    \item[Información faltante completamente aleatoria:] cuando la información
-        faltante es independiente de la variable medida y de otras variables.
-    \item[Información faltante aleatoria:] cuando la información faltante depende
-        de otras variables, pero no de la variable en sí. 
-    \item[Información faltante no aleatoria:] cuando hay una relación entre la
-        información faltante y el valor de la variable.
-\end{description}
-
-Una vez categorizado el patrón de ocurrencia, existen a su vez tres
-mecanismos~\cite{tsikriktsis2005review} principales para lidiar con información
-faltante como son la eliminación, el reemplazo y los  procedimientos basados en
-modelo.~\cite{tsikriktsis2005review} recomienda utilizar un mecanismo de
-reemplazo para escalas del tipo \textit{Likert}.
-
-Las técnicas de reemplazo se clasifican en tres grandes
-grupos\cite{tsikriktsis2005review}:
-\begin{enumerate*}[label=\itshape\alph*\upshape)]
-\item basadas en el promedio,
-\item basadas en regresión, e,
-\item imputación \emph{hot deck}.
-\end{enumerate*}
-
-\fixme{De estas técnicas se seleccionó la sustitución}{Resaltar}. Basada por
-promedio ya que las relaciones entre las variables son bajas y los datos
-faltantes son menos del $10\%$. La sustitución basada por promedio se divide
-nuevamente en tres grupos\cite{tsikriktsis2005review}; promedio
-\begin{enumerate*}[label=\itshape\alph*\upshape.]
-\item total,
-\item del subgrupo, y,
-\item por caso.
-\end{enumerate*}
-
-La sustitución por promedio total es elegida debido a que la relación entre la
-variable que falta y las demás variables en los datos es relativamente baja, es
-fácil de usar y retiene la muestra. La sustitución por promedio total se realiza
-obteniendo el promedio de todas las respuestas de la pregunta cuya respuesta
-falte, la sustitución de subgrupo es similar, solo que se limita a aquellos
-sujetos del mismo subgrupo del sujeto que no respondió, y finalmente, la
-sustitución por caso, es el promedio de las respuestas válidas del sujeto.
+%\subsubsection{Manejo de información faltante}
+%\label{sec:informacion_faltante}
+%\observacion{No repetir tanto existe}
+%
+%En toda encuesta pueden haber preguntas que no son respondidas por los encuestados, 
+%en este tipo de situaciones existen tres posibles formas de categorizar el 
+%patrón de ocurrencia de la falta de 
+%respuestas\cite{leite2010performance,tsikriktsis2005review}:
+%
+%\begin{description}
+%    \item[Información faltante completamente aleatoria:] cuando la información
+%        faltante es independiente de la variable medida y de otras variables.
+%    \item[Información faltante aleatoria:] cuando la información faltante depende
+%        de otras variables, pero no de la variable en sí. 
+%    \item[Información faltante no aleatoria:] cuando hay una relación entre la
+%        información faltante y el valor de la variable.
+%\end{description}
+%
+%Una vez categorizado el patrón de ocurrencia, existen a su vez tres
+%mecanismos~\cite{tsikriktsis2005review} principales para lidiar con información
+%faltante como son la eliminación, el reemplazo y los  procedimientos basados en
+%modelo.~\cite{tsikriktsis2005review} recomienda utilizar un mecanismo de
+%reemplazo para escalas del tipo \textit{Likert}.
+%
+%Las técnicas de reemplazo se clasifican en tres grandes
+%grupos\cite{tsikriktsis2005review}:
+%\begin{enumerate*}[label=\itshape\alph*\upshape)]
+%\item basadas en el promedio,
+%\item basadas en regresión, e,
+%\item imputación \emph{hot deck}.
+%\end{enumerate*}
+%
+%\fixme{De estas técnicas se seleccionó la sustitución}{Resaltar}. Basada por
+%promedio ya que las relaciones entre las variables son bajas y los datos
+%faltantes son menos del $10\%$. La sustitución basada por promedio se divide
+%nuevamente en tres grupos\cite{tsikriktsis2005review}; promedio
+%\begin{enumerate*}[label=\itshape\alph*\upshape.]
+%\item total,
+%\item del subgrupo, y,
+%\item por caso.
+%\end{enumerate*}
+%
+%La sustitución por promedio total es elegida debido a que la relación entre la
+%variable que falta y las demás variables en los datos es relativamente baja, es
+%fácil de usar y retiene la muestra. La sustitución por promedio total se realiza
+%obteniendo el promedio de todas las respuestas de la pregunta cuya respuesta
+%falte, la sustitución de subgrupo es similar, solo que se limita a aquellos
+%sujetos del mismo subgrupo del sujeto que no respondió, y finalmente, la
+%sustitución por caso, es el promedio de las respuestas válidas del sujeto.
 
 \subsection{Correlación de variables aleatorias}
 \label{sec:correlacion}
