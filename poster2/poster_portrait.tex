@@ -68,6 +68,8 @@
 }
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \setlength{\leftmargini}{1em}
+
+\newcommand{\pin}[2]{{\textbf{#2}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Begin of Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,7 +155,7 @@
   {\textsc{ Mirta González y Arturo Volpe }}
   % University logo
   {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
-    \includegraphics[height=9em]{imagenes/logopol.png}
+    \includegraphics[height=9em]{../util/logo.pdf}
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -239,6 +241,7 @@
   \headerbox{Conclusiones}{name=conclusiones,column=0,below=problema, above=bottom}{%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}
+
 %\item La solución es válida como herramienta educativa de apoyo a los
     %estudiantes de enfermería, dándoles la posibilidad de probar sus
     %conocimientos en cualquier lugar y momento.
@@ -256,19 +259,21 @@
 %    que mejor puntaje alcanzaron en la solución, mejor nota obtuvieron en la prueba
 %    de conocimiento.
     
-\item La solución obtuvo una aceptación positiva en todos los factores estudiados.
-\item Los usuarios que utilizaron más tiempo la solución obtuvieron mejores puntuaciones 
-en el juego.
-\item Los usuarios con mejor puntuación en el juego obtuvieron mejor nota en la 
-prueba de conocimiento.
-\item Los estudiantes consideraron a la solución como una herramienta útil para 
-el apoyo de sus clases teóricas, prácticas de laboratorio y prácticas de campo.
-\item La utilización de la solución se dio mayormente en horarios extracurriculares, 
-acentuándose así la importancia de la movilidad proveída.
+\item La solución obtuvo una aceptación positiva en todos los factores
+    estudiados.
+\item Los estudiantes consideraron a la solución como una herramienta útil para
+    el apoyo de sus clases teóricas, prácticas de laboratorio y prácticas de
+    campo.
+\item La utilización de la solución se dio mayormente en horarios
+    extracurriculares, acentuándose así la importancia de la movilidad proveída.
+\item Los usuarios que utilizaron más tiempo la solución obtuvieron mejores
+    puntuaciones en el juego.
+\item Los usuarios con mejor puntuación en el juego obtuvieron mejor nota en la
+    prueba de conocimiento.
 
 \end{itemize}
-    \vspace{0.3em}
-  }
+
+}
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \headerbox{Solución propuesta}{name=solucion,column=1,span=2,row=0}{%
@@ -277,13 +282,13 @@ acentuándose así la importancia de la movilidad proveída.
 Se diseña y desarrolla un Juego Serio para dispositivos móviles llamado
 \textit{eTesai}, el cual ofrece a los estudiantes de enfermería un medio para
 realizar procedimientos de enfermería y cuyo objetivo es servir como herramienta
-de apoyo al aprendizaje. En la figura se observa los componentes de la solución,
-y las herramientas utilizadas para su desarrollo.
+de apoyo al aprendizaje. En la figura se observan los componentes de la solución.
+%,y las herramientas utilizadas para su desarrollo.
 
 \begin{center}
 	\includegraphics[scale=0.3]{../resumen/images/full.png}
 \end{center}
-
+\setlength{\columnsep}{1pt}
 \begin{multicols}{2}
     \begin{itemize}
 
@@ -298,7 +303,7 @@ y las herramientas utilizadas para su desarrollo.
         
         \item \textbf{Venopunción}
       
-        El objetivo principal de este procedimiento es extraer muestras de la sangre 
+        El objetivo principal de este procedimiento es extraer muestras de sangre 
         del paciente para su análisis en un laboratorio.
     	\begin{center}
     		\includegraphics[width=4cm]{../solucion/images/hemocultivo_gui.jpg}
@@ -306,13 +311,14 @@ y las herramientas utilizadas para su desarrollo.
 		
         \item \textbf{Valoración de la escala de Glasgow}
 	
-		El objetivo principal de esta escena es diagnosticar el estado de 
+		El objetivo principal de este procedimiento es diagnosticar el estado de 
 		conciencia de un paciente en estado crítico, utilizando la escala 
 		de \textit{Glasgow}
 		\begin{center}
 		\includegraphics[width=4cm]{../solucion/images/glasgow_comandos_voz.jpg}
 		\end{center}
 		\end{itemize}
+		
     \item \textbf{Back-end:} los registros de uso del \textit{front-end} son
         almacenados bajo demanda en un servidor \textit{back-end}, el cual se
         encarga de asociar los registros con los alumnos y almacenarlos de
@@ -427,26 +433,27 @@ Promedio de partidas por usuario & 12
 \end{center}
 
 \textbf{Correlación: utilización y conocimiento}
-	\begin{center}
 	
+
 	\scriptsize 
+	
 	\begin{itemize}
-		\item \textbf{Puntaje máx juego \textit{Extracción de Sangre} y promedio 
-		\textit{Extracción de Sangre} examen}, $0.74$, 
-		correlación positiva muy fuerte.
-		\item \textbf{Puntaje máx juego \textit{Glasgow} y promedio 
-		\textit{Glasgow} examen}, $0.54$, correlación positiva 
-		fuerte.
-		\item \textbf{Promedio \textit{Glasgow} examen y tiempo jugado 
-		\textit{Glasgow}}, $0.86$, correlación positiva muy fuerte.
-		\item \textbf{Puntaje máx juego \textit{Extracción de Sangre} y tiempo 
-		jugado \textit{Extracción de Sangre}}, $0.30$, correlación positiva 
-		moderada.
-		\item \textbf{Puntaje máx juego \textit{Glasgow} y tiempo jugado 
-		\textit{Glasgow}}, $0.61$, correlación positiva fuerte. 
+	
+	\setlength\itemsep{0em}
+    \item Las correlaciones sugieren que mientras más se utiliza la
+        solución, mejor rendimiento se obtiene.
+    \item Las correlaciones sugieren que los alumnos con mejor rendimiento
+        en la solución, obtuvieron mejor rendimiento en la evaluación del
+        conocimiento.
+    \item Las correlaciones sugieren que los usuarios dedicaron un tiempo
+        similar en ambos procedimientos.
+    \item Las correlaciones sugieren que los usuarios que completaron la
+        mayor parte del procedimiento Venopunción, dedicaron más tiempo al
+        procedimiento Glasgow.
+    \item Las correlaciones sugieren que el nivel de conocimiento de los
+        alumnos sobre ambos procedimientos está relacionado.
 	\end{itemize}
 		
-	\end{center}
 
 \end{multicols}
    \vspace{0.3em}
