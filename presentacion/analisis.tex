@@ -1,8 +1,41 @@
 \section{Evaluación}
 \setcounter{sectiontotal}{10}
 
+
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Metodología}
+
+\pause{} 
+
+\begin{table}
+    \tiny
+\centering
+\begin{tabulary}{\textwidth}{rLLLL}
+\toprule
+\textbf{Objetivo}      & Evaluar la usabilidad de la interfaz      & Determinar la muestra                                              & Evaluar el uso y la aceptación & Evaluar el conocimiento\\
+\midrule
+\textbf{Participantes} & Alumnos de la carrera de II de la FP-UNA. & \multicolumn{3}{c}{Alumnos de la carrera de enfermería del IAB} \\
+\midrule
+\textbf{Muestra}       & 8 Alumnos                                 & 124 Alumnos                                                        & 11 Alumnos                     & 124 alumnos \\
+\midrule
+\textbf{Lugar}         & FP-UNA                                    & IAB                                                                &                                & IAB\\
+\midrule
+\textbf{Duración}      & 15 minutos                                & 10 minutos                                                         & 20 días                        & 20 minutos\\
+\midrule
+\textbf{Fases}           & \tabitem Explicación de los procedimientos. & \tabitem Presentación.          & \tabitem Explicación de la interfaz. & \tabitem Explicación de la prueba.\\
+                & \tabitem Tareas.                            & \tabitem Encuesta.              & \tabitem Utilización de la solución. & \tabitem Encuesta sobre conocimiento\\
+                & \tabitem Encuesta de usabilidad.            & \tabitem Recopilación de datos. & \tabitem Encuesta de apreciación.    & \tabitem Recopilación de datos.\\
+                & \tabitem Recopilación de datos.             &                                 & \tabitem Recopilación de datos.\\
+\bottomrule
+\end{tabulary}
+\end{table}
+
+\end{frame}
+
 \begin{frame}[fragile]
-    \frametitle{Pruebas preliminares}
+    \frametitle{\pagetitle}
+    \framesubtitle{Pruebas preliminares}
 
 \begin{filecontents}{interfazuso.dat}
 n   p       s
@@ -25,7 +58,7 @@ n   p       s
               ymin=0,ymax=10,
               %ytick={0,2,4,6,8,10},
               xticklabels={Contextual,Interfaz,Herramienta},
-              ylabel= Tiempo,
+              ylabel= Tiempo (s),
               xlabel= Tipo de acción,
               bar width=10pt,
               %enlarge x limits={abs=2},
@@ -41,27 +74,28 @@ n   p       s
     \end{subfigure}\hfill
     \pause
     \begin{subtable}[b]{.5\linewidth}
-        \scriptsize
-        \centering
+        \tiny
         \begin{tabular}{lr}
         \toprule
-        Métrica & Disconformidad \\
+        Variable & Apreaciación \\
         \midrule
-        Calidad Gráfica         & {\color{green!90!black} 0.17} \\
-        Interacción Entorno     & {\color{red!90}   0.50} \\
-        Interacción Objetos     & {\color{red!90}   0.49} \\
-        Características Entorno & {\color{green!90!black} 0.33} \\
-        Usabililidad Interfaz   & {\color{red!90}   0.51} \\
-        Integración Hardware    & {\color{green!90!black} 0.27} \\
+        Gráficos                & \pin{ForestGreen}{De acuerdo}              \\
+        Interacción Entorno     & \pin{BurntOrange}{Neutral}                 \\
+        Interacción Objetos     & \pin{BurntOrange}{Neutral}                 \\
+        Características Entorno & \pin{ForestGreen}{Parcialmente de acuerdo} \\
+        Usabililidad            & \pin{BurntOrange}{Neutral}                 \\
+        Integración             & \pin{ForestGreen}{Parcialmente de acuerdo} \\
         \bottomrule
-        \end{tabular}
-        \caption{Disconformidad por métrica}
+    \end{tabular}
+        \caption{Disconformidad por variable}
     \end{subtable}
 \end{figure}
 
 \end{frame}
 
-\begin{frame}{Encuesta para determinar muestra}
+\begin{frame}
+    \frametitle{\pagetitle}
+    \framesubtitle{Encuesta para determinar muestra}
 
 \begin{figure}
     \begin{subfigure}[b]{.3\linewidth}
@@ -109,8 +143,8 @@ n   p       s
                 explode=.1
                 ]%
             {%
-                81.7 / Cumple,
-                18.3 /  No Cumple
+                81.7 /  No Cumple,
+                18.3 /  Cumple
             }
         \end{tikzpicture}
         \caption{Cumplimiento de requisitos}
@@ -119,9 +153,195 @@ n   p       s
 
 \end{frame}
 
-\begin{frame}[t,fragile]
-\frametitle{Encuesta para evaluar conocimiento}
+% Utilización
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Utilización de la solución}
+
+\begin{table}
 \centering
+\small
+\begin{tabular}{lr}
+\toprule
+Partidas                         & 99 \\
+Primera partida                  & 4 de Noviembre de 2014 \\
+Última partida                   & 23 de Noviembre de 2014 \\
+\midrule
+\onslide+<2->{Tiempo total       & 11.134 s \\
+Promedio de tiempo por partida   & 112 s}
+\\\midrule
+\onslide+<3->{Acciones           & 2.944 \\
+Promedio de acciones por partida & 30}
+\\\midrule
+\onslide+<4->{Usuarios           & \textcolor{red}{8} \\
+Promedio de partidas por usuario & 12}
+\\\bottomrule
+\end{tabular}
+\end{table}
+
+\end{frame}
+% Utilización por hora
+\begin{frame}[t,fragile]
+    \frametitle{\pagetitle}
+    \framesubtitle{Utilización de la solución}
+\centering
+
+% Datos
+\begin{filecontents}{utilizaciontiempo.dat}
+Hora	Cantidad
+ 0	 0
+ 1	 9
+ 2	 4
+ 3	 2
+ 4	 0
+ 5	11
+ 6	 8
+ 7	 3
+ 8	 5
+ 9	 7
+10	 7
+11	12
+12	15
+13	 9
+14	 6
+15	 0
+16	 0
+17	 0
+18	 0
+19	 0
+20	 0
+21	 0
+22	 0
+23	 1
+24	 0
+\end{filecontents}
+\pgfplotstableread{utilizaciontiempo.dat}{\UtilizacionTiempo}
+
+\begin{figure}
+    \begin{tikzpicture}[thick,scale=0.85, every node/.style={transform shape}]
+        \begin{axis}[
+            title={},
+            xlabel={Hora},
+            ylabel={Partidas},
+            xmin=0, xmax=24,
+            ymin=0, ymax=16,
+            xtick       = {0  , 3  , 6  , 9  , 12 , 15 , 18 , 21 , 24},
+            xticklabels = {12 , 15 , 18 , 21 ,  0 , 3  ,  6 ,  9 , 12},
+            %ytick={0,.25,.50,.75,1},
+            legend pos=north east,
+            ymajorgrids=true,
+            xmajorgrids=true,
+            grid style=dashed,
+        ]
+         
+        \addplot[color=blue,fill=blue!5] table [x = {Hora}, y = {Cantidad}] {\UtilizacionTiempo};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Utilización por hora}
+\end{figure}
+ 
+
+\end{frame}
+
+% Utilización progreso
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Utilización de la solución}
+
+\begin{table}
+\centering
+\scriptsize
+\begin{tabulary}{\linewidth}{lrrrr}
+\toprule
+& \multicolumn{2}{c}{Venopunción}    & \multicolumn{2}{c}{Glasgow}  \\
+\cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+\textbf{Promedio} & \textbf{Puntaje (17)} & \textbf{Desviación} &
+                  \textbf{Puntaje (4)} & \textbf{Desviación} \\
+\midrule
+Primera vez       & $6.1$        & $6.3$      & $1.4$       & $0.9$ \\
+Siguientes veces  & $8.0$        & $3.8$      & $1.6$       & $1.5$ \\
+Más altos          & $11.0$       & $4.9$      & $2.6$       & $0.9$ \\
+\bottomrule
+\end{tabulary}
+\caption{Mejora por escenario}
+\end{table}
+
+\end{frame}
+
+% Apreciación de la solución
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Apreciación de la solución}
+
+\begin{table}
+\tiny
+\begin{tabulary}{\textwidth}{lrll}
+\toprule
+\textbf{Factor}                   & \shortstack{\textbf{Promedio encuesta} \\ (Promedio estandarizado)} & \textbf{Puntos fuertes}             & \textbf{Puntos débiles} \\
+\midrule
+Motivación          & De acuerdo (0.67) & \tabitem Puntaje                    & \tabitem Tiempo  \\
+                    &                   & \tabitem Socialización              & \\
+\midrule
+Exploración         & De acuerdo (0.68) & \tabitem Aleatoriedad               & \tabitem Utilización    \\
+                    &                   & \tabitem Funciones                  & \\
+\midrule
+Inmersión           & De acuerdo (0.63) & \tabitem Escenografía               & \tabitem Pertenencia\\
+                    &                   & \tabitem Gráficos                   & \\
+                    &                   & \tabitem Ordenes verbales           & \\
+\midrule
+Pedagogía           & De acuerdo (0.67) & \tabitem Comprensión                & \\
+                    &                   & \tabitem Retroalimentación limitada & \\
+\midrule
+Representación      & Parcialmente      & \tabitem Movimientos motrices       & \tabitem Reacción verbal\\
+                    & de acuerdo (0.53) &                                     & \tabitem Estados del paciente\\
+\midrule
+Retroalimentación   & Parcialmente      & \tabitem Detalles de los pasos      & \tabitem Iconos \\
+                    & de acuerdo (0.60) &                                     & \\
+\midrule
+Utilidad            & De acuerdo (0.69) & \tabitem Complemento                & \\
+                    &                   & \tabitem Facilitador                & \\
+\bottomrule
+\end{tabulary}
+\caption{Aceptación por aspecto de la solución}
+\end{table}
+
+\end{frame}
+
+%% Hipótesis
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Aceptación por consideración de diseño}
+
+\begin{table}
+\scriptsize
+\centering
+\begin{tabular}{lcr}
+\toprule
+& \multicolumn{2}{c}{Promedio} \\
+%\cmidrule(c){2-3} 
+\cmidrule(lr){2-3}
+Consideraciones de diseño          & Encuesta                & Estandarizado \\
+\midrule
+C1. Interacción a través de la voz & De acuerdo              & $0,55$ \\
+C2. Extracción de elementos        & Parcialmente de acuerdo & $0,65$ \\
+C3. Bioseguridad                   & De acuerdo              & $0,58$ \\
+C4. Representación Iconográfica    & Parcialmente de acuerdo & $0,53$ \\
+C5. Motivación                     & De acuerdo              & $0,65$ \\
+C6. Retroalimentación limitada     & De acuerdo              & $0,61$ \\
+C7. Movilidad                      & De acuerdo              & $0,66$ \\
+\bottomrule
+\end{tabular}
+\caption{Aceptación por consideración de diseño}
+\end{table}
+
+\end{frame}
+
+% Conocimiento
+\begin{frame}[t,fragile]
+\frametitle{\pagetitle}
+\framesubtitle{Encuesta para evaluar conocimiento}
+%\centering
 
 % Datos
 \begin{filecontents}{objetiva.dat}
@@ -139,242 +359,118 @@ n	total        muestra	    control
 \end{filecontents}
 \pgfplotstableread{objetiva.dat}{\Objetiva}
 
-\begin{tikzpicture}[thick,scale=0.8, every node/.style={transform shape}]
-\begin{axis}[
-    title={},
-    xlabel={Pregunta},
-    ylabel={Puntos},
-    xmin=1, xmax=10,
-    ymin=0, ymax=1,
-    xtick={0,1,2,3,4,5,6,7,8,9,10},
-    ytick={0,.25,.50,.75,1},
-    legend pos=outer north east,
-    ymajorgrids=true,
-    xmajorgrids=true,
-    grid style=dashed,
-]
- 
-\only<1->{\addplot[color=blue,] table [x = {n}, y = {muestra}] {\Objetiva};
-\addlegendentry{Muestra}}
-\only<2->{\addplot[color=red,] table [x = {n}, y = {control}] {\Objetiva};
-\addlegendentry{Control}}
-\only<3->{\addplot[color=black,dashed] table [x = {n}, y = {total}] {\Objetiva};
-\addlegendentry{Total}}
- 
-\end{axis}
-\end{tikzpicture}
-
-\end{frame}
-\begin{frame}{Comparación de rendimiento}
-
-\begin{table}
-\begin{tabular}{lr}
-\toprule
-Promedio usuarios & \textbf{3.82} \\
-\onslide+<2->{Promedio control  & \textbf{3.47} \\\midrule}
-\onslide+<3->{Promedio total    & \textbf{3.49}}
-\\\bottomrule
-\end{tabular}
-\caption{Puntaje promedio por grupo}
-\end{table}
-\note{Estos datos no son estadísticamente válidos}
-\note{El Incremento es del $10\%$}
-
-\end{frame}
-
-\begin{frame}{Apreciación de la solución}
-
 \begin{figure}
-    \scriptsize
+%\tiny
+\begin{subfigure}[b]{.5\linewidth}
+    \begin{tikzpicture}[thick,scale=0.5, every node/.style={transform shape}]
+        \begin{axis}[
+            ybar,
+            width=\linewidth,
+            bar width=9pt,
+            x=25pt,
+            height=10cm,
+            axis on top,
+            enlarge x limits=true,
+            tick align=inside,
+            tickwidth=0pt,
+            title={},
+            xlabel={Pregunta},
+            ylabel={Puntos},
+            xmin=1, xmax=10,
+            ymin=0, ymax=1,
+            xtick={0,1,2,3,4,5,6,7,8,9,10},
+            ytick={0,.25,.50,.75,1},
+            legend pos=north east,
+            ymajorgrids=true,
+            xmajorgrids=true,
+            grid style=dashed,
+        ]
+         
+        \only<1->{%
+        \addplot[color=blue,fill=blue!30] table [x = {n}, y = {muestra}] {\Objetiva};
+        \addlegendentry{Muestra}}
+        \only<2->{%
+        \addplot[color=red,fill=red!30] table [x = {n}, y = {control}] {\Objetiva};
+        \addlegendentry{Control}}
+        %\only<3->{\addplot[color=black,dashed] table [x = {n}, y = {total}] {\Objetiva};
+        %\addlegendentry{Total}}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Comparación de puntaje*}
+\end{subfigure}\hfill
+\pause
+\pause
+\pause
+\begin{subtable}[b]{.5\linewidth}
     \centering
-    \begin{subtable}[b]{.5\linewidth}
-        \tiny
-        \begin{tabular}{lc}
-        \toprule
-        Factores                 & Promedio encuesta \\
-        \midrule
-        Motivación               & De acuerdo \\
-        Facilidad de exploración & De acuerdo \\
-        Sensación de Inmersión   & De acuerdo \\
-        Pedagogía                & De acuerdo \\
-        Representación           & Parcialmente de acuerdo \\
-        Retroalimentación        & Parcialmente de acuerdo \\
-        Utilidad                 & De acuerdo \\
-        \bottomrule
-        \end{tabular}
-        \caption{Aceptación por aspecto de la solución}
-    \end{subtable}\hfill
-    \pause
-    \begin{subfigure}[b]{.5\linewidth}
-        \tiny
-        \begin{tikzpicture}[label distance=.15cm]
-        \tkzKiviatDiagram[scale=.35,%
-                            lattice=9,
-                            %step=10,
-                            ]
-                        {Motivación,
-                         Exploración,
-                         Inmersión,
-                         Pedagogía,
-                         Representación,
-                         Retroalimentación,
-                         Utilidad}
-        \tkzKiviatLine[thick,
-                        color=blue!25!white,
-                        mark=ball,
-                        ball color=blue,
-                        mark size=5pt,
-                        opacity=.2, 
-                        fill=blue!20](6.7,6.8,6.3,6.7,5.3,6.0,6.9)
-        \tkzKiviatGrad[prefix={$0,$},unity=1](1) 
-        \end{tikzpicture}
-        \caption{Valores estandarizados}
-    \end{subfigure}
+    \scriptsize
+    \begin{tabular}{lr}
+    \toprule
+    \textbf{Grupo}         & \textbf{Promedio (10)} \\
+    \midrule
+    \onslide+<4->{Usuarios & \textbf{3.82}  \\}
+    \onslide+<5->{Control  & \textbf{3.47} \\\midrule}
+    \onslide+<6->{Total    & \textbf{3.49}}
+    \\\bottomrule
+    \end{tabular}
+    \caption{Puntaje promedio por grupo*}
+\end{subtable}
 \end{figure}
+ 
+\tiny 
+
+\textbf{*} Los usuarios participaron del experimento luego del examen
+final de la materia \textit{Enfemería en Urgencias}, la cual requiere el dominio
+de ambos temas simulados como parte de sus competencias básicas.
 
 \end{frame}
-\begin{frame}{Validación de hipótesis}
 
+% Correlación
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Correlación}
 
 \begin{table}
-\scriptsize
+\tiny
 \centering
-\begin{tabular}{lcr}
+\begin{tabulary}{\textwidth}{Lrrrrrr}
 \toprule
-& \multicolumn{2}{c}{Promedio} \\
-%\cmidrule(c){2-3} 
-\cmidrule(lr){2-3}
-Hipótesis                        & Encuesta                & Estandarizado \\
+                                  & \multicolumn{2}{c}{Puntaje Max.} & \multicolumn{2}{c}{Tiempo de juego} & \multicolumn{2}{c}{Puntaje examen} \\
+\cmidrule(lr){2-3} 
+\cmidrule(lr){4-5} 
+\cmidrule(lr){6-7}
+                            & Venopunción             & Glasgow                & Venopunción          & Glasgow                 & Venopunción             & Glasgow \\
 \midrule
-Comandos de voz con interfaz     & De acuerdo              & $0,55$ \\
-Extracción uniforme de elementos & Parcialmente de acuerdo & $0,65$ \\
-Acciones de bioseguridad         & De acuerdo              & $0,58$ \\
-Representación iconográfica      & Parcialmente de acuerdo & $0,53$ \\
-Factores motivadores             & De acuerdo              & $0,65$ \\
-Falta de pistas                  & De acuerdo              & $0,61$ \\
-\bottomrule
-\end{tabular}
-\caption{Aceptación por hipótesis}
+P.M. Venopunción            & 1                       & 0.12                   & \pin{NavyBlue}{0.30} & \pin{RoyalPurple}{0.35} & \pin{ForestGreen}{0.74} & 0.55 \\
+P.M. Glasgow                & 0.12                    & 1                      & 0.32                 & \pin{Aquamarine}{0.61}  & 0                       & \pin{BrickRed}{0.54} \\
+\midrule
+T.J. Venopunción            & \pin{NavyBlue}{0.30}    & 0.32                   & 1                    & 0.29                    & 0.04                    & 0.05\\
+T.J. Glasgow                & \pin{RoyalPurple}{0.35} & \pin{Aquamarine}{0.61} & 0.29                 & 1                       & 0.69                    & \pin{Orange}{0.86}\\
+\midrule
+P.E. Venopunción            & \pin{ForestGreen}{0.74} & 0                      & 0.04                 & 0.69                    & 1                       & \pin{VioletRed}{0.78} \\
+P.E. Glasgow                & 0.55                    & \pin{BrickRed}{0.54}   & 0.05                 & \pin{Orange}{0.86}      & \pin{VioletRed}{0.78}   & 1 \\
+\bottomrule               
+\end{tabulary}
+\caption{Correlación entre factores estudiados} 
 \end{table}
 
+\tiny
+\begin{itemize}
+\item \pin{NavyBlue}{Venopunción. Rendimiento en la solución y tiempo de juego.}
+\item \pin{ForestGreen}{Venopunción. Rendimiento en la solucion y en el exámen.}
+\item \pin{Aquamarine}{Glasgow. Rendimiento en la solución y tiempo de juego.}
+\item \pin{BrickRed}{Glasgow. Rendimiento en la solución y en el exámen.}
+\item \pin{Orange}{Glasgow. Tiempo de juego y rendimiento en el exámen.}
+\item \pin{RoyalPurple}{Rendimiento Venopunción y tiempo de juego Glasgow.}
+\item \pin{VioletRed}{Puntaje examen Glasgow y Puntaje examen Venopunción}
+\end{itemize}
+\note{%
+
+\begin{tabular}{|r|r|r|r|r|r|}
+\hline  & M.F.  & F.     & M.     & W.     & N \\
+\hline
+Mínimo  & $0.7$ & $0.69$ & $0.39$ & $0.29$ & $0.19$ \\
+\hline
+\end{tabular}}
 \end{frame}
 
-\begin{frame}{Utilización de la solución}
-
-\begin{table}
-\centering
-\small
-\begin{tabular}{lr}
-\toprule
-Partidas                         & 99 \\
-Primera partida                  & 4 de Noviembre de 2014 \\
-Última partida                   & 23 de Noviembre de 2014 \\
-\midrule
-\onslide+<2->{Tiempo total                     & 11.134 \\
-Promedio de tiempo por partida   & 112}
-\\\midrule
-\onslide+<3->{Acciones                         & 2.944 \\
-Promedio de acciones por partida & 30}
-\\\midrule
-\onslide+<4->{Usuarios                         & \textcolor{red}{8} \\
-Promedio de partidas por usuario & 12}
-\\\bottomrule
-\end{tabular}
-\caption{Utilización de la solución}
-\end{table}
-
-\end{frame}
-\begin{frame}[t,fragile]
-    \frametitle{Evolución \emph{Extracción de sangre}}
-
-%Datos
-\begin{filecontents}{registrohemocultivo.dat}
-n   p   s
- 1  11  14.3
- 2  9   10.6
- 4  3   3.3 
- 5  3   6.8 
- 6  3   5.8 
- 7  4   4   
- 9  16  0
-10  3   7.2 
-\end{filecontents}
-
-\pgfplotstableread{registrohemocultivo.dat}{\RegHemocultivo}
-
-\begin{figure}
-\centering
-\begin{tikzpicture}[scale=.7]
-   \begin{axis}[ybar,%
-      legend pos=outer north east,
-      symbolic x coords={1,2,4,5,6,7,9,10},
-      ymin=0,ymax=18,
-      xtick=data,
-      ytick={0,3,6,9,12,15,18},
-      ylabel= Puntaje,
-      xlabel= Alumno,
-      bar width=6pt,
-        ]   
-\addplot[color=blue,ybar,fill=blue!75,area legend] table [x = {n}, y = {p}] {\RegHemocultivo};
-\addlegendentry{Primer}
-\addplot[color=red,ybar,fill=red!75,area legend] table [x = {n}, y = {s}] {\RegHemocultivo};
-\addlegendentry[align=left]{Promedio \\ siguientes}
-\end{axis}
-\end{tikzpicture}
-\caption{Evolución del puntaje en \emph{Extracción de sangre} por alumno}
-\end{figure}
-
-\end{frame}
-\begin{frame}[t,fragile]
-    \frametitle{Evolución \emph{Glasgow}}
-
-%Datos
-\begin{filecontents}{registroglasgow.dat}
-n    p    s
-1    1    1.5 
-2    2    2.3 
-4    1    1.5 
-6    2    2 
-7    0    1 
-\end{filecontents}
-\pgfplotstableread{registroglasgow.dat}{\RegGlasgow}
-
-\begin{figure}
-\centering
-\begin{tikzpicture}[scale=.7]
-   \begin{axis}[ybar,%
-      legend pos=outer north east,
-      symbolic x coords={1,2,4,6,7},
-      ymin=0,ymax=4,
-      xtick=data,
-      ytick={0,1,2,3,4},
-      ylabel= Puntaje,
-      xlabel= Alumno,
-        ]   
-\addplot[color=blue,ybar,fill=blue!75,area legend] table [x = {n}, y = {p}] {\RegGlasgow};
-\addlegendentry{Primer}
-\addplot[color=red,ybar,fill=red!75,area legend] table [x = {n}, y = {s}] {\RegGlasgow};
-\addlegendentry[align=left]{Promedio \\ siguientes}
-\end{axis}
-\end{tikzpicture}
-\caption{Evolución del puntaje en \emph{Evaluación Glasgow} por alumno}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Correlación}
-
-\begin{table}
-\scriptsize
-\centering
-\begin{tabular}{lrc}
-\toprule
-Factores                                                    & Valor         & Interpretación \\
-\midrule
-\onslide+<1->{Tiempo de uso y puntaje máximo extracción     & \textbf{0.62} & Positiva Fuerte}\\
-\onslide+<2->{Tiempo de uso y puntaje máximo glasgow        & \textbf{0.78} & Positiva Muy Fuerte}\\
-\onslide+<3->{Puntaje máximo extracción y encuesta objetiva & \textbf{0.44} & Positiva Fuerte}\\\bottomrule
-\end{tabular}
-\end{table}
-
-\end{frame}

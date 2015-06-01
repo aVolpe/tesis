@@ -1,80 +1,169 @@
 \section{Planteamiento del problema}
-\setcounter{sectiontotal}{8}
+\setcounter{sectiontotal}{2}
 
-\begin{frame}{Estado actual del Instituto Andrés Barbero}
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Estado actual del Instituto Andrés Barbero}
 
-%\begin{figure}
-%    \begin{subfigure}[b]{.6\linewidth}
-%        \centering
-%        \includegraphics[height=3cm]{../problema/iab_sala_3.jpg}
-%        \caption{Tiempo por tipo de actividad}
-%    \end{subfigure}
+\includegraphics[width=\textwidth]{imagenes/iab.jpg} 
 
-    
-%    \begin{subfigure}[b]{.6\linewidth}
-	\begin{enumerate}[<+->]
+\end{frame}
+
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Prácticas profesionales}
+
+\begin{columns}
+\column{.4\textwidth} \hspace{0.5cm}
+\begin{overprint}
+    \onslide<1|handout:1> \includegraphics[width=\textwidth, height=5.5cm]{../problema/iab_sala_3.jpg} 
+    \onslide<2|handout:0> \includegraphics[width=\textwidth, height=5.5cm]{imagenes/practica_campo.jpg} 
+\end{overprint}
+\column{.7\textwidth} \hspace{0.5cm}
+\begin{itemize}[<+->]
 	\item Prácticas en laboratorio
 	\item Prácticas en hospitales o prácticas de campo
-	\end{enumerate}
-%	\end{subfigure}
-%\end{figure}
+\end{itemize}
+\end{columns}
+
 \end{frame}
 
-\begin{frame}{Problemas actuales del Instituto Andrés Barbero}
-	\begin{enumerate}[<+->]
-	\item Falta de preparación de los alumnos
-	\item Definición de un protocolo de comunicación
-	\item Nerviosismo ante la primera práctica
-	\item Alta carga horaria de los trabajos prácticos
-	\item Reducida carga horaria para el estudio de las materias teóricas
-	\item Poca flexibilidad de los profesores
-	\item Falta de materiales actualizados para los profesores
-	\item Problemas de transporte
-	\item Falta de preparación para las prácticas
-	\item Alta cantidad de alumnos
-	\end{enumerate}
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Problemas actuales del Instituto Andrés Barbero}
+\pause{}
+\begin{itemize}[<+->]
+\item Preparación para las prácticas.
+\item Falta de tiempo.
+\item Materiales desactualizados.
+\item Cantidad de alumnos
+
+    \bigskip
+
+    \begin{tabular}{lr}
+        \tabitem{} Teoría   & 1:50 \\
+        \tabitem{} Práctica & 1:10 \\
+    \end{tabular}
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Propuesta de solución}
-	\begin{enumerate}[<+->]
-	\item Evaluación
-	\item Progreso
-	\item Tiempo de práctica
-	\item Factor psicológico
-	\item Ubicuidad
-	\item Realismo
-	\item Enfoque individual
-	\end{enumerate}
+\section{Propuesta}
+\setcounter{sectiontotal}{6}
+
+% Descripción
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Propuesta de solución}
+\pause{}
+\begin{block}{Descripción}
+\centering
+Desarrollo de un \textbf{Juego Serio} que incluya la simulación de
+laboratorios virtuales para apoyar el proceso de aprendizaje de los alumnos
+de la carrera de enfermería, permitiendo a los mismos realizar
+procedimientos de enfermería a un paciente virtual.
+\end{block}
 \end{frame}
 
-%\begin{frame}{Requerimientos de la solución}\end{frame}
+% Criterios que resuelve
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Propuesta de solución}
+% TODO no debería tener otro nombre?
 
-\begin{frame}{Alcance de la solución (I)}
-	Factores limitantes.
-	\begin{enumerate}[<+->]
+\begin{itemize}[<+->]
+\item Evaluación
+\item Progreso
+\item Disponibilidad de tiempo
+\item Factor psicológico
+\item Enfoque individual
+\end{itemize}
+\end{frame}
+
+
+% Venopunción
+\begin{frame}
+    \frametitle{\pagetitle}
+    \framesubtitle{Venopunción}
+
+    \pause{}
+    
+    \begin{block}{Descripción}
+    \centering
+    El procedimiento denominado \emph{Venopunción} es utilizado
+    frecuentemente para extraer muestras de sangre. Es un procedimiento invasivo
+    que ofrece un medio directo de acceso al sistema vascular. 
+    \end{block}
+
+	\begin{columns}
+	\column{.6\textwidth} \hspace{0.5cm}
+    \centering
+    \begin{tikzpicture}
+      {\node[opacity=1]{%
+              \includegraphicsx[width=.8\textwidth]{imagenes/extraccion.jpg}%
+          };}
+    \end{tikzpicture}
+    
+    \column{.5\textwidth} \hspace{0.5cm}
+    \textbf{Competencia básica}
+    \begin{itemize}
+	\item Ayudar en procedimientos invasivos
+	\end{itemize}
+	\end{columns}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{\pagetitle}
+    \framesubtitle{Escala de Glasgow}
+    
+    \begin{block}{Descripción}
+    \centering
+    La escala de Glasgow es utilizada como una herramienta de valoración
+    objetiva del estado de conciencia de pacientes en estado crítico. 
+    
+    Se evalúa la respuesta motora, verbal y ocular del paciente.
+    \end{block}
+
+	\begin{columns}
+	\column{.6\textwidth} \hspace{0.5cm}
+    \centering
+    \begin{tikzpicture}
+      {\node[opacity=.7]{%
+              %\oldincludegraphics[width=.8\textwidth]{imagenes/glasgow.jpg}%
+              \includegraphics[width=.85\textwidth]{imagenes/glasgow.jpg}%
+          };}
+    \end{tikzpicture}
+    
+    \column{.5\textwidth} \hspace{0.5cm}
+    \textbf{Competencia básica}
+    \begin{itemize}
+	\item Identificar actividades de cuidados según problemas urgentes principales.
+	\end{itemize}
+	\end{columns}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{\pagetitle}
+    \framesubtitle{Factores Limitantes}
+	\begin{itemize}[<+->]
 	\item Limitaciones técnicas
 	\item Importancia de representación
 	\item Facilidad de realización
-	\end{enumerate}
+	\end{itemize}
 \end{frame}
 
-\begin{frame}{Alcance de la solución (II)}
-	Hipótesis.
-	\begin{enumerate}[<+->]
-	\item Comando de voz con interfaz
-	\item Extracción uniforme de elementos
-	\item Acciones de bioseguridad
-	\item Representación iconográfica
-	\item Factores limitantes
-	\item Falta de pistas
-	\item Ubicuidad
-	\end{enumerate}
+\begin{frame}
+    \frametitle{\pagetitle}
+    \framesubtitle{Consideraciones de diseño}
+	\begin{itemize}[<+->]
+	\item \textbf{C1.} Interacción por voz
+	\item \textbf{C2.} Extracción de elementos
+	\item \textbf{C3.} Bioseguridad
+	\item \textbf{C4.} Representación iconográfica
+    \item \textbf{C5.} Motivación
+	\item \textbf{C6.} Retroalimentación limitada
+	\item \textbf{C7.} Movilidad
+	\end{itemize}
 \end{frame}
 
-\begin{frame}{Alcance de la solución (III)}
-	Decisiones de diseño.
-	\begin{enumerate}[<+->]
-	\item Acciones por interfaz de usuario
-	\item Simulación integra de pasos
-	\end{enumerate}
-\end{frame}
