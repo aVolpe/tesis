@@ -156,25 +156,25 @@ elemento queda seleccionado (simulando que es la herramienta que el enfermero
 tiene en la mano en ese momento), sólo un elemento puede ser seleccionado a la
 vez. Si el mismo botón se vuelve a presionar inmediatamente después de haber
 sido presionado, el elemento se des-selecciona (simulando que el enfermero dejó
-la herramienta). Los elementos disponibles están enumerados en la 
+la herramienta). Los elementos disponibles están enumerados en la
 figura~\ref{fig:hemocultivo_elementos} y son los siguientes:
 
 
 \begin{figure}[H]
-\centering 
-\includegraphics[width=10cm]{solucion/images/hemocultivo_jeringa_ampliada.jpg}
-\caption{Vista de la jeringa ampliada, facilitando la extracción de sangre. Se
-    agregan flechas azules para facilitar la comprensión de cómo se extrae
-    sangre.}
-\label{fig:hemocultivo_jeringa_zoom}
+\centering
+\includegraphics[width=10cm]{solucion/images/hemocultivo_elementos.jpg}
+\caption{Interfaz con los elementos en el paciente.}
+\label{fig:hemocultivo_elementos}
 \end{figure}
 
-\begin{enumerate}
+
+\begin{enumerate} 
+    
 \item \textbf{Torniquete}: es el primer elemento que se debe usar, para
-    utilizarlo, se debe presionar una zona del brazo del
-    paciente, en ese momento, el torniquete aparece en ese lugar, para
-    extraerlo, se debe presionar el torniquete y elegir la opción extraer en un menú 
-    que aparecerá inmediatamente.
+    utilizarlo, se debe presionar una zona del brazo del paciente, en ese
+    momento, el torniquete aparece en ese lugar, para extraerlo, se debe
+    presionar el torniquete y elegir la opción extraer en un menú que aparecerá
+    inmediatamente.
 
 \item \textbf{Esterilizador}: es un elemento que se utiliza para realizar la
     higienización del punto de punción, para utilizarlo se debe presionar
@@ -186,24 +186,33 @@ figura~\ref{fig:hemocultivo_elementos} y son los siguientes:
     utilización es similar a la del \emph{Torniquete}.
 
     A través de un menú contextual, se ofrece la posibilidad de realizar un
-    acercamiento, como se observa en la figura~\ref{fig:hemocultivo_jeringa_zoom}, 
-    en la vista ampliada. Se puede realizar la extracción de sangre utilizando dos dedos, 
-    con el primero se presiona el tambor y con el segundo dedo se extrae el émbolo\footnote{El
-    tambor es la parte de la jeringa que almacena el fluido, mientras que el
-    émbolo es la parte que se utiliza para presionar o succionar el fluido}.
+    acercamiento, como se observa en la
+    figura~\ref{fig:hemocultivo_jeringa_zoom}, en la vista ampliada. Se puede
+    realizar la extracción de sangre utilizando dos dedos, con el primero se
+    presiona el tambor y con el segundo dedo se extrae el émbolo\footnote{El
+        tambor es la parte de la jeringa que almacena el fluido, mientras que el
+        émbolo es la parte que se utiliza para presionar o succionar el fluido}.
     
 \item \textbf{Algodón}: el algodón se utiliza para presionar una zona que
     recientemente fue punzada, para utilizar este elemento, basta con presionar
     el brazo del paciente durante un segundo.
+
 \end{enumerate}
 
+\begin{figure}[H]
+\centering 
+\includegraphics[width=10cm]{solucion/images/hemocultivo_jeringa_ampliada.jpg}
+\caption{Vista de la jeringa ampliada, facilitando la extracción de sangre. Se
+    agregan flechas azules para facilitar la comprensión de cómo se extrae
+    sangre.}
+\label{fig:hemocultivo_jeringa_zoom}
+\end{figure}
 
 
-Para la utilización de los elementos, existe un menú
-contextual\footnote{Un menú que se despliega al presionar un elemento, es
-    contextual pues varía de acuerdo al elemento seleccionado.}, que lista las
-opciones disponibles por elemento, como se observa en la
-figura~\ref{fig:hemocultivo_torniquete_cm}.
+Para la utilización de los elementos, existe un menú contextual\footnote{Un menú
+    que se despliega al presionar un elemento, es contextual pues varía de
+    acuerdo al elemento seleccionado.}, que lista las opciones disponibles por
+elemento, como se observa en la figura~\ref{fig:hemocultivo_torniquete_cm}.
 
 \begin{figure}[H]
 \centering
@@ -450,14 +459,13 @@ realizar la verificación es el algoritmo de \enquote{RETE}\cite{de2001eca}. La 
 reglas definidas y la no dependencia circular entre ellas, hace innecesario la
 implementación de tal algoritmo en este trabajo\cite{de2001eca}. 
 
-De acuerdo a la descripción dada en~\ref{sec:eca_ejecucion}, la propuesta
-implementada utiliza una ejecución inmediata, principalmente por la sencillez
-de las reglas, es decir, las reglas no realizan un proceso complejo, solamente
-controlan el estado del entorno y lo validan. Además, la ejecución inmediata es 
-importante por que el entorno no sufre
-modificaciones entre el evento lanzado y la ejecución de la regla, según
-\cite{bailey2004event}, este es el factor más importante para determinar el tipo
-de ejecución deseado.
+De acuerdo a la descripción dada en~\ref{sec:eca}, la propuesta implementada
+utiliza una ejecución inmediata, principalmente por la sencillez de las reglas,
+es decir, las reglas no realizan un proceso complejo, solamente controlan el
+estado del entorno y lo validan. Además, la ejecución inmediata es importante
+por que el entorno no sufre modificaciones entre el evento lanzado y la
+ejecución de la regla, según \cite{bailey2004event}, este es el factor más
+importante para determinar el tipo de ejecución deseado.
 
 El motor de reglas actúa sobre aquellas reglas en estado
 \emph{WAITING\_FOR\_CONDITION} e invoca al procedimiento que se encarga de
