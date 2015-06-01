@@ -120,18 +120,36 @@ prácticas\cite{charsky:2010}.
 \subsection{Motores de acciones condicionadas por eventos}
 \label{sec:eca}
 
-Un evento es la ocurrencia de un hecho en particular. Por cada acción que realiza el usuario dentro  de una simulación, existe un evento relacionado, por consiguiente, es razonable  estudiar algunos eventos para determinar si las acciones del usuario son correctas.
+Un evento es la ocurrencia de un hecho en particular. Por cada acción que
+realiza el usuario dentro  de una simulación, existe un evento relacionado, por
+consiguiente, es razonable  estudiar algunos eventos para determinar si las
+acciones del usuario son correctas.
 
-Para determinar si una sucesión de eventos es la correcta, se definen reglas, una regla es una asociación de una condición y una acción, la condición define si el entorno es el adecuado para realizar una acción, la cual es un procedimiento que realiza la lógica deseada.
+Para determinar si una sucesión de eventos es la correcta, se definen reglas,
+una regla es una asociación de una condición y una acción, la condición define
+si el entorno es el adecuado para realizar una acción, la cual es un
+procedimiento que realiza la lógica deseada.
 
-Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos como triggers, es decir, una base de datos relacional (u orientada a objetos) es un motor de reglas \gls{eca}\cite{bailey2004event,behrends2006combining}.
+Las \gls{eca} son aquellas que son activadas una vez que se cumplen determinados
+eventos\cite{bailey2004event}. En las bases de datos relacionales, son conocidos
+como triggers, es decir, una base de datos relacional (u orientada a objetos) es
+un motor de reglas \gls{eca}\cite{bailey2004event,behrends2006combining}.
 
-Las mismas pueden ser utilizadas para notificar que un determinado conjunto de eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar información acerca de la utilización de un determinado recurso.
+Las mismas pueden ser utilizadas para notificar que un determinado conjunto de
+eventos ha ocurrido\cite{bailey2004event}, así como servir para almacenar
+información acerca de la utilización de un determinado recurso.
 
 
 % \subsubsection{Motivación}
 
-Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en forma de una única regla, lo cual facilita la declaración de las mismas\cite{bailey2004event}.  Son principalmente útiles para analizar el comportamiento en tiempo real de un sistema en una forma reactiva\cite{bailey2004event,de2001eca,bailey2002analysis},  esta característica está impulsada principalmente por que son ejecutadas después  de la ocurrencia de un evento, y el entorno no es modificado, pudiendo así acceder  al mismo entorno que el que lanzó el evento.
+Las reglas del tipo \gls{eca} permiten reaccionar a determinados eventos, en
+forma de una única regla, lo cual facilita la declaración de las
+mismas\cite{bailey2004event}.  Son principalmente útiles para analizar el
+comportamiento en tiempo real de un sistema en una forma
+reactiva\cite{bailey2004event,de2001eca,bailey2002analysis},  esta
+característica está impulsada principalmente por que son ejecutadas después  de
+la ocurrencia de un evento, y el entorno no es modificado, pudiendo así acceder
+al mismo entorno que el que lanzó el evento.
 
 
 %\subsubsection{Modelo de ejecución}
