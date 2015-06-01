@@ -12,6 +12,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage[utf8]{inputenc}
 
 \bibliographystyle{unsrt} % Numeros ordenados por entrada
 %%\bibliographystyle{alpha} % Nombre y a�o 
@@ -215,22 +216,45 @@
   \begingroup\doublespacing % always typeset title pages in doublespacing %
   \begin{titlepage}%
   \begin{center}
-    \vspace{1.5\@line}\textbf{\large\MakeUppercase{\@institution}}\par
+%    \vspace{1.5\@line}
+    \textbf{\large\MakeUppercase{\@institution}}\par
 	%\vspace{1.5\@line}\textbf{\large\MakeUppercase{\@nameinstitution}}\par
     \vspace{\@line}\textbf{\large\@faculty}\par
     %\textbf{\large\@department}\par
 	%%\vspace{2\@line}\includegraphics{logo.png}\par
-    \vspace{2\@line}\includegraphics[natwidth=220,natheight=330]{\@logosource}\par
-    \vspace{0.5\@line}\textsc{\Large``\@title''}\par
+    %\vspace{2\@line}\includegraphics[natwidth=220,natheight=330]{\@logosource}\par
+    \vspace{2\@line}\includegraphics[width=3.5cm]{\@logosource}\par
+    \vspace{0.5\@line}\textsc{\Large``Juegos serios como apoyo a la formación de profesionales:}\par
+    \textsc{\Large Una aplicación al área de enfermería''}\par
     \vspace{0.5\@line}
+
     \begin{singlespace}
       \textsc{Trabajo Final de Grado presentado por}\par
+      \vspace{0.5\@line}
+                  \vspace{0.5\@line}
+                  \vspace{0.5\@line}
+                  \vspace{0.5\@line}
+%                  \vspace{0.5\@line}
       \vfill{\scshape \@typeauthor{\unskip,\par}{\unskip\par y{} }}\par
+                  \vspace{0.5\@line}
+                  \vspace{0.5\@line}
+                  \vspace{0.5\@line}
+%                  \vspace{0.5\@line}
+      \vspace{0.5\@line}
+
       \vfill\textsc{como requisito}\par
       \textsc{para obtener el t\'{i}tulo de \@grade}\par
+
       \textsc{en \@degree}\par
+      \vspace{0.5\@line}
+                  \vspace{2\@line}
+%                  \vspace{0.5\@line}
+%                  \vspace{0.5\@line}
+%                  \vspace{0.5\@line}
+
       \vfill\textsc{\@advisorname}\par\vspace{4pt}
 	  \textsc{\@advisortitle\ \@advisor}\par\vspace{4pt}
+	        \vspace{2\@line}
     \end{singlespace}
     \vfill\textrm{\@address. \hfill \@monthyear}
   \end{center}
