@@ -125,7 +125,7 @@ Con esta encuesta se busca identificar las fortalezas y debilidades de la
 solución, además de evaluar la solución en cuanto a factores de exploración,
 representación, motivación, inmersión, retroalimentación y pedagogía. También se
 busca valorar el nivel de aceptación de la solución y la validación de las
-hipótesis planteadas como parte del diseño de la solución.
+consideraciones de diseño planteadas como parte del diseño de la solución.
 
 La encuesta cuenta con $27$ preguntas cerradas, es decir de una sola respuesta
 en una lista de opciones, y con $4$ preguntas abiertas, es decir los encuestados
@@ -184,18 +184,18 @@ Utilidad             & De acuerdo (0.69)              & \tabitem Complemento    
 
 \begin{table}
 \centering
-\caption{Hipótesis con su aceptación}
+\caption{Consideraciones de diseño con su aceptación}
 \begin{tabular}{lcr}
 \toprule
-Hipótesis                   & Promedio encuesta     & Promedio estandarizado \\
+Consideración de diseño     & Promedio encuesta     & Promedio estandarizado \\
 \midrule
-H1. Comandos de voz         & De acuerdo              & $0,55$ \\
-H2. Extracción de elementos & Parcialmente de acuerdo & $0,65$ \\
-H3. Bioseguridad            & De acuerdo              & $0,58$ \\
-H4. Iconos                  & Parcialmente de acuerdo & $0,53$ \\
-H5. Motivación              & De acuerdo              & $0,65$ \\
-H6. Retroalimentación       & De acuerdo              & $0,61$ \\
-H7. Ubicuidad               & De acuerdo              & $0,66$ \\
+C1. Interacción a través de la voz  & De acuerdo              & $0,55$ \\
+C2. Extracción de elementos & Parcialmente de acuerdo & $0,65$ \\
+C3. Bioseguridad            & De acuerdo              & $0,58$ \\
+C4. Representación iconográfica  & Parcialmente de acuerdo & $0,53$ \\
+C5. Motivación              & De acuerdo              & $0,65$ \\
+C6. Retroalimentación limitada      & De acuerdo              & $0,61$ \\
+C7. Movilidad               & De acuerdo              & $0,66$ \\
 \bottomrule
 \end{tabular}
 \label{tab:resultado_resumen_hipotesis}
@@ -281,18 +281,19 @@ EG5. Respuesta verbal     & 0.36 & 0.45 & 0.45 \\
 
 La solución propuesta almacena información relacionada a la actividad del
 usuario, incluyendo cuando y como utiliza las acciones, los pasos que realiza,
-el orden y las condiciones de la escena cuando realiza cada acción, el tiempo de partida por procedimiento, entre otras informaciones.
+el orden y las condiciones de la escena cuando realiza cada acción, el tiempo de
+partida por procedimiento, entre otras informaciones.
 
 El registro de actividades ayuda a identificar las  fortalezas y debilidades de
 la solución en cuanto al diseño y utilidad. Sobre todo, ayuda a medir el impacto
 pedagógico al permitir contrarrestar el uso y desempeño del usuario con el
 puntaje obtenido por el mismo en la encuesta utilizada para medir el
-conocimiento. Los principales resultados obtenidos utilizando la correlación de 
-Pearson\cite{BoslaughStatistics2008} entre los datos del registro de actividades y 
-de la encuesta de conocimiento considerando sólo a la muestra son los mostrados en el 
-cuadro~\ref{tab:all_correlation}.
+conocimiento. Los principales resultados obtenidos utilizando la correlación de
+Pearson\cite{BoslaughStatistics2008} entre los datos del registro de actividades
+y de la encuesta de conocimiento considerando sólo a la muestra son los
+mostrados en el cuadro~\ref{tab:all_correlation}.
 
-\begin{table}
+\begin{table}[H]
 \centering
 \caption{Correlación entre factores estudiados} 
 \begin{tabular}{lrrrrrr}
@@ -302,15 +303,15 @@ cuadro~\ref{tab:all_correlation}.
 \begin{sideways}\textbf{Puntaje Máx Glasgow (juego)}\end{sideways}        &
 \begin{sideways}\textbf{Tiempo Jugado Venopunción}\end{sideways}         &
 \begin{sideways}\textbf{Tiempo Jugado Glasgow}\end{sideways} &
-\begin{sideways}\textbf{Puntaje Prom Venopunción (examen)}\end{sideways}  &
-\begin{sideways}\textbf{Puntaje Prom Glasgow (examen)}\end{sideways}    \\
+\begin{sideways}\textbf{Puntaje Venopunción (examen)}\end{sideways}  &
+\begin{sideways}\textbf{Puntaje Glasgow (examen)}\end{sideways}    \\
 \midrule
-Puntaje Máx Venopunción (juego)    & 1    & 0.12  & \textbf{0.3}   & \textbf{0.35} & \textbf{0.74} & \textbf{0.55} \\
-Puntaje Máx Glasgow (juego)       & 0.12 & 1     & \textbf{0.32} & \textbf{0.61} & 0 & \textbf{0.54}\\
-Tiempo Jugado Venopunción     		 & \textbf{0.3}  & \textbf{0.32} & 1  & 0.29 & 0.04 & 0.05\\
-Tiempo Jugado Glasgow 				 & \textbf{0.35} & \textbf{0.61}  & 0.29  & 1    & \textbf{0.69} & \textbf{0.86}\\
-Puntaje Prom Venopunción (examen) & \textbf{0.74} & 0 	& 0.04  & \textbf{0.69} & 1 & \textbf{0.78} \\
-Puntaje Prom Glasgow (examen)    		 & \textbf{0.55} & \textbf{0.54} & 0.05  & \textbf{0.86} & \textbf{0.78} & 1 \\
+Puntaje Máx Venopunción (juego)    & 1    & 0.12  & \textbf{0.30}   & \textbf{0.35} & \textbf{0.74} & 0.55 \\
+Puntaje Máx Glasgow (juego)       & 0.12 & 1     & 0.32 & \textbf{0.61} & 0 & \textbf{0.54}\\
+Tiempo Jugado Venopunción     		 & \textbf{0.30}  & \textbf{0.32} & 1  & 0.29 & 0.04 & 0.05\\
+Tiempo Jugado Glasgow 				 & \textbf{0.35} & \textbf{0.61}  & 0.29  & 1    & 0.69 & \textbf{0.86}\\
+Puntaje Venopunción (examen) & \textbf{0.74} & 0 	& 0.04  & 0.69 & 1 & \textbf{0.78} \\
+Puntaje Glasgow (examen)    		 & 0.55 & \textbf{0.54} & 0.05  & \textbf{0.86} & \textbf{0.78} & 1 \\
 \bottomrule               
 \end{tabular}
 
