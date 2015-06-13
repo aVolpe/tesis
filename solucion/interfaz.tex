@@ -490,9 +490,9 @@ entorno es la esperada.
 \midrule
 1  & Explicar procedimiento    &         & Explicar procedimiento    & Sea la primera regla lanzada\\
 2  & Higienización de manos    & 1       & Higienización de manos    &\\
-3  & Ponerse tababoca          & 2       & Ponerse tababoca          & Se realize antes de ponerse los guantes\\
-4  & Ponerse gorro             & 2       & Ponerse gorro             & Se realize antes de ponerse los guantes\\
-5  & Ponerse bata              & 2       & Ponerse bata              & Se realize antes de ponerse los guantes\\
+3  & Ponerse tababoca          & 2       & Ponerse tababoca          & Se realice antes de ponerse los guantes\\
+4  & Ponerse gorro             & 2       & Ponerse gorro             & Se realice antes de ponerse los guantes\\
+5  & Ponerse bata              & 2       & Ponerse bata              & Se realice antes de ponerse los guantes\\
 6  & Calzar guantes            & 2,3,4,5 & Calzar guantes            &\\
 7  & Colocar torniquete        & 10      & Colocar torniquete        & La zona correcta y mismo brazo de inserción\\
 8  & Cerrar manos              & 7,10    & Cerrar puño               & Sea el mismo brazo que inserción\\
@@ -634,16 +634,16 @@ paciente.}
 \label{fig:glasgow_seleccion}
 \end{figure}
 
-La pantalla principal de este procedimiento se muestra en la
-figura~\ref{fig:glasgow_principal}, en ella además de contar con el paciente sólo se ofrece
-una opción para finalizar la partida actual.
+%La pantalla principal de este procedimiento se muestra en la
+%figura~\ref{fig:glasgow_principal}, en ella además de contar con el paciente sólo se ofrece
+%una opción para finalizar la partida actual.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=10cm]{solucion/images/glasgow_principal.jpg}
-\caption{Pantalla principal de la escena de valoración de la escala de Glasgow.}
-\label{fig:glasgow_principal}
-\end{figure}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=10cm]{solucion/images/glasgow_principal.jpg}
+%\caption{Pantalla principal de la escena de valoración de la escala de Glasgow.}
+%\label{fig:glasgow_principal}
+%\end{figure}
 
 
 
@@ -689,30 +689,28 @@ foco principal de la cámara.
 %el usuario emite palabras, conocidas como \emph{Comandos de Voz}, que permiten
 %al usuario o enfermero interactuar con el paciente.
 
-\begin{figure}[H]
+\begin{figure}[hbt]
 \centering
-\includegraphics[scale=0.5]{solucion/images/glasgow_principal.jpg}
+\includegraphics[width=10cm]{solucion/images/glasgow_principal.jpg}
 \caption{Interfaz principal de la escena \emph{Evaluación de Glasgow}, se observa además
-    la opción que permite finalizar la escena
-    (esquina inferior derecha).}
+    la opción que permite finalizar la escena.}
 \label{fig:glasgow_principal}
 \end{figure}
 
-El usuario puede interactuar con el paciente de dos modos, por un 
-\enquote{menú de comandos de voz} y por opciones a través de \enquote{menú contextual}. 
+El usuario puede interactuar con el paciente de dos modos, por un \enquote{menú
+    de comandos de voz} y por opciones a través de \enquote{menú contextual}. 
 
 \begin{itemize}
-\item{\textbf{Menú Contextual}}
 
-Las opciones a través del menú contextual se relacionan a acciones que puede
-realizar el enfermero sobre una parte particular del cuerpo del paciente, en las
-extremidades, el menú despliega una sola opción, la cual es \emph{Pinchar} como se 
-observa en la figura~\ref{fig:glasgow_menu_accion}, que
-provoca que el enfermero realice un estímulo doloroso al paciente. El
-paciente reacciona ante este estímulo dependiendo de su valoración motora y
-ocular. 
+\item{\textbf{Menú Contextual}:} las opciones a través del menú contextual se
+    relacionan a acciones que puede realizar el enfermero sobre una parte
+    particular del cuerpo del paciente, en las extremidades, el menú despliega
+    una sola opción, la cual es \emph{Pinchar} como se observa en la
+    figura~\ref{fig:glasgow_menu_accion}, que provoca que el enfermero realice
+    un estímulo doloroso al paciente. El paciente reacciona ante este estímulo
+    dependiendo de su valoración motora y ocular. 
 
-\begin{itemize}
+    \begin{itemize}
     \item Si el estado ocular del paciente es \enquote{Al dolor}, el paciente
         abrirá los ojos inmediatamente después de que se presione la opción. 
     \item  La respuesta motora varía de acuerdo a su estado, si el mismo es
@@ -723,9 +721,9 @@ ocular.
         cuerpo, indistintamente de la ubicación del estímulo doloroso, y si el
         estado es \enquote{Extiende}, el paciente extenderá el cuerpo también 
         indistintamente de la ubicación del estímulo doloroso.
-\end{itemize}
+    \end{itemize}
 
-\begin{figure}[H]
+\begin{figure}[hbt]
 \centering
 \includegraphics[scale=0.5]{solucion/images/glasgow_menu_accion.png}
 \caption{Menú contextual para realizar un estímulo doloroso al paciente en el procedimiento de 
@@ -735,12 +733,7 @@ ocular.
 
 \item{\textbf{Menú de comandos de voz}}
 
-Este menú se activa y se muestra al usuario cuando la solución detecta que el usuario ha 
-hablado. Las opciones disponibles a través de los comandos de voz, simulan una
-interacción verbal entre el enfermero y el paciente, y se agrupan en tres
-tipos, verbales, oculares y motoras como puede verse en la figura~\ref{fig:glasgow_gui}. 
-
-\begin{figure}[H]
+\begin{figure}[hbt]
 \centering
 \includegraphics[scale=0.5]{solucion/images/glasgow_comandos_voz.jpg}
 \caption{Interfaz de la escena \emph{Evaluación de Glasgow}, se observan los
@@ -968,7 +961,7 @@ partida, ir al menú de inicio, y compartir sus logros en las redes sociales.
 
 Si el usuario presiona el botón \enquote{Facebook}, se despliega el menú de
 dicha red social, permitiendo que el mismo pueda agregar un mensaje
-personalizado y el resultado de la sesión se comparta con un texto similar a \enquote{Conseguí 15 puntos
-    en 1475 segundos, en el procedimiento de \emph{Venopunción} jugando con
-    \gls{nombre}}.
+personalizado y el resultado de la sesión se comparta con un texto similar a
+\enquote{Conseguí 15 puntos en 1475 segundos, en el procedimiento de
+    \emph{Venopunción} jugando con \textit{eTes\~{a}i}}.
 
