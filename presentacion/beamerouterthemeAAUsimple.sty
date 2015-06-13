@@ -84,6 +84,13 @@
         \usebeamerfont{section in head/foot}\hspace*{3.5ex}%
         \insertshortauthor\ |\ %
                 \insertshorttitle%
+                \hfill\hfill%
+                \hfill\hfill%
+                \hfill\hfill%
+                \hfill\hfill%
+                \hfill\hfill%
+                \hfill\hfill%
+                \normalsize\insertframenumber/\inserttotalframenumber%
       \end{beamercolorbox}%
   }
   
@@ -160,7 +167,7 @@
         % place the total number of frames
         \node[fill=normal text.bg,draw=AAUsimple.fg,circle,thick,minimum width=2*\beamer@borderwidth] at ([xshift=\beamer@counterradius] logopos) {{\usebeamercolor[fg]{normal text}\inserttotalframenumber}};
         % place the current frame number
-        \node[fill=normal text.bg,draw=AAUsimple.fg,circle,thick,minimum width=2*\beamer@borderwidth] at ([shift={(\progress:\beamer@counterradius)}] logopos) {{\usebeamercolor[fg]{normal text}\insertframenumber}};
+        \node[fill=normal text.bg,draw=AAUsimple.fg,circle,thick,minimum width=2*\beamer@borderwidth] at ([shift={(\progress:\beamer@counterradius)}] logopos) {{\usebeamercolor[fg]{normal text}\big\insertframenumber}};
       \fi
     }
   \end{tikzpicture}%
