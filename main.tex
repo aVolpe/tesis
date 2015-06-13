@@ -33,7 +33,7 @@
 \usepackage{glossaries}
 \usepackage{etoolbox}
 \usepackage[xindy]{imakeidx}
-\usepackage[colorinlistoftodos,prependcaption,spanish]{todonotes}
+%\usepackage[colorinlistoftodos,prependcaption,spanish]{todonotes}
 \usepackage{filecontents}
 \usepackage{util/pgf-pie}
 
@@ -116,14 +116,14 @@
   plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
 }
 
-\newcommandx{\todox}[2][1=]{\todo[linecolor=gray,backgroundcolor=white,#1]{#2}}
-\newcommandx{\martin}[2][1=]{\todo[linecolor=blue,backgroundcolor=white,#1]{#2}}
-\newcommandx{\replantear}[2][1=]{\todo[inline,caption={Replantear},#1]{#2}}
-\newcommandx{\observacion}[2][1=]{\todo[inline,caption={Observacion},#1]{#2}}
-\newcommandx{\pregunta}[2][1=]{\todo[backgroundcolor=white,inline,caption={Pregunta},#1]{¿#2?}}
-\newcommandx{\revisar}[2][1=]{\todo[size=\small,caption={Revision},linecolor=red,backgroundcolor=white,#1]{#2}}
-\newcommand{\tabletodo}[2][]{\begin{minipage}{3cm}\todo[inline,#1]{#2}\end{minipage}}
-\newcommand{\fixme}[2]{\uline{#1}\todo[linecolor=blue,backgroundcolor=green,size=\small]{#2}}
+%\newcommandx{\todox}[2][1=]{\todo[linecolor=gray,backgroundcolor=white,#1]{#2}}
+%\newcommandx{\martin}[2][1=]{\todo[linecolor=blue,backgroundcolor=white,#1]{#2}}
+%\newcommandx{\replantear}[2][1=]{\todo[inline,caption={Replantear},#1]{#2}}
+%\newcommandx{\observacion}[2][1=]{\todo[inline,caption={Observacion},#1]{#2}}
+%\newcommandx{\pregunta}[2][1=]{\todo[backgroundcolor=white,inline,caption={Pregunta},#1]{¿#2?}}
+%\newcommandx{\revisar}[2][1=]{\todo[size=\small,caption={Revision},linecolor=red,backgroundcolor=white,#1]{#2}}
+%\newcommand{\tabletodo}[2][]{\begin{minipage}{3cm}\todo[inline,#1]{#2}\end{minipage}}
+%\newcommand{\fixme}[2]{\uline{#1}\todo[linecolor=blue,backgroundcolor=green,size=\small]{#2}}
 %\newcommand{\cs}{C$\sharp$ }
 %\newcommand{\cs}{C\includegraphics{hash-symbol}}
 \newcommand{\cs}{%
@@ -139,10 +139,12 @@
 
 \begin{document}
 
+
 \include{acronimos}
 
 \maketitle
 
+\include{agradecimientos}
 % Tabla de contenidos
 %\setcounter{secnumdepth}{5}
 %\setcounter{tocdepth}{5}
@@ -157,9 +159,9 @@
 %\listoftodos
 %\todototoc
 
-%\printglossary[type=\acronymtype,title=Lista de Siglas]
+\printglossary[type=\acronymtype,title=Lista de Siglas]
 
-%\addcontentsline{toc}{chapter}{Lista de Siglas}
+\addcontentsline{toc}{chapter}{Lista de Siglas}
 
 \mainmatter
 
