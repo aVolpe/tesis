@@ -145,3 +145,68 @@ Otras librerias             & Java EE & 6\\
 \end{frame}
 
 \frameimage[Juegos serios, Dimensiones]{../juegos_serios/desarrollo_dimensiones.png}
+
+\begin{frame}[noframenumbering]
+\frametitle{\apendixframetitle}
+\framesubtitle{Correlación de Pearson}
+
+%\sriptsize
+\scriptsize
+El coeficiente para las variables $X$ e $Y$ está dado por:
+
+\begin{equation}
+r = \frac{\sum_{i=1}^n{(\frac{x_i-\bar{x}}{s_x})({\frac{y_i-\bar{y}}{s_y}})}}%
+{n - 1}
+\end{equation}
+
+donde:
+
+\begin{itemize}
+    \item ($x_i$, $y_i$) es el conjunto de coordenadas de las variables $X$ e $Y$.
+    \item $\bar{x}$ es la media de la variable $X$.
+    \item $\bar{y}$ es la media de la variable $Y$.
+    \item $s_x$ es la desviación estándar de la variable $X$.
+    \item $s_y$ es la desviación estándar de la variable $Y$.
+    \item $n - 1$ son los grados de libertad.
+\end{itemize}
+
+El valor del coeficiente está comprendido entre $-1$ y $1$.
+
+\end{frame}
+
+\begin{frame}[noframenumbering]
+\frametitle{\apendixframetitle}
+\framesubtitle{Doble estandarización}
+
+\scriptsize
+Siendo:
+\begin{itemize}
+	\item $\min_i$ la respuesta de menor valor del usuario $i$.
+	\item $\max_i$ la respuesta de mayor valor del usuario $i$.
+\end{itemize}
+
+Para cada respuesta $s$ del usuario $i$, el valor ajustado, por la primera
+normalización, $s_1$ se define como:
+
+\begin{equation}
+s_1{_i}=\frac{s-\min_i}{\max_i-\min_i}
+\end{equation}
+
+%\observacion{Considerar resumir}
+Y luego siendo:
+\begin{itemize}
+	\item $groupmin_i$ la respuesta ajustada de menor valor en el grupo $i$.
+	\item $groupmax_i$ la respuesta ajustada de mayor valor en el grupo $i$
+\end{itemize}
+
+Para cada respuesta ajustada $s_1{_i}$ del usuario $i$, el valor ajustado $sa_i$ se
+define como:	
+
+\begin{equation}
+sa_i=\frac{s_{1_i}-groupmin_i}{groupmax_i-groupmin_i}
+\end{equation}
+
+Obteniendo así un valor normalizado, tanto por individuo, como por pregunta, en
+el rango $0$ y $1$.
+
+\end{frame}
