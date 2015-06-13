@@ -1,0 +1,31 @@
+\newenvironment{step}[2]%
+{%
+% Workaroudn terrible http://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
+\def\fooNoA{#1}
+\def\fooNoB{#2}
+
+%Primer frame
+\begin{frame}[noframenumbering]%
+\frametitle{\pagetitle}%
+\framesubtitle{#1 (1 de 2)}%
+%\begin{itemize}%
+}%
+{%
+%\end{itemize}%
+\end{frame}%
+
+%Segundo frame
+\begin{frame}[noframenumbering]%
+\frametitle{\pagetitle}%
+\framesubtitle{\fooNoA (2 de 2)}%
+\includemedia[
+  height=0.7\textheight,%
+  width=\textwidth,%
+  activate=pageopen,%
+  deactivate=pageclose,%
+  addresource=\fooNoB,
+  flashvars={source=\fooNoB}
+]{}{VPlayer.swf}
+\end{frame}%
+}
+

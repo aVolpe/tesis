@@ -1,0 +1,273 @@
+%\documentclass[xcolor={table,usenames,dvipsnames},handout]{beamer}
+\documentclass[xcolor={table,usenames,dvipsnames}]{beamer}
+%\documentclass[xcolor=table,aspectratio=169]{beamer}
+\usepackage{etex}
+\usepackage[]{xcolor}
+\usepackage{pgfpages}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{tkz-kiviat}
+\usepackage{fixpauseincludegraphics}
+%\newcommand*{\includegraphicsx}[2][]{\includegraphics[#1]{#2}}
+\usepackage{booktabs}
+\usepackage{tabulary}
+\usepackage{filecontents}
+\usepackage{rotating}
+\usepackage{media9}
+\usepackage{multimedia}
+%\usepackage{svg}
+\usepackage{../util/pgf-pie}
+
+% BEGIN BIBTEX declaration
+
+%% Cambiar el tamaño del footnote
+\let\oldfootnotesize\footnotesize
+\renewcommand*{\footnotesize}{\oldfootnotesize\tiny}
+
+
+\usepackage[url=false,style=numeric-comp,sorting=none,citetracker,pagetracker=page]{biblatex}
+\AtEveryBibitem{%
+  \clearname{booktitle}%
+  \clearlist{booktitle}%
+  \clearfield{booktitle}%
+}
+
+% Todo esto es para citar sin repetir
+\makeatletter
+% user-level citation command
+\DeclareCiteCommand{\sfcite}[\cbx@superscript]
+  {\usebibmacro{cite:init}%
+   \let\multicitedelim\supercitedelim
+   \iffieldundef{prenote}{}{\BibliographyWarning{Ignoring prenote argument}}%
+   \iffieldundef{postnote}{}{\BibliographyWarning{Ignoring postnote argument}}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:super:foot}%
+   \usebibmacro{cite:comp}}
+  {}
+  {\usebibmacro{cite:dump}}
+
+% save instcount, save key and last inline instcount if seen first on page
+\newbibmacro*{cite:super:foot}{%
+  \xdef\cbx@key{\thefield{entrykey}}%
+  \ifsamepage{\value{instcount}}{\csuse{cbx@instcount@\cbx@key}}{}{%
+    \listxadd{\cbx@savelist}{\cbx@key}%
+    \ifnumequal{\value{cbx@tempcntd}}{0}{%
+      \defcounter{cbx@tempcntc}{\value{instcount}}%
+      \loop\ifnum\value{cbx@tempcntc}>0
+        \ifsamepage{\value{instcount}}{\value{cbx@tempcntc}}
+          {\ifcsundef{blx@fnpage@\number\numexpr\value{cbx@tempcntc}}
+             {\setcounter{cbx@tempcntd}{\value{cbx@tempcntc}}}{}%
+           \stepcounter{cbx@tempcntc}}
+          {\setcounter{cbx@tempcntc}{0}}%
+      \repeat}{}}%
+  \csnumgdef{cbx@instcount@\cbx@key}{\value{instcount}}}
+\let\cbx@savelist\@empty
+\newcounter{cbx@tempcntc}
+\newcounter{cbx@tempcntd}
+\setcounter{cbx@tempcntd}{0}
+
+\newrobustcmd*{\cbx@superscript}[1]{%
+  \global\toggletrue{cbx@sfcite}
+  \mkbibsuperscript{#1}%
+  \cbx@footnote%
+  \global\togglefalse{cbx@sfcite}}
+\newtoggle{cbx@sfcite}
+
+\AtEveryCitekey{%
+  \ifciteseen{}{\csnumgdef{cbx@instcount@\thefield{entrykey}}{-1}}%
+  \iftoggle{cbx@sfcite}{}{\cbx@footnote}}
+\AtEveryBibitem{\cbx@footnote}
+\AtEveryLositem{\cbx@footnote}
+
+% defer citation footnotes to last inline reference instance on page
+\newrobustcmd*{\cbx@footnote}{%
+  \ifboolexpr{ not test {\ifdefempty{\cbx@savelist}}
+            %   and test {\ifnumequal{\value{instcount}}{\value{cbx@tempcntd}}} 
+            }
+    {\cbx@sortlist@init%
+     \let\do\cbx@do
+     \dolistloop{\cbx@sortlist}%
+     \global\let\cbx@savelist\@empty
+     \setcounter{cbx@tempcntd}{0}}{}}
+
+% print footnotes in 'sorting' order
+\def\cbx@do#1{%
+  \ifinlist{#1}{\cbx@savelist}
+    {\begingroup
+     \blx@resetdata
+     \blx@getdata@cite{#1}%
+     \blx@setoptions@type\abx@field@entrytype
+     \blx@setoptions@entry
+     \blx@execute
+     \blx@beglang
+     \iffieldundef{shorthand}
+       {\gdef\@thefnmark{\printfield{prefixnumber}\printfield{labelnumber}}}
+       {\gdef\@thefnmark{\printfield{shorthand}}}%
+     \gappto\@thefnmark{\blx@initunit}%
+     \ifhyperref
+       {\@footnotetext{\blx@driver\abx@field@entrytype}}
+       {\@footnotetext{\blx@driver\abx@field@entrytype}}%
+     \blx@endlang
+     \endgroup}
+    {}}
+
+% access internal list of sorted entry keys
+\def\cbx@sortlist@init{%
+  \ifcsundef{blx@sort@\the\c@refsection}
+    {\global\letcs{\cbx@sortlist}
+       {blx@slists@\the\c@refsection @entry@\blx@sorting}}% Biber
+    {\global\letcs{\cbx@sortlist}{blx@sort@\the\c@refsection}}}% BibTeX
+\let\cbx@sortlist\@empty
+\makeatother
+
+\addbibresource{../bibliography.bib}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% END BIBER DECLARATION
+
+\captionsetup{compatibility=false}
+\pgfplotsset{compat=1.8}
+
+\usetikzlibrary{shapes,arrows,shadows}
+\tikzstyle{block} = [rectangle, draw, fill=gray!20, 
+    text width=10em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+
+\usetheme[
+%%% options passed to the outer theme
+    %progressstyle=corner,   %either fixedCircCnt, movCircCnt, or corner
+%    rotationcw,          % change the rotation direction from counter-clockwise to clockwise
+    shownavsym          % show the navigation symbols
+  ]{AAUsimple}
+
+% specify a logo on the titlepage (you can specify additional logos an include them in 
+% institute command below
+%\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{../util/logo.jpg} % placed on the title page
+\titlegraphic{% is placed on the bottom of the title page
+    \includegraphics[width=2cm]{../util/logo.pdf}
+  %\hspace{1cm}\pgfuseimage{titlepagelogo2}
+}
+
+%
+%% Buscar más en http://deic.uab.es/~iblanes/beamer_gallery/individual/Malmoe-dolphin-default.html
+%\usetheme{Malmoe}
+
+%\usetheme{Ilmenau}
+%%\usecolortheme{dolphin}
+%\usetheme{Madrid}
+%\useinnertheme{circles}
+
+%\usecolortheme{lily}
+\setbeamercovered{transparent}
+\setbeamercolor{block title}{use=structure,fg=white,bg=beamer@headercolor}
+\setbeamercolor{block body}{use=structure,fg=black,bg=gray!20!white}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamerfont{framesubtitle}{size=\large}
+%\setbeamerfont{frametitle}{size=\normalsize}
+
+\newcommand{\cs}{%
+  {\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\fontseries{b}\selectfont\#}}}}
+
+
+%\setbeameroption{show notes on second screen} % Descomentar para no ver comentarios
+
+\beamertemplatenavigationsymbolsempty
+
+\newcounter{sectionframestart}
+\newcounter{sectiontotal}
+
+\AtBeginSection[]
+{%
+    \setcounter{sectionframestart}{\numexpr \value{framenumber}+1}
+}
+
+\newcommand\subsectnum{%
+    \ifnum \value{sectiontotal}>1%
+      (%
+       %\number\numexpr \insertpagenumber-\insertsectionstartpage+1\relax~de~%
+       %\number\numexpr \insertsectionendpage-\insertsectionstartpage+1\relax%
+       \number\numexpr \value{framenumber}-\value{sectionframestart}+1\relax%
+       ~de~%
+       \arabic{sectiontotal}%
+      )
+    \else
+
+    \fi
+}
+
+\newcommand\pagetitle{\insertsectionhead~\subsectnum}
+
+%\addtobeamertemplate{frametitle}{\stepcounter{frameinsectionnumber}\arabic{frameinsectionnumber}}{}
+
+%\addtobeamertemplate{frametitle}{\pagetitle{}}{\pagetitle{}}
+%\addtobeamertemplate{frametitle}{Hello }{!}
+%\addtobeamertemplate{framesubtitle}{\insertframetitle}
+
+%\makeatletter
+  %\CheckCommand*\beamer@checkframetitle{\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+  %\renewcommand*\beamer@checkframetitle{\global\let\beamer@frametitle\relax\@ifnextchar\bgroup\beamer@inlineframetitle{}}
+%\makeatother
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\newcommand{\pintar}[2]{{\color{#1} #2}}
+\newcommand{\pin}[2]{{\color{#1} \textbf{#2}}}
+
+\setbeamercolor{normal text}{fg=black}
+%%%%%%%%%%%%%%%%%%%%%
+% Datos de la tesis %
+%%%%%%%%%%%%%%%%%%%%%
+
+\author[Mirta González y Arturo Volpe]{Mirta González \quad Arturo Volpe}
+
+\title[Juegos serios como apoyo a la formación de profesionales]
+%tradicional\hspace{2em}\insertframenumber/\inserttotalframenumber]%
+{Juegos serios como apoyo a la formación de profesionales: \\ Una aplicación al
+    área de enfermería}
+
+%\date{Mayo, 2014} %leave out for today's date to be insterted
+\date{}
+
+\institute{Universidad Nacional de Asunción\\Facultad Politécnica}
+
+\begin{document}
+\newif\iflinux
+\linuxtrue
+
+%\end{frame}
+
+{\aauwavesbg%
+\begin{frame}[plain,noframenumbering] % the plain option removes the sidebar and header from the title page
+  \titlepage
+\end{frame}}
+
+\begin{frame}
+\frametitle{Índice}
+\tableofcontents
+\end{frame}
+
+\input{introduccion.tex}
+\input{tics.tex}
+\input{juegos_serios.tex}
+\input{problema.tex}
+\input{tecnologia.tex}
+\input{implementacion_videos.tex}
+\input{analisis.tex}
+\input{conclusiones.tex}
+\input{futuro.tex}
+
+
+\section*{}
+
+{\aauwavesbg
+\begin{frame}[plain,noframenumbering]
+  \finalpage{¡Muchas gracias!}
+\end{frame}}
+
+\appendix
+\input{apendice.tex}
+
+\end{document}
