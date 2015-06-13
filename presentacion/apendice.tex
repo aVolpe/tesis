@@ -1,7 +1,28 @@
 \section{Apéndices}
+\setcounter{sectiontotal}{10}
+\newcounter{pagenumber}
+\setcounter{pagenumber}{0}
+
+\newcommand\apendixframetitle{%
+\stepcounter{pagenumber}
+Apéndices (%
+\arabic{pagenumber}%
+~de~%
+\arabic{sectiontotal}%
+)%
+}
+
+\newcommand\frameimage[2][Apendice]{%
+\begin{frame}[noframenumbering]
+\frametitle{\apendixframetitle}
+\framesubtitle{#1}
+\centering
+\includegraphics[width=\textwidth,height=0.8\textheight,keepaspectratio]{#2}
+\end{frame}
+}
 
 \begin{frame}[noframenumbering]
-\frametitle{Apéndices (1 de 3)}
+\frametitle{\apendixframetitle}
 \framesubtitle{Tecnologías utilizadas \- Front-end}
 \begin{table}
 \centering
@@ -29,7 +50,7 @@ Otras librerías          & NGUI            & 2.7\\
 \end{frame}
 
 \begin{frame}[noframenumbering]
-\frametitle{Apéndices (2 de 3)}
+\frametitle{\apendixframetitle}
 \framesubtitle{Tecnologías utilizadas \- Back-end}
 \begin{table}
 \centering
@@ -52,3 +73,75 @@ Otras librerias             & Java EE & 6\\
 \end{table}
 \end{frame}
 
+\begin{frame}[noframenumbering]
+\frametitle{\apendixframetitle}
+\framesubtitle{Justificación de la muestra}
+
+\small
+
+\begin{itemize}
+
+\item El número de muestras tomadas fue 8, ya que según Nielsen son necesarios
+    al menos $5$ participantes para poder obtener resultados significativos en
+    una prueba de usabilidad. Además, Ritch asegura que la teoría de Nielsen es
+    verdadera especialmente para pruebas simples. 
+
+\item La utilización de $11$ alumnos es suficiente, ya que según estudios
+    presentados en Nielsen, mientras menos experiencia tengan los sujetos de
+    estudio con la solución planteada, serán necesarios menos para detectar un
+    gran porcentaje de errores y fortalezas, y según Ritch, una base de $10$ a
+    $12$ es suficiente para obtener resultados estadísticamente válidos.
+
+\item Cabe destacar que por Norman se demuestra que, aunque el tamaño de la
+    muestra sea pequeña y los datos no puedan ser distribuidos normalmente o los
+    datos sean de escalas de tipo \textit{Likert}, los métodos paramétricos como
+    el análisis de varianza, la regresión y la correlación pueden ser
+    utilizados.
+
+\end{itemize}
+\end{frame}
+
+
+\frameimage[Juegos Serios. Corrientes relacionadas]{../juegos_serios/corrientes_paralelas.png}
+\frameimage[Implementación, Flujo del motor]{../solucion/images/rules_flow.png}
+
+\begin{frame}[noframenumbering]
+\frametitle{\apendixframetitle}
+\framesubtitle{Implementación. Flujo}
+\centering
+\begin{tikzpicture}[thick,scale=0.6, every node/.style={transform shape}]
+    % Place nodes
+    \node [block] (1) {1. Objetivos de diseño};
+    \node [block, right of=1, node distance=5cm] (2) {2. Competencias básicas relacionadas con la educación};
+    \node [block, right of=2, node distance=5cm] (3) {3. Investigación del dominio};
+    \node [block, below of=3, node distance=3cm] (4) {4. Diseño del juego};
+    \node [block, left of=4, node distance=5cm] (5) {5. Tiempo en el juego};
+    \node [block, left of=5, node distance=5cm] (6) {6. Acciones de jugabilidad};
+    \node [block, below of=6, node distance=3cm] (7) {7. Indicadores};
+    \node [block, right of=7, node distance=5cm] (8) {8. Representación e interacción};
+    \node [block, right of=8, node distance=5cm] (9) {9. Implementación};
+    \node [block, below of=9, node distance=3cm] (10) {10. Evaluación};
+    % Draw edges
+    \path [line] (1) -- (2);
+    \path [line] (2) -- (3);
+    \path [line] (3) -- (4);
+    \path [line] (4) -- (5);
+    \path [line] (5) -- (6);
+    \path [line] (6) -- (7);
+    \path [line] (7) -- (8);
+    \path [line] (8) -- (9);
+    \path [line] (9) -- (10);
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[noframenumbering]
+\frametitle{\apendixframetitle}
+\framesubtitle{Implementación. Descripción}
+
+\begin{itemize}
+    \item Orientado a eventos (utilizando el API de \cs{})
+    \item Registro de LOG's en archivos del teléfono en formato Json.
+\end{itemize}
+\end{frame}
+
+\frameimage[Juegos serios, Dimensiones]{../juegos_serios/desarrollo_dimensiones.png}

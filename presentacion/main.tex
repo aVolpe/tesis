@@ -1,4 +1,4 @@
-%\documentclass[xcolor=table,handout]{beamer}
+%\documentclass[xcolor={table,usenames,dvipsnames},handout]{beamer}
 \documentclass[xcolor={table,usenames,dvipsnames}]{beamer}
 %\documentclass[xcolor=table,aspectratio=169]{beamer}
 \usepackage{etex}
@@ -12,17 +12,23 @@
 \usepackage{tikz}
 \usepackage{tkz-kiviat}
 \usepackage{fixpauseincludegraphics}
+%\newcommand*{\includegraphicsx}[2][]{\includegraphics[#1]{#2}}
 \usepackage{booktabs}
 \usepackage{tabulary}
 \usepackage{filecontents}
 \usepackage{rotating}
 %\usepackage{svg}
 \usepackage{../util/pgf-pie}
+%te debería recibir la referencia, pero por el momento
+% solo recibe el número (del 1 a N en orden de aparición)
 
 \captionsetup{compatibility=false}
 \pgfplotsset{compat=1.8}
 
 \usetikzlibrary{shapes,arrows,shadows}
+\tikzstyle{block} = [rectangle, draw, fill=gray!20, 
+    text width=10em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
 
 \usetheme[
 %%% options passed to the outer theme
@@ -110,7 +116,7 @@
 
 \title[Juegos serios como apoyo a la formación de profesionales]
 %tradicional\hspace{2em}\insertframenumber/\inserttotalframenumber]%
-{Juegos serios como apoyo a la formación de profesionales: Una aplicación al
+{Juegos serios como apoyo a la formación de profesionales: \\ Una aplicación al
     área de enfermería}
 
 %\date{Mayo, 2014} %leave out for today's date to be insterted
@@ -118,6 +124,7 @@
 
 \institute{Universidad Nacional de Asunción\\Facultad Politécnica}
 
+\include{./macro_windows.tex}
 \begin{document}
 
 
@@ -138,10 +145,11 @@
 \input{juegos_serios.tex}
 \input{problema.tex}
 \input{tecnologia.tex}
-\input{implementacion.tex}
+\input{implementacion_videos.tex}
 \input{analisis.tex}
 \input{conclusiones.tex}
 \input{futuro.tex}
+
 
 \section*{}
 

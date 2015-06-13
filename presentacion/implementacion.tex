@@ -1,5 +1,11 @@
 \section{Diseño e implementación}
-\setcounter{sectiontotal}{3}
+\setcounter{sectiontotal}{1}
+\pgfmathtruncatemacro\implpass{1}
+\newcommand{\addstep}[2][0]{%
+    \includegraphics<\implpass|handout:#1>[width=\textwidth]{#2}%
+    \pgfmathtruncatemacro\implpass{\implpass+1}%
+
+}
 
 % TODO Agregar lo de los ECA!
 % TODO mejorar esta imagen
@@ -7,30 +13,30 @@
 \frametitle{\pagetitle}
 \framesubtitle{Flujo de interacción}
 \centering
-\begin{overprint}
-\onslide<1|handout:1> \includegraphics[width=\textwidth]{../solucion/images/pantalla_inicio.jpg} 
-\onslide<2|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo2.png} 
-\onslide<3|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo3.png} 
-\onslide<4|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo4.png} 
-\onslide<5|handout:0> \includegraphics[width=\textwidth]{../solucion/images/hemocultivo_jeringa_ampliada.jpg} 
-\onslide<6|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo6.png} 
-\onslide<7|handout:0> \includegraphics[width=\textwidth]{../solucion/images/resultado_hemocultivo.jpg}
-\onslide<8|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo18.png} 
-\onslide<9|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo8.png} 
+
+\addstep{../solucion/images/pantalla_inicio.jpg} 
+\addstep{imagenes/flujo/flujo2.png} 
+\addstep{../solucion/images/hemocultivo_principal.jpg} 
+\addstep{imagenes/flujo/flujo3.png} 
+\addstep{../solucion/images/hemocultivo_gui.jpg} 
+\addstep{imagenes/flujo/flujo4.png} 
+\addstep{../solucion/images/hemocultivo_jeringa_ampliada.jpg} 
+\addstep{imagenes/flujo/flujo6.png} 
+\addstep{../solucion/images/resultado_hemocultivo.jpg}
+\addstep{imagenes/flujo/flujo18.png} 
+\addstep{imagenes/flujo/flujo8.png} 
 % Glasgow
-\onslide<10|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo9.png}
-\onslide<11|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo10.png}
-%\onslide<12|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo11.png}
-\onslide<12|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo12.png}
-\onslide<13|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo13.png}
-\onslide<14|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo14.png}
-\onslide<15|handout:0> \includegraphics[width=\textwidth]{../solucion/images/glasgow_comandos_voz.jpg}
-\onslide<16|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo16.png}
-\onslide<17|handout:0> \includegraphics[width=\textwidth]{imagenes/flujo/flujo17.png}
+\addstep{../solucion/images/pantalla_inicio.jpg} 
+\addstep{imagenes/flujo/flujo9.png}
+\addstep{imagenes/flujo/flujo10.png}
+%\addstep{imagenes/flujo/flujo11.png}
+\addstep{imagenes/flujo/flujo12.png}
+\addstep{imagenes/flujo/flujo13.png}
+\addstep{imagenes/flujo/flujo14.png}
+\addstep{../solucion/images/glasgow_comandos_voz.jpg}
+\addstep{../solucion/images/glasgow_diagnostico.jpg}
+\addstep{imagenes/flujo/flujo16.png}
+\addstep{../solucion/images/resultado_glasgow.jpg}
+%\addstep{imagenes/flujo/flujo17.png}
 
-
-
-
-
-\end{overprint}
 \end{frame}
