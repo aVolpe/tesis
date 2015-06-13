@@ -59,6 +59,8 @@
 \setbeamercolor{block title}{use=structure,fg=white,bg=beamer@headercolor}
 \setbeamercolor{block body}{use=structure,fg=black,bg=gray!20!white}
 \setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamerfont{framesubtitle}{size=\large}
+%\setbeamerfont{frametitle}{size=\normalsize}
 
 \newcommand{\cs}{%
   {\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\fontseries{b}\selectfont\#}}}}
@@ -76,6 +78,7 @@
     \setcounter{sectionframestart}{\numexpr \value{framenumber}+1}
 }
 
+\newcommand{\sfcite}[1]{}
 \newcommand\subsectnum{%
     \ifnum \value{sectiontotal}>1%
       (%
