@@ -1,5 +1,5 @@
 \section{Componentes principales}
-\setcounter{sectiontotal}{2}
+\setcounter{sectiontotal}{5}
 
 \begin{frame}
     \frametitle{\pagetitle}
@@ -7,7 +7,7 @@
     %\pause{}
 	\begin{figure}
 		%\centering
-        \includegraphicsx[scale=0.41]{../resumen/images/full.png}
+        \includegraphicsx[scale=0.41]{../tecnologias/images/full.pdf}
 		\caption{Esquema general de componentes de la solución}
 	\end{figure}
 \end{frame}
@@ -15,14 +15,8 @@
 \begin{frame}
 \frametitle{\pagetitle}
 \framesubtitle{Motor de videojuego: Unity 3D}
-%\pause{}
 \tiny
 
-%\footnote{\fullcite{videojuego:telechea}}
-
-%\begin{table}
-    %\centering
-    %\tiny
 \begin{tabulary}{\textwidth}{rCCCCCCCC}
 \toprule
 & \multicolumn{3}{c}{\textbf{Motor}\footnote{\fullcite{videojuego:telechea}}} \\
@@ -60,6 +54,67 @@ gratuito no comercial} \\
 \bottomrule
 
 \end{tabulary}
-%\end{table}
 
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Arquitectura}
+\begin{figure}
+\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{./imagenes/esquema_global.pdf}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Tecnologías utilizadas \- Front-end}
+\begin{table}
+\centering
+\begin{tabular}{lrr}
+\toprule
+\textbf{Utilización} & \textbf{Tecnología} \\
+\midrule
+Motor de videojuego      & Unity3d         \\
+IDE                      & MonoDevelop     \\
+                         & Unity Editor    \\
+\midrule
+Modelado 3D              & 3ds Max         \\
+Modelado 2D              & Photoshop       \\
+Modelado de personajes   & MakeHuman       \\
+
+\midrule
+Lenguaje de programación & \cs{} \\
+Gestión de código fuente & Git \\
+Otras librerías          & NGUI            \\
+                         & Facebook \\
+                         
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Tecnologías utilizadas \- Back-end}
+\begin{table}
+\centering
+\begin{tabular}{lrr}
+\toprule
+\textbf{Utilización} & \textbf{Tecnología}  \\
+\midrule
+IDE                         & Eclipse \\
+Lenguaje de programación    & Java \\
+\midrule
+Servidor de aplicaciones    & Jboss \\
+Servidor de base de datos   & PostgreSQL \\
+Proveedor de plataforma     & OpenShift \\
+\midrule
+Gestión de código fuente    & Git & 1.8\\
+Otras librerias             & Java EE & 6\\
+
+\bottomrule
+\end{tabular}
+\end{table}
 \end{frame}
