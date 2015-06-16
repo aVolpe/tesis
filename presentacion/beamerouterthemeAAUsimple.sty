@@ -130,13 +130,9 @@
       \draw[draw=none,fill=AAUsimple.bg] (UL) rectangle (HLR);
       % draw the outer circle
       \fill[fill=AAUsimple.fg] (logopos) circle (\beamer@logoouterradius);
-      %\draw[fill=AAUsimple.fg] (logopos) ellipse (.7cm and .9cm);
       % draw the inner circle
       \fill[fill=normal text.bg] (logopos) circle (\beamer@logoinnerradius);
-      %\fill[fill=normal text.bg] (logopos) ellipse (.69cm and .89cm);
       % place the logo
-      %\node at (logopos) {\includegraphics[width=1.8\beamer@logoradius]{AAUgraphics/aau_logo_new_circle}};
-      %\node at (logopos) {\pgfuseimage{logoperpage}}};
       \node at (logopos)
       {\includegraphics[width=1.10\beamer@logoradius]{../util/logo.pdf}};
 
@@ -144,15 +140,15 @@
       \ifx\beamer@progressstyle\beamer@progressfixedCircCnt% the circular counter with a fixed counter
         % calculate end position
         \ifx\beamer@rotationcw\undefined% counterclockwise rotation
-          \pgfmathsetmacro{\progress}{360*\insertframenumber/\inserttotalframenumber};
+          \pgfmathsetmacro{\progress}{360*(\insertframenumber/\inserttotalframenumber)};
         \else% clockwise rotation
-          \pgfmathsetmacro{\progress}{-360*\insertframenumber/\inserttotalframenumber};
+          \pgfmathsetmacro{\progress}{-360*(\insertframenumber/\inserttotalframenumber)};
         \fi
         % draw the arc
         \draw[color=AAUsimple.bg,line width=0.5*\beamer@borderwidth] ([xshift=\beamer@counterradius] logopos) arc[radius=\beamer@counterradius, start angle=0, end angle=\progress];
         \fill[fill=AAUsimple.bg] ([shift={(\progress:\beamer@counterradius)}] logopos) circle (0.25\beamer@borderwidth);
         % place the current frame number
-        \node[fill=normal text.bg,draw=AAUsimple.fg,thick,circle,minimum width=2*\beamer@borderwidth] at ([xshift=\beamer@counterradius]logopos) {{\usebeamercolor[fg]{normal text}\insertframenumber}};
+        %\node[fill=normal text.bg,draw=AAUsimple.fg,thick,circle,minimum width=2*\beamer@borderwidth] at ([xshift=\beamer@counterradius]logopos) {{\usebeamercolor[fg]{normal text}\insertframenumber}};
       \fi
       
       \ifx\beamer@progressstyle\beamer@progressmovCircCnt% the circular counter with a moving counter
