@@ -235,21 +235,21 @@ de acciones.
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\rowcolor{gris} \textbf{} & \multicolumn{2}{|c|}{\textbf{Menú Contextual}} &
-\multicolumn{2}{|c|}{\textbf{Menú de la Interfaz}} &
-\multicolumn{2}{|c|}{\textbf{Herramienta}}\\
+& \multicolumn{2}{c|}{\textbf{Menú Contextual}} &
+\multicolumn{2}{c|}{\textbf{Menú de la Interfaz}} & \multicolumn{2}{c|}{\textbf{Herramienta}}\\
 \hline
-\rowcolor{gris} Usuario & Primera & Siguientes & Primera & Siguientes & Primera & Siguientes \\
-\hline 1 &  8 &  2.25 &  3 & 9.14 & 11 & 3.0 \\
-\hline 2 & 30 &  7.00 &  4 & 3.57 &  7 & 4.5 \\
-\hline 3 &  5 &  2.25 &  5 & 1.86 &  1 & 1.0 \\
-\hline 4 &  2 & 13.00 &  4 & 2.00 &  1 & 0.5 \\
-\hline 5 & 18 &  2.75 &  6 & 4.43 &  6 & 3.0 \\
-\hline 6 &  4 & 14.25 & 11 & 7.86 & 13 & 4.0 \\
-\hline 7 &  5 &  8.00 &  4 & 4.71 & 20 & 2.5 \\
-\hline 8 &  3 &  2.33 & 10 & 3.57 &  3 & 6.5 \\
+\textbf{Usuario}  & \textbf{Primera} & \textbf{Siguientes} & \textbf{Primera} & \textbf{Siguientes} & \textbf{Primera} & \textbf{Siguientes} \\
+\hline 1          & 8                & 2.25                & 3                & 9.14                & 11               & 3.0 \\
+\hline 2          & 30               & 7.00                & 4                & 3.57                & 7                & 4.5 \\
+\hline 3          & 5                & 2.25                & 5                & 1.86                & 1                & 1.0 \\
+\hline 4          & 2                & 13.00               & 4                & 2.00                & 1                & 0.5 \\
+\hline 5          & 18               & 2.75                & 6                & 4.43                & 6                & 3.0 \\
+\hline 6          & 4                & 14.25               & 11               & 7.86                & 13               & 4.0 \\
+\hline 7          & 5                & 8.00                & 4                & 4.71                & 20               & 2.5 \\
+\hline 8          & 3                & 2.33                & 10               & 3.57                & 3                & 6.5 \\
 \hline
-\textbf{Promedio} & 9.38 & 6.37 & 5.88 & 4.64 & 7.75 & 3.125 \\
+\textbf{Promedio} & \textbf{9.38}    & \textbf{6.37}       & \textbf{5.88}    & \textbf{4.64}       & \textbf{7.75}    & \textbf{3.125} \\
+\hline
 \end{tabular}
 \caption{Tiempo por acciones la primera vez y las siguientes veces que se realizo}
 \label{tab:interfaz_tiempo_acciones}
@@ -258,21 +258,6 @@ de acciones.
 En la tabla~\ref{tab:interfaz_tiempo_acciones} se observa consistentemente una 
 mejora en el tiempo de realización de un tipo de acción con respecto a la primera vez 
 que es realizada. 
-
-En la figura~\ref{fig:interfaz_tiempo_acciones} se observa como en promedio el
-usuario aprende, y en las siguientes acciones similares demora menos tiempo,
-este es un factor importante y es el objetivo de esta prueba pues muestra que la
-interfaz es fácil de usar, y con tres tipos de acciones, el usuario puede
-utilizarla sin mayores inconvenientes. Se observa una mejoría del $30\%$ en las
-\emph{Acciones por menú contextual}, $21\%$ en las \emph{Acciones por menú de la
-    \Gls{gui}} y finalmente, una mejoría del $60\%$ en las \emph{Acciones con elementos}.
-
-%\begin{figure}[H]
-%\centering
-%\includegraphics[width=14cm]{resultados/imagenes/interfaz_tiempo_actividades.png}
-%\caption{Tiempo por tipo de actividad}
-%\label{fig:interfaz_tiempo_acciones}
-%\end{figure}
 
 \begin{filecontents}{interfazuso.dat}
 n   p       s
@@ -285,7 +270,7 @@ n   p       s
 \begin{figure}[H]
     
         \centering
-        \begin{tikzpicture}[scale=1]
+        \begin{tikzpicture}[scale=.8]
            \begin{axis}[ybar,%
               legend pos=outer north east,
               xmin=1,
@@ -302,9 +287,9 @@ n   p       s
               bar width=10pt,
               %enlarge x limits={abs=2},
                 ]   
-        \addplot[color=blue,ybar,fill=blue!75,area legend] table [x = {n}, y = {p}] {\InterfazUso};
+        \addplot[color=blue!90,ybar,fill=blue!55,area legend] table [x = {n}, y = {p}] {\InterfazUso};
         \addlegendentry{Primer}
-        \addplot[color=red,ybar,fill=red!75,area legend] table [x = {n}, y = {s}]
+        \addplot[color=red!90,ybar,fill=red!55,area legend] table [x = {n}, y = {s}]
         {\InterfazUso};
         \addlegendentry[align=left]{Promedio \\ siguientes}
         \end{axis}
@@ -313,16 +298,18 @@ n   p       s
         \label{fig:interfaz_tiempo_acciones}
 \end{figure}
 
-En la tabla~\ref{tab:interfaz_cantidad_espaciales} se observa la cantidad de
-movimientos espaciales realizados por los usuarios, se observa que en promedio
-se desplazaron $10,88$ veces por el escenario, y $6,75$ veces acercaron o
-alejaron la cámara del paciente.
+En la figura~\ref{fig:interfaz_tiempo_acciones} se observa como en promedio el
+usuario aprende, y en las siguientes acciones similares demora menos tiempo,
+este es un factor importante y es el objetivo de esta prueba pues muestra que la
+interfaz es fácil de usar, y con tres tipos de acciones, el usuario puede
+utilizarla sin mayores inconvenientes. Se observa una mejoría del $30\%$ en las
+\emph{Acciones por menú contextual}, $21\%$ en las \emph{Acciones por menú de la
+    \Gls{gui}} y finalmente, una mejoría del $60\%$ en las \emph{Acciones con elementos}.
 
-%\observacion{Hay que dejar bien en claro de donde sale esto, por que es
-%importante entender el significado de esta diferencia}
 
-\begin{table}[H]
+\begin{table}[hbt]
 \centering
+\small
 \begin{tabular}{lrrr}
 \toprule
 \textbf{Jugador}  & \textbf{Desplazamiento} & \textbf{Acercamiento/alejamiento} & \textbf{Total} \\
@@ -343,6 +330,11 @@ alejaron la cámara del paciente.
 \label{tab:interfaz_cantidad_espaciales}
 \end{table}
 
+En la tabla~\ref{tab:interfaz_cantidad_espaciales} se observa la cantidad de
+movimientos espaciales realizados por los usuarios, se observa que en promedio
+se desplazaron $10,88$ veces por el escenario, y $6,75$ veces acercaron o
+alejaron la cámara del paciente.
+
 No existe una cantidad mínima o máxima de movimientos que el usuario debe realizar para acercar, 
 alejar o desplazar la cámara. Los datos mostrados en la tabla~\ref{tab:interfaz_cantidad_espaciales} 
 muestran que no son necesarias demasiados movimientos. Teniendo en cuenta esta información y la 
@@ -351,6 +343,7 @@ que en promedio los usuarios realizan $1,7$ movimientos por minuto.
 
 \begin{table}[!hbt]
 \centering
+\small
 \begin{tabular}{lrrr}
 \toprule
 \textbf{Alumno} & \textbf{Tiempo (min)} \\
@@ -379,11 +372,10 @@ adaptación.
 La tabla~\ref{tab:interfaz_acciones} nos muestra la cantidad de pasos
 realizados por los alumnos de un total de 19. Se observa que en promedio 
 realizaron $16.75$ pasos.
-%esto permite identificar en que parte del procedimiento los usuarios tienen
-%inconvenientes en cuanto al uso de la interfaz.
 
-\begin{table}[H]
+\begin{table}[htb]
 \centering
+\small
 \begin{tabular}{lrrr}
 \toprule
 \textbf{Alumno} & \textbf{Pasos realizados (19)} \\
@@ -409,31 +401,26 @@ realizaron $16.75$ pasos.
 \subsubsection{Encuesta}
 
 
-La encuesta es utilizada para obtener el grado de
-disconformidad de los usuarios con respecto a la solución. Se utiliza la disconformidad 
-para resaltar los puntos débiles, así, aquellas variables que tengan el mayor porcentaje serán
-las que deban ser mejoradas.
+La encuesta es utilizada para obtener el grado de disconformidad de los usuarios
+con respecto a la solución. Se utiliza la disconformidad para resaltar los
+puntos débiles, así, aquellas variables que tengan el mayor porcentaje serán las
+que deban ser mejoradas.
 
-%Las preguntas que forman parte de la  encuesta son agrupadas en cuanto a
-%aspectos de calidad gráfica, interacción con el entorno, interacción con los
-%objetos, características del entorno, usabilidad de la interfaz e integración
-%con el hardware.
 
-En la tabla~\ref{tab:interfaz_disconformidad_metrica} se observan que las mayores 
-disconformidades son la usabilidad de la interfaz de usuario que llega al $51\%$, la 
-interacción de los usuarios con el entorno que llega al $50\%$ y la interacción con los 
-objetos que llega al $49\%$. Otras disconformidades con menor porcentaje son las
-características del entorno con un  $33\%$, la integración con el hardware con
-un $27\%$ y por último la calidad gráfica con un $17\%$.
+En la tabla~\ref{tab:interfaz_disconformidad_metrica} se observan que las
+mayores disconformidades son la usabilidad de la interfaz de usuario que llega
+al $51\%$, la interacción de los usuarios con el entorno que llega al $50\%$ y
+la interacción con los objetos que llega al $49\%$. Otras disconformidades con
+menor porcentaje son las características del entorno con un  $33\%$, la
+integración con el hardware con un $27\%$ y por último la calidad gráfica con un
+$17\%$.
 
-%\observacion{Hay que explicar que estas pruebas se hicieron de forma previa a
-%las demás y que se arreglan algunos casos}
 
-\begin{table}[H]
+\begin{table}[htb]
 \centering
 \begin{tabular}{lr}
 \toprule
-Variable & Disconformidad (0-1)\\
+\textbf{Variable} & \textbf{Disconformidad (0-1)}\\
 \midrule
 Calidad Gráfica         & 0.17 \\
 Interacción Entorno     & 0.50\\

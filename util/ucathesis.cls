@@ -223,7 +223,7 @@
     %\textbf{\large\@department}\par
 	%%\vspace{2\@line}\includegraphics{logo.png}\par
     %\vspace{2\@line}\includegraphics[natwidth=220,natheight=330]{\@logosource}\par
-    \vspace{2\@line}\includegraphics[width=3.5cm]{\@logosource}\par
+    \vspace{2\@line}\includegraphics[width=4.5cm]{\@logosource}\par
     \vspace{0.5\@line}\textsc{\Large``Juegos serios como apoyo a la formación de profesionales:}\par
     \textsc{\Large Una aplicación al área de enfermería''}\par
     \vspace{0.5\@line}

@@ -551,52 +551,37 @@ puntaje final se muestra el tiempo que le tomó al usuario completar el procedim
 
 \subsubsection{Registro de actividad}
 
-Los eventos provocados por las acciones del usuario, la aplicación y el motor de 
-reglas son registrados de manera transparente como se explica más adelante 
-en~\ref{sec:backend_reg_eventos}. En la tabla~\ref{tab:hemocultivo_registro} se pueden observar los eventos relacionados al procedimiento.
-
-%Existen otros tipos de eventos que no son generados por acciones, por ejemplo,
-%cuando la simulación termina, el motor de reglas lanza un evento por regla,
-%indicando su estado.
-%
-%El registro de actividades permite reproducir las \fixme{partidas}{Unificar
-%    términos} y por lo tanto, es posible determinar que tareas \fixme{fueron con
-%    las que los usuarios tuvieron}{pulir} un mayor número de inconvenientes.
-%
-%
-%El registro de actividades se almacena en el dispositivo del usuario, y luego
-%es enviado al \emph{backend}, esto se explica con más detalle
-%en~\ref{sec:backend_reg_eventos}. 
-
-
-
+Los eventos provocados por las acciones del usuario, la aplicación y el motor de
+reglas son registrados de manera transparente como se explica más adelante
+en~\ref{sec:backend_reg_eventos}. En la tabla~\ref{tab:hemocultivo_registro} se
+pueden observar los eventos relacionados al procedimiento.
 
 \begin{table}[H]
 \centering
-\begin{tabulary}{\textwidth}{|L|L|L|}
-\hline
-Acción & Eventos & Motivos \\
-\hline
+\begin{tabulary}{\textwidth}{LLL}
+    \toprule
+\textbf{Acción} & \textbf{Eventos} & \textbf{Motivos} \\
+\midrule
 Preparación del paciente & Explicación del procedimiento & Validación de interfaz intuitiva, 
 de realización correcta de pasos y de la hipótesis \enquote{Interacción por la voz} \\
-\hline
+\midrule
 Bioseguridad inicial  & Lavado de manos, calzado de guantes, bata, tababoca y gorro & Validación 
 de interfaz intuitiva, de realización correcta de los pasos y de la hipótesis 
 \enquote{Bioseguridad} \\
-\hline
+\midrule
 Preparación para la extracción & Esterilización de zona, colocación de torniquete, petición de cierre de mano 
 & Validación de interfaz intuitiva, de realización correcta de pasos y de validación de la hipótesis \enquote{Interacción por la voz} \\
-\hline
+\midrule
 Punción y extracción & Punzado, extracción de torniquete, petición de apertura de mano, extracción de sangre, 
 extracción de jeringa & Validación de interfaz intuitiva, de realización correcta de pasos y de la 
 hipótesis \enquote{Interacción por la voz} \\
-\hline
+\midrule
 Post - extracción & Presionar zona de punción & Interfaz intuitiva, realización correcta del paso \\
-\hline
+\midrule
 Bioseguridad final & Lavado de manos, descalzado de guantes, bata, tapaboca y gorro & Validación de interfaz intuitiva, de realización correcta de los pasos y de la hipótesis \enquote{Bioseguridad} \\
-\hline
+\midrule
 Utilización de redes sociales & Socialización del resultado de la partida & Medición del efecto motivador, validación de la hipótesis \enquote{Motivación}\\
-\hline
+\bottomrule
 \end{tabulary}
 \caption{Acciones registradas durante una partida del procedimiento de venopunción, los eventos 
 relacionados a ellas, y los motivos de sus registros.}
@@ -770,6 +755,7 @@ tabla~\ref{tab:glasgow_opciones_respuesta}.
 
 \begin{table}[H]
 \centering
+\small
 \begin{tabulary}{\textwidth}{LCCCCC}
 \toprule
 \textbf{Pregunta} & \textbf{Orientado} & \textbf{Confusa} & \textbf{Palabras
@@ -778,9 +764,11 @@ tabla~\ref{tab:glasgow_opciones_respuesta}.
 ¿Qué día es? & El día de la semana actual & Cualquier día de la semana menos el
 correcto & La respuesta a otra pregunta en estado orientado & Gritos, gruñidos y
 quejidos & No emite sonido \\
+\midrule
 ¿Cuál es su nombre? & \emph{Carlos Benitez} & Respuesta coherente sin mencionar
 su nombre & Respuesta a otra pregunta en estado orientado & Gritos, gruñidos y
 quejidos & No emite sonido \\
+\midrule
 ¿Donde se encuentra? & \emph{En una cama de hospital} & \emph{En mi dormitorio} &
 Respuesta a otra pregunta en estado orientado & Gritos, gruñidos y quejidos & No
 emite sonido \\
@@ -877,68 +865,39 @@ la escala de Glasgow.}
 %\end{itemize}
 
 \subsubsection{Registro de actividad}
-%\observacion{Todo esto es repetido}
 
-Los eventos provocados por las acciones del usuario y por la aplicación son registrados de 
-manera transparente como se explica más adelante en~\ref{sec:backend_reg_eventos}. En la 
-tabla~\ref{tab:glasgow_registro} se pueden observan los eventos registrados.
+Los eventos provocados por las acciones del usuario y por la aplicación son
+registrados de manera transparente como se explica más adelante
+en~\ref{sec:backend_reg_eventos}. En la tabla~\ref{tab:glasgow_registro} se
+pueden observan los eventos registrados.
 
-%Cada acción que realiza el usuario dentro de la simulación provoca un evento, y
-%estos eventos son registrados de manera transparente para el usuario. Como así
-%también los eventos que genera la aplicación.
-%
-%El registro de actividades permite reproducir las partidas y por lo tanto, es
-%posible determinar que tareas fueron con las que los usuarios tuvieron un mayor
-%número de inconvenientes.
 
 
 
 \begin{table}[H]
 \centering
-\begin{tabulary}{\textwidth}{|L|L|L|}
-\hline
-Acción & Eventos & Motivos \\
-\hline
+\begin{tabulary}{\textwidth}{LLL}
+\toprule
+\textbf{Acción} & \textbf{Eventos} & \textbf{Motivos} \\
+\midrule
 Estímulos dolorosos & Estimulación de extremidades del paciente & Validación de interfaz intuitiva \\
-\hline
+\midrule
 Acciones de voz  & Solicitudes y preguntas al paciente & Validación de la hipótesis \enquote{Interacción 
 por la voz} \\
-\hline
+\midrule
 Diagnóstico del paciente & Valoración del usuario acerca de la respuesta motora, verbal y ocular 
 del paciente así como su estado general & Validación de interfaz intuitiva, de realización correcta de 
 la valoración \\
-\hline
+\midrule
 Utilización de redes sociales & Socialización del resultado de la partida & Medición del efecto motivador 
 y validación de la hipótesis \enquote{Motivación}\\
-\hline
+\bottomrule
 \end{tabulary}
-\caption{Acciones registradas durante una partida del procedimiento de valoración de la ecala 
-de Glasgow, los eventos relacionados a ellas, y los motivos de sus registros.}
+\caption{Acciones registradas durante una partida del procedimiento de
+    valoración de la escala de Glasgow, los eventos relacionados a ellas, y los
+    motivos de sus registros.}
 \label{tab:glasgow_registro}
 \end{table}
-
-%\observacion{Hay que depurar las cosas repetidas (esto esta abajo del primer
-%párrafo de interfaz, pero me parece que incluye a las dos sub subsection)}
-
-%\subsubsection{Interfaz de usuario}
-
-%La interfaz de usuario, como se observa en la figura~\ref{fig:glasgow_gui}, es
-%muy sencilla, se compone de solo una opción permanente, la cual permite al
-%usuario finalizar la escena y mostrar la \emph{Pantalla de diagnóstico}. Se
-%observan además, las opciones que se despliegan cuando la solución detecta que
-%el usuario emite palabras, conocidas como \emph{Comandos de Voz}, que permiten
-%al mismo interactuar con el paciente.
-%
-%\begin{figure}[H]
-%\centering
-%\includegraphics[scale=0.5]{solucion/images/glasgow_comandos_voz.jpg}
-%\caption{Interfaz de la escena \emph{Evaluación de Glasgow}, se observan los
-%    \emph{comandos de voz}, así como la opción que permite finalizar la escena
-%    (esquina inferior derecha).}
-%\label{fig:glasgow_gui}
-%\end{figure}
-%
-%Además se ve en la interfaz, al paciente, que es el foco principal de la cámara.
 
 \subsection{Pantalla de resultados}
 
@@ -948,7 +907,7 @@ la encargada de mostrar toda la información que fue recabada durante la partida
 esta información incluye los pasos correctos e incorrectos que realizó el
 usuario.
 
-\begin{figure}[H]
+\begin{figure}[htb]
 \centering
 \includegraphics[scale=0.5]{solucion/images/resultado_hemocultivo.jpg}
 \caption{Pantalla de resultados mostrando los pasos correctos e incorrectos, en

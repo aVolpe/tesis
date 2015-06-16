@@ -1,16 +1,19 @@
-%\documentclass[final,fmstyle,twoside,openright]{./util/ucathesis}
-\documentclass[final,fmstyle]{./util/ucathesis}
+\documentclass[final,fmstyle,a4paper]{./util/ucathesis}
 
+%\usepackage{amsmath,amsthm}
+
+%\usepackage[showframe=true]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{csquotes} 
-\usepackage{graphicx}
-\usepackage[showframe=false, left=40mm, right=20mm]{geometry}
+\usepackage{csquotes}
+%\usepackage{graphicx}
 \usepackage[inline]{enumitem}
 \usepackage{pgfgantt}
+\setlength{\paperheight}{297mm}
+\setlength{\paperwidth}{210mm}
 \usepackage[bookmarks]{hyperref}
-\usepackage{changepage}
+%\usepackage{changepage}
 \usepackage{booktabs}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -19,12 +22,12 @@
 \usepackage{rotating}
 \usepackage{tkz-kiviat}
 \usepackage{multirow}
-\usepackage[normalem]{ulem}
+%\usepackage[normalem]{ulem}
 \usepackage{pdflscape} % Ver si no funciona con páginas en formato de tesis http://goo.gl/Rszezu
 %\usepackage{rotating}
 \usepackage{tabulary}
-\usepackage{titlesec}
-\usepackage[newcommands]{ragged2e}
+%\usepackage{titlesec}
+%\usepackage[newcommands]{ragged2e}
 \usepackage{pdfpages}
 \usepackage{pgfplots}
 \usepackage{tikz}
@@ -36,6 +39,7 @@
 %\usepackage[colorinlistoftodos,prependcaption,spanish]{todonotes}
 \usepackage{filecontents}
 \usepackage{util/pgf-pie}
+\usepackage{perpage}
 
 \newcommand{\removed}[1]{\uline{#1}}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
@@ -48,11 +52,6 @@
 % PACKAGE titlesec
 \setcounter{secnumdepth}{4}
 
-\titleformat{\paragraph}
-{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-\titlespacing*{\paragraph}
-{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
 % END PACKAGE titlesec
 
 % Agregar bullets al entorno description
@@ -63,15 +62,15 @@
 
 
 
-\tikzstyle{block} = [rectangle, draw, fill=gray!20, 
+\tikzstyle{block} = [rectangle, draw, fill=gray!20,
     text width=10em, text centered, rounded corners, minimum height=4em]
 \tikzstyle{line} = [draw, -latex']
 
-%\MakePerPage{footnote}
-\addbibresource{bibliography.bib} 
+\MakePerPage{footnote}
+\addbibresource{bibliography.bib}
 
 %Datos de la tesís
-\title{Juegos serios como apoyo a la formación de profesionales: \protect\\ Una aplicación al 
+\title{Juegos serios como apoyo a la formación de profesionales: \protect\\ Una aplicación al
 área de  enfermería}
 \author{Mirta Beatriz González Leguizamón y Arturo Pedro Volpe Torres}
 \degree{Informática}
@@ -103,7 +102,7 @@
 }
 
 \newcommand*{\custompostdesc}[1]{%
-  \ifcsempty{glo@#1@useri}{}{(\glsentryuseri{#1})}%
+  \ifcsempty{glo@#1@useri}{}{ (\glsentryuseri{#1})}%
 }
 
 \renewcommand*{\CustomAcronymFields}{%
@@ -111,21 +110,12 @@
   name={\the\glsshorttok},%
   description={\the\glslongtok\noexpand\custompostdesc{\the\glslabeltok}},%
   first={\the\glslongtok\space(\the\customtok)},%
-  firstplural={\the\glslongtok\noexpand\acrpluralsuffix\space(\the\customtok)}%
+  firstplural={\the\glslongtok\noexpand\acrpluralsuffix
+    \space (\the\customtok)}%
   text={\the\glsshorttok},%
   plural={\the\glsshorttok\noexpand\acrpluralsuffix}%
 }
 
-%\newcommandx{\todox}[2][1=]{\todo[linecolor=gray,backgroundcolor=white,#1]{#2}}
-%\newcommandx{\martin}[2][1=]{\todo[linecolor=blue,backgroundcolor=white,#1]{#2}}
-%\newcommandx{\replantear}[2][1=]{\todo[inline,caption={Replantear},#1]{#2}}
-%\newcommandx{\observacion}[2][1=]{\todo[inline,caption={Observacion},#1]{#2}}
-%\newcommandx{\pregunta}[2][1=]{\todo[backgroundcolor=white,inline,caption={Pregunta},#1]{¿#2?}}
-%\newcommandx{\revisar}[2][1=]{\todo[size=\small,caption={Revision},linecolor=red,backgroundcolor=white,#1]{#2}}
-%\newcommand{\tabletodo}[2][]{\begin{minipage}{3cm}\todo[inline,#1]{#2}\end{minipage}}
-%\newcommand{\fixme}[2]{\uline{#1}\todo[linecolor=blue,backgroundcolor=green,size=\small]{#2}}
-%\newcommand{\cs}{C$\sharp$ }
-%\newcommand{\cs}{C\includegraphics{hash-symbol}}
 \newcommand{\cs}{%
   {\settoheight{\dimen0}{C}C\kern-.05em \resizebox{!}{\dimen0}{\raisebox{\depth}{\fontseries{b}\selectfont\#}}}}
 
@@ -134,8 +124,10 @@
 \definecolor{agua}{rgb}{0.88,1,1}
 
 \SetCustomStyle
+
 \makeglossaries
 \makeindex
+
 
 \begin{document}
 
