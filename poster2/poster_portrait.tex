@@ -83,7 +83,8 @@
 % Define some colors
 
 %\definecolor{lightblue}{cmyk}{0.83,0.24,0,0.12}
-\definecolor{lightblue}{rgb}{0.145,0.6666,1}
+%\definecolor{lightblue}{rgb}{0.145,0.6666,1}
+\definecolor{lightblue}{RGB}{28,77,135}
 
 % Draw a video
 \newlength{\FSZ}
@@ -148,12 +149,12 @@
   linewidth=2pt
   }
   % Eye Catcher
-  {\includegraphics[height=7em]{imagenes/logouna.png}} 
+  {\includegraphics[height=8em]{imagenes/una.png}} 
   % Title
   {\bf\textsc{Juegos serios como apoyo a la formación de
           profesionales:\hspace{5cm} Una aplicación al área de enfermería}\vspace{0.5em}}
   % Authors
-  {\textsc{Mirta González y Arturo Volpe}}
+  {\textsc{Mirta Beatriz González Leguizamón y Arturo Pedro Volpe Torres}}
   % University logo
   {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
     \includegraphics[height=9em]{../util/logo.pdf}
@@ -207,13 +208,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{Motivación}{name=problema,column=0,below=objetivo}{%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      %Este trabajo se centra en las problemáticas referentes al área de
-%enfermería proponiendo una solución basada en las TIC. Se considera como
-%campo de estudio al Instituto Doctor Andrés Barbero, cuyos estudiantes del %último año de la carrera de Licenciatura en Enfermería son tomados como %población objetivo.
+%Este trabajo se centra en las problemáticas referentes al área de enfermería
+%proponiendo una solución basada en las TIC. Se considera como campo de estudio
+%al Instituto Doctor Andrés Barbero, cuyos estudiantes del último año de la
+%carrera de Licenciatura en Enfermería son tomados como población objetivo.
 \begin{itemize}
-\item Los juegos serios son herramientas que ayudan al desarrollo del pensamiento 
-	crítico, sus principales áreas de aplicación son la militar, la salud y la 
-	empresarial
+\item Los juegos serios son herramientas que ayudan al desarrollo del
+    pensamiento crítico, sus principales áreas de aplicación son la militar, la
+    salud y la empresarial.
 \item Los estudiantes de enfermería aprenden a través de la experimentación
     activa y reflexionando sobre su experiencia, los juegos serios son una
     herramienta ideal para este tipo de
@@ -224,14 +226,16 @@
 \item La personalización de la enseñanza es difícil debido a la gran cantidad de
     alumnos\cite{iab:tesis_alumnos}.
 
-%\item La mayoría los juegos serios ofrecen una experiencia muy guiada, %dificultando el desarrollo del pensamiento crítico y la toma 
+%\item La mayoría los juegos serios ofrecen una experiencia muy guiada, 
+%dificultando el desarrollo del pensamiento crítico y la toma 
 %de decisiones.
 
 \end{itemize}
 
 %Uno de los principales inconvenientes de los estudiantes es la poca
-%disponibilidad de tiempo que poseen\cite{iab:tesis_alumnos}, la difícil 
-%personalización de la enseñanza en las prácticas\cite{iab:tesis_alumnos} y el %nerviosismo ante las primeras prácticas.
+%disponibilidad de tiempo que poseen\cite{iab:tesis_alumnos}, la difícil
+%personalización de la enseñanza en las prácticas\cite{iab:tesis_alumnos} y el
+%nerviosismo ante las primeras prácticas.
 
 %Según~\cite{humphreys2013developing} los alumnos de enfermería son estudiantes
 %divergentes, es decir aprenden a través de experimentación activa, e
@@ -291,7 +295,7 @@ de apoyo al aprendizaje. En la figura se observan los componentes de la solució
 %,y las herramientas utilizadas para su desarrollo.
 
 \begin{center}
-    \includegraphics[scale=0.3]{../tecnologias/images/full.png}
+    \includegraphics[scale=0.3]{../tecnologias/images/full.pdf}
 \end{center}
 \setlength{\columnsep}{1pt}
 \begin{multicols}{2}
@@ -477,15 +481,9 @@ Promedio de partidas por usuario & 12
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{Referencias}{name=referencias,column=1,span=2,below=resultados,above=bottom}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   La solución es válida como herramienta educativa de apoyo a los 
-%   estudiantes de enfermería, dándoles la posibilidad de probar sus conocimientos en cualquier 
-%   lugar y momento. No se considera que se aprenda mejor con respecto otros métodos, sino que, 
-%   ya sea por motivación, interés, curiosidad o los aspectos lúdicos, puede ayudar en el
-%   proceso de enseñanza-aprendizaje dándole un rol más activo a las TIC en este ámbito. 
 \smaller
-    %\printbibliography{}
     \bibliographystyle{plain} % Plain referencing style
-    \renewcommand{\refname}{}
+    \renewcommand{\section}[2]{}%
     \bibliography{../bibliography} % Use the example bibliography file sample.bib
    \vspace{0.3em}
   }
