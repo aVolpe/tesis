@@ -1,0 +1,32 @@
+\section{Diseño}
+\setcounter{sectiontotal}{1}
+
+\begin{frame}
+\frametitle{\pagetitle}
+\framesubtitle{Flujo de desarrollo}
+\centering
+\begin{tikzpicture}[thick,scale=0.6, every node/.style={transform shape}]
+    % Place nodes
+    \node [block] (1) {1. Objetivos de diseño};
+    \node [block, right of=1, node distance=6cm] (2) {2. Competencias básicas relacionadas con la educación};
+    \node [block, right of=2, node distance=6cm] (3) {3. Investigación del dominio};
+    \node [block, below of=3, node distance=4cm] (4) {4. Diseño del juego};
+    %\node [block, left of=4, node distance=4cm] (5) {5. Tiempo en el juego};
+    %\node [block, below of=2, node distance=4cm] (6) {5. Acciones de jugabilidad};
+    \node [block, below of=1, node distance=4cm] (7) {6. Indicadores};
+    \node [block, below of=7, node distance=4cm] (8) {7. Representación e interacción};
+    \node [block, below of=2, node distance=7cm] (9) {8. Implementación};
+    \node [block, below of=4, node distance=4cm] (10) {9. Evaluación};
+    % Draw edges
+    \path [line] (1) -- (2);
+    \path [line] (2) -- (3);
+    \path [line] (3) -- (4);
+    %\path [line] (4) -- (4);
+    \path [line] (4) -- (6);
+    \path [line] (6) -- (7);
+    \path [line] (7) -- (8);
+    \path [line] (8) -- (9);
+    \path [line] (9) -- (10);
+\end{tikzpicture}
+\end{frame}
+
