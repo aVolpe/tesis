@@ -5,7 +5,7 @@
 \def\fooNoB{#2}
 
 %Primer frame
-\begin{frame}[noframenumbering]%
+\begin{frame}%
 \frametitle{\pagetitle}%
 \framesubtitle{#1 (1 de 2)}%
 %\begin{itemize}%
@@ -17,7 +17,7 @@
 %Segundo frame
 \begin{frame}[noframenumbering]%
 \frametitle{\pagetitle}%
-\framesubtitle{\fooNoA (2 de 2)}%
+\framesubtitle{\fooNoA{}~(2 de 2)}%
 \includemedia[
   height=0.7\textheight,%
   width=\textwidth,%

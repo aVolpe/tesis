@@ -41,8 +41,7 @@
 % institute command below
 %\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{../util/logo.jpg} % placed on the title page
 \titlegraphic{% is placed on the bottom of the title page
-    \includegraphics[width=2cm]{../util/logo.pdf}
-  %\hspace{1cm}\pgfuseimage{titlepagelogo2}
+    \includegraphics[height=.5cm]{../util/logo.pdf}
 }
 
 %
@@ -60,6 +59,7 @@
 \setbeamercolor{block body}{use=structure,fg=black,bg=gray!20!white}
 \setbeamertemplate{blocks}[rounded][shadow=true]
 \setbeamerfont{framesubtitle}{size=\large}
+\setbeamerfont{date}{size=\tiny}
 %\setbeamerfont{frametitle}{size=\normalsize}
 
 \newcommand{\cs}{%
