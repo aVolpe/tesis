@@ -154,9 +154,9 @@
       \ifx\beamer@progressstyle\beamer@progressmovCircCnt% the circular counter with a moving counter
         % draw the current and total frame number
         \ifx\beamer@rotationcw\undefined% counterclockwise rotation
-          \pgfmathsetmacro{\progress}{360*\insertframenumber/\inserttotalframenumber};
+          \pgfmathsetmacro{\progress}{360*(\insertframenumber/\inserttotalframenumber)};
         \else% clockwise rotation
-          \pgfmathsetmacro{\progress}{-360*\insertframenumber/\inserttotalframenumber};
+          \pgfmathsetmacro{\progress}{-360*(\insertframenumber/\inserttotalframenumber)};
         \fi
         % draw the arc
         \draw[color=AAUsimple.bg,line width=0.5*\beamer@borderwidth] ([xshift=\beamer@counterradius] logopos) arc (0:\progress:\beamer@counterradius);
