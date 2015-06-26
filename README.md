@@ -8,23 +8,8 @@
 
 ## Compilación
 
-Se utiliza `latexmk` para la compilación
-
-* Libro:
-    
-    latexmk main
-
-* Resumen
-
-    cd resumen && latexmk main
-
-* Poster
-
-    cd poster && latexmk poster_portrait.tex
-
-* Presentación
-
-    cd presentacion && latexmk main_linux.tex
+Se utiliza `latexmk` para la compilación (compilar `main.tex`, `resumen/main.tex`,
+`poster2/poster_portrait.tex` y `resumen/main.tex`)
 
 ## Utilización
 
